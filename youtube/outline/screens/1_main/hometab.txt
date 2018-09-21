@@ -1,4 +1,20 @@
+/** Superclasses **/
+
 class AppScreen {}
+
+class Icon {
+
+    /** Method/Functions List **/
+    // 1.) iconTapped: captures & handles messaging for when icon is tapped.
+}
+
+class LogoIcon : Icon {
+
+}
+
+
+
+/******************************************************/
 
 
 class TopNav {
@@ -8,16 +24,26 @@ class TopNav {
     // 2.) actionIconList: an array of objects of class ActionIcon, which all inherit from class Icon
 
     /** Methods/Functions List **/
-    // 1.) iconTapped: function to capture & handle button tapping
+
+    /** Delegates/Extensions **/
+    1.) iconTappedDelegate : Listens for any icons to be tapped, and changes screen accordingly.
 }
 
 class ContentView {
 
     /** Properties **/
+    // 1.) videoList: an array of objects of class VideoListView
 
     /** Methods/Functions List **/
+    // 1.) videoListDidScroll: captures & handles user scrolling. When user scrolls, move content in appropriate direction.
 }
 
 class BottomNav {
+    /** Properties **/
+    var tabIconList: an array of objects of class TabIcon, which inherits from class Icon.
 
+    /** Methods/Functions List **/
+
+    /** Delegates/Extensions **/
+    1.) iconTappedDelegate : Listens for any icons to be tapped, and changes screen accordingly.
 }
