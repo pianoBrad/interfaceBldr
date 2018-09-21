@@ -1,0 +1,23 @@
+class AppScreen {}
+
+
+class TopNav {
+
+    /** Properties **/
+    // 1.) logoIcon: an instance of class LogoIcon, which inherits from class Icon
+    // 2.) actionIconList: an array of objects of class ActionIcon, which all inherit from class Icon
+
+    /** Methods/Functions List **/
+    // 1.) iconTapped: function to capture & handle button tapping
+}
+
+class ContentView {
+
+    /** Properties **/
+
+    /** Methods/Functions List **/
+}
+
+class BottomNav {
+
+}
