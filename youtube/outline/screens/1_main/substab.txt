@@ -1,0 +1,20 @@
+/** Super Classes **/
+
+class AppScreen {}
+class Icon {}
+class LogoIcon {}
+class MainView {}
+class AppButtons {}
+
+**************************************
+
+class SubscriptionsTab: MainView, AppButtons {
+    
+    // 1.) There will be a pop-up (or modal I think is what they are called) (variable?)
+        // that pops up to remind the user not to miss new videos via notifications. 
+        // They can dismiss is it on their own by pressing the 'x'.
+
+    // 2.) This modal is listening for whether or not a user has tapped on it.
+        // If the user taps on it, it has to do only one of the two things
+        // listed above in step one.
+}
