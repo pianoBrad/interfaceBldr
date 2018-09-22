@@ -16,6 +16,22 @@ class LogoIcon : Icon {
 
 /******************************************************/
 
+    /********* Keithon Notes and Ideas for this file ***********/
+
+        // I think personally that we should make some sort of class that wraps 
+        // the three following classes. In the first three tabs 'Home' 'Trending' & 'Subscriptions' 
+        // all have the same exact parts. The 'trending' and 'Subscriptions' tabs both 
+        // have buttons in their that can have interchangable responsabilities (I think). 
+        // Finally, the 'Subscriptions' tab has one more extra thing... 
+        // the modal/pop up thing that can be exited by the user. 
+
+        // I'd wrap it like this (I'll go ahead and implement this on the other files):
+
+        class MainView : TopNav, ContentView, BottomNav {
+            
+        }
+
+    /********************* End of thoughts *********************/
 
 class TopNav {
 
@@ -45,5 +61,5 @@ class BottomNav {
     /** Methods/Functions List **/
 
     /** Delegates/Extensions **/
-    1.) iconTappedDelegate : Listens for any icons to be tapped, and changes screen accordingly.
+    // 1.) iconTappedDelegate : Listens for any icons to be tapped, and changes screen accordingly.
 }

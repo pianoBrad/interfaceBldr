@@ -1,0 +1,38 @@
+/** Super Classes **/
+
+class AppScreen {}
+
+class Icon {
+    /** Method/Functions List **/
+    // 1.) iconTapped: captures & handles messaging for when icon is tapped.
+}
+
+class LogoIcon : Icon {
+}
+
+class AppButtons {
+    
+    // 1.) buttonTapped: captures & handles messaging for when icon is tapped.
+    // 2.) button can go to a user profile or to different destination in application.
+}
+ 
+ class MainView : TopNav, ContentView, BottomNav {  
+     // 1.) This view would inherit all three different views.
+}
+
+/*************************************************************/
+
+class SubscriptionTabView : MainView, AppButtons {
+    // Only one new property will need to go into this subscription class.
+    // 1.)  iconTapped || buttonTapped: captures & handles messaging for when icon or button is tapped.
+}
+
+
+
+
+/*************************************************************/
+
+
+
+
+
