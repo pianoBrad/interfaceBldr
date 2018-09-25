@@ -1,0 +1,75 @@
+Class structure:
+
+* Global:
+
+    * Player (NSObject)
+        <> name : String = "player"
+        <> isWinner : Bool = false
+        <> score : Score
+        <> paddle : Paddle
+        <> goal : Goal
+        -> init(withName: String)
+        -> declareWinner()
+
+    * GameObject (UIView)
+        <> var origin : CGPoint
+        <> var width : CGFloat
+        <> var height : CGFloat
+        -> func draw() // render self on screen
+        -> func getPos() -> [origin: CGPoint, width: CGFloat, height: CGFloat]
+
+        * Paddle (GameObject)
+            -> func move(direction: String)
+
+        * Ball (GameObject)
+            <> var speed : CGFloat
+            -> override func draw() // want to draw a circle here rather than rectangle
+            -> func updatePosition() // ball calculates it's own movement based on most recent collision
+            -> func checkDidCollide() -> UIView
+            << BallDelegate
+                -> didScore(forPlayer: Player)
+
+        * Goal (GameObject)
+            <> forPlayer : Player
+
+    * Score (UIView)
+        <> curTotal : Int
+        <> maxTotal : Int
+        << ScoreDelegate
+            -> didReachMaxTotal(forPlayer: Player)
+
+
+* App Flow:
+
+    * SelectModeVC (UIViewController)
+        -> modeSelected() // perform segue to present corresponding mode
+
+    * GameVC (UIViewController)
+        <> var player1 : Player = Player(withName: "player 1")
+        <> var player2 : Player = Player(withName: "player 2")
+        <> var ball : Ball
+        <> var boundaries : [GameObject]
+
+        -> setupGame()
+           // Loop through players, draw paddles, goals and score for each
+           // Loop through boundaries & draw each
+           // Draw ball
+        -> startRound()
+           // ball.updatePosition() and listen for events to respond to
+        -> resetRound()
+           // set ball origin to center screen
+
+        >> BallDelegate
+            // didScore() = update associated player's score
+        >> ScoreDelegate
+            // didReachMaxTotal() = declare associated player winner & endGame()
+        -> endGame(forPlayers: [Player])
+            // perform game over segue and pass over players info
+
+    * GameOverVC (UIViewController)
+        <> var players    : [Players]
+        <> var winnerText : UITextField
+        <> var scoreText  : UITextField
+        -> presentWinner()
+            // Loop through players and check for isWinner = true, update winnerText
+
