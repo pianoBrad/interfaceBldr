@@ -15,9 +15,9 @@
 		2D314CB72159711B00B74FBA /* mockstagramTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D314CB62159711B00B74FBA /* mockstagramTests.swift */; };
 		2D314CC22159711B00B74FBA /* mockstagramUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D314CC12159711B00B74FBA /* mockstagramUITests.swift */; };
 		2D86594621598431003A5B67 /* MainFeedVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D86594521598431003A5B67 /* MainFeedVC.swift */; };
-		2D8659482159864D003A5B67 /* MediaCard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D8659472159864D003A5B67 /* MediaCard.swift */; };
-		2D86594A215986A8003A5B67 /* MediaCard.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2D865949215986A8003A5B67 /* MediaCard.xib */; };
 		2D86594D21598905003A5B67 /* UIViewExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D86594C21598905003A5B67 /* UIViewExtensions.swift */; };
+		2D86594F2159EFC4003A5B67 /* MediaCard.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2D86594E2159EFC4003A5B67 /* MediaCard.xib */; };
+		2D8659512159F04F003A5B67 /* MediaCard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D8659502159F04F003A5B67 /* MediaCard.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -52,9 +52,9 @@
 		2D314CC12159711B00B74FBA /* mockstagramUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = mockstagramUITests.swift; sourceTree = "<group>"; };
 		2D314CC32159711B00B74FBA /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		2D86594521598431003A5B67 /* MainFeedVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainFeedVC.swift; sourceTree = "<group>"; };
-		2D8659472159864D003A5B67 /* MediaCard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MediaCard.swift; sourceTree = "<group>"; };
-		2D865949215986A8003A5B67 /* MediaCard.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MediaCard.xib; sourceTree = "<group>"; };
 		2D86594C21598905003A5B67 /* UIViewExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIViewExtensions.swift; sourceTree = "<group>"; };
+		2D86594E2159EFC4003A5B67 /* MediaCard.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MediaCard.xib; sourceTree = "<group>"; };
+		2D8659502159F04F003A5B67 /* MediaCard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MediaCard.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -151,8 +151,8 @@
 		2D86593D2159743B003A5B67 /* views */ = {
 			isa = PBXGroup;
 			children = (
-				2D8659472159864D003A5B67 /* MediaCard.swift */,
-				2D865949215986A8003A5B67 /* MediaCard.xib */,
+				2D86594E2159EFC4003A5B67 /* MediaCard.xib */,
+				2D8659502159F04F003A5B67 /* MediaCard.swift */,
 			);
 			path = views;
 			sourceTree = "<group>";
@@ -322,7 +322,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				2D86594A215986A8003A5B67 /* MediaCard.xib in Resources */,
+				2D86594F2159EFC4003A5B67 /* MediaCard.xib in Resources */,
 				2D314CAC2159711B00B74FBA /* LaunchScreen.storyboard in Resources */,
 				2D314CA92159711B00B74FBA /* Assets.xcassets in Resources */,
 				2D314CA42159711A00B74FBA /* Main.storyboard in Resources */,
@@ -350,10 +350,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				2D8659482159864D003A5B67 /* MediaCard.swift in Sources */,
 				2D86594D21598905003A5B67 /* UIViewExtensions.swift in Sources */,
 				2D314C9F2159711A00B74FBA /* AppDelegate.swift in Sources */,
 				2D314CA72159711A00B74FBA /* mockstagram.xcdatamodeld in Sources */,
+				2D8659512159F04F003A5B67 /* MediaCard.swift in Sources */,
 				2D86594621598431003A5B67 /* MainFeedVC.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
