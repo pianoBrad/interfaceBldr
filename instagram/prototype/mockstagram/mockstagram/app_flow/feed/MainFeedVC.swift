@@ -12,7 +12,6 @@ class MainFeedVC: UIViewController {
 
     
     @IBOutlet weak var contentScrollView: UIScrollView!
-    @IBOutlet weak var scrollContentView: UIView!
     @IBOutlet weak var contentFeed: UIStackView!
     
     var cardsList: [MediaCard] = []
@@ -29,5 +28,7 @@ class MainFeedVC: UIViewController {
             
             contentFeed.insertArrangedSubview(card, at: index)
         }
+        
+        print(contentFeed.frame)
     }
 }

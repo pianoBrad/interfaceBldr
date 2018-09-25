@@ -36,29 +36,17 @@
                             <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Ini-xV-mT4">
                                 <rect key="frame" x="0.0" y="64" width="375" height="554"/>
                                 <subviews>
-                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="WzY-eY-Ojo" userLabel="ContentView">
+                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="equalSpacing" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="yWH-l6-qyw">
                                         <rect key="frame" x="0.0" y="0.0" width="375" height="554"/>
-                                        <subviews>
-                                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="equalSpacing" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="yWH-l6-qyw">
-                                                <rect key="frame" x="0.0" y="0.0" width="375" height="554"/>
-                                            </stackView>
-                                        </subviews>
-                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                        <constraints>
-                                            <constraint firstItem="yWH-l6-qyw" firstAttribute="leading" secondItem="WzY-eY-Ojo" secondAttribute="leading" id="DXo-W2-XZj"/>
-                                            <constraint firstItem="yWH-l6-qyw" firstAttribute="height" secondItem="WzY-eY-Ojo" secondAttribute="height" priority="250" id="HUr-7T-i2l"/>
-                                            <constraint firstAttribute="trailing" secondItem="yWH-l6-qyw" secondAttribute="trailing" id="VVA-Vc-Gvt"/>
-                                            <constraint firstItem="yWH-l6-qyw" firstAttribute="top" secondItem="WzY-eY-Ojo" secondAttribute="top" id="h81-9b-bg0"/>
-                                        </constraints>
-                                    </view>
+                                    </stackView>
                                 </subviews>
                                 <constraints>
-                                    <constraint firstItem="WzY-eY-Ojo" firstAttribute="leading" secondItem="Ini-xV-mT4" secondAttribute="leading" id="GJy-hb-Z1N"/>
-                                    <constraint firstAttribute="trailing" secondItem="WzY-eY-Ojo" secondAttribute="trailing" id="QL2-nj-2HS"/>
-                                    <constraint firstItem="WzY-eY-Ojo" firstAttribute="centerX" secondItem="Ini-xV-mT4" secondAttribute="centerX" id="WVL-dQ-HsA"/>
-                                    <constraint firstAttribute="bottom" secondItem="WzY-eY-Ojo" secondAttribute="bottom" id="e9M-mf-Ia1"/>
-                                    <constraint firstItem="WzY-eY-Ojo" firstAttribute="centerY" secondItem="Ini-xV-mT4" secondAttribute="centerY" id="uct-J8-O4f"/>
-                                    <constraint firstItem="WzY-eY-Ojo" firstAttribute="top" secondItem="Ini-xV-mT4" secondAttribute="top" id="z08-Y6-gvo"/>
+                                    <constraint firstItem="yWH-l6-qyw" firstAttribute="leading" secondItem="Ini-xV-mT4" secondAttribute="leading" id="B3f-18-oaJ"/>
+                                    <constraint firstItem="yWH-l6-qyw" firstAttribute="height" secondItem="Ini-xV-mT4" secondAttribute="height" priority="250" id="Eem-iu-JCB"/>
+                                    <constraint firstItem="yWH-l6-qyw" firstAttribute="top" secondItem="Ini-xV-mT4" secondAttribute="top" id="QvB-D7-Ti4"/>
+                                    <constraint firstAttribute="bottom" secondItem="yWH-l6-qyw" secondAttribute="bottom" id="Vcq-Hp-tvh"/>
+                                    <constraint firstAttribute="trailing" secondItem="yWH-l6-qyw" secondAttribute="trailing" id="aTe-tk-1DK"/>
+                                    <constraint firstItem="yWH-l6-qyw" firstAttribute="centerX" secondItem="Ini-xV-mT4" secondAttribute="centerX" id="lmf-Oi-iUK"/>
                                 </constraints>
                             </scrollView>
                         </subviews>
@@ -75,7 +63,6 @@
                     <connections>
                         <outlet property="contentFeed" destination="yWH-l6-qyw" id="ZGp-Tj-9cx"/>
                         <outlet property="contentScrollView" destination="Ini-xV-mT4" id="pGU-sj-wcf"/>
-                        <outlet property="scrollContentView" destination="WzY-eY-Ojo" id="k2r-JE-Zmx"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="xdE-qp-ZAb" userLabel="First Responder" sceneMemberID="firstResponder"/>
