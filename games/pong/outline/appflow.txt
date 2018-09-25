@@ -25,18 +25,19 @@ Class structure:
             <> var speed : CGFloat
             -> override func draw() // want to draw a circle here rather than rectangle
             -> func updatePosition() // ball calculates it's own movement based on most recent collision
-            -> func checkDidCollide() -> UIView
-            << BallDelegate
-                -> didScore(forPlayer: Player)
+            -> func checkDidCollide(withObject : GameObject) -> GameObject
+            << protocol BallDelegate
+                -> func didScore(forPlayer: Player)
 
         * Goal (GameObject)
             <> forPlayer : Player
 
     * Score (UIView)
-        <> curTotal : Int
-        <> maxTotal : Int
+        <> curTotal : Int = 0 
+        <> maxTotal : Int = 10
+        -> updateTotal()
         << ScoreDelegate
-            -> didReachMaxTotal(forPlayer: Player)
+            -> didReachMaxTotal()
 
 
 * App Flow:
@@ -70,6 +71,6 @@ Class structure:
         <> var players    : [Players]
         <> var winnerText : UITextField
         <> var scoreText  : UITextField
-        -> presentWinner()
+        -> func presentWinner()
             // Loop through players and check for isWinner = true, update winnerText
 
