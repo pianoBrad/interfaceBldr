@@ -1,0 +1,45 @@
+Class structure:
+
+* Global:
+
+    * [Buttons]
+
+        * Icon (UIButton)
+
+            * NavIcon (Icon)
+
+            * TabBarIcon (Icon)
+
+            * CardFooterIcon (Icon)
+
+    * [Views]
+
+        * Card (UIView)
+
+            * CardHeader (UIView)
+
+            * CardFooter (UIView)
+
+    * [TableCells]
+
+        * MessageCell (UITableViewCell)
+
+    * [Navigation]
+
+        * NavBar (UINavigationBar)
+
+        * TopTabBar (UICollectionView (Horizontal))
+
+
+* App Flow:
+
+    * CameraVC (UIViewController)
+
+    * MainTabBC (UITabBarController)
+
+        * CommentVC (UIViewController)
+
+    * MessagesVC (UITableViewController)
+
+        * MessageDetailVC (UIViewController)
+
