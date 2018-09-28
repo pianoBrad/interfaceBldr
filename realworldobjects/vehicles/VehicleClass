@@ -1,0 +1,79 @@
+/******** Creating a specific brand of car... like Ford or something ********/
+
+class called Vehicle {
+    /** Properties **/
+
+        /** Constants **/
+
+            let wheels = true
+            let engineCount = 1
+            let transmissionCount = 1
+            let stereoCount = 1
+            let frontBumper = 1
+            let rearBumper = 1
+            let driverSide = 1
+            let passengerSide = 1
+            let frontOfVehicle = frontBumper
+            let rearOfVehicle = rearBumper
+
+        /** Variables **/
+        
+            var wheelsCount = 4
+            var wheelSize = 14
+            var engineSize = ['twoStroke', '4 Cylinder', '6 Cylinder', '8 Cylinder']
+            var doors = 4
+            var seats = 4
+            var windowsCount = 6
+            var gearShifterCount = 1
+            var exhaustPipe = 1
+            var axleCount = 2
+            var color = red
+            var windowTintPercent = .50
+            var wheelType = ['Alloy', 'Aluminum', 'Chrome', 'Hubcap', 'Platinum']
+            var trunkCount = 1
+            var trunkSize = medium
+            var vehicleSize = midSize
+            
+
+
+    /** Functions/Methods **/
+        func moveForward() {
+            rotate driverSide wheels !Clockwise && rotate passengerSide wheels Clockwise
+        }
+
+        func moveBackward() {
+            rotate driverSide wheels Clockwise && rotate passengerSide wheels !Clockwise
+        }
+
+        func stopVehicle() {
+            if moveForward {
+                !moveForward
+            } else if moveBackward {
+                !moveBackward
+            }
+        }
+
+}
+
+******************************* END OF VEHICLE CLASS **********************************
+
+******************************** START OF CAR CLASS ***********************************
+
+class called Car {
+
+    /** Properties **/
+
+        /** Variables **/
+            var doors = 2
+            var wheelSize = 14
+            var windowTintPercent = .75
+            var engineSize = '8 Cylinder'
+
+    /** Functions **/
+    moveBackward
+    stopVehicle
+    moveForward
+    stopVehicle
+}
+
+******************************* END OF Car CLASS **********************************        

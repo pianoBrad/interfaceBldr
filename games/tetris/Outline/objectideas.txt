@@ -1,0 +1,86 @@
+Objects that I believe need to b:
+    - Stats
+    - GameBoard
+    - Scoreboard
+    - Levels
+    - Lines
+    - GameMode
+    - 
+
+
+
+Class Structure: 
+
+* Global:
+
+    * Player (NSObject)
+        - Is there any need?
+
+    * GameObject (UIView)
+        <> var origin : CGPoint
+        <> var width : CGFloat
+        <> var height : CGFloat
+        -> func draw() // render self on screen
+        -> func getPos() -> [origin: CGPoint, width: CGFloat, height: CGFloat]
+
+        * GamePlayBoard
+            <> var gamePlayBoard : GamePlayBoard
+            << sending out a delegate that tells someone a gamePiece image is in a specific spot. (line needs to know)
+
+        * GamePiece (GameObject)
+        // All of the game pieces are made up of squares... would be a drawing of one square tile and then group them together? Or would it be simpler to 'sketch' a game piece, give dimensions, and then base origin off of itself.
+
+
+
+            <> var iGamePiece
+            <> var jGamePiece
+            <> var lGamePiece
+            <> var oGamePiece
+            <> var sGamePiece
+            <> var tGamePiece
+            <> var zGamePiece
+            // I'm just now realizing that these can just be instances of GamePiece
+
+            // all game pieces need to be able to rotate clockwise
+            -> some sort of func that would rotate this?
+            ->
+
+            ///// Starting over on the GamePiece object //////
+            <> var gamePieceIMG : UIImageView
+            <> var speed : CGFloat
+            -> override func draw() // rendering image
+            -> func updatePosition() // update image position 
+            -> func checkDidCollide(withObject : GameObject) -> GameObject
+
+        * GamePieceStatistics (UITableViewController)
+            // I guess...        👆🏾👆🏾👆🏾👆🏾👆🏾👆🏾👆🏾👆🏾
+            <> var //I'm guessing 
+
+        * Levels
+            <> var weak levelLabel? : (UILabel)
+            <> var levelNumbers : Int
+            -> func levelUp() // after clearing a certain number of lines, move up one level... would this be a for loop?
+
+        * Lines
+            <> lineRowOrigin : getPos([origin: CGPoint, width: CGFloat, height: CGFloat]) (//can I use this here?)
+            -> 
+
+        * NextGamePiece
+            <> var weak nextGamePieceLabel? : (UILabel)
+            <> var nextGamePieceObject
+            -> init() //appears at the exact same moment that gamePiece enters the gamePlayBoard. 
+
+        * ScoreBoard
+            <> var topScoreLabel : (UILabel)
+            <> var currentScoreLabel : (UILabel)
+
+        * SoundFx
+            <> var soundFx : (AVSomethingOrAnother,CantRemember)
+
+        * Music
+            <> var menuMusic : (AVSomethingOrAnother)
+            <> var gamePlayMusic : (AVSomethingOrAnother)
+
+
+
+

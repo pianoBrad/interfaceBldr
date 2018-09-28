@@ -1,0 +1,44 @@
+Class structure:
+
+
+// This is a class representing all businesses.
+
+class Business {
+
+    /** Properties **/
+
+    <> employee : Int
+    <> building : Building
+    <> equipment : BusinessEquipment
+    <> bank account : String
+    <> money : Int
+    <> customers : Int
+
+
+    /** Methods **/
+
+
+}
+
+
+class CoffeeShop {
+
+    /** Properties **/
+    
+    <> parkingLot : Bool
+    <> parkingLotSpace : Int
+    <> coffeeBar : 
+    <> barista = employee
+    <> coffeeShop = building
+    <> tables = equipment
+    <> chairs = equipment
+    <> cashRegister = equipment
+    <> espressoMachine = equipment
+
+    // at some point should I just include the 'BusinessEquipment' class with the CoffeeShop class like this:
+        'class CoffeeShop: Business, BusinessEquipment' 
+    or no... wait... won't that inherit from 'Business' anyway with the 'equipment' property?
+        
+
+}
+
