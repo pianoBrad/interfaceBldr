@@ -7,13 +7,12 @@ class Business {
 
     /** Properties **/
 
-    <> employee : Int
-    <> building : Building
-    <> equipment : BusinessEquipment
-    <> bank account : String
-    <> money : Int
-    <> customers : Int
-
+    <> employees : [Employee]
+    <> locations : [BusinessLocation]
+    <> equipment : [BusinessEquipment] = []
+    <> bankAccount : [BankAccount]
+    <> reports : Reporting
+    <> sales : [Sale]
 
     /** Methods **/
 
@@ -24,21 +23,23 @@ class Business {
 class CoffeeShop {
 
     /** Properties **/
-    
-    <> parkingLot : Bool
-    <> parkingLotSpace : Int
-    <> coffeeBar : 
-    <> barista = employee
-    <> coffeeShop = building
-    <> tables = equipment
-    <> chairs = equipment
-    <> cashRegister = equipment
-    <> espressoMachine = equipment
+
+    <> playlist : [Song]
 
     // at some point should I just include the 'BusinessEquipment' class with the CoffeeShop class like this:
-        'class CoffeeShop: Business, BusinessEquipment' 
+        'class CoffeeShop: Business, BusinessEquipment'
     or no... wait... won't that inherit from 'Business' anyway with the 'equipment' property?
-        
 
+
+
+    init(withBizProperties: [Any]) {
+
+        for property in withBizProperties {
+
+            if thisProperty = property as? playlist {
+                self.playlist = thisProperty
+            }
+        }
+    }
 }
 
