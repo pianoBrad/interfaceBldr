@@ -3,7 +3,31 @@
 import UIKit
 import PlaygroundSupport
 
-
+extension UIColor {
+    /**
+     * This extension allows us to create an instance of UIColor
+     * converted from a hex color, like so:
+     *   UIColor(hexFromString: "#ffffff") //would give us white
+     */
+    convenience init(hexFromString:String, alpha:CGFloat = 1.0) {
+        var colorString : String = hexFromString.trimmingCharacters(
+            in: .whitespacesAndNewlines).uppercased()
+        var rgbValue : UInt32 = 10066329 //default to #999999, worst-case
+        
+        if (colorString.hasPrefix("#")) {
+            colorString.remove(at: colorString.startIndex)
+        }
+        
+        if (colorString.count == 6) {
+            Scanner(string: colorString).scanHexInt32(&rgbValue)
+        }
+        
+        self.init(red: CGFloat((rgbValue & 0xFF0000) >> 16) / 255,
+                  green: CGFloat((rgbValue & 0x00FF00) >> 8) / 255,
+                  blue: CGFloat(rgbValue & 0x0000FF) / 255,
+                  alpha: alpha)
+    }
+}
 
 class PlayerView : UIView {
 	
@@ -20,8 +44,7 @@ class PlayerView : UIView {
 	/** Custom Methods **/
 	func commonInit() {
 		
-		self.backgroundColor = .gray
-		
+        self.backgroundColor = UIColor(hexFromString: "#F8F8F8")
 	}
 	
 }
@@ -40,7 +63,7 @@ class GameBoard : UIView {
 	
 	func commonInit() {
 		
-		self.backgroundColor = .green
+        self.backgroundColor = UIColor(hexFromString: "#26BCAC")
 	}
 	
 	
@@ -61,7 +84,7 @@ class ControlPanel : UIView {
 	/** Custom Method **/
 	func commonInit() {
 		
-		self.backgroundColor = .gray
+		self.backgroundColor = UIColor(hexFromString: "#F8F8F8")
 		
 	}
 	
