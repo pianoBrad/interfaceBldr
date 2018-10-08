@@ -14,6 +14,7 @@
 		2D314CAC2159711B00B74FBA /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2D314CAA2159711B00B74FBA /* LaunchScreen.storyboard */; };
 		2D314CB72159711B00B74FBA /* mockstagramTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D314CB62159711B00B74FBA /* mockstagramTests.swift */; };
 		2D314CC22159711B00B74FBA /* mockstagramUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D314CC12159711B00B74FBA /* mockstagramUITests.swift */; };
+		2D71C9FE216BAAE1006A8D30 /* MainNavTabBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D71C9FD216BAAE1006A8D30 /* MainNavTabBar.swift */; };
 		2D86594621598431003A5B67 /* MainFeedVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D86594521598431003A5B67 /* MainFeedVC.swift */; };
 		2D86594D21598905003A5B67 /* UIViewExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D86594C21598905003A5B67 /* UIViewExtensions.swift */; };
 		2D86594F2159EFC4003A5B67 /* MediaCard.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2D86594E2159EFC4003A5B67 /* MediaCard.xib */; };
@@ -51,6 +52,7 @@
 		2D314CBD2159711B00B74FBA /* mockstagramUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = mockstagramUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		2D314CC12159711B00B74FBA /* mockstagramUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = mockstagramUITests.swift; sourceTree = "<group>"; };
 		2D314CC32159711B00B74FBA /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		2D71C9FD216BAAE1006A8D30 /* MainNavTabBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainNavTabBar.swift; sourceTree = "<group>"; };
 		2D86594521598431003A5B67 /* MainFeedVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainFeedVC.swift; sourceTree = "<group>"; };
 		2D86594C21598905003A5B67 /* UIViewExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIViewExtensions.swift; sourceTree = "<group>"; };
 		2D86594E2159EFC4003A5B67 /* MediaCard.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MediaCard.xib; sourceTree = "<group>"; };
@@ -174,6 +176,7 @@
 		2D86594021597461003A5B67 /* navigation */ = {
 			isa = PBXGroup;
 			children = (
+				2D71C9FD216BAAE1006A8D30 /* MainNavTabBar.swift */,
 			);
 			path = navigation;
 			sourceTree = "<group>";
@@ -354,6 +357,7 @@
 				2D314C9F2159711A00B74FBA /* AppDelegate.swift in Sources */,
 				2D314CA72159711A00B74FBA /* mockstagram.xcdatamodeld in Sources */,
 				2D8659512159F04F003A5B67 /* MediaCard.swift in Sources */,
+				2D71C9FE216BAAE1006A8D30 /* MainNavTabBar.swift in Sources */,
 				2D86594621598431003A5B67 /* MainFeedVC.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -530,7 +534,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = KWRG283N5S;
+				DEVELOPMENT_TEAM = A46J4WF27R;
 				INFOPLIST_FILE = mockstagram/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -548,7 +552,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = KWRG283N5S;
+				DEVELOPMENT_TEAM = A46J4WF27R;
 				INFOPLIST_FILE = mockstagram/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",

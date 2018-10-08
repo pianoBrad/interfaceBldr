@@ -14,23 +14,74 @@
             <objects>
                 <viewController title="Search" id="Azc-tT-5NT" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="2pX-hm-ON2">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="618"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <color key="backgroundColor" red="1" green="0.4823529412" blue="0.4823529412" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <viewLayoutGuide key="safeArea" id="mlV-qX-aUl"/>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Item 2" id="Wve-CA-gMl"/>
+                    <tabBarItem key="tabBarItem" title="" image="icon_search" selectedImage="icon_active_search" id="Wve-CA-gMl"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="4Mx-Eo-igT" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1090" y="-242"/>
+        </scene>
+        <!--View Controller-->
+        <scene sceneID="soM-gu-tPQ">
+            <objects>
+                <viewController id="Fbx-47-INv" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="V2F-7h-EvI">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" red="0.99215686270000003" green="0.74117647060000003" blue="0.01176470588" alpha="1" colorSpace="calibratedRGB"/>
+                        <viewLayoutGuide key="safeArea" id="2pU-h5-SNA"/>
+                    </view>
+                    <tabBarItem key="tabBarItem" title="" image="icon_rect-add" selectedImage="icon_active_rect-add" id="DqP-L8-tXQ"/>
+                    <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="N9s-F9-ncX" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1089" y="440"/>
+        </scene>
+        <!--View Controller-->
+        <scene sceneID="CGQ-LK-rPW">
+            <objects>
+                <viewController id="HTb-ei-lTu" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="vVC-xp-8kH">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" name="systemGreenColor" catalog="System" colorSpace="catalog"/>
+                        <viewLayoutGuide key="safeArea" id="zmS-EG-j6a"/>
+                    </view>
+                    <tabBarItem key="tabBarItem" title="" image="icon_heart" selectedImage="icon_active_heart" id="Hbz-7J-P7x"/>
+                    <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="r1l-v8-sS7" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1089" y="1127"/>
+        </scene>
+        <!--View Controller-->
+        <scene sceneID="mVh-Hr-nEj">
+            <objects>
+                <viewController id="cqs-Fu-qec" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="Pyc-oD-hHm">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <viewLayoutGuide key="safeArea" id="tZy-Br-zsZ"/>
+                    </view>
+                    <tabBarItem key="tabBarItem" image="icon_profile" selectedImage="icon_active_profile" id="T6b-oK-xt8"/>
+                    <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="MmP-IA-HwZ" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1089" y="1836"/>
         </scene>
         <!--MainFeed-->
         <scene sceneID="qIZ-SB-4gI">
             <objects>
                 <viewController title="MainFeed" id="Vx4-ek-be9" customClass="MainFeedVC" customModule="mockstagram" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="ZH4-hk-08x">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="618"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Ini-xV-mT4">
@@ -59,7 +110,7 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="vJ7-s9-9Rh"/>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Item 1" id="uIL-PF-YaA"/>
+                    <tabBarItem key="tabBarItem" title="" image="icon_home" selectedImage="icon_active_home" id="uIL-PF-YaA"/>
                     <connections>
                         <outlet property="contentFeed" destination="yWH-l6-qyw" id="ZGp-Tj-9cx"/>
                         <outlet property="contentScrollView" destination="Ini-xV-mT4" id="pGU-sj-wcf"/>
@@ -74,7 +125,7 @@
             <objects>
                 <tabBarController title="mockstagram" id="TAl-yO-P6j" sceneMemberID="viewController">
                     <navigationItem key="navigationItem" title="mockstagram" id="HSm-dl-ySB"/>
-                    <tabBar key="tabBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="VZQ-oD-1h7">
+                    <tabBar key="tabBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" translucent="NO" id="VZQ-oD-1h7" customClass="MainNavTabBar" customModule="mockstagram" customModuleProvider="target">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="49"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -82,6 +133,9 @@
                     <connections>
                         <segue destination="Vx4-ek-be9" kind="relationship" relationship="viewControllers" id="xdS-qR-LH2"/>
                         <segue destination="Azc-tT-5NT" kind="relationship" relationship="viewControllers" id="5nf-qv-UUQ"/>
+                        <segue destination="Fbx-47-INv" kind="relationship" relationship="viewControllers" id="umU-50-pj8"/>
+                        <segue destination="HTb-ei-lTu" kind="relationship" relationship="viewControllers" id="pjb-av-ey7"/>
+                        <segue destination="cqs-Fu-qec" kind="relationship" relationship="viewControllers" id="tr4-yc-Ag7"/>
                     </connections>
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="qMu-da-zE4" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -105,4 +159,16 @@
             <point key="canvasLocation" x="-751" y="-574"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="icon_active_heart" width="50" height="46"/>
+        <image name="icon_active_home" width="50" height="53"/>
+        <image name="icon_active_profile" width="50" height="54"/>
+        <image name="icon_active_rect-add" width="50" height="50"/>
+        <image name="icon_active_search" width="50" height="51"/>
+        <image name="icon_heart" width="50" height="46"/>
+        <image name="icon_home" width="50" height="53"/>
+        <image name="icon_profile" width="50" height="54"/>
+        <image name="icon_rect-add" width="50" height="50"/>
+        <image name="icon_search" width="50" height="50"/>
+    </resources>
 </document>
