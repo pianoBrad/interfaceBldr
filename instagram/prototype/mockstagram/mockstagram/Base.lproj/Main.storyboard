@@ -59,14 +59,26 @@
             </objects>
             <point key="canvasLocation" x="1089" y="1127"/>
         </scene>
-        <!--View Controller-->
+        <!--ProfileVC-->
         <scene sceneID="mVh-Hr-nEj">
             <objects>
-                <viewController id="cqs-Fu-qec" sceneMemberID="viewController">
+                <viewController id="cqs-Fu-qec" customClass="ProfileVC" customModule="mockstagram" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="Pyc-oD-hHm">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="9a8-4e-QCw" customClass="ProfileView" customModule="mockstagram" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="64" width="375" height="554"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            </view>
+                        </subviews>
                         <color key="backgroundColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="9a8-4e-QCw" firstAttribute="height" secondItem="tZy-Br-zsZ" secondAttribute="height" id="ClK-tB-Mnv"/>
+                            <constraint firstItem="9a8-4e-QCw" firstAttribute="width" secondItem="tZy-Br-zsZ" secondAttribute="width" id="Qr1-g3-bgM"/>
+                            <constraint firstItem="9a8-4e-QCw" firstAttribute="bottom" secondItem="tZy-Br-zsZ" secondAttribute="bottom" id="dv4-Qf-vYk"/>
+                            <constraint firstItem="9a8-4e-QCw" firstAttribute="centerX" secondItem="tZy-Br-zsZ" secondAttribute="centerX" id="ndk-sf-Z9P"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="tZy-Br-zsZ"/>
                     </view>
                     <tabBarItem key="tabBarItem" image="icon_profile" selectedImage="icon_active_profile" id="T6b-oK-xt8"/>
@@ -74,7 +86,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="MmP-IA-HwZ" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1089" y="1836"/>
+            <point key="canvasLocation" x="1088.8" y="1835.5322338830586"/>
         </scene>
         <!--MainFeed-->
         <scene sceneID="qIZ-SB-4gI">

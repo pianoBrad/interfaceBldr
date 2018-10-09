@@ -27,8 +27,6 @@ class MainFeedVC: UIViewController {
         for (index, card) in cardsList.enumerated() {
             
             contentFeed.insertArrangedSubview(card, at: index)
-        }
-        
-        print(contentFeed.frame)
+        }        
     }
 }
