@@ -20,6 +20,9 @@
             <connections>
                 <outlet property="contentScrollView" destination="Q6y-YT-Ui7" id="NRg-l3-VlE"/>
                 <outlet property="contentView" destination="iN0-l3-epB" id="0ZQ-rh-9mw"/>
+                <outlet property="followersStatsView" destination="rwD-Po-C1q" id="1BE-ro-bXR"/>
+                <outlet property="followingStatsView" destination="RXs-ee-Uh6" id="w5Z-WH-8zJ"/>
+                <outlet property="postsStatsView" destination="KsG-Z4-C8z" id="kEm-HF-gZ0"/>
             </connections>
         </placeholder>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
@@ -62,45 +65,29 @@
                                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="xfp-dD-nng" userLabel="Stats Container">
                                             <rect key="frame" x="113" y="0.0" width="247" height="55"/>
                                             <subviews>
-                                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="KsG-Z4-C8z" userLabel="Posts">
+                                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="KsG-Z4-C8z" userLabel="Posts" customClass="ProfileStatsView" customModule="mockstagram" customModuleProvider="target">
                                                     <rect key="frame" x="0.0" y="0.0" width="82.5" height="55"/>
-                                                    <subviews>
-                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="1,000" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="z0o-ns-VzX">
-                                                            <rect key="frame" x="0.0" y="19" width="82.5" height="21"/>
-                                                            <constraints>
-                                                                <constraint firstAttribute="height" constant="21" id="r7U-hi-BzU"/>
-                                                            </constraints>
-                                                            <fontDescription key="fontDescription" name="Lato-Bold" family="Lato" pointSize="17"/>
-                                                            <nil key="textColor"/>
-                                                            <nil key="highlightedColor"/>
-                                                        </label>
-                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="posts" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="N2N-Fg-jVD">
-                                                            <rect key="frame" x="0.0" y="40" width="82.5" height="15"/>
-                                                            <constraints>
-                                                                <constraint firstAttribute="height" constant="15" id="YRb-eO-u4P"/>
-                                                            </constraints>
-                                                            <fontDescription key="fontDescription" name="Lato-Regular" family="Lato" pointSize="12"/>
-                                                            <color key="textColor" red="0.59999999999999998" green="0.59999999999999998" blue="0.59999999999999998" alpha="1" colorSpace="calibratedRGB"/>
-                                                            <nil key="highlightedColor"/>
-                                                        </label>
-                                                    </subviews>
                                                     <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                                    <constraints>
-                                                        <constraint firstAttribute="trailing" secondItem="N2N-Fg-jVD" secondAttribute="trailing" id="8xn-dX-aaw"/>
-                                                        <constraint firstAttribute="bottom" secondItem="N2N-Fg-jVD" secondAttribute="bottom" id="EUR-XE-QPJ"/>
-                                                        <constraint firstItem="z0o-ns-VzX" firstAttribute="leading" secondItem="KsG-Z4-C8z" secondAttribute="leading" id="JVx-gZ-w4H"/>
-                                                        <constraint firstAttribute="trailing" secondItem="z0o-ns-VzX" secondAttribute="trailing" id="LaY-P6-d5y"/>
-                                                        <constraint firstItem="N2N-Fg-jVD" firstAttribute="leading" secondItem="KsG-Z4-C8z" secondAttribute="leading" id="kas-AC-Q4N"/>
-                                                        <constraint firstItem="N2N-Fg-jVD" firstAttribute="top" secondItem="z0o-ns-VzX" secondAttribute="bottom" id="wRN-mg-0T0"/>
-                                                    </constraints>
+                                                    <userDefinedRuntimeAttributes>
+                                                        <userDefinedRuntimeAttribute type="string" keyPath="statNameText" value="posts"/>
+                                                        <userDefinedRuntimeAttribute type="string" keyPath="statCountText" value="1,134"/>
+                                                    </userDefinedRuntimeAttributes>
                                                 </view>
                                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="rwD-Po-C1q" userLabel="Followers" customClass="ProfileStatsView" customModule="mockstagram" customModuleProvider="target">
                                                     <rect key="frame" x="82.5" y="0.0" width="82" height="55"/>
                                                     <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                    <userDefinedRuntimeAttributes>
+                                                        <userDefinedRuntimeAttribute type="string" keyPath="statCountText" value="575"/>
+                                                        <userDefinedRuntimeAttribute type="string" keyPath="statNameText" value="followers"/>
+                                                    </userDefinedRuntimeAttributes>
                                                 </view>
-                                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="RXs-ee-Uh6" userLabel="Following">
+                                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="RXs-ee-Uh6" userLabel="Following" customClass="ProfileStatsView" customModule="mockstagram" customModuleProvider="target">
                                                     <rect key="frame" x="164.5" y="0.0" width="82.5" height="55"/>
                                                     <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                    <userDefinedRuntimeAttributes>
+                                                        <userDefinedRuntimeAttribute type="string" keyPath="statCountText" value="923"/>
+                                                        <userDefinedRuntimeAttribute type="string" keyPath="statNameText" value="following"/>
+                                                    </userDefinedRuntimeAttributes>
                                                 </view>
                                             </subviews>
                                             <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>

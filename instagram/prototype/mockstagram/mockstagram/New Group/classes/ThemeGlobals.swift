@@ -11,6 +11,7 @@ import UIKit
 class ThemeGlobals: NSObject
 {
     /** Colors **/
+    var darkGrey = UIColor(hexFromString: "#262626")
     var lightGrey = UIColor(hexFromString: "#999999")
     
     /** Fonts **/
