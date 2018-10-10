@@ -8,15 +8,17 @@
 
 import UIKit
 
+@IBDesignable 
 class ProfileView: UIView
 {
     
     @IBOutlet var contentView: UIView!
     @IBOutlet weak var contentScrollView: UIScrollView!
     
-    @IBOutlet weak var postsStatsView: ProfileStatsView!
-    @IBOutlet weak var followersStatsView: ProfileStatsView!
-    @IBOutlet weak var followingStatsView: ProfileStatsView!
+    
+    @IBOutlet weak var postsStatsView: ProfileHeaderStatsView!
+    @IBOutlet weak var followersStatsView: ProfileHeaderStatsView!
+    @IBOutlet weak var followingStatsView: ProfileHeaderStatsView!
     
     
     override init(frame: CGRect)
@@ -33,7 +35,8 @@ class ProfileView: UIView
     
     func commonInit()
     {
-        Bundle.main.loadNibNamed("ProfileView", owner: self, options: nil)
+        let bundle = Bundle(for: ProfileView.self)
+        bundle.loadNibNamed("ProfileView", owner: self, options: nil)
         self.addSubview(contentView)
         contentView.frame = self.bounds
         contentView.autoresizingMask = [.flexibleWidth, .flexibleHeight]
@@ -44,9 +47,9 @@ class ProfileView: UIView
     }
 }
 
-extension ProfileView : ProfileStatsViewDelegate
+extension ProfileView : ProfileHeaderStatsViewDelegate
 {
-    func statWasTapped(_ sender: ProfileStatsView)
+    func statWasTapped(_ sender: ProfileHeaderStatsView)
     {
         print("Stat tapped!")
     }

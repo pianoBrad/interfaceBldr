@@ -14,6 +14,8 @@
 		2D314CAC2159711B00B74FBA /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2D314CAA2159711B00B74FBA /* LaunchScreen.storyboard */; };
 		2D314CB72159711B00B74FBA /* mockstagramTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D314CB62159711B00B74FBA /* mockstagramTests.swift */; };
 		2D314CC22159711B00B74FBA /* mockstagramUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D314CC12159711B00B74FBA /* mockstagramUITests.swift */; };
+		2D3E6641216E3CD100CD96FC /* ProfileHeaderStatsView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2D3E6640216E3CD100CD96FC /* ProfileHeaderStatsView.xib */; };
+		2D3E6643216E3D3200CD96FC /* ProfileHeaderStatsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D3E6642216E3D3200CD96FC /* ProfileHeaderStatsView.swift */; };
 		2D71C9FE216BAAE1006A8D30 /* MainNavTabBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D71C9FD216BAAE1006A8D30 /* MainNavTabBar.swift */; };
 		2D86594621598431003A5B67 /* MainFeedVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D86594521598431003A5B67 /* MainFeedVC.swift */; };
 		2D86594D21598905003A5B67 /* UIViewExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D86594C21598905003A5B67 /* UIViewExtensions.swift */; };
@@ -31,7 +33,6 @@
 		2DEE28F6216CF8E90007A239 /* Lato-BoldItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 2DEE28EC216CF8E90007A239 /* Lato-BoldItalic.ttf */; };
 		2DEE28F7216CF8E90007A239 /* Lato-HairlineItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 2DEE28ED216CF8E90007A239 /* Lato-HairlineItalic.ttf */; };
 		2DEE28F8216CF8E90007A239 /* Lato-LightItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 2DEE28EE216CF8E90007A239 /* Lato-LightItalic.ttf */; };
-		2DEE28FB216D02E10007A239 /* ProfileStatsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2DEE28FA216D02E10007A239 /* ProfileStatsView.swift */; };
 		2DEE28FD216D079B0007A239 /* ProfileVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2DEE28FC216D079B0007A239 /* ProfileVC.swift */; };
 		2DEE2900216D295C0007A239 /* ThemeGlobals.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2DEE28FF216D295C0007A239 /* ThemeGlobals.swift */; };
 		2DEE2903216D29CD0007A239 /* UIColorExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2DEE2902216D29CD0007A239 /* UIColorExtensions.swift */; };
@@ -68,6 +69,8 @@
 		2D314CBD2159711B00B74FBA /* mockstagramUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = mockstagramUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		2D314CC12159711B00B74FBA /* mockstagramUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = mockstagramUITests.swift; sourceTree = "<group>"; };
 		2D314CC32159711B00B74FBA /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		2D3E6640216E3CD100CD96FC /* ProfileHeaderStatsView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ProfileHeaderStatsView.xib; sourceTree = "<group>"; };
+		2D3E6642216E3D3200CD96FC /* ProfileHeaderStatsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileHeaderStatsView.swift; sourceTree = "<group>"; };
 		2D71C9FD216BAAE1006A8D30 /* MainNavTabBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainNavTabBar.swift; sourceTree = "<group>"; };
 		2D86594521598431003A5B67 /* MainFeedVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainFeedVC.swift; sourceTree = "<group>"; };
 		2D86594C21598905003A5B67 /* UIViewExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIViewExtensions.swift; sourceTree = "<group>"; };
@@ -85,7 +88,6 @@
 		2DEE28EC216CF8E90007A239 /* Lato-BoldItalic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Lato-BoldItalic.ttf"; sourceTree = "<group>"; };
 		2DEE28ED216CF8E90007A239 /* Lato-HairlineItalic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Lato-HairlineItalic.ttf"; sourceTree = "<group>"; };
 		2DEE28EE216CF8E90007A239 /* Lato-LightItalic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Lato-LightItalic.ttf"; sourceTree = "<group>"; };
-		2DEE28FA216D02E10007A239 /* ProfileStatsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileStatsView.swift; sourceTree = "<group>"; };
 		2DEE28FC216D079B0007A239 /* ProfileVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileVC.swift; sourceTree = "<group>"; };
 		2DEE28FF216D295C0007A239 /* ThemeGlobals.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ThemeGlobals.swift; sourceTree = "<group>"; };
 		2DEE2902216D29CD0007A239 /* UIColorExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIColorExtensions.swift; sourceTree = "<group>"; };
@@ -181,6 +183,15 @@
 			);
 			name = global;
 			path = "New Group";
+			sourceTree = "<group>";
+		};
+		2D3E6644216E459400CD96FC /* header */ = {
+			isa = PBXGroup;
+			children = (
+				2D3E6640216E3CD100CD96FC /* ProfileHeaderStatsView.xib */,
+				2D3E6642216E3D3200CD96FC /* ProfileHeaderStatsView.swift */,
+			);
+			path = header;
 			sourceTree = "<group>";
 		};
 		2D86593D2159743B003A5B67 /* views */ = {
@@ -280,7 +291,7 @@
 			children = (
 				2DEE28E0216CEFEE0007A239 /* ProfileView.xib */,
 				2DEE28E2216CF0330007A239 /* ProfileView.swift */,
-				2DEE28FA216D02E10007A239 /* ProfileStatsView.swift */,
+				2D3E6644216E459400CD96FC /* header */,
 			);
 			path = profile;
 			sourceTree = "<group>";
@@ -420,6 +431,7 @@
 				2DEE28F2216CF8E90007A239 /* Lato-Bold.ttf in Resources */,
 				2D314CA42159711A00B74FBA /* Main.storyboard in Resources */,
 				2DEE28F6216CF8E90007A239 /* Lato-BoldItalic.ttf in Resources */,
+				2D3E6641216E3CD100CD96FC /* ProfileHeaderStatsView.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -447,11 +459,11 @@
 				2D86594D21598905003A5B67 /* UIViewExtensions.swift in Sources */,
 				2D314C9F2159711A00B74FBA /* AppDelegate.swift in Sources */,
 				2D314CA72159711A00B74FBA /* mockstagram.xcdatamodeld in Sources */,
+				2D3E6643216E3D3200CD96FC /* ProfileHeaderStatsView.swift in Sources */,
 				2DEE28FD216D079B0007A239 /* ProfileVC.swift in Sources */,
 				2DEE2900216D295C0007A239 /* ThemeGlobals.swift in Sources */,
 				2D8659512159F04F003A5B67 /* MediaCard.swift in Sources */,
 				2DEE2903216D29CD0007A239 /* UIColorExtensions.swift in Sources */,
-				2DEE28FB216D02E10007A239 /* ProfileStatsView.swift in Sources */,
 				2D71C9FE216BAAE1006A8D30 /* MainNavTabBar.swift in Sources */,
 				2DEE28E3216CF0330007A239 /* ProfileView.swift in Sources */,
 				2D86594621598431003A5B67 /* MainFeedVC.swift in Sources */,
