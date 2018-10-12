@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		2D2C88582170373C009F7894 /* ProfileBtn.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D2C88572170373C009F7894 /* ProfileBtn.swift */; };
 		2D314C9F2159711A00B74FBA /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D314C9E2159711A00B74FBA /* AppDelegate.swift */; };
 		2D314CA42159711A00B74FBA /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2D314CA22159711A00B74FBA /* Main.storyboard */; };
 		2D314CA72159711A00B74FBA /* mockstagram.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 2D314CA52159711A00B74FBA /* mockstagram.xcdatamodeld */; };
@@ -56,6 +57,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		2D2C88572170373C009F7894 /* ProfileBtn.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileBtn.swift; sourceTree = "<group>"; };
 		2D314C9B2159711A00B74FBA /* mockstagram.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = mockstagram.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		2D314C9E2159711A00B74FBA /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		2D314CA32159711A00B74FBA /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -207,6 +209,7 @@
 		2D86593E21597447003A5B67 /* buttons */ = {
 			isa = PBXGroup;
 			children = (
+				2D2C88572170373C009F7894 /* ProfileBtn.swift */,
 			);
 			path = buttons;
 			sourceTree = "<group>";
@@ -460,6 +463,7 @@
 				2D314C9F2159711A00B74FBA /* AppDelegate.swift in Sources */,
 				2D314CA72159711A00B74FBA /* mockstagram.xcdatamodeld in Sources */,
 				2D3E6643216E3D3200CD96FC /* ProfileHeaderStatsView.swift in Sources */,
+				2D2C88582170373C009F7894 /* ProfileBtn.swift in Sources */,
 				2DEE28FD216D079B0007A239 /* ProfileVC.swift in Sources */,
 				2DEE2900216D295C0007A239 /* ThemeGlobals.swift in Sources */,
 				2D8659512159F04F003A5B67 /* MediaCard.swift in Sources */,

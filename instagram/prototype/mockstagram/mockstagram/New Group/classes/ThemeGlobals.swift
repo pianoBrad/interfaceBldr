@@ -13,6 +13,7 @@ class ThemeGlobals: NSObject
     /** Colors **/
     var darkGrey = UIColor(hexFromString: "#262626")
     var lightGrey = UIColor(hexFromString: "#999999")
+    var borderBtnLightGrey = UIColor(hexFromString: "#CCCCCC")
     
     /** Fonts **/
     var fontNamePrimaryHairline = "Lato-Hairline"
