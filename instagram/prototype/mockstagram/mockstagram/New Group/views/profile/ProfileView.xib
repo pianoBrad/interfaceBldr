@@ -153,7 +153,7 @@
                                 </label>
                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="p1c-LQ-r6Z" customClass="StoryStack" customModule="mockstagram" customModuleProvider="target">
                                     <rect key="frame" x="15" y="222" width="345" height="65"/>
-                                    <color key="backgroundColor" red="0.99215686270000003" green="0.74117647060000003" blue="0.01176470588" alpha="1" colorSpace="calibratedRGB"/>
+                                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                     <constraints>
                                         <constraint firstAttribute="height" constant="65" id="shG-tD-kSX"/>
                                     </constraints>

@@ -62,7 +62,6 @@ class StoryStack: UIView
         for _ in 1...amountToShow
         {
             let storyBtnFrame = CGRect(x: 0, y: 0, width: self.frame.height, height: self.frame.height)
-            print(storyBtnFrame)
             let storyBtn = StoryBtnView(frame: storyBtnFrame)
             stories.append(storyBtn)
         }
@@ -79,7 +78,6 @@ class StoryStack: UIView
     
         for view in mainStackView.subviews
         {
-            print("removing views now..")
             mainStackView.removeArrangedSubview(
                 view, shouldRemoveFromSuperview: true
             )
