@@ -13,28 +13,27 @@ class ControlPanelBtn: UIButton
     /** Properties **/
     var bgColor : UIColor = .clear
     
-    
-    
-    override init(frame: CGRect) {
+    override init(frame: CGRect)
+    {
         super.init(frame: frame)
         commonInit()
     }
     
-    required init?(coder aDecoder: NSCoder) {
+    required init?(coder aDecoder: NSCoder)
+    {
         super.init(coder: aDecoder)
         commonInit()
     }
     
     /** Custom Methods **/
-    func commonInit() {
+    func commonInit()
+    {
         self.backgroundColor = bgColor
         self.setTitleColor(UIColor.init(hexFromString: "#26BCAC"), for: .normal)
-        
-        
-        
     }
-    
-    convenience init(frame: CGRect, andColor: UIColor, andText: String) {
+
+    convenience init(frame: CGRect, andColor: UIColor, andText: String)
+    {
         self.init(frame: frame)
         self.backgroundColor = bgColor
         // self.titleLabel?.text = andText

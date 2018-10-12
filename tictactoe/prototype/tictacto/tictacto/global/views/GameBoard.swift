@@ -10,18 +10,20 @@ import UIKit
 
 class GameBoard: UIView {
 
-    override init(frame: CGRect) {
+    override init(frame: CGRect)
+    {
         super.init(frame: frame)
         commonInit()
     }
     
-    required init?(coder aDecoder: NSCoder) {
+    required init?(coder aDecoder: NSCoder)
+    {
         super.init(coder: aDecoder)
         commonInit()
     }
     
-    func commonInit() {
-        
+    func commonInit()
+    {
         self.backgroundColor = UIColor(hexFromString: "#26BCAC")
     }
 }

@@ -16,12 +16,46 @@
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Zrz-rs-kFH" userLabel="Player View" customClass="PlayerView" customModule="tictacto" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="133.5"/>
+                                <color key="backgroundColor" red="0.97254901960784312" green="0.97254901960784312" blue="0.97254901960784312" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            </view>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="oLX-ft-3x4" userLabel="Game Board" customClass="GameBoard" customModule="tictacto" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="133.5" width="375" height="422.5"/>
+                                <color key="backgroundColor" red="0.14901960784313725" green="0.73725490196078436" blue="0.67450980392156867" alpha="1" colorSpace="calibratedRGB"/>
+                            </view>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="4GH-M7-OMM" userLabel="Control Panel" customClass="ControlPanel" customModule="tictacto" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="556" width="375" height="111"/>
+                                <color key="backgroundColor" red="0.97254901960784312" green="0.97254901960784312" blue="0.97254901960784312" alpha="1" colorSpace="calibratedRGB"/>
+                            </view>
+                        </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="Zrz-rs-kFH" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="17T-IM-VP5"/>
+                            <constraint firstItem="4GH-M7-OMM" firstAttribute="top" secondItem="oLX-ft-3x4" secondAttribute="bottom" id="5W2-eF-pzK"/>
+                            <constraint firstItem="4GH-M7-OMM" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="9Gs-8G-ljB"/>
+                            <constraint firstItem="4GH-M7-OMM" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="GFj-iV-7mX"/>
+                            <constraint firstItem="oLX-ft-3x4" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="JsK-AR-GrR"/>
+                            <constraint firstItem="4GH-M7-OMM" firstAttribute="height" secondItem="8bC-Xf-vdC" secondAttribute="height" multiplier="1:6" id="WXE-Wj-LaD"/>
+                            <constraint firstItem="Zrz-rs-kFH" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="XAL-ex-xsw"/>
+                            <constraint firstItem="Zrz-rs-kFH" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" id="f72-Je-TAF"/>
+                            <constraint firstItem="oLX-ft-3x4" firstAttribute="top" secondItem="Zrz-rs-kFH" secondAttribute="bottom" id="l3D-9M-plo"/>
+                            <constraint firstItem="4GH-M7-OMM" firstAttribute="bottom" secondItem="6Tk-OE-BBY" secondAttribute="bottom" id="mEF-s2-E07"/>
+                            <constraint firstItem="Zrz-rs-kFH" firstAttribute="height" secondItem="8bC-Xf-vdC" secondAttribute="height" multiplier="1:5" id="tve-XN-pGE"/>
+                            <constraint firstItem="oLX-ft-3x4" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="vRy-pf-HfM"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
+                    <connections>
+                        <outlet property="controlPanel" destination="4GH-M7-OMM" id="0jM-Bm-OzF"/>
+                        <outlet property="gameBoard" destination="oLX-ft-3x4" id="kez-8a-bpY"/>
+                        <outlet property="playerView" destination="Zrz-rs-kFH" id="CqI-QI-XEy"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
+            <point key="canvasLocation" x="140" y="133.5832083958021"/>
         </scene>
     </scenes>
 </document>
