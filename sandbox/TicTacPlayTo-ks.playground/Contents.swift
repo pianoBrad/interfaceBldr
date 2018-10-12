@@ -29,6 +29,63 @@ extension UIColor {
     }
 }
 
+class ControlPanelBtn : UIButton {
+	
+	/** Properties **/
+	var bgColor : UIColor = .green
+	
+	
+	
+	override init(frame: CGRect) {
+		super.init(frame: frame)
+		commonInit()
+	}
+	
+	required init?(coder aDecoder: NSCoder) {
+		super.init(coder: aDecoder)
+		commonInit()
+	}
+	
+	/** Custom Methods **/
+	func commonInit() {
+		self.backgroundColor = bgColor
+		
+		/********************** Start *********************
+		func borderFromInternet() {
+			var borderWidth: CGFloat {
+				get {
+					return layer.borderWidth
+				}
+				set {
+					layer.borderWidth = newValue
+				}
+			}
+			
+		
+			var borderColor: UIColor? {
+				get {
+					if let color = layer.borderColor {
+						return UIColor(cgColor: color)
+					}
+					return nil
+				}
+				set {
+					if let color = newValue {
+						layer.borderColor = color.cgColor
+					} else {
+						layer.borderColor = nil
+					}
+				}
+			}
+			
+		}
+		********************** End *********************/
+		
+		
+		
+	}
+}
+
 class PlayerView : UIView {
 	
 	override init(frame: CGRect) {
@@ -43,7 +100,6 @@ class PlayerView : UIView {
 	
 	/** Custom Methods **/
 	func commonInit() {
-		
         self.backgroundColor = UIColor(hexFromString: "#F8F8F8")
 	}
 	
@@ -83,10 +139,10 @@ class ControlPanel : UIView {
 	
 	/** Custom Method **/
 	func commonInit() {
-		
 		self.backgroundColor = UIColor(hexFromString: "#F8F8F8")
-		
 	}
+	
+	
 	
 	
 }
@@ -99,6 +155,9 @@ class TicTacToeVC : UIViewController {
 	var playerView : PlayerView!
 	var gameBoard : GameBoard!
 	var controlPanel : ControlPanel!
+	var undoBtn : ControlPanelBtn!
+	var resetBtn : ControlPanelBtn!
+	var redoBtn : ControlPanelBtn!
 	
     override func loadView() {
         let view = UIView()
@@ -115,12 +174,17 @@ class TicTacToeVC : UIViewController {
 		displayPlayerView()
 		displayGameBoard()
 		displayControlPanel()
+		displayUndoBtn()
+		displayResetBtn()
+		displayRedoBtn()
 	}
 	
 	/** Custom Methods **/
 	func displayPlayerView() {
 		
 		let playerViewFrame = CGRect.init(x: self.view.frame.origin.x, y: self.view.frame.origin.y, width: self.view.frame.width, height: self.view.frame.height/3)
+		
+		
 		
 		self.playerView = PlayerView.init(frame: playerViewFrame)
 		self.view.addSubview(playerView)
@@ -145,9 +209,64 @@ class TicTacToeVC : UIViewController {
 		
 		let controlPanelFrame = CGRect.init(x: self.view.frame.origin.x, y: self.gameBoard.frame.height + self.playerView.frame.height, width: self.view.frame.width, height: availableHeight)
 		
+		
+
+		/** Custom Methods **/
+		
 		self.controlPanel = ControlPanel.init(frame: controlPanelFrame)
 		self.view.addSubview(controlPanel)
 		
+	}
+	
+	func displayUndoBtn() {
+		
+		/** Properties **/
+		let availableHeight =  self.view.frame.height - (self.playerView.frame.height + self.gameBoard.frame.height)
+		
+		let undoBtnFrame = CGRect.init(x: self.view.frame.origin.x, y: self.controlPanel.frame.origin.y, width: self.controlPanel.frame.width * 0.25, height: availableHeight)
+		
+		/** Custom Methods **/
+		self.undoBtn = ControlPanelBtn.init(frame: undoBtnFrame)
+		self.view.addSubview(undoBtn)
+		
+		
+	}
+	
+	func displayResetBtn() {
+		
+		/** Properties **/
+		let availableHeight =  self.view.frame.height - (self.playerView.frame.height + self.gameBoard.frame.height)
+		
+		let resetBtnFrame = CGRect.init(x: self.controlPanel.frame.width * 0.25, y: self.controlPanel.frame.origin.y, width: self.controlPanel.frame.width * 0.50, height: availableHeight)
+		
+		// I think there is an issue with my x-axis float... I think I set it wrong.
+		
+		// some sort of property for title.text
+		// some sort of property for titleColor.color
+		
+		/** Custom Methods **/
+		self.resetBtn = ControlPanelBtn.init(frame: resetBtnFrame)
+		self.view.addSubview(resetBtn)
+		
+	}
+	
+	func displayRedoBtn() {
+
+		/** Properties **/
+		let availableHeight =  self.view.frame.height - (self.playerView.frame.height + self.gameBoard.frame.height)
+		
+		let redoBtnFrame = CGRect.init(x: self.controlPanel.frame.width * 0.75, y: self.controlPanel.frame.origin.y, width: self.controlPanel.frame.width * 0.50, height: availableHeight)
+
+
+		
+		// some sort of property for title.text
+		// some sort of property for titleColor.color
+
+		/** Custom Methods **/
+		
+		self.redoBtn = ControlPanelBtn.init(frame: redoBtnFrame)
+		self.view.addSubview(redoBtn)
+
 	}
 	
 }
