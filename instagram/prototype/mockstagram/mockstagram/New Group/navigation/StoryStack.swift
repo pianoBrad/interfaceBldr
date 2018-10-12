@@ -8,6 +8,11 @@
 
 import UIKit
 
+protocol StoryStackDelegate : class
+{
+    func storyTapped(_ sender: StoryBtnView)
+}
+
 @IBDesignable
 class StoryStack: UIView
 {
@@ -25,6 +30,8 @@ class StoryStack: UIView
         }
     }
     var stories : [StoryBtnView] = []
+    
+    weak var stackDelegate : StoryStackDelegate?
     
     /** Overrides **/
     override init(frame: CGRect)
@@ -66,9 +73,10 @@ class StoryStack: UIView
             stories.append(storyBtn)
         }
         
-        for (index, card) in stories.enumerated()
+        for (index, story) in stories.enumerated()
         {
-            mainStackView.insertArrangedSubview(card, at: index)
+            mainStackView.insertArrangedSubview(story, at: index)
+            story.storyBtnDelegate = self
         }
     }
     
@@ -82,5 +90,13 @@ class StoryStack: UIView
                 view, shouldRemoveFromSuperview: true
             )
         }
+    }
+}
+
+extension StoryStack : StoryBtnViewDelegate
+{
+    func storyTapped(_ sender: StoryBtnView)
+    {
+        stackDelegate?.storyTapped(sender)
     }
 }

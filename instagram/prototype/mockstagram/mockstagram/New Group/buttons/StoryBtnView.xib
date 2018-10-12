@@ -16,6 +16,7 @@
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="StoryBtnView" customModule="mockstagram" customModuleProvider="target">
             <connections>
                 <outlet property="contentView" destination="iN0-l3-epB" id="daX-Mb-Y77"/>
+                <outlet property="storyBtn" destination="5vr-qs-SIK" id="feG-VB-umg"/>
                 <outlet property="thumbnailView" destination="0UT-1f-ATQ" id="XBW-yO-SHv"/>
                 <outlet property="titleLabel" destination="ZtU-M0-vRR" id="8mE-Jl-4fp"/>
             </connections>
@@ -41,15 +42,22 @@
                     <nil key="textColor"/>
                     <nil key="highlightedColor"/>
                 </label>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="5vr-qs-SIK">
+                    <rect key="frame" x="0.0" y="0.0" width="65" height="65"/>
+                </button>
             </subviews>
             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
             <constraints>
+                <constraint firstItem="5vr-qs-SIK" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" id="3As-Fc-fi1"/>
                 <constraint firstAttribute="trailing" secondItem="ZtU-M0-vRR" secondAttribute="trailing" id="6sX-eE-6al"/>
                 <constraint firstItem="0UT-1f-ATQ" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" id="FGp-dY-tfg"/>
                 <constraint firstItem="ZtU-M0-vRR" firstAttribute="top" secondItem="0UT-1f-ATQ" secondAttribute="bottom" id="Iag-Fj-xtI"/>
+                <constraint firstItem="5vr-qs-SIK" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" id="R8k-ke-X2M"/>
                 <constraint firstItem="ZtU-M0-vRR" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" id="T5a-II-kb6"/>
                 <constraint firstItem="0UT-1f-ATQ" firstAttribute="centerX" secondItem="iN0-l3-epB" secondAttribute="centerX" id="UQ7-zw-kSV"/>
+                <constraint firstAttribute="trailing" secondItem="5vr-qs-SIK" secondAttribute="trailing" id="XDz-FF-bdb"/>
                 <constraint firstAttribute="bottom" secondItem="ZtU-M0-vRR" secondAttribute="bottom" id="g4V-Mi-XzF"/>
+                <constraint firstAttribute="bottom" secondItem="5vr-qs-SIK" secondAttribute="bottom" id="zCg-UZ-eMj"/>
             </constraints>
             <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
             <point key="canvasLocation" x="53.600000000000001" y="48.125937031484263"/>

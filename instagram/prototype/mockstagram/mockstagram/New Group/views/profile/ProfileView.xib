@@ -24,6 +24,7 @@
                 <outlet property="followingStatsView" destination="RXs-ee-Uh6" id="Zll-eC-85r"/>
                 <outlet property="postsStatsView" destination="KsG-Z4-C8z" id="VoP-pi-FD9"/>
                 <outlet property="profileBtn" destination="wPN-A4-xK3" id="T1a-6T-Daj"/>
+                <outlet property="storyStack" destination="p1c-LQ-r6Z" id="9bQ-u4-scs"/>
             </connections>
         </placeholder>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>

@@ -26,6 +26,7 @@ class ProfileView: UIView
     @IBOutlet weak var followingStatsView: ProfileHeaderStatsView!
     
     @IBOutlet weak var profileBtn: ProfileBtn!
+    @IBOutlet weak var storyStack: StoryStack!
     
     override init(frame: CGRect)
     {
@@ -52,6 +53,7 @@ class ProfileView: UIView
         self.followingStatsView.statsDelegate = self
         
         self.profileBtn.btnDelegate = self
+        self.storyStack.stackDelegate = self
     }
 }
 
@@ -71,5 +73,12 @@ extension ProfileView : ProfileBtnDelegate
         {
             profileDelegate?.editProfileBtnPressed(sender)
         }
+    }
+}
+
+extension ProfileView : StoryStackDelegate
+{
+    func storyTapped(_ sender: StoryBtnView) {
+        print("story tapped!")
     }
 }

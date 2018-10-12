@@ -8,12 +8,21 @@
 
 import UIKit
 
+protocol StoryBtnViewDelegate : class
+{
+    func storyTapped(_ sender : StoryBtnView)
+}
+
 class StoryBtnView: UIView
 {
     /** Properties **/
     @IBOutlet var contentView: UIView!
+    
+    @IBOutlet weak var storyBtn: UIButton!
     @IBOutlet weak var thumbnailView: UIView!
     @IBOutlet weak var titleLabel: UILabel!
+    
+    weak var storyBtnDelegate : StoryBtnViewDelegate?
     
     /** Overrides **/
     override init(frame: CGRect)
@@ -36,5 +45,12 @@ class StoryBtnView: UIView
         self.addSubview(contentView)
         contentView.frame = self.bounds
         contentView.autoresizingMask = [.flexibleWidth, .flexibleHeight]
+        
+        self.storyBtn.addTarget(self, action: #selector(handleBtnPress), for: .touchUpInside)
+    }
+    
+    @objc func handleBtnPress(_ sender: UIButton)
+    {
+        storyBtnDelegate?.storyTapped(self)
     }
 }
