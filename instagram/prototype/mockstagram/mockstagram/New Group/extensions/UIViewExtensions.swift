@@ -12,7 +12,7 @@ import UIKit
 extension UIView {
     
     // This adds a function that all sub-classes of UIView can grab onto
-    func instantiateFromXib(named: String) -> UIView
+    func instantiateFromXib(named: String, forView: UIView) -> UIView
     {
         guard let view = Bundle.main.loadNibNamed(named, owner: self, options: nil)?.first as? UIView else {
             

@@ -151,16 +151,31 @@
                                     <color key="textColor" red="0.59999999999999998" green="0.59999999999999998" blue="0.59999999999999998" alpha="1" colorSpace="calibratedRGB"/>
                                     <nil key="highlightedColor"/>
                                 </label>
+                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="p1c-LQ-r6Z" customClass="StoryStack" customModule="mockstagram" customModuleProvider="target">
+                                    <rect key="frame" x="15" y="222" width="345" height="65"/>
+                                    <color key="backgroundColor" red="0.99215686270000003" green="0.74117647060000003" blue="0.01176470588" alpha="1" colorSpace="calibratedRGB"/>
+                                    <constraints>
+                                        <constraint firstAttribute="height" constant="65" id="shG-tD-kSX"/>
+                                    </constraints>
+                                    <userDefinedRuntimeAttributes>
+                                        <userDefinedRuntimeAttribute type="number" keyPath="numDemoStories">
+                                            <integer key="value" value="10"/>
+                                        </userDefinedRuntimeAttribute>
+                                    </userDefinedRuntimeAttributes>
+                                </view>
                             </subviews>
                             <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             <constraints>
                                 <constraint firstItem="K82-ag-ZMw" firstAttribute="trailing" secondItem="duu-bY-e4B" secondAttribute="trailing" id="4y7-dB-dog"/>
+                                <constraint firstItem="p1c-LQ-r6Z" firstAttribute="width" secondItem="Tx3-IF-CrQ" secondAttribute="width" constant="-30" id="7nO-49-qSf"/>
+                                <constraint firstItem="p1c-LQ-r6Z" firstAttribute="top" secondItem="0UT-Hz-JtW" secondAttribute="bottom" constant="8" id="F62-xl-kd2"/>
                                 <constraint firstItem="Tx3-IF-CrQ" firstAttribute="top" secondItem="CUp-QU-IHT" secondAttribute="top" constant="10" id="GO4-sI-ObR"/>
                                 <constraint firstItem="K82-ag-ZMw" firstAttribute="leading" secondItem="duu-bY-e4B" secondAttribute="leading" id="IAm-xR-Wgg"/>
                                 <constraint firstItem="K82-ag-ZMw" firstAttribute="top" secondItem="duu-bY-e4B" secondAttribute="bottom" id="aKO-wE-rFr"/>
                                 <constraint firstItem="0UT-Hz-JtW" firstAttribute="width" secondItem="aXd-xg-zGR" secondAttribute="width" id="aPM-0e-d5J"/>
                                 <constraint firstItem="Tx3-IF-CrQ" firstAttribute="leading" secondItem="CUp-QU-IHT" secondAttribute="leading" id="f6L-t0-8K1"/>
                                 <constraint firstItem="duu-bY-e4B" firstAttribute="top" secondItem="V7E-pC-GNe" secondAttribute="bottom" constant="8" id="g8R-iW-RfP"/>
+                                <constraint firstItem="p1c-LQ-r6Z" firstAttribute="leading" secondItem="V7E-pC-GNe" secondAttribute="leading" id="krl-hd-gSr"/>
                                 <constraint firstItem="aXd-xg-zGR" firstAttribute="leading" secondItem="K82-ag-ZMw" secondAttribute="leading" id="lKx-02-niR"/>
                                 <constraint firstItem="0UT-Hz-JtW" firstAttribute="top" secondItem="aXd-xg-zGR" secondAttribute="bottom" constant="5" id="lMp-Gc-jf5"/>
                                 <constraint firstItem="duu-bY-e4B" firstAttribute="leading" secondItem="V7E-pC-GNe" secondAttribute="leading" id="mWj-RX-x5e"/>

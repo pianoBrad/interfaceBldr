@@ -8,6 +8,10 @@
 
 /* Begin PBXBuildFile section */
 		2D2C88582170373C009F7894 /* ProfileBtn.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D2C88572170373C009F7894 /* ProfileBtn.swift */; };
+		2D2C885A2170D8DC009F7894 /* StoryStack.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2D2C88592170D8DC009F7894 /* StoryStack.xib */; };
+		2D2C885C2170D97C009F7894 /* StoryStack.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D2C885B2170D97C009F7894 /* StoryStack.swift */; };
+		2D2C885E2170DA63009F7894 /* StoryBtnView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D2C885D2170DA63009F7894 /* StoryBtnView.swift */; };
+		2D2C88622170DA80009F7894 /* StoryBtnView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2D2C88612170DA80009F7894 /* StoryBtnView.xib */; };
 		2D314C9F2159711A00B74FBA /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D314C9E2159711A00B74FBA /* AppDelegate.swift */; };
 		2D314CA42159711A00B74FBA /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2D314CA22159711A00B74FBA /* Main.storyboard */; };
 		2D314CA72159711A00B74FBA /* mockstagram.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 2D314CA52159711A00B74FBA /* mockstagram.xcdatamodeld */; };
@@ -37,6 +41,7 @@
 		2DEE28FD216D079B0007A239 /* ProfileVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2DEE28FC216D079B0007A239 /* ProfileVC.swift */; };
 		2DEE2900216D295C0007A239 /* ThemeGlobals.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2DEE28FF216D295C0007A239 /* ThemeGlobals.swift */; };
 		2DEE2903216D29CD0007A239 /* UIColorExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2DEE2902216D29CD0007A239 /* UIColorExtensions.swift */; };
+		2DF206782170E93A008A6A6A /* UIStackViewExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2DF206772170E93A008A6A6A /* UIStackViewExtensions.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -58,6 +63,10 @@
 
 /* Begin PBXFileReference section */
 		2D2C88572170373C009F7894 /* ProfileBtn.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileBtn.swift; sourceTree = "<group>"; };
+		2D2C88592170D8DC009F7894 /* StoryStack.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = StoryStack.xib; sourceTree = "<group>"; };
+		2D2C885B2170D97C009F7894 /* StoryStack.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StoryStack.swift; sourceTree = "<group>"; };
+		2D2C885D2170DA63009F7894 /* StoryBtnView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StoryBtnView.swift; sourceTree = "<group>"; };
+		2D2C88612170DA80009F7894 /* StoryBtnView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = StoryBtnView.xib; sourceTree = "<group>"; };
 		2D314C9B2159711A00B74FBA /* mockstagram.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = mockstagram.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		2D314C9E2159711A00B74FBA /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		2D314CA32159711A00B74FBA /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -93,6 +102,7 @@
 		2DEE28FC216D079B0007A239 /* ProfileVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileVC.swift; sourceTree = "<group>"; };
 		2DEE28FF216D295C0007A239 /* ThemeGlobals.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ThemeGlobals.swift; sourceTree = "<group>"; };
 		2DEE2902216D29CD0007A239 /* UIColorExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIColorExtensions.swift; sourceTree = "<group>"; };
+		2DF206772170E93A008A6A6A /* UIStackViewExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIStackViewExtensions.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -210,6 +220,8 @@
 			isa = PBXGroup;
 			children = (
 				2D2C88572170373C009F7894 /* ProfileBtn.swift */,
+				2D2C885D2170DA63009F7894 /* StoryBtnView.swift */,
+				2D2C88612170DA80009F7894 /* StoryBtnView.xib */,
 			);
 			path = buttons;
 			sourceTree = "<group>";
@@ -225,6 +237,8 @@
 			isa = PBXGroup;
 			children = (
 				2D71C9FD216BAAE1006A8D30 /* MainNavTabBar.swift */,
+				2D2C88592170D8DC009F7894 /* StoryStack.xib */,
+				2D2C885B2170D97C009F7894 /* StoryStack.swift */,
 			);
 			path = navigation;
 			sourceTree = "<group>";
@@ -268,6 +282,7 @@
 			children = (
 				2D86594C21598905003A5B67 /* UIViewExtensions.swift */,
 				2DEE2902216D29CD0007A239 /* UIColorExtensions.swift */,
+				2DF206772170E93A008A6A6A /* UIStackViewExtensions.swift */,
 			);
 			path = extensions;
 			sourceTree = "<group>";
@@ -429,12 +444,14 @@
 				2DEE28E1216CEFEE0007A239 /* ProfileView.xib in Resources */,
 				2D314CAC2159711B00B74FBA /* LaunchScreen.storyboard in Resources */,
 				2DEE28F5216CF8E90007A239 /* Lato-Regular.ttf in Resources */,
+				2D2C885A2170D8DC009F7894 /* StoryStack.xib in Resources */,
 				2DEE28EF216CF8E90007A239 /* Lato-Light.ttf in Resources */,
 				2D314CA92159711B00B74FBA /* Assets.xcassets in Resources */,
 				2DEE28F2216CF8E90007A239 /* Lato-Bold.ttf in Resources */,
 				2D314CA42159711A00B74FBA /* Main.storyboard in Resources */,
 				2DEE28F6216CF8E90007A239 /* Lato-BoldItalic.ttf in Resources */,
 				2D3E6641216E3CD100CD96FC /* ProfileHeaderStatsView.xib in Resources */,
+				2D2C88622170DA80009F7894 /* StoryBtnView.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -464,7 +481,10 @@
 				2D314CA72159711A00B74FBA /* mockstagram.xcdatamodeld in Sources */,
 				2D3E6643216E3D3200CD96FC /* ProfileHeaderStatsView.swift in Sources */,
 				2D2C88582170373C009F7894 /* ProfileBtn.swift in Sources */,
+				2DF206782170E93A008A6A6A /* UIStackViewExtensions.swift in Sources */,
 				2DEE28FD216D079B0007A239 /* ProfileVC.swift in Sources */,
+				2D2C885C2170D97C009F7894 /* StoryStack.swift in Sources */,
+				2D2C885E2170DA63009F7894 /* StoryBtnView.swift in Sources */,
 				2DEE2900216D295C0007A239 /* ThemeGlobals.swift in Sources */,
 				2D8659512159F04F003A5B67 /* MediaCard.swift in Sources */,
 				2DEE2903216D29CD0007A239 /* UIColorExtensions.swift in Sources */,
