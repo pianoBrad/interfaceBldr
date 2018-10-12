@@ -32,7 +32,7 @@ extension UIColor {
 class ControlPanelBtn : UIButton {
 	
 	/** Properties **/
-	var bgColor : UIColor = .green
+	var bgColor : UIColor = .clear
 	
 	
 	
@@ -49,40 +49,17 @@ class ControlPanelBtn : UIButton {
 	/** Custom Methods **/
 	func commonInit() {
 		self.backgroundColor = bgColor
+		self.setTitleColor(UIColor.init(hexFromString: "#26BCAC"), for: .normal)
 		
-		/********************** Start *********************
-		func borderFromInternet() {
-			var borderWidth: CGFloat {
-				get {
-					return layer.borderWidth
-				}
-				set {
-					layer.borderWidth = newValue
-				}
-			}
-			
+	
 		
-			var borderColor: UIColor? {
-				get {
-					if let color = layer.borderColor {
-						return UIColor(cgColor: color)
-					}
-					return nil
-				}
-				set {
-					if let color = newValue {
-						layer.borderColor = color.cgColor
-					} else {
-						layer.borderColor = nil
-					}
-				}
-			}
-			
-		}
-		********************** End *********************/
-		
-		
-		
+	}
+	
+	convenience init(frame: CGRect, andColor: UIColor, andText: String) {
+		self.init(frame: frame)
+		self.backgroundColor = bgColor
+		// self.titleLabel?.text = andText
+		setTitle(andText, for: .normal)
 	}
 }
 
@@ -226,8 +203,10 @@ class TicTacToeVC : UIViewController {
 		let undoBtnFrame = CGRect.init(x: self.view.frame.origin.x, y: self.controlPanel.frame.origin.y, width: self.controlPanel.frame.width * 0.25, height: availableHeight)
 		
 		/** Custom Methods **/
-		self.undoBtn = ControlPanelBtn.init(frame: undoBtnFrame)
+//		self.undoBtn = ControlPanelBtn.init(frame: undoBtnFrame)
+		self.undoBtn = ControlPanelBtn.init(frame: undoBtnFrame, andColor: .red, andText: "UNDO")
 		self.view.addSubview(undoBtn)
+		
 		
 		
 	}
@@ -245,7 +224,8 @@ class TicTacToeVC : UIViewController {
 		// some sort of property for titleColor.color
 		
 		/** Custom Methods **/
-		self.resetBtn = ControlPanelBtn.init(frame: resetBtnFrame)
+//		self.resetBtn = ControlPanelBtn.init(frame: resetBtnFrame)
+		self.resetBtn = ControlPanelBtn.init(frame: resetBtnFrame, andColor: .yellow, andText: "RESET")
 		self.view.addSubview(resetBtn)
 		
 	}
@@ -255,16 +235,17 @@ class TicTacToeVC : UIViewController {
 		/** Properties **/
 		let availableHeight =  self.view.frame.height - (self.playerView.frame.height + self.gameBoard.frame.height)
 		
-		let redoBtnFrame = CGRect.init(x: self.controlPanel.frame.width * 0.75, y: self.controlPanel.frame.origin.y, width: self.controlPanel.frame.width * 0.50, height: availableHeight)
+		let redoBtnFrame = CGRect.init(x: self.controlPanel.frame.width * 0.75, y: self.controlPanel.frame.origin.y, width: self.controlPanel.frame.width * 0.25, height: availableHeight)
 
-
+		
 		
 		// some sort of property for title.text
 		// some sort of property for titleColor.color
 
 		/** Custom Methods **/
 		
-		self.redoBtn = ControlPanelBtn.init(frame: redoBtnFrame)
+//		self.redoBtn = ControlPanelBtn.init(frame: redoBtnFrame)
+		self.redoBtn = ControlPanelBtn.init(frame: redoBtnFrame, andColor: .blue, andText: "REDO")
 		self.view.addSubview(redoBtn)
 
 	}
