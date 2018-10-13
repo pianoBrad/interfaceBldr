@@ -21,11 +21,14 @@
 		2D314CC22159711B00B74FBA /* mockstagramUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D314CC12159711B00B74FBA /* mockstagramUITests.swift */; };
 		2D3E6641216E3CD100CD96FC /* ProfileHeaderStatsView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2D3E6640216E3CD100CD96FC /* ProfileHeaderStatsView.xib */; };
 		2D3E6643216E3D3200CD96FC /* ProfileHeaderStatsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D3E6642216E3D3200CD96FC /* ProfileHeaderStatsView.swift */; };
+		2D449FC52171ABFF00351D9B /* ProfileContactView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D449FC42171ABFF00351D9B /* ProfileContactView.swift */; };
+		2D449FC72171AD7000351D9B /* ProfileContactBtn.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D449FC62171AD7000351D9B /* ProfileContactBtn.swift */; };
 		2D71C9FE216BAAE1006A8D30 /* MainNavTabBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D71C9FD216BAAE1006A8D30 /* MainNavTabBar.swift */; };
 		2D86594621598431003A5B67 /* MainFeedVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D86594521598431003A5B67 /* MainFeedVC.swift */; };
 		2D86594D21598905003A5B67 /* UIViewExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D86594C21598905003A5B67 /* UIViewExtensions.swift */; };
 		2D86594F2159EFC4003A5B67 /* MediaCard.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2D86594E2159EFC4003A5B67 /* MediaCard.xib */; };
 		2D8659512159F04F003A5B67 /* MediaCard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D8659502159F04F003A5B67 /* MediaCard.swift */; };
+		2D94EE7E217278590094F130 /* ProfileContactView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2D94EE7D217278590094F130 /* ProfileContactView.xib */; };
 		2DEE28E1216CEFEE0007A239 /* ProfileView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2DEE28E0216CEFEE0007A239 /* ProfileView.xib */; };
 		2DEE28E3216CF0330007A239 /* ProfileView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2DEE28E2216CF0330007A239 /* ProfileView.swift */; };
 		2DEE28EF216CF8E90007A239 /* Lato-Light.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 2DEE28E5216CF8E80007A239 /* Lato-Light.ttf */; };
@@ -82,11 +85,14 @@
 		2D314CC32159711B00B74FBA /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		2D3E6640216E3CD100CD96FC /* ProfileHeaderStatsView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ProfileHeaderStatsView.xib; sourceTree = "<group>"; };
 		2D3E6642216E3D3200CD96FC /* ProfileHeaderStatsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileHeaderStatsView.swift; sourceTree = "<group>"; };
+		2D449FC42171ABFF00351D9B /* ProfileContactView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileContactView.swift; sourceTree = "<group>"; };
+		2D449FC62171AD7000351D9B /* ProfileContactBtn.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileContactBtn.swift; sourceTree = "<group>"; };
 		2D71C9FD216BAAE1006A8D30 /* MainNavTabBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainNavTabBar.swift; sourceTree = "<group>"; };
 		2D86594521598431003A5B67 /* MainFeedVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainFeedVC.swift; sourceTree = "<group>"; };
 		2D86594C21598905003A5B67 /* UIViewExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIViewExtensions.swift; sourceTree = "<group>"; };
 		2D86594E2159EFC4003A5B67 /* MediaCard.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MediaCard.xib; sourceTree = "<group>"; };
 		2D8659502159F04F003A5B67 /* MediaCard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MediaCard.swift; sourceTree = "<group>"; };
+		2D94EE7D217278590094F130 /* ProfileContactView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ProfileContactView.xib; sourceTree = "<group>"; };
 		2DEE28E0216CEFEE0007A239 /* ProfileView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ProfileView.xib; sourceTree = "<group>"; };
 		2DEE28E2216CF0330007A239 /* ProfileView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileView.swift; sourceTree = "<group>"; };
 		2DEE28E5216CF8E80007A239 /* Lato-Light.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Lato-Light.ttf"; sourceTree = "<group>"; };
@@ -222,6 +228,7 @@
 				2D2C88572170373C009F7894 /* ProfileBtn.swift */,
 				2D2C885D2170DA63009F7894 /* StoryBtnView.swift */,
 				2D2C88612170DA80009F7894 /* StoryBtnView.xib */,
+				2D449FC62171AD7000351D9B /* ProfileContactBtn.swift */,
 			);
 			path = buttons;
 			sourceTree = "<group>";
@@ -310,6 +317,8 @@
 				2DEE28E0216CEFEE0007A239 /* ProfileView.xib */,
 				2DEE28E2216CF0330007A239 /* ProfileView.swift */,
 				2D3E6644216E459400CD96FC /* header */,
+				2D449FC42171ABFF00351D9B /* ProfileContactView.swift */,
+				2D94EE7D217278590094F130 /* ProfileContactView.xib */,
 			);
 			path = profile;
 			sourceTree = "<group>";
@@ -440,6 +449,7 @@
 				2DEE28F4216CF8E90007A239 /* Lato-Hairline.ttf in Resources */,
 				2DEE28F0216CF8E90007A239 /* Lato-Black.ttf in Resources */,
 				2DEE28F7216CF8E90007A239 /* Lato-HairlineItalic.ttf in Resources */,
+				2D94EE7E217278590094F130 /* ProfileContactView.xib in Resources */,
 				2D86594F2159EFC4003A5B67 /* MediaCard.xib in Resources */,
 				2DEE28E1216CEFEE0007A239 /* ProfileView.xib in Resources */,
 				2D314CAC2159711B00B74FBA /* LaunchScreen.storyboard in Resources */,
@@ -477,6 +487,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				2D86594D21598905003A5B67 /* UIViewExtensions.swift in Sources */,
+				2D449FC72171AD7000351D9B /* ProfileContactBtn.swift in Sources */,
 				2D314C9F2159711A00B74FBA /* AppDelegate.swift in Sources */,
 				2D314CA72159711A00B74FBA /* mockstagram.xcdatamodeld in Sources */,
 				2D3E6643216E3D3200CD96FC /* ProfileHeaderStatsView.swift in Sources */,
@@ -487,6 +498,7 @@
 				2D2C885E2170DA63009F7894 /* StoryBtnView.swift in Sources */,
 				2DEE2900216D295C0007A239 /* ThemeGlobals.swift in Sources */,
 				2D8659512159F04F003A5B67 /* MediaCard.swift in Sources */,
+				2D449FC52171ABFF00351D9B /* ProfileContactView.swift in Sources */,
 				2DEE2903216D29CD0007A239 /* UIColorExtensions.swift in Sources */,
 				2D71C9FE216BAAE1006A8D30 /* MainNavTabBar.swift in Sources */,
 				2DEE28E3216CF0330007A239 /* ProfileView.swift in Sources */,

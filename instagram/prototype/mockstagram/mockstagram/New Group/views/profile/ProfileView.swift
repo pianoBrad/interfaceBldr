@@ -43,7 +43,10 @@ class ProfileView: UIView
     func commonInit()
     {
         let bundle = Bundle(for: ProfileView.self)
-        bundle.loadNibNamed("ProfileView", owner: self, options: nil)
+        bundle.loadNibNamed(
+            String(describing: ProfileView.self),
+            owner: self, options: nil
+        )
         self.addSubview(contentView)
         contentView.frame = self.bounds
         contentView.autoresizingMask = [.flexibleWidth, .flexibleHeight]

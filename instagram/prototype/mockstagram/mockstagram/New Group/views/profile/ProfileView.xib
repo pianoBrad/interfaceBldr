@@ -24,7 +24,7 @@
                 <outlet property="followingStatsView" destination="RXs-ee-Uh6" id="Zll-eC-85r"/>
                 <outlet property="postsStatsView" destination="KsG-Z4-C8z" id="VoP-pi-FD9"/>
                 <outlet property="profileBtn" destination="wPN-A4-xK3" id="T1a-6T-Daj"/>
-                <outlet property="storyStack" destination="p1c-LQ-r6Z" id="9bQ-u4-scs"/>
+                <outlet property="storyStack" destination="TfM-0s-1Cj" id="XOk-6a-tpB"/>
             </connections>
         </placeholder>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
@@ -152,35 +152,40 @@
                                     <color key="textColor" red="0.59999999999999998" green="0.59999999999999998" blue="0.59999999999999998" alpha="1" colorSpace="calibratedRGB"/>
                                     <nil key="highlightedColor"/>
                                 </label>
-                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="p1c-LQ-r6Z" customClass="StoryStack" customModule="mockstagram" customModuleProvider="target">
+                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="TfM-0s-1Cj" customClass="StoryStack" customModule="mockstagram" customModuleProvider="target">
                                     <rect key="frame" x="15" y="222" width="345" height="65"/>
-                                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                    <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                     <constraints>
-                                        <constraint firstAttribute="height" constant="65" id="shG-tD-kSX"/>
+                                        <constraint firstAttribute="height" constant="65" id="rdW-wa-Ztu"/>
                                     </constraints>
-                                    <userDefinedRuntimeAttributes>
-                                        <userDefinedRuntimeAttribute type="number" keyPath="numDemoStories">
-                                            <integer key="value" value="10"/>
-                                        </userDefinedRuntimeAttribute>
-                                    </userDefinedRuntimeAttributes>
+                                </view>
+                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ItQ-mG-cmy" customClass="ProfileContactView" customModule="mockstagram" customModuleProvider="target">
+                                    <rect key="frame" x="15" y="297" width="345" height="60"/>
+                                    <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                    <constraints>
+                                        <constraint firstAttribute="height" constant="60" id="QYr-CG-rtZ"/>
+                                    </constraints>
                                 </view>
                             </subviews>
                             <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             <constraints>
                                 <constraint firstItem="K82-ag-ZMw" firstAttribute="trailing" secondItem="duu-bY-e4B" secondAttribute="trailing" id="4y7-dB-dog"/>
-                                <constraint firstItem="p1c-LQ-r6Z" firstAttribute="width" secondItem="Tx3-IF-CrQ" secondAttribute="width" constant="-30" id="7nO-49-qSf"/>
-                                <constraint firstItem="p1c-LQ-r6Z" firstAttribute="top" secondItem="0UT-Hz-JtW" secondAttribute="bottom" constant="8" id="F62-xl-kd2"/>
+                                <constraint firstItem="TfM-0s-1Cj" firstAttribute="top" secondItem="0UT-Hz-JtW" secondAttribute="bottom" constant="8" id="85h-ue-DAi"/>
                                 <constraint firstItem="Tx3-IF-CrQ" firstAttribute="top" secondItem="CUp-QU-IHT" secondAttribute="top" constant="10" id="GO4-sI-ObR"/>
+                                <constraint firstItem="ItQ-mG-cmy" firstAttribute="trailing" secondItem="RXs-ee-Uh6" secondAttribute="trailing" id="I59-Tu-nbG"/>
                                 <constraint firstItem="K82-ag-ZMw" firstAttribute="leading" secondItem="duu-bY-e4B" secondAttribute="leading" id="IAm-xR-Wgg"/>
+                                <constraint firstItem="TfM-0s-1Cj" firstAttribute="leading" secondItem="V7E-pC-GNe" secondAttribute="leading" id="Wy1-zF-lYt"/>
                                 <constraint firstItem="K82-ag-ZMw" firstAttribute="top" secondItem="duu-bY-e4B" secondAttribute="bottom" id="aKO-wE-rFr"/>
                                 <constraint firstItem="0UT-Hz-JtW" firstAttribute="width" secondItem="aXd-xg-zGR" secondAttribute="width" id="aPM-0e-d5J"/>
                                 <constraint firstItem="Tx3-IF-CrQ" firstAttribute="leading" secondItem="CUp-QU-IHT" secondAttribute="leading" id="f6L-t0-8K1"/>
+                                <constraint firstItem="TfM-0s-1Cj" firstAttribute="trailing" secondItem="RXs-ee-Uh6" secondAttribute="trailing" id="g5b-Dw-ICK"/>
                                 <constraint firstItem="duu-bY-e4B" firstAttribute="top" secondItem="V7E-pC-GNe" secondAttribute="bottom" constant="8" id="g8R-iW-RfP"/>
-                                <constraint firstItem="p1c-LQ-r6Z" firstAttribute="leading" secondItem="V7E-pC-GNe" secondAttribute="leading" id="krl-hd-gSr"/>
                                 <constraint firstItem="aXd-xg-zGR" firstAttribute="leading" secondItem="K82-ag-ZMw" secondAttribute="leading" id="lKx-02-niR"/>
                                 <constraint firstItem="0UT-Hz-JtW" firstAttribute="top" secondItem="aXd-xg-zGR" secondAttribute="bottom" constant="5" id="lMp-Gc-jf5"/>
+                                <constraint firstItem="ItQ-mG-cmy" firstAttribute="top" secondItem="TfM-0s-1Cj" secondAttribute="bottom" constant="10" id="lb1-tD-aoe"/>
                                 <constraint firstItem="duu-bY-e4B" firstAttribute="leading" secondItem="V7E-pC-GNe" secondAttribute="leading" id="mWj-RX-x5e"/>
                                 <constraint firstAttribute="trailing" secondItem="Tx3-IF-CrQ" secondAttribute="trailing" id="nF6-vc-s17"/>
+                                <constraint firstItem="ItQ-mG-cmy" firstAttribute="leading" secondItem="V7E-pC-GNe" secondAttribute="leading" id="njf-bS-fOR"/>
                                 <constraint firstItem="aXd-xg-zGR" firstAttribute="top" secondItem="K82-ag-ZMw" secondAttribute="bottom" constant="8" id="pMA-Ze-rUm"/>
                                 <constraint firstItem="aXd-xg-zGR" firstAttribute="trailing" secondItem="K82-ag-ZMw" secondAttribute="trailing" id="t6i-fD-uNh"/>
                                 <constraint firstItem="0UT-Hz-JtW" firstAttribute="centerX" secondItem="aXd-xg-zGR" secondAttribute="centerX" id="tUj-KJ-gDz"/>

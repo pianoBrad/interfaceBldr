@@ -41,7 +41,10 @@ class StoryBtnView: UIView
     func commonInit()
     {
         let bundle = Bundle(for: StoryBtnView.self)
-        bundle.loadNibNamed("StoryBtnView", owner: self, options: nil)
+        bundle.loadNibNamed(
+            String(describing: StoryBtnView.self),
+            owner: self, options: nil
+        )
         self.addSubview(contentView)
         contentView.frame = self.bounds
         contentView.autoresizingMask = [.flexibleWidth, .flexibleHeight]

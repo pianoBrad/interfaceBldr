@@ -22,7 +22,7 @@
                 <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" translatesAutoresizingMaskIntoConstraints="NO" id="YfD-a3-4dD">
                     <rect key="frame" x="0.0" y="0.0" width="345" height="65"/>
                     <subviews>
-                        <stackView opaque="NO" contentMode="scaleToFill" distribution="equalSpacing" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="1Pm-GX-jB2">
+                        <stackView opaque="NO" contentMode="scaleToFill" distribution="fillProportionally" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="1Pm-GX-jB2">
                             <rect key="frame" x="0.0" y="0.0" width="345" height="65"/>
                         </stackView>
                     </subviews>

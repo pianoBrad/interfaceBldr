@@ -54,7 +54,8 @@ class ProfileHeaderStatsView: UIView {
     {
         let bundle = Bundle(for: ProfileHeaderStatsView.self)
         bundle.loadNibNamed(
-            "ProfileHeaderStatsView", owner: self, options: nil
+            String(describing: ProfileHeaderStatsView.self),
+            owner: self, options: nil
         )
         self.addSubview(contentView)
         contentView.frame = self.bounds
