@@ -15,6 +15,7 @@ class ThemeGlobals: NSObject
     var lightGrey = UIColor(hexFromString: "#999999")
     var borderBtnLightGrey = UIColor(hexFromString: "#CCCCCC")
     var linkPrimary = UIColor(hexFromString: "#3897F0")
+    var bgColorPrimary = UIColor(hexFromString: "#FFFFFF")
     
     /** Fonts **/
     var fontNamePrimaryHairline = "Lato-Hairline"
@@ -27,6 +28,10 @@ class ThemeGlobals: NSObject
     var fontNamePrimaryBoldItalic = "Lato-BoldItalic"
     var fontNamePrimaryBlack = "Lato-Black"
     var fontNamePrimaryBlackItalic = "Lato-BlackItalic"
+    
+    /** Spacing **/
+    var primaryStackSpacingX : CGFloat = 10
+    var primaryStackSpacingY : CGFloat = 8
     
     override init()
     {

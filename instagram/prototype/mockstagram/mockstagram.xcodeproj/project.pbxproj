@@ -29,8 +29,10 @@
 		2D86594F2159EFC4003A5B67 /* MediaCard.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2D86594E2159EFC4003A5B67 /* MediaCard.xib */; };
 		2D8659512159F04F003A5B67 /* MediaCard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D8659502159F04F003A5B67 /* MediaCard.swift */; };
 		2D94EE7E217278590094F130 /* ProfileContactView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2D94EE7D217278590094F130 /* ProfileContactView.xib */; };
-		2DEE28E1216CEFEE0007A239 /* ProfileView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2DEE28E0216CEFEE0007A239 /* ProfileView.xib */; };
-		2DEE28E3216CF0330007A239 /* ProfileView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2DEE28E2216CF0330007A239 /* ProfileView.swift */; };
+		2DC1A382217390CF004833DD /* ProfileHeaderView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2DC1A381217390CF004833DD /* ProfileHeaderView.xib */; };
+		2DC1A3842173911D004833DD /* ProfileHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2DC1A3832173911D004833DD /* ProfileHeaderView.swift */; };
+		2DC1A38621739FF9004833DD /* ProfileOccupationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2DC1A38521739FF9004833DD /* ProfileOccupationView.swift */; };
+		2DC1A3892173AF2E004833DD /* DynamicHeightLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2DC1A3882173AF2E004833DD /* DynamicHeightLabel.swift */; };
 		2DEE28EF216CF8E90007A239 /* Lato-Light.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 2DEE28E5216CF8E80007A239 /* Lato-Light.ttf */; };
 		2DEE28F0216CF8E90007A239 /* Lato-Black.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 2DEE28E6216CF8E80007A239 /* Lato-Black.ttf */; };
 		2DEE28F1216CF8E90007A239 /* Lato-BlackItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 2DEE28E7216CF8E80007A239 /* Lato-BlackItalic.ttf */; };
@@ -93,8 +95,10 @@
 		2D86594E2159EFC4003A5B67 /* MediaCard.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MediaCard.xib; sourceTree = "<group>"; };
 		2D8659502159F04F003A5B67 /* MediaCard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MediaCard.swift; sourceTree = "<group>"; };
 		2D94EE7D217278590094F130 /* ProfileContactView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ProfileContactView.xib; sourceTree = "<group>"; };
-		2DEE28E0216CEFEE0007A239 /* ProfileView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ProfileView.xib; sourceTree = "<group>"; };
-		2DEE28E2216CF0330007A239 /* ProfileView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileView.swift; sourceTree = "<group>"; };
+		2DC1A381217390CF004833DD /* ProfileHeaderView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ProfileHeaderView.xib; sourceTree = "<group>"; };
+		2DC1A3832173911D004833DD /* ProfileHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileHeaderView.swift; sourceTree = "<group>"; };
+		2DC1A38521739FF9004833DD /* ProfileOccupationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileOccupationView.swift; sourceTree = "<group>"; };
+		2DC1A3882173AF2E004833DD /* DynamicHeightLabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DynamicHeightLabel.swift; sourceTree = "<group>"; };
 		2DEE28E5216CF8E80007A239 /* Lato-Light.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Lato-Light.ttf"; sourceTree = "<group>"; };
 		2DEE28E6216CF8E80007A239 /* Lato-Black.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Lato-Black.ttf"; sourceTree = "<group>"; };
 		2DEE28E7216CF8E80007A239 /* Lato-BlackItalic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Lato-BlackItalic.ttf"; sourceTree = "<group>"; };
@@ -195,6 +199,7 @@
 				2D86593E21597447003A5B67 /* buttons */,
 				2D86593F21597452003A5B67 /* cells */,
 				2D865942215974A8003A5B67 /* data */,
+				2DC1A3872173AF00004833DD /* labels */,
 				2D86594021597461003A5B67 /* navigation */,
 				2D86593D2159743B003A5B67 /* views */,
 				2DEE2901216D29630007A239 /* classes */,
@@ -208,6 +213,9 @@
 			children = (
 				2D3E6640216E3CD100CD96FC /* ProfileHeaderStatsView.xib */,
 				2D3E6642216E3D3200CD96FC /* ProfileHeaderStatsView.swift */,
+				2DC1A381217390CF004833DD /* ProfileHeaderView.xib */,
+				2DC1A3832173911D004833DD /* ProfileHeaderView.swift */,
+				2DC1A38521739FF9004833DD /* ProfileOccupationView.swift */,
 			);
 			path = header;
 			sourceTree = "<group>";
@@ -294,6 +302,14 @@
 			path = extensions;
 			sourceTree = "<group>";
 		};
+		2DC1A3872173AF00004833DD /* labels */ = {
+			isa = PBXGroup;
+			children = (
+				2DC1A3882173AF2E004833DD /* DynamicHeightLabel.swift */,
+			);
+			path = labels;
+			sourceTree = "<group>";
+		};
 		2DEE28E4216CF72E0007A239 /* fonts */ = {
 			isa = PBXGroup;
 			children = (
@@ -314,8 +330,6 @@
 		2DEE28F9216D02CA0007A239 /* profile */ = {
 			isa = PBXGroup;
 			children = (
-				2DEE28E0216CEFEE0007A239 /* ProfileView.xib */,
-				2DEE28E2216CF0330007A239 /* ProfileView.swift */,
 				2D3E6644216E459400CD96FC /* header */,
 				2D449FC42171ABFF00351D9B /* ProfileContactView.swift */,
 				2D94EE7D217278590094F130 /* ProfileContactView.xib */,
@@ -451,7 +465,6 @@
 				2DEE28F7216CF8E90007A239 /* Lato-HairlineItalic.ttf in Resources */,
 				2D94EE7E217278590094F130 /* ProfileContactView.xib in Resources */,
 				2D86594F2159EFC4003A5B67 /* MediaCard.xib in Resources */,
-				2DEE28E1216CEFEE0007A239 /* ProfileView.xib in Resources */,
 				2D314CAC2159711B00B74FBA /* LaunchScreen.storyboard in Resources */,
 				2DEE28F5216CF8E90007A239 /* Lato-Regular.ttf in Resources */,
 				2D2C885A2170D8DC009F7894 /* StoryStack.xib in Resources */,
@@ -462,6 +475,7 @@
 				2DEE28F6216CF8E90007A239 /* Lato-BoldItalic.ttf in Resources */,
 				2D3E6641216E3CD100CD96FC /* ProfileHeaderStatsView.xib in Resources */,
 				2D2C88622170DA80009F7894 /* StoryBtnView.xib in Resources */,
+				2DC1A382217390CF004833DD /* ProfileHeaderView.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -495,13 +509,15 @@
 				2DF206782170E93A008A6A6A /* UIStackViewExtensions.swift in Sources */,
 				2DEE28FD216D079B0007A239 /* ProfileVC.swift in Sources */,
 				2D2C885C2170D97C009F7894 /* StoryStack.swift in Sources */,
+				2DC1A3892173AF2E004833DD /* DynamicHeightLabel.swift in Sources */,
 				2D2C885E2170DA63009F7894 /* StoryBtnView.swift in Sources */,
 				2DEE2900216D295C0007A239 /* ThemeGlobals.swift in Sources */,
 				2D8659512159F04F003A5B67 /* MediaCard.swift in Sources */,
+				2DC1A38621739FF9004833DD /* ProfileOccupationView.swift in Sources */,
 				2D449FC52171ABFF00351D9B /* ProfileContactView.swift in Sources */,
+				2DC1A3842173911D004833DD /* ProfileHeaderView.swift in Sources */,
 				2DEE2903216D29CD0007A239 /* UIColorExtensions.swift in Sources */,
 				2D71C9FE216BAAE1006A8D30 /* MainNavTabBar.swift in Sources */,
-				2DEE28E3216CF0330007A239 /* ProfileView.swift in Sources */,
 				2D86594621598431003A5B67 /* MainFeedVC.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

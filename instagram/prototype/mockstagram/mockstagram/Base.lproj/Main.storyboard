@@ -67,22 +67,38 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="9a8-4e-QCw" customClass="ProfileView" customModule="mockstagram" customModuleProvider="target">
+                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="eg6-Zb-rBx">
                                 <rect key="frame" x="0.0" y="64" width="375" height="554"/>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                            </view>
+                                <subviews>
+                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillProportionally" translatesAutoresizingMaskIntoConstraints="NO" id="ogO-a2-jby" userLabel="Content Stack">
+                                        <rect key="frame" x="0.0" y="0.0" width="375" height="554"/>
+                                    </stackView>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstItem="ogO-a2-jby" firstAttribute="top" secondItem="eg6-Zb-rBx" secondAttribute="top" id="2Lf-VO-1pt"/>
+                                    <constraint firstAttribute="trailing" secondItem="ogO-a2-jby" secondAttribute="trailing" id="CWp-dp-fIy"/>
+                                    <constraint firstItem="ogO-a2-jby" firstAttribute="leading" secondItem="eg6-Zb-rBx" secondAttribute="leading" id="KB1-5J-0e3"/>
+                                    <constraint firstAttribute="bottom" secondItem="ogO-a2-jby" secondAttribute="bottom" id="N2P-BE-VGw"/>
+                                    <constraint firstItem="ogO-a2-jby" firstAttribute="centerX" secondItem="eg6-Zb-rBx" secondAttribute="centerX" id="SNI-8f-tmJ"/>
+                                    <constraint firstItem="ogO-a2-jby" firstAttribute="height" secondItem="eg6-Zb-rBx" secondAttribute="height" priority="250" id="WTG-f1-JAk"/>
+                                </constraints>
+                            </scrollView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
-                            <constraint firstItem="9a8-4e-QCw" firstAttribute="height" secondItem="tZy-Br-zsZ" secondAttribute="height" id="ClK-tB-Mnv"/>
-                            <constraint firstItem="9a8-4e-QCw" firstAttribute="width" secondItem="tZy-Br-zsZ" secondAttribute="width" id="Qr1-g3-bgM"/>
-                            <constraint firstItem="9a8-4e-QCw" firstAttribute="bottom" secondItem="tZy-Br-zsZ" secondAttribute="bottom" id="dv4-Qf-vYk"/>
-                            <constraint firstItem="9a8-4e-QCw" firstAttribute="centerX" secondItem="tZy-Br-zsZ" secondAttribute="centerX" id="ndk-sf-Z9P"/>
+                            <constraint firstItem="eg6-Zb-rBx" firstAttribute="leading" secondItem="tZy-Br-zsZ" secondAttribute="leading" id="BEh-SQ-y6i"/>
+                            <constraint firstItem="eg6-Zb-rBx" firstAttribute="top" secondItem="tZy-Br-zsZ" secondAttribute="top" id="M8E-J6-nkx"/>
+                            <constraint firstItem="tZy-Br-zsZ" firstAttribute="trailing" secondItem="eg6-Zb-rBx" secondAttribute="trailing" id="qTj-6g-ahw"/>
+                            <constraint firstItem="eg6-Zb-rBx" firstAttribute="bottom" secondItem="tZy-Br-zsZ" secondAttribute="bottom" id="yXW-uq-Rus"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="tZy-Br-zsZ"/>
                     </view>
                     <tabBarItem key="tabBarItem" image="icon_profile" selectedImage="icon_active_profile" id="T6b-oK-xt8"/>
                     <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
+                    <connections>
+                        <outlet property="contentScrollView" destination="eg6-Zb-rBx" id="fa6-ep-yZa"/>
+                        <outlet property="contentStack" destination="ogO-a2-jby" id="dka-Fq-gDG"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="MmP-IA-HwZ" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
