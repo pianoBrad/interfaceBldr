@@ -37,7 +37,6 @@ class DynamicHeightLabel: UIView
     /** Custom methods **/
     func commonInit()
     {
-        self.backgroundColor = .orange
         containerView.backgroundColor = .red
         self.addSubview(containerView)
         containerView.translatesAutoresizingMaskIntoConstraints = false
@@ -47,7 +46,17 @@ class DynamicHeightLabel: UIView
         label.numberOfLines = 0
         containerView.addSubview(label)
         label.translatesAutoresizingMaskIntoConstraints = false
-        containerView.addConstraints(getLabelConstraints(forSuperview: containerView))
+        containerView.addConstraints(
+            getLabelConstraints(forSuperview: containerView)
+        )
+    
+        // Need to add this to prevent container from sizing 0 in stackview
+        let bottomConst = NSLayoutConstraint(
+            item: self, attribute: .bottom,
+            relatedBy: .equal, toItem: containerView, attribute: .bottom,
+            multiplier: 1, constant: 0
+        )
+        self.addConstraint(bottomConst)
     }
 
     func getContainerConstraints(forSuperview: UIView) -> [NSLayoutConstraint]
@@ -79,7 +88,9 @@ class DynamicHeightLabel: UIView
     func getLabelConstraints(forSuperview: UIView) -> [NSLayoutConstraint]
     {
         let leadingConst = NSLayoutConstraint(
-            item: label, attribute: .leading, relatedBy: .equal, toItem: forSuperview, attribute: .leading, multiplier: 1, constant: theme.primaryStackSpacingX
+            item: label, attribute: .leading,
+            relatedBy: .equal, toItem: forSuperview, attribute: .leading,
+            multiplier: 1, constant: theme.primaryStackSpacingX
         )
         let topConst = NSLayoutConstraint(
             item: label, attribute: .top,

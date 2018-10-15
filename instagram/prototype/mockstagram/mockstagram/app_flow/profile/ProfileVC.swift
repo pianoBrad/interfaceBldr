@@ -18,6 +18,8 @@ class ProfileVC: UIViewController {
     var headerView : ProfileHeaderView?
     var occupationView : ProfileOccupationView?
     var bioView : DynamicHeightLabel?
+    var followersView : ProfileFollowersListView?
+    
     var bio : String = ""
     
     /** Overrides **/
@@ -29,6 +31,19 @@ class ProfileVC: UIViewController {
         addProfileHeader()
         addOccupation(titled: "test occupation")
         addBio(withText: "Tester bio! Tester bio! Tester bio! Tester bio! Tester bio! Tester bio! Tester bio! Tester bio! Tester bio! Tester bio! Tester bio! Tester bio! Tester bio! Tester bio! Tester bio! Tester bio! Tester bio! Tester bio! Tester bio! Tester bio! Tester bio! Tester bio! Tester bio!")
+        
+        contentStack.layoutIfNeeded()
+        for view in contentStack.arrangedSubviews
+        {
+            if let dynamicView = view as? DynamicHeightLabel
+            {
+                print(dynamicView.containerView.frame)
+            }
+        }
+        addFollowers(withList: [
+            "myFriend", "someDude", "anotherHomie"
+            ])
+        contentStack.layoutIfNeeded()
     }
     
     /** Custom methods **/
@@ -75,5 +90,11 @@ class ProfileVC: UIViewController {
         {
             contentStack.insertArrangedSubview(bioView!, at: 0)
         }
+    }
+    
+    func addFollowers(withList: [String])
+    {
+        followersView = ProfileFollowersListView(withFollowers: withList)
+        contentStack.insertArrangedSubview(followersView!, at: contentStack.arrangedSubviews.count)
     }
 }
