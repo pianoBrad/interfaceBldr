@@ -20,7 +20,7 @@ class ProfileVC: UIViewController {
     var bioView : DynamicHeightLabel?
     var followersView : ProfileFollowersListView?
     
-    var bio : String = ""
+    var bio : String = "Tester bio! Tester bio! Tester bio! Tester bio! Tester bio! Tester bio! Tester bio! Tester bio! Tester bio! Tester bio! Tester bio! Tester bio! Tester bio! Tester bio! Tester bio! Tester bio! Tester bio! Tester bio! Tester bio! Tester bio! Tester bio! Tester bio! Tester bio!"
     
     /** Overrides **/
     override func viewDidLoad()
@@ -30,20 +30,33 @@ class ProfileVC: UIViewController {
         self.view.backgroundColor = .blue
         addProfileHeader()
         addOccupation(titled: "test occupation")
-        addBio(withText: "Tester bio! Tester bio! Tester bio! Tester bio! Tester bio! Tester bio! Tester bio! Tester bio! Tester bio! Tester bio! Tester bio! Tester bio! Tester bio! Tester bio! Tester bio! Tester bio! Tester bio! Tester bio! Tester bio! Tester bio! Tester bio! Tester bio! Tester bio!")
+        addBio(withText: bio)
         
-        contentStack.layoutIfNeeded()
-        for view in contentStack.arrangedSubviews
-        {
-            if let dynamicView = view as? DynamicHeightLabel
-            {
-                print(dynamicView.containerView.frame)
-            }
-        }
         addFollowers(withList: [
             "myFriend", "someDude", "anotherHomie"
             ])
         contentStack.layoutIfNeeded()
+    }
+    
+    override func viewDidLayoutSubviews() {
+        var contentWidth = contentStack.frame.width
+        
+        if self.view.safeAreaLayoutGuide.layoutFrame.size.width < contentWidth
+        {
+            contentWidth = self.view.safeAreaLayoutGuide.layoutFrame.size.width
+        }
+        
+        self.bioView?.resetLabelHeight(forWidth: contentWidth)
+    }
+    
+    override func viewWillTransition(to size: CGSize, with coordinator: UIViewControllerTransitionCoordinator) {
+        
+        coordinator.animate(alongsideTransition: { (context) in
+            // During rotation
+            self.bioView?.resetLabelHeight(forWidth: self.contentStack.frame.width)
+        }) { (context) in
+            // After rotation
+        }
     }
     
     /** Custom methods **/

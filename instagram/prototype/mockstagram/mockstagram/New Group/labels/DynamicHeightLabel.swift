@@ -13,7 +13,9 @@ class DynamicHeightLabel: UIView
     /** Properties **/
     var containerView : UIView = UIView(frame: .zero)
     var label : UILabel = UILabel()
+    var labelFont = UIFont(name: theme.fontNamePrimaryRegular, size: 14)!
     var labelHeight : CGFloat = 25
+    var labelHeightConst = NSLayoutConstraint()
     
     /** Overrides **/
     override init(frame: CGRect)
@@ -32,6 +34,7 @@ class DynamicHeightLabel: UIView
     {
         self.init(frame: .zero)
         self.label.text = withText
+        self.label.font = labelFont
     }
     
     /** Custom methods **/
@@ -49,14 +52,14 @@ class DynamicHeightLabel: UIView
         containerView.addConstraints(
             getLabelConstraints(forSuperview: containerView)
         )
-    
-        // Need to add this to prevent container from sizing 0 in stackview
-        let bottomConst = NSLayoutConstraint(
-            item: self, attribute: .bottom,
-            relatedBy: .equal, toItem: containerView, attribute: .bottom,
-            multiplier: 1, constant: 0
+        
+        
+        let heightConst = NSLayoutConstraint(
+            item: self, attribute: .height, relatedBy: .equal,
+            toItem: nil, attribute: .notAnAttribute, multiplier: 1, constant: 10
         )
-        self.addConstraint(bottomConst)
+        self.labelHeightConst = heightConst
+        self.addConstraint(labelHeightConst)
     }
 
     func getContainerConstraints(forSuperview: UIView) -> [NSLayoutConstraint]
@@ -114,5 +117,14 @@ class DynamicHeightLabel: UIView
             multiplier: 1, constant: 0
         )
         return [leadingConst, topConst, botConst, widthConst, heightConst]
+    }
+    
+    func resetLabelHeight(forWidth : CGFloat)
+    {
+        if let newHeight = self.label.text?.height(
+            withConstrainedWidth: forWidth, font: self.labelFont)
+        {
+            self.labelHeightConst.constant = newHeight
+        }
     }
 }
