@@ -19,6 +19,7 @@ class ProfileVC: UIViewController {
     var occupationView : ProfileOccupationView?
     var bioView : DynamicHeightLabel?
     var followersView : ProfileFollowersListView?
+    var contactView : ProfileContactView?
     
     var bio : String = "Tester bio! Tester bio! Tester bio! Tester bio! Tester bio! Tester bio! Tester bio! Tester bio! Tester bio! Tester bio! Tester bio! Tester bio! Tester bio! Tester bio! Tester bio! Tester bio! Tester bio! Tester bio! Tester bio! Tester bio! Tester bio! Tester bio! Tester bio!"
     var followers : [String] = ["myFriend", "someDude", "anotherHomie"]
@@ -32,9 +33,8 @@ class ProfileVC: UIViewController {
         addProfileHeader()
         addOccupation(titled: "test occupation")
         addBio(withText: bio)
-        
         addFollowers(withList:followers)
-        contentStack.layoutIfNeeded()
+        addContactView()
     }
     
     override func viewDidLayoutSubviews() {
@@ -48,8 +48,8 @@ class ProfileVC: UIViewController {
         self.bioView?.resetLabelHeight(forWidth: contentWidth)
     }
     
-    override func viewWillTransition(to size: CGSize, with coordinator: UIViewControllerTransitionCoordinator) {
-        
+    override func viewWillTransition(to size: CGSize, with coordinator: UIViewControllerTransitionCoordinator)
+    {
         coordinator.animate(alongsideTransition: { (context) in
             // During rotation
             self.bioView?.resetLabelHeight(forWidth: self.contentStack.frame.width)
@@ -107,6 +107,16 @@ class ProfileVC: UIViewController {
     func addFollowers(withList: [String])
     {
         followersView = ProfileFollowersListView(withFollowers: withList)
-        contentStack.insertArrangedSubview(followersView!, at: contentStack.arrangedSubviews.count)
+        contentStack.insertArrangedSubview(
+            followersView!, at: contentStack.arrangedSubviews.count
+        )
+    }
+
+    func addContactView()
+    {
+        contactView = ProfileContactView()
+        contentStack.insertArrangedSubview(
+            contactView!, at: contentStack.arrangedSubviews.count
+        )
     }
 }
