@@ -14,7 +14,7 @@ protocol StoryStackDelegate : class
 }
 
 @IBDesignable
-class StoryStack: UIView
+class StoryStack: StandardStackSubView
 {
     /** Properties **/
     @IBOutlet var contentView: UIView!
@@ -37,18 +37,26 @@ class StoryStack: UIView
         commonInit(withDemoStories: 5)
     }
 
+    convenience init(withDemoStories: Int)
+    {
+        self.init(frame: .zero)
+        commonInit(withDemoStories: withDemoStories)
+    }
+    
     /** Custom methods **/
     func commonInit(withDemoStories : Int = 0)
     {
+        super.commonInit()
         let bundle = Bundle(for: StoryStack.self)
         bundle.loadNibNamed(
             String(describing: StoryStack.self),
             owner: self, options: nil
         )
-        self.addSubview(contentView)
-        contentView.bounds = self.bounds
+        self.containerView.addSubview(contentView)
+        contentView.frame = self.containerView.bounds
         contentView.autoresizingMask = [.flexibleWidth, .flexibleHeight]
-
+        self.setContainerHeight(toValue: 85)
+        
         displayDemoStories(amountToShow: withDemoStories)
     }
     
@@ -56,18 +64,12 @@ class StoryStack: UIView
     {
         clearStories()
         
-        //for _ in 1...amountToShow
         for _ in stride(from: 1, through: amountToShow, by: 1)
         {
-            let storyBtnFrame = CGRect(x: 0, y: 0, width: self.frame.height, height: self.frame.height)
-            let storyBtn = StoryBtnView(frame: storyBtnFrame)
+            let storyBtn = StoryBtnView()
             stories.append(storyBtn)
-        }
-        
-        for (index, story) in stories.enumerated()
-        {
-            mainStackView.insertArrangedSubview(story, at: index)
-            story.storyBtnDelegate = self
+            mainStackView.insertArrangedSubview(storyBtn, at: mainStackView.arrangedSubviews.count)
+            storyBtn.storyBtnDelegate = self
         }
     }
     

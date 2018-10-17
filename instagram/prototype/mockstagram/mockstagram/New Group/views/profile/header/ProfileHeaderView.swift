@@ -8,11 +8,20 @@
 
 import UIKit
 
+protocol ProfileHeaderViewDelegate : class
+{
+    func editProfileBtnPressed(_ sender: UIButton)
+}
+
 @IBDesignable
 class ProfileHeaderView: UIView
 {
     /** Properties **/
     @IBOutlet var contentView: UIView!
+    
+    @IBOutlet weak var editProfileBtn: ProfileBtn!
+    
+    weak var headerDelegate : ProfileHeaderViewDelegate?
     
     /** Overrides **/
     override init(frame: CGRect)
@@ -38,5 +47,21 @@ class ProfileHeaderView: UIView
         self.addSubview(contentView)
         contentView.frame = self.bounds
         contentView.autoresizingMask = [.flexibleHeight, .flexibleWidth]
+    
+        self.editProfileBtn.addTarget(
+            self, action: #selector(checkBtnPress), for: .touchUpInside
+        )
+    }
+    
+    @objc func checkBtnPress(_ sender: UIButton)
+    {
+        switch sender
+        {
+        case editProfileBtn:
+            self.headerDelegate?.editProfileBtnPressed(sender)
+            break
+        default:
+            break
+        }
     }
 }

@@ -38,6 +38,9 @@
 		2DC1A38D21742734004833DD /* StandardStackSubView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2DC1A38C21742734004833DD /* StandardStackSubView.swift */; };
 		2DC1A38F2174E07F004833DD /* StringExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2DC1A38E2174E07F004833DD /* StringExtensions.swift */; };
 		2DC1A3912174E0BE004833DD /* NSAttributedStringExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2DC1A3902174E0BE004833DD /* NSAttributedStringExtensions.swift */; };
+		2DDC94E62177C99F002C6B5B /* ProfileEditView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2DDC94E52177C99F002C6B5B /* ProfileEditView.xib */; };
+		2DDC94E82177C9B1002C6B5B /* ProfileEditView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2DDC94E72177C9B1002C6B5B /* ProfileEditView.swift */; };
+		2DDC94EA2177DA1F002C6B5B /* StandardFormNavController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2DDC94E92177DA1F002C6B5B /* StandardFormNavController.swift */; };
 		2DEE28EF216CF8E90007A239 /* Lato-Light.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 2DEE28E5216CF8E80007A239 /* Lato-Light.ttf */; };
 		2DEE28F0216CF8E90007A239 /* Lato-Black.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 2DEE28E6216CF8E80007A239 /* Lato-Black.ttf */; };
 		2DEE28F1216CF8E90007A239 /* Lato-BlackItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 2DEE28E7216CF8E80007A239 /* Lato-BlackItalic.ttf */; };
@@ -109,6 +112,9 @@
 		2DC1A38C21742734004833DD /* StandardStackSubView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StandardStackSubView.swift; sourceTree = "<group>"; };
 		2DC1A38E2174E07F004833DD /* StringExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StringExtensions.swift; sourceTree = "<group>"; };
 		2DC1A3902174E0BE004833DD /* NSAttributedStringExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NSAttributedStringExtensions.swift; sourceTree = "<group>"; };
+		2DDC94E52177C99F002C6B5B /* ProfileEditView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ProfileEditView.xib; sourceTree = "<group>"; };
+		2DDC94E72177C9B1002C6B5B /* ProfileEditView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileEditView.swift; sourceTree = "<group>"; };
+		2DDC94E92177DA1F002C6B5B /* StandardFormNavController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StandardFormNavController.swift; sourceTree = "<group>"; };
 		2DEE28E5216CF8E80007A239 /* Lato-Light.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Lato-Light.ttf"; sourceTree = "<group>"; };
 		2DEE28E6216CF8E80007A239 /* Lato-Black.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Lato-Black.ttf"; sourceTree = "<group>"; };
 		2DEE28E7216CF8E80007A239 /* Lato-BlackItalic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Lato-BlackItalic.ttf"; sourceTree = "<group>"; };
@@ -266,6 +272,7 @@
 				2D71C9FD216BAAE1006A8D30 /* MainNavTabBar.swift */,
 				2D2C88592170D8DC009F7894 /* StoryStack.xib */,
 				2D2C885B2170D97C009F7894 /* StoryStack.swift */,
+				2DDC94E92177DA1F002C6B5B /* StandardFormNavController.swift */,
 			);
 			path = navigation;
 			sourceTree = "<group>";
@@ -324,6 +331,23 @@
 			path = labels;
 			sourceTree = "<group>";
 		};
+		2DDC94E32177940E002C6B5B /* details */ = {
+			isa = PBXGroup;
+			children = (
+				2DC1A38A2174252F004833DD /* ProfileFollowersListView.swift */,
+				2D12590E2177704400691077 /* ProfileContactView.xib */,
+				2D1259102177707D00691077 /* ProfileContactView.swift */,
+			);
+			path = details;
+			sourceTree = "<group>";
+		};
+		2DDC94E421779439002C6B5B /* feed */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = feed;
+			sourceTree = "<group>";
+		};
 		2DEE28E4216CF72E0007A239 /* fonts */ = {
 			isa = PBXGroup;
 			children = (
@@ -344,10 +368,9 @@
 		2DEE28F9216D02CA0007A239 /* profile */ = {
 			isa = PBXGroup;
 			children = (
+				2DDC94E421779439002C6B5B /* feed */,
 				2D3E6644216E459400CD96FC /* header */,
-				2DC1A38A2174252F004833DD /* ProfileFollowersListView.swift */,
-				2D12590E2177704400691077 /* ProfileContactView.xib */,
-				2D1259102177707D00691077 /* ProfileContactView.swift */,
+				2DDC94E32177940E002C6B5B /* details */,
 			);
 			path = profile;
 			sourceTree = "<group>";
@@ -356,6 +379,8 @@
 			isa = PBXGroup;
 			children = (
 				2DEE28FC216D079B0007A239 /* ProfileVC.swift */,
+				2DDC94E52177C99F002C6B5B /* ProfileEditView.xib */,
+				2DDC94E72177C9B1002C6B5B /* ProfileEditView.swift */,
 			);
 			path = profile;
 			sourceTree = "<group>";
@@ -474,6 +499,7 @@
 			files = (
 				2DEE28F3216CF8E90007A239 /* Lato-Italic.ttf in Resources */,
 				2DEE28F8216CF8E90007A239 /* Lato-LightItalic.ttf in Resources */,
+				2DDC94E62177C99F002C6B5B /* ProfileEditView.xib in Resources */,
 				2DEE28F1216CF8E90007A239 /* Lato-BlackItalic.ttf in Resources */,
 				2DEE28F4216CF8E90007A239 /* Lato-Hairline.ttf in Resources */,
 				2DEE28F0216CF8E90007A239 /* Lato-Black.ttf in Resources */,
@@ -535,8 +561,10 @@
 				2DC1A3842173911D004833DD /* ProfileHeaderView.swift in Sources */,
 				2DEE2903216D29CD0007A239 /* UIColorExtensions.swift in Sources */,
 				2D1259112177707D00691077 /* ProfileContactView.swift in Sources */,
+				2DDC94EA2177DA1F002C6B5B /* StandardFormNavController.swift in Sources */,
 				2D50EA9E2176D5070012C1FE /* ContainerView.swift in Sources */,
 				2D71C9FE216BAAE1006A8D30 /* MainNavTabBar.swift in Sources */,
+				2DDC94E82177C9B1002C6B5B /* ProfileEditView.swift in Sources */,
 				2D86594621598431003A5B67 /* MainFeedVC.swift in Sources */,
 				2DC1A3912174E0BE004833DD /* NSAttributedStringExtensions.swift in Sources */,
 			);

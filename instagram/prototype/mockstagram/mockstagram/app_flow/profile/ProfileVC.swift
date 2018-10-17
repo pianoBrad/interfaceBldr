@@ -19,6 +19,7 @@ class ProfileVC: UIViewController {
     var occupationView : ProfileOccupationView?
     var bioView : DynamicHeightLabel?
     var followersView : ProfileFollowersListView?
+    var storiesView : StoryStack?
     var contactView : ProfileContactView?
     
     var bio : String = "Tester bio! Tester bio! Tester bio! Tester bio! Tester bio! Tester bio! Tester bio! Tester bio! Tester bio! Tester bio! Tester bio! Tester bio! Tester bio! Tester bio! Tester bio! Tester bio! Tester bio! Tester bio! Tester bio! Tester bio! Tester bio! Tester bio! Tester bio!"
@@ -34,6 +35,7 @@ class ProfileVC: UIViewController {
         addOccupation(titled: "test occupation")
         addBio(withText: bio)
         addFollowers(withList:followers)
+        addStoryStack()
         addContactView()
     }
     
@@ -62,6 +64,7 @@ class ProfileVC: UIViewController {
     func addProfileHeader()
     {
         headerView = ProfileHeaderView()
+        headerView?.headerDelegate = self
         contentStack.insertArrangedSubview(headerView!, at: 0)
     }
     
@@ -112,11 +115,38 @@ class ProfileVC: UIViewController {
         )
     }
 
+    func addStoryStack()
+    {
+        storiesView = StoryStack(withDemoStories: 7)
+        storiesView?.stackDelegate = self
+        contentStack.insertArrangedSubview(storiesView!, at: contentStack.arrangedSubviews.count)
+    }
+    
     func addContactView()
     {
         contactView = ProfileContactView()
         contentStack.insertArrangedSubview(
             contactView!, at: contentStack.arrangedSubviews.count
         )
+    }
+}
+
+extension ProfileVC : ProfileHeaderViewDelegate
+{
+    func editProfileBtnPressed(_ sender: UIButton)
+    {
+        let vc = UIViewController()
+        let nav = StandardFormNavController(rootViewController: vc)
+        vc.view = ProfileEditView()
+        vc.navigationItem.title = "Edit Profile"
+        self.present(nav, animated: true, completion: nil)
+    }
+}
+
+extension ProfileVC : StoryStackDelegate
+{
+    func storyTapped(_ sender: StoryBtnView)
+    {
+
     }
 }
