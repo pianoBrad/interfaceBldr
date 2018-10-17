@@ -30,9 +30,32 @@ class StandardStackSubView: UIView
     func commonInit()
     {
         self.addSubview(containerView)
+        self.backgroundColor = theme.bgColorPrimary
         containerView.translatesAutoresizingMaskIntoConstraints = false
         self.addConstraints(
             getContainerViewConstraints(toView: containerView, forView: self)
         )
+    }
+    
+    func setStandardYPadding(forConstraints: [NSLayoutConstraint])
+    {
+        print("tryint to update padding now..")
+    
+        for constraint in forConstraints
+        {
+            switch (constraint.firstAttribute.rawValue)
+            {
+            case 3: // top
+                print("adjusting top padding now..")
+                constraint.constant = theme.primaryStackSpacingY
+                break
+            case 4: // bottom
+                print("adjusting bot padding now..")
+                constraint.constant = -theme.primaryStackSpacingY
+                break
+            default:
+                break
+            }
+        }
     }
 }

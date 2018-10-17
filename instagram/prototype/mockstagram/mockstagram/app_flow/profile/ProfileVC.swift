@@ -21,6 +21,7 @@ class ProfileVC: UIViewController {
     var followersView : ProfileFollowersListView?
     
     var bio : String = "Tester bio! Tester bio! Tester bio! Tester bio! Tester bio! Tester bio! Tester bio! Tester bio! Tester bio! Tester bio! Tester bio! Tester bio! Tester bio! Tester bio! Tester bio! Tester bio! Tester bio! Tester bio! Tester bio! Tester bio! Tester bio! Tester bio! Tester bio!"
+    var followers : [String] = ["myFriend", "someDude", "anotherHomie"]
     
     /** Overrides **/
     override func viewDidLoad()
@@ -32,9 +33,7 @@ class ProfileVC: UIViewController {
         addOccupation(titled: "test occupation")
         addBio(withText: bio)
         
-        addFollowers(withList: [
-            "myFriend", "someDude", "anotherHomie"
-            ])
+        addFollowers(withList:followers)
         contentStack.layoutIfNeeded()
     }
     

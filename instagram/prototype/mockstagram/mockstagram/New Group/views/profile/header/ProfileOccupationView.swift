@@ -8,10 +8,9 @@
 
 import UIKit
 
-class ProfileOccupationView: UIView
+class ProfileOccupationView: StandardStackSubView
 {
     /** Properties **/
-    let containerView = UIView()
     let occupationLabel = UILabel()
     let labelHeight : CGFloat = 17
     
@@ -34,17 +33,9 @@ class ProfileOccupationView: UIView
         setOccupation(withTitle: withTitle)
     }
     
-    /** Custom methods **/
-    func commonInit()
+    override func commonInit()
     {
-        self.backgroundColor = theme.bgColorPrimary
-        // Add container view
-        self.addSubview(containerView)
-        containerView.translatesAutoresizingMaskIntoConstraints = false
-        self.addConstraints(
-            getContainerViewConstraints(toView: containerView, forView: self)
-        )
-        
+        super.commonInit()
         occupationLabel.font = UIFont(
             name: theme.fontNamePrimaryRegular, size: 14
         )
@@ -60,6 +51,7 @@ class ProfileOccupationView: UIView
         setOccupationConstraints(forView: containerView)
     }
     
+    /** Custom methods **/
     func setOccupation(withTitle: String)
     {
         occupationLabel.text = withTitle
