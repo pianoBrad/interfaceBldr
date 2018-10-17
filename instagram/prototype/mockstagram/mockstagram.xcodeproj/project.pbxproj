@@ -23,6 +23,7 @@
 		2D3E6643216E3D3200CD96FC /* ProfileHeaderStatsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D3E6642216E3D3200CD96FC /* ProfileHeaderStatsView.swift */; };
 		2D449FC52171ABFF00351D9B /* ProfileContactView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D449FC42171ABFF00351D9B /* ProfileContactView.swift */; };
 		2D449FC72171AD7000351D9B /* ProfileContactBtn.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D449FC62171AD7000351D9B /* ProfileContactBtn.swift */; };
+		2D50EA9E2176D5070012C1FE /* ContainerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D50EA9D2176D5070012C1FE /* ContainerView.swift */; };
 		2D71C9FE216BAAE1006A8D30 /* MainNavTabBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D71C9FD216BAAE1006A8D30 /* MainNavTabBar.swift */; };
 		2D86594621598431003A5B67 /* MainFeedVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D86594521598431003A5B67 /* MainFeedVC.swift */; };
 		2D86594D21598905003A5B67 /* UIViewExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D86594C21598905003A5B67 /* UIViewExtensions.swift */; };
@@ -93,6 +94,7 @@
 		2D3E6642216E3D3200CD96FC /* ProfileHeaderStatsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileHeaderStatsView.swift; sourceTree = "<group>"; };
 		2D449FC42171ABFF00351D9B /* ProfileContactView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileContactView.swift; sourceTree = "<group>"; };
 		2D449FC62171AD7000351D9B /* ProfileContactBtn.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileContactBtn.swift; sourceTree = "<group>"; };
+		2D50EA9D2176D5070012C1FE /* ContainerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContainerView.swift; sourceTree = "<group>"; };
 		2D71C9FD216BAAE1006A8D30 /* MainNavTabBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainNavTabBar.swift; sourceTree = "<group>"; };
 		2D86594521598431003A5B67 /* MainFeedVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainFeedVC.swift; sourceTree = "<group>"; };
 		2D86594C21598905003A5B67 /* UIViewExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIViewExtensions.swift; sourceTree = "<group>"; };
@@ -234,6 +236,7 @@
 				2D86594E2159EFC4003A5B67 /* MediaCard.xib */,
 				2D8659502159F04F003A5B67 /* MediaCard.swift */,
 				2DC1A38C21742734004833DD /* StandardStackSubView.swift */,
+				2D50EA9D2176D5070012C1FE /* ContainerView.swift */,
 				2DEE28F9216D02CA0007A239 /* profile */,
 			);
 			path = views;
@@ -532,6 +535,7 @@
 				2D449FC52171ABFF00351D9B /* ProfileContactView.swift in Sources */,
 				2DC1A3842173911D004833DD /* ProfileHeaderView.swift in Sources */,
 				2DEE2903216D29CD0007A239 /* UIColorExtensions.swift in Sources */,
+				2D50EA9E2176D5070012C1FE /* ContainerView.swift in Sources */,
 				2D71C9FE216BAAE1006A8D30 /* MainNavTabBar.swift in Sources */,
 				2D86594621598431003A5B67 /* MainFeedVC.swift in Sources */,
 				2DC1A3912174E0BE004833DD /* NSAttributedStringExtensions.swift in Sources */,

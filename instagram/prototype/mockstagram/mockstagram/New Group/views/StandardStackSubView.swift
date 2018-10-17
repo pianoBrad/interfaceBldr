@@ -11,7 +11,7 @@ import UIKit
 class StandardStackSubView: UIView
 {
     /** Properties **/
-    var containerView = UIView()
+    var containerView = ContainerView()
     
     /** Overrides **/
     override init(frame: CGRect)
@@ -39,22 +39,41 @@ class StandardStackSubView: UIView
     
     func setStandardYPadding(forConstraints: [NSLayoutConstraint])
     {
-        print("tryint to update padding now..")
-    
         for constraint in forConstraints
-        {
-            switch (constraint.firstAttribute.rawValue)
+        {            
+            if let containerView = constraint.firstItem,
+                containerView.classForCoder == ContainerView.self
             {
-            case 3: // top
-                print("adjusting top padding now..")
-                constraint.constant = theme.primaryStackSpacingY
-                break
-            case 4: // bottom
-                print("adjusting bot padding now..")
-                constraint.constant = -theme.primaryStackSpacingY
-                break
-            default:
-                break
+                switch (constraint.firstAttribute.rawValue)
+                {
+                case 3: // top
+                    constraint.constant = theme.primaryStackSpacingY
+                    break
+                case 4: // bottom
+                    constraint.constant = -theme.primaryStackSpacingY
+                    break
+                default:
+                    break
+                }
+            }
+        }
+    }
+    
+    func setContainerHeight(toValue: CGFloat)
+    {
+        for constraint in self.constraints
+        {
+            if let containerView = constraint.firstItem,
+                containerView.classForCoder == ContainerView.self
+            {
+                switch constraint.firstAttribute.rawValue
+                {
+                case 8: // height
+                    constraint.constant = toValue
+                    break
+                default:
+                    break
+                }
             }
         }
     }

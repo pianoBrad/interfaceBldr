@@ -12,6 +12,7 @@ class ProfileFollowersListView: StandardStackSubView
 {
     /** Properties **/
     var followersList : [String] = []
+    var contentLabel  = UILabel()
     
     /** Overrides **/
     override init(frame: CGRect)
@@ -33,10 +34,26 @@ class ProfileFollowersListView: StandardStackSubView
     override func commonInit()
     {
         super.commonInit()
-        self.containerView.backgroundColor = .brown
-        setStandardYPadding(forConstraints: containerView.constraints)
+        self.setContainerHeight(toValue: 15)
+        setStandardYPadding(forConstraints: self.constraints)
+        
+        
+        contentLabel.textColor = theme.lightGrey
+        contentLabel.font = UIFont(name: theme.fontNamePrimaryRegular, size: 11)
+        contentLabel.text = "Followed by"
+        
+        addContentLabelToView()
     }
     
     /** Custom methods **/
-    
+    func addContentLabelToView()
+    {
+        self.containerView.addSubview(self.contentLabel)
+        
+        self.contentLabel.translatesAutoresizingMaskIntoConstraints = false
+        self.containerView.addConstraints(
+            getFullSizeViewConstraints(
+                toView: contentLabel, forView: containerView)
+        )
+    }
 }
