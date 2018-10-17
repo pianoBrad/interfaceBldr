@@ -14,6 +14,49 @@
             <rect key="frame" x="0.0" y="0.0" width="375" height="400"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="JZN-C3-byF" userLabel="Grid Container">
+                    <rect key="frame" x="0.0" y="12.5" width="375" height="375"/>
+                    <subviews>
+                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Boo-5r-Sri" userLabel="Vertical Grid Line 1">
+                            <rect key="frame" x="119" y="0.0" width="12" height="375"/>
+                            <color key="backgroundColor" red="0.11764705882352941" green="0.62745098039215685" blue="0.5725490196078431" alpha="1" colorSpace="calibratedRGB"/>
+                            <constraints>
+                                <constraint firstAttribute="width" constant="12" id="rRd-E1-nzH"/>
+                            </constraints>
+                        </view>
+                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="JPL-Sw-5FM" userLabel="Vertical Grid Line 2">
+                            <rect key="frame" x="244" y="0.0" width="12" height="375"/>
+                            <color key="backgroundColor" red="0.1176470588" green="0.62745098040000002" blue="0.57254901960000004" alpha="1" colorSpace="calibratedRGB"/>
+                            <constraints>
+                                <constraint firstAttribute="width" constant="12" id="GQ9-J4-5gp"/>
+                            </constraints>
+                        </view>
+                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="9DG-yX-6pd" userLabel="Horizontal Grid Line 1">
+                            <rect key="frame" x="0.0" y="119" width="375" height="12"/>
+                            <color key="backgroundColor" red="0.11764705882352941" green="0.62745098039215685" blue="0.5725490196078431" alpha="1" colorSpace="calibratedRGB"/>
+                            <constraints>
+                                <constraint firstAttribute="height" constant="12" id="87U-Wl-EwS"/>
+                            </constraints>
+                        </view>
+                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="fcp-O8-Mqo" userLabel="Horizontal Grid Line 2">
+                            <rect key="frame" x="0.0" y="244" width="375" height="12"/>
+                            <color key="backgroundColor" red="0.1176470588" green="0.62745098040000002" blue="0.57254901960000004" alpha="1" colorSpace="calibratedRGB"/>
+                            <constraints>
+                                <constraint firstAttribute="height" constant="12" id="pWA-vZ-RY4"/>
+                            </constraints>
+                        </view>
+                    </subviews>
+                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    <constraints>
+                        <constraint firstItem="9DG-yX-6pd" firstAttribute="centerX" secondItem="JZN-C3-byF" secondAttribute="centerX" id="9pp-Am-WtO"/>
+                        <constraint firstItem="JPL-Sw-5FM" firstAttribute="centerY" secondItem="JZN-C3-byF" secondAttribute="centerY" id="By0-pz-zZK"/>
+                        <constraint firstItem="Boo-5r-Sri" firstAttribute="centerY" secondItem="JZN-C3-byF" secondAttribute="centerY" id="V55-ZX-Bn9"/>
+                        <constraint firstItem="Boo-5r-Sri" firstAttribute="height" secondItem="JZN-C3-byF" secondAttribute="height" id="ZPd-S4-uAT"/>
+                        <constraint firstItem="9DG-yX-6pd" firstAttribute="width" secondItem="JZN-C3-byF" secondAttribute="width" id="bin-2Y-ELy"/>
+                        <constraint firstItem="fcp-O8-Mqo" firstAttribute="centerX" secondItem="JZN-C3-byF" secondAttribute="centerX" id="iLI-6P-kja"/>
+                        <constraint firstItem="fcp-O8-Mqo" firstAttribute="width" secondItem="JZN-C3-byF" secondAttribute="width" id="vkd-t3-G86"/>
+                    </constraints>
+                </view>
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="jnZ-CA-wXQ" userLabel="Game Container">
                     <rect key="frame" x="0.0" y="12.5" width="375" height="375"/>
                     <subviews>
@@ -116,10 +159,19 @@
             </subviews>
             <color key="backgroundColor" red="0.14901960784313725" green="0.73725490196078436" blue="0.67450980392156867" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
             <constraints>
+                <constraint firstItem="fcp-O8-Mqo" firstAttribute="top" secondItem="uGE-Gg-7db" secondAttribute="bottom" constant="-6" id="20Z-j8-ci5"/>
+                <constraint firstItem="JZN-C3-byF" firstAttribute="centerX" secondItem="iN0-l3-epB" secondAttribute="centerX" id="46s-La-yt2"/>
+                <constraint firstItem="JPL-Sw-5FM" firstAttribute="height" secondItem="jnZ-CA-wXQ" secondAttribute="height" id="4kI-0R-qcW"/>
                 <constraint firstItem="jnZ-CA-wXQ" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" priority="750" id="5Gw-bq-smG"/>
                 <constraint firstItem="jnZ-CA-wXQ" firstAttribute="height" relation="lessThanOrEqual" secondItem="iN0-l3-epB" secondAttribute="height" constant="-25" id="6hw-g4-oG2"/>
+                <constraint firstItem="JZN-C3-byF" firstAttribute="width" secondItem="jnZ-CA-wXQ" secondAttribute="width" id="Fcm-lM-Tkm"/>
+                <constraint firstItem="JZN-C3-byF" firstAttribute="height" secondItem="jnZ-CA-wXQ" secondAttribute="height" id="TtP-XU-VLD"/>
+                <constraint firstItem="9DG-yX-6pd" firstAttribute="top" secondItem="OZ7-lY-byK" secondAttribute="bottom" constant="-6" id="Wga-au-x7O"/>
                 <constraint firstItem="jnZ-CA-wXQ" firstAttribute="centerY" secondItem="iN0-l3-epB" secondAttribute="centerY" id="ZJw-DD-oV8"/>
+                <constraint firstItem="JZN-C3-byF" firstAttribute="centerY" secondItem="iN0-l3-epB" secondAttribute="centerY" id="ZrQ-bQ-5bb"/>
+                <constraint firstItem="Boo-5r-Sri" firstAttribute="leading" secondItem="OZ7-lY-byK" secondAttribute="trailing" constant="-6" id="anV-XL-dKL"/>
                 <constraint firstItem="jnZ-CA-wXQ" firstAttribute="centerX" secondItem="iN0-l3-epB" secondAttribute="centerX" id="fUs-5t-UOA"/>
+                <constraint firstItem="JPL-Sw-5FM" firstAttribute="leading" secondItem="Cx9-LJ-vor" secondAttribute="trailing" constant="-6" id="fvQ-9D-ydx"/>
                 <constraint firstItem="jnZ-CA-wXQ" firstAttribute="width" relation="lessThanOrEqual" secondItem="iN0-l3-epB" secondAttribute="width" id="vnN-hH-aOy"/>
                 <constraint firstAttribute="bottom" secondItem="jnZ-CA-wXQ" secondAttribute="bottom" priority="750" id="yj3-A3-EqM"/>
             </constraints>
