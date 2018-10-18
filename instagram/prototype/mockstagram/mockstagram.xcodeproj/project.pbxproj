@@ -41,6 +41,8 @@
 		2DDC94E62177C99F002C6B5B /* ProfileEditView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2DDC94E52177C99F002C6B5B /* ProfileEditView.xib */; };
 		2DDC94E82177C9B1002C6B5B /* ProfileEditView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2DDC94E72177C9B1002C6B5B /* ProfileEditView.swift */; };
 		2DDC94EA2177DA1F002C6B5B /* StandardFormNavController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2DDC94E92177DA1F002C6B5B /* StandardFormNavController.swift */; };
+		2DDC94EC2178200C002C6B5B /* StandardFormFieldView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2DDC94EB2178200C002C6B5B /* StandardFormFieldView.xib */; };
+		2DDC94EF21782065002C6B5B /* StandardFormFieldView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2DDC94EE21782065002C6B5B /* StandardFormFieldView.swift */; };
 		2DEE28EF216CF8E90007A239 /* Lato-Light.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 2DEE28E5216CF8E80007A239 /* Lato-Light.ttf */; };
 		2DEE28F0216CF8E90007A239 /* Lato-Black.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 2DEE28E6216CF8E80007A239 /* Lato-Black.ttf */; };
 		2DEE28F1216CF8E90007A239 /* Lato-BlackItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 2DEE28E7216CF8E80007A239 /* Lato-BlackItalic.ttf */; };
@@ -115,6 +117,8 @@
 		2DDC94E52177C99F002C6B5B /* ProfileEditView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ProfileEditView.xib; sourceTree = "<group>"; };
 		2DDC94E72177C9B1002C6B5B /* ProfileEditView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileEditView.swift; sourceTree = "<group>"; };
 		2DDC94E92177DA1F002C6B5B /* StandardFormNavController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StandardFormNavController.swift; sourceTree = "<group>"; };
+		2DDC94EB2178200C002C6B5B /* StandardFormFieldView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = StandardFormFieldView.xib; sourceTree = "<group>"; };
+		2DDC94EE21782065002C6B5B /* StandardFormFieldView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StandardFormFieldView.swift; sourceTree = "<group>"; };
 		2DEE28E5216CF8E80007A239 /* Lato-Light.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Lato-Light.ttf"; sourceTree = "<group>"; };
 		2DEE28E6216CF8E80007A239 /* Lato-Black.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Lato-Black.ttf"; sourceTree = "<group>"; };
 		2DEE28E7216CF8E80007A239 /* Lato-BlackItalic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Lato-BlackItalic.ttf"; sourceTree = "<group>"; };
@@ -244,6 +248,7 @@
 				2DC1A38C21742734004833DD /* StandardStackSubView.swift */,
 				2D50EA9D2176D5070012C1FE /* ContainerView.swift */,
 				2DEE28F9216D02CA0007A239 /* profile */,
+				2DDC94ED21782013002C6B5B /* forms */,
 			);
 			path = views;
 			sourceTree = "<group>";
@@ -346,6 +351,15 @@
 			children = (
 			);
 			path = feed;
+			sourceTree = "<group>";
+		};
+		2DDC94ED21782013002C6B5B /* forms */ = {
+			isa = PBXGroup;
+			children = (
+				2DDC94EB2178200C002C6B5B /* StandardFormFieldView.xib */,
+				2DDC94EE21782065002C6B5B /* StandardFormFieldView.swift */,
+			);
+			path = forms;
 			sourceTree = "<group>";
 		};
 		2DEE28E4216CF72E0007A239 /* fonts */ = {
@@ -517,6 +531,7 @@
 				2D3E6641216E3CD100CD96FC /* ProfileHeaderStatsView.xib in Resources */,
 				2D2C88622170DA80009F7894 /* StoryBtnView.xib in Resources */,
 				2DC1A382217390CF004833DD /* ProfileHeaderView.xib in Resources */,
+				2DDC94EC2178200C002C6B5B /* StandardFormFieldView.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -549,6 +564,7 @@
 				2D3E6643216E3D3200CD96FC /* ProfileHeaderStatsView.swift in Sources */,
 				2DC1A38F2174E07F004833DD /* StringExtensions.swift in Sources */,
 				2D2C88582170373C009F7894 /* ProfileBtn.swift in Sources */,
+				2DDC94EF21782065002C6B5B /* StandardFormFieldView.swift in Sources */,
 				2DF206782170E93A008A6A6A /* UIStackViewExtensions.swift in Sources */,
 				2DEE28FD216D079B0007A239 /* ProfileVC.swift in Sources */,
 				2D2C885C2170D97C009F7894 /* StoryStack.swift in Sources */,
