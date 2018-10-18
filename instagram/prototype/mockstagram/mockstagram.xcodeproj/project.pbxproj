@@ -43,6 +43,7 @@
 		2DDC94EA2177DA1F002C6B5B /* StandardFormNavController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2DDC94E92177DA1F002C6B5B /* StandardFormNavController.swift */; };
 		2DDC94EC2178200C002C6B5B /* StandardFormFieldView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2DDC94EB2178200C002C6B5B /* StandardFormFieldView.xib */; };
 		2DDC94EF21782065002C6B5B /* StandardFormFieldView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2DDC94EE21782065002C6B5B /* StandardFormFieldView.swift */; };
+		2DDC94F12178DDA7002C6B5B /* StandardFormSectionBtn.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2DDC94F02178DDA7002C6B5B /* StandardFormSectionBtn.swift */; };
 		2DEE28EF216CF8E90007A239 /* Lato-Light.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 2DEE28E5216CF8E80007A239 /* Lato-Light.ttf */; };
 		2DEE28F0216CF8E90007A239 /* Lato-Black.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 2DEE28E6216CF8E80007A239 /* Lato-Black.ttf */; };
 		2DEE28F1216CF8E90007A239 /* Lato-BlackItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 2DEE28E7216CF8E80007A239 /* Lato-BlackItalic.ttf */; };
@@ -119,6 +120,7 @@
 		2DDC94E92177DA1F002C6B5B /* StandardFormNavController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StandardFormNavController.swift; sourceTree = "<group>"; };
 		2DDC94EB2178200C002C6B5B /* StandardFormFieldView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = StandardFormFieldView.xib; sourceTree = "<group>"; };
 		2DDC94EE21782065002C6B5B /* StandardFormFieldView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StandardFormFieldView.swift; sourceTree = "<group>"; };
+		2DDC94F02178DDA7002C6B5B /* StandardFormSectionBtn.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StandardFormSectionBtn.swift; sourceTree = "<group>"; };
 		2DEE28E5216CF8E80007A239 /* Lato-Light.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Lato-Light.ttf"; sourceTree = "<group>"; };
 		2DEE28E6216CF8E80007A239 /* Lato-Black.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Lato-Black.ttf"; sourceTree = "<group>"; };
 		2DEE28E7216CF8E80007A239 /* Lato-BlackItalic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Lato-BlackItalic.ttf"; sourceTree = "<group>"; };
@@ -260,6 +262,7 @@
 				2D2C885D2170DA63009F7894 /* StoryBtnView.swift */,
 				2D2C88612170DA80009F7894 /* StoryBtnView.xib */,
 				2D449FC62171AD7000351D9B /* ProfileContactBtn.swift */,
+				2DDC94F02178DDA7002C6B5B /* StandardFormSectionBtn.swift */,
 			);
 			path = buttons;
 			sourceTree = "<group>";
@@ -573,6 +576,7 @@
 				2DEE2900216D295C0007A239 /* ThemeGlobals.swift in Sources */,
 				2D8659512159F04F003A5B67 /* MediaCard.swift in Sources */,
 				2DC1A38621739FF9004833DD /* ProfileOccupationView.swift in Sources */,
+				2DDC94F12178DDA7002C6B5B /* StandardFormSectionBtn.swift in Sources */,
 				2DC1A38B2174252F004833DD /* ProfileFollowersListView.swift in Sources */,
 				2DC1A3842173911D004833DD /* ProfileHeaderView.swift in Sources */,
 				2DEE2903216D29CD0007A239 /* UIColorExtensions.swift in Sources */,

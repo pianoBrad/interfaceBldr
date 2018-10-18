@@ -14,6 +14,30 @@ class StandardFormFieldView: StandardStackSubView
     /** Properties **/
     @IBOutlet var contentView: UIView!
     
+    @IBOutlet weak var fieldNameLabel: UILabel!
+    @IBOutlet weak var fieldValueTextField: UITextField!
+    @IBOutlet weak var fieldDividerView: UIView!
+    
+    @IBInspectable var displayDivider : Bool = true
+    {
+        didSet
+        {
+            if (!displayDivider)
+            {
+                self.removeDividerView()
+            }
+        }
+    }
+    
+    convenience init(withoutDivider: Bool)
+    {
+        self.init()
+        if (withoutDivider)
+        {
+            removeDividerView()
+        }
+    }
+    
     /** Overrides **/
     override func commonInit()
     {
@@ -28,5 +52,11 @@ class StandardFormFieldView: StandardStackSubView
         contentView.autoresizingMask = [.flexibleWidth, .flexibleHeight]
         
         self.setContainerHeight(toValue: 45)
+    }
+
+    /** Custom methods **/
+    func removeDividerView()
+    {
+        self.fieldDividerView.removeFromSuperview()
     }
 }

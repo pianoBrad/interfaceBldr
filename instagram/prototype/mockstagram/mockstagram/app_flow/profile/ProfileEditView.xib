@@ -12,6 +12,9 @@
         <array key="Lato-Bold.ttf">
             <string>Lato-Bold</string>
         </array>
+        <array key="Lato-Regular.ttf">
+            <string>Lato-Regular</string>
+        </array>
     </customFonts>
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="ProfileEditView" customModule="mockstagram" customModuleProvider="target">
@@ -80,7 +83,22 @@
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="5tR-3X-bZL" userLabel="Form Field 4" customClass="StandardFormFieldView" customModule="mockstagram" customModuleProvider="target">
                     <rect key="frame" x="0.0" y="330" width="375" height="45"/>
                     <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    <userDefinedRuntimeAttributes>
+                        <userDefinedRuntimeAttribute type="boolean" keyPath="displayDivider" value="NO"/>
+                    </userDefinedRuntimeAttributes>
                 </view>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="leading" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="uVm-rr-kJo" customClass="StandardFormSectionBtn" customModule="mockstagram" customModuleProvider="target">
+                    <rect key="frame" x="0.0" y="383" width="375" height="45"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="45" id="AMc-TP-s5y"/>
+                        <constraint firstAttribute="width" relation="lessThanOrEqual" constant="500" id="Z08-dr-H3x"/>
+                    </constraints>
+                    <fontDescription key="fontDescription" name="Lato-Regular" family="Lato" pointSize="16"/>
+                    <inset key="contentEdgeInsets" minX="20" minY="0.0" maxX="20" maxY="0.0"/>
+                    <state key="normal" title="Try Instagram Business Tools">
+                        <color key="titleColor" red="0.2196078431372549" green="0.59215686274509804" blue="0.94117647058823528" alpha="1" colorSpace="calibratedRGB"/>
+                    </state>
+                </button>
             </subviews>
             <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
             <constraints>
@@ -88,14 +106,17 @@
                 <constraint firstItem="L3i-gu-6DE" firstAttribute="centerX" secondItem="vUN-kp-3ea" secondAttribute="centerX" id="0NT-xs-scA"/>
                 <constraint firstItem="5Bd-v3-sbW" firstAttribute="top" secondItem="PXV-78-OjS" secondAttribute="bottom" id="1S6-eV-vHd"/>
                 <constraint firstItem="5tR-3X-bZL" firstAttribute="top" secondItem="nT4-z9-Tdz" secondAttribute="bottom" id="4vP-I2-pYP"/>
+                <constraint firstItem="uVm-rr-kJo" firstAttribute="centerX" secondItem="vUN-kp-3ea" secondAttribute="centerX" id="8K3-Q4-rmF"/>
                 <constraint firstItem="nT4-z9-Tdz" firstAttribute="width" secondItem="5Bd-v3-sbW" secondAttribute="width" id="9hi-HD-pwW"/>
                 <constraint firstItem="L3i-gu-6DE" firstAttribute="width" secondItem="5Bd-v3-sbW" secondAttribute="width" id="DQS-p1-UYD"/>
                 <constraint firstItem="PXV-78-OjS" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" id="FbD-Vy-qE0"/>
+                <constraint firstItem="uVm-rr-kJo" firstAttribute="width" secondItem="iN0-l3-epB" secondAttribute="width" priority="999" id="HJQ-1I-d84"/>
                 <constraint firstItem="5tR-3X-bZL" firstAttribute="height" secondItem="5Bd-v3-sbW" secondAttribute="height" id="IXf-P5-ZYW"/>
                 <constraint firstItem="nT4-z9-Tdz" firstAttribute="top" secondItem="L3i-gu-6DE" secondAttribute="bottom" id="Jt8-CS-Utd"/>
                 <constraint firstItem="5Bd-v3-sbW" firstAttribute="width" secondItem="PXV-78-OjS" secondAttribute="width" id="MPp-c2-dh6"/>
                 <constraint firstItem="nT4-z9-Tdz" firstAttribute="centerX" secondItem="vUN-kp-3ea" secondAttribute="centerX" id="RfM-8v-3sb"/>
                 <constraint firstItem="5Bd-v3-sbW" firstAttribute="centerX" secondItem="vUN-kp-3ea" secondAttribute="centerX" id="WAw-35-VQJ"/>
+                <constraint firstItem="uVm-rr-kJo" firstAttribute="top" secondItem="5tR-3X-bZL" secondAttribute="bottom" constant="8" id="WFR-ih-pBC"/>
                 <constraint firstItem="L3i-gu-6DE" firstAttribute="top" secondItem="5Bd-v3-sbW" secondAttribute="bottom" id="bSy-Fg-ib0"/>
                 <constraint firstItem="L3i-gu-6DE" firstAttribute="height" secondItem="5Bd-v3-sbW" secondAttribute="height" id="dz3-TN-RFr"/>
                 <constraint firstItem="PXV-78-OjS" firstAttribute="top" secondItem="vUN-kp-3ea" secondAttribute="top" id="fpZ-fr-t00"/>

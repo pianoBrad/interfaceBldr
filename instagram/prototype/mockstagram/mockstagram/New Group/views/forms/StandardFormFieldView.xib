@@ -20,6 +20,9 @@
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="StandardFormFieldView" customModule="mockstagram" customModuleProvider="target">
             <connections>
                 <outlet property="contentView" destination="iN0-l3-epB" id="owy-x6-MVU"/>
+                <outlet property="fieldDividerView" destination="OdZ-Xe-py7" id="5Zl-EK-HoP"/>
+                <outlet property="fieldNameLabel" destination="5vg-EF-dMe" id="jtL-KP-ihb"/>
+                <outlet property="fieldValueTextField" destination="tXF-If-w4G" id="eW1-FU-Jqt"/>
             </connections>
         </placeholder>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
