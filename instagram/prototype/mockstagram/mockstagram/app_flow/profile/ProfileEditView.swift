@@ -66,7 +66,7 @@ extension ProfileEditView : StandardFormSectionBtnDelegate
         {
         case bizToolsBtn:
             let vc = UIViewController()
-            vc.view = StandardSliderView()
+            vc.view = BizToolsSlider()
             vc.title = "Try Mockstagram Biz Tools!"
             self.curNav?.pushViewController(vc, animated: true)
             break

@@ -8,19 +8,75 @@
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
+    <customFonts key="customFonts">
+        <array key="Lato-Bold.ttf">
+            <string>Lato-Bold</string>
+        </array>
+    </customFonts>
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="StandardSliderView" customModule="mockstagram" customModuleProvider="target">
             <connections>
                 <outlet property="contentView" destination="iN0-l3-epB" id="arz-QI-d9o"/>
+                <outlet property="continueBtn" destination="oRJ-ck-fzg" id="dE4-nu-lwM"/>
+                <outlet property="slideStackWidth" destination="WpD-lf-FeO" id="5Dm-WI-jDX"/>
+                <outlet property="slidesPager" destination="9CU-Ub-7Vp" id="aUC-8u-KSu"/>
+                <outlet property="slidesScrollView" destination="KxH-06-2Uc" id="of8-xR-ZZt"/>
+                <outlet property="slidesStack" destination="l8p-au-1WL" id="W5f-7t-9tP"/>
             </connections>
         </placeholder>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
         <view contentMode="scaleToFill" id="iN0-l3-epB">
             <rect key="frame" x="0.0" y="0.0" width="375" height="668"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" bounces="NO" pagingEnabled="YES" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" translatesAutoresizingMaskIntoConstraints="NO" id="KxH-06-2Uc">
+                    <rect key="frame" x="0.0" y="20" width="375" height="648"/>
+                    <subviews>
+                        <stackView opaque="NO" contentMode="scaleToFill" distribution="fillProportionally" translatesAutoresizingMaskIntoConstraints="NO" id="l8p-au-1WL">
+                            <rect key="frame" x="0.0" y="0.0" width="375" height="648"/>
+                        </stackView>
+                    </subviews>
+                    <constraints>
+                        <constraint firstItem="l8p-au-1WL" firstAttribute="leading" secondItem="KxH-06-2Uc" secondAttribute="leading" id="0vV-nF-ZxA"/>
+                        <constraint firstAttribute="bottom" secondItem="l8p-au-1WL" secondAttribute="bottom" id="6Vt-qw-sWd"/>
+                        <constraint firstItem="l8p-au-1WL" firstAttribute="centerY" secondItem="KxH-06-2Uc" secondAttribute="centerY" id="OiC-ak-Jh9"/>
+                        <constraint firstItem="l8p-au-1WL" firstAttribute="width" secondItem="KxH-06-2Uc" secondAttribute="width" priority="250" id="WpD-lf-FeO"/>
+                        <constraint firstItem="l8p-au-1WL" firstAttribute="top" secondItem="KxH-06-2Uc" secondAttribute="top" id="geV-oy-FIk"/>
+                        <constraint firstAttribute="trailing" secondItem="l8p-au-1WL" secondAttribute="trailing" id="m2W-3v-dtr"/>
+                    </constraints>
+                </scrollView>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="oRJ-ck-fzg">
+                    <rect key="frame" x="15" y="553" width="345" height="40"/>
+                    <color key="backgroundColor" red="0.2196078431372549" green="0.59215686274509804" blue="0.94117647058823528" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="40" id="BOK-Bu-wGq"/>
+                        <constraint firstAttribute="width" relation="lessThanOrEqual" constant="500" id="ULC-3q-EhV"/>
+                    </constraints>
+                    <fontDescription key="fontDescription" name="Lato-Bold" family="Lato" pointSize="15"/>
+                    <state key="normal" title="Continue">
+                        <color key="titleColor" red="0.98039215690000003" green="0.98039215690000003" blue="0.98039215690000003" alpha="1" colorSpace="calibratedRGB"/>
+                    </state>
+                </button>
+                <pageControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" numberOfPages="3" translatesAutoresizingMaskIntoConstraints="NO" id="9CU-Ub-7Vp">
+                    <rect key="frame" x="168" y="611" width="39" height="37"/>
+                </pageControl>
+            </subviews>
             <color key="backgroundColor" red="0.99215686270000003" green="0.74117647060000003" blue="0.01176470588" alpha="1" colorSpace="calibratedRGB"/>
+            <constraints>
+                <constraint firstItem="oRJ-ck-fzg" firstAttribute="centerX" secondItem="vUN-kp-3ea" secondAttribute="centerX" id="0hk-Pd-o7R"/>
+                <constraint firstItem="KxH-06-2Uc" firstAttribute="top" secondItem="vUN-kp-3ea" secondAttribute="top" id="83g-hE-kTm"/>
+                <constraint firstItem="KxH-06-2Uc" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" id="ACo-IL-IdX"/>
+                <constraint firstItem="KxH-06-2Uc" firstAttribute="height" secondItem="vUN-kp-3ea" secondAttribute="height" id="BxO-UA-eZj"/>
+                <constraint firstItem="oRJ-ck-fzg" firstAttribute="width" secondItem="iN0-l3-epB" secondAttribute="width" priority="999" constant="-30" id="RbQ-mE-EOC"/>
+                <constraint firstItem="9CU-Ub-7Vp" firstAttribute="centerX" secondItem="vUN-kp-3ea" secondAttribute="centerX" id="SoF-n3-mBL"/>
+                <constraint firstItem="KxH-06-2Uc" firstAttribute="bottom" secondItem="vUN-kp-3ea" secondAttribute="bottom" id="iW9-dx-lky"/>
+                <constraint firstItem="vUN-kp-3ea" firstAttribute="bottom" secondItem="9CU-Ub-7Vp" secondAttribute="bottom" constant="20" id="men-IC-INz"/>
+                <constraint firstItem="KxH-06-2Uc" firstAttribute="trailing" secondItem="vUN-kp-3ea" secondAttribute="trailing" id="rr0-Qc-nC8"/>
+                <constraint firstItem="vUN-kp-3ea" firstAttribute="bottom" secondItem="oRJ-ck-fzg" secondAttribute="bottom" constant="75" id="t0x-KT-hbJ"/>
+            </constraints>
             <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
             <viewLayoutGuide key="safeArea" id="vUN-kp-3ea"/>
+            <point key="canvasLocation" x="138.40000000000001" y="153.82308845577214"/>
         </view>
     </objects>
 </document>

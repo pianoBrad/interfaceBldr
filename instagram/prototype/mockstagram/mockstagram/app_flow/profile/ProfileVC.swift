@@ -52,10 +52,12 @@ class ProfileVC: UIViewController {
     
     override func viewWillTransition(to size: CGSize, with coordinator: UIViewControllerTransitionCoordinator)
     {
-        coordinator.animate(alongsideTransition: { (context) in
+        coordinator.animate(alongsideTransition:
+        { (context) in
             // During rotation
             self.bioView?.resetLabelHeight(forWidth: self.contentStack.frame.width)
-        }) { (context) in
+        })
+        { (context) in
             // After rotation
         }
     }

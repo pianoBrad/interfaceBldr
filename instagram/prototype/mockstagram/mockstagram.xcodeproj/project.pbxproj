@@ -24,6 +24,12 @@
 		2D3E6641216E3CD100CD96FC /* ProfileHeaderStatsView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2D3E6640216E3CD100CD96FC /* ProfileHeaderStatsView.xib */; };
 		2D3E6643216E3D3200CD96FC /* ProfileHeaderStatsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D3E6642216E3D3200CD96FC /* ProfileHeaderStatsView.swift */; };
 		2D449FC72171AD7000351D9B /* ProfileContactBtn.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D449FC62171AD7000351D9B /* ProfileContactBtn.swift */; };
+		2D4C4880217B889600A29019 /* BizToolsSlider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D4C487F217B889600A29019 /* BizToolsSlider.swift */; };
+		2D4C4882217B891400A29019 /* BizToolsSlideOne.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2D4C4881217B891400A29019 /* BizToolsSlideOne.xib */; };
+		2D4C4884217B893400A29019 /* BizToolsSlideOne.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D4C4883217B893400A29019 /* BizToolsSlideOne.swift */; };
+		2D4C4887217B8E9900A29019 /* BizToolsSlideTwo.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2D4C4886217B8E9900A29019 /* BizToolsSlideTwo.xib */; };
+		2D4C4889217B8EB300A29019 /* BizToolsSlideTwo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D4C4888217B8EB300A29019 /* BizToolsSlideTwo.swift */; };
+		2D4C488B217B94BA00A29019 /* NSLayoutConstraintExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D4C488A217B94BA00A29019 /* NSLayoutConstraintExtensions.swift */; };
 		2D50EA9E2176D5070012C1FE /* ContainerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D50EA9D2176D5070012C1FE /* ContainerView.swift */; };
 		2D515A27217A9D6D007DC6A6 /* StandardSliderView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2D515A26217A9D6D007DC6A6 /* StandardSliderView.xib */; };
 		2D515A29217A9D9A007DC6A6 /* StandardSliderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D515A28217A9D9A007DC6A6 /* StandardSliderView.swift */; };
@@ -103,6 +109,12 @@
 		2D3E6640216E3CD100CD96FC /* ProfileHeaderStatsView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ProfileHeaderStatsView.xib; sourceTree = "<group>"; };
 		2D3E6642216E3D3200CD96FC /* ProfileHeaderStatsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileHeaderStatsView.swift; sourceTree = "<group>"; };
 		2D449FC62171AD7000351D9B /* ProfileContactBtn.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileContactBtn.swift; sourceTree = "<group>"; };
+		2D4C487F217B889600A29019 /* BizToolsSlider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BizToolsSlider.swift; sourceTree = "<group>"; };
+		2D4C4881217B891400A29019 /* BizToolsSlideOne.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = BizToolsSlideOne.xib; sourceTree = "<group>"; };
+		2D4C4883217B893400A29019 /* BizToolsSlideOne.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BizToolsSlideOne.swift; sourceTree = "<group>"; };
+		2D4C4886217B8E9900A29019 /* BizToolsSlideTwo.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = BizToolsSlideTwo.xib; sourceTree = "<group>"; };
+		2D4C4888217B8EB300A29019 /* BizToolsSlideTwo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BizToolsSlideTwo.swift; sourceTree = "<group>"; };
+		2D4C488A217B94BA00A29019 /* NSLayoutConstraintExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NSLayoutConstraintExtensions.swift; sourceTree = "<group>"; };
 		2D50EA9D2176D5070012C1FE /* ContainerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContainerView.swift; sourceTree = "<group>"; };
 		2D515A26217A9D6D007DC6A6 /* StandardSliderView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = StandardSliderView.xib; sourceTree = "<group>"; };
 		2D515A28217A9D9A007DC6A6 /* StandardSliderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StandardSliderView.swift; sourceTree = "<group>"; };
@@ -246,6 +258,18 @@
 			path = header;
 			sourceTree = "<group>";
 		};
+		2D4C4885217B8E7200A29019 /* biz_tools_slider */ = {
+			isa = PBXGroup;
+			children = (
+				2D4C487F217B889600A29019 /* BizToolsSlider.swift */,
+				2D4C4881217B891400A29019 /* BizToolsSlideOne.xib */,
+				2D4C4883217B893400A29019 /* BizToolsSlideOne.swift */,
+				2D4C4886217B8E9900A29019 /* BizToolsSlideTwo.xib */,
+				2D4C4888217B8EB300A29019 /* BizToolsSlideTwo.swift */,
+			);
+			path = biz_tools_slider;
+			sourceTree = "<group>";
+		};
 		2D86593D2159743B003A5B67 /* views */ = {
 			isa = PBXGroup;
 			children = (
@@ -333,6 +357,7 @@
 				2DF206772170E93A008A6A6A /* UIStackViewExtensions.swift */,
 				2DC1A38E2174E07F004833DD /* StringExtensions.swift */,
 				2DC1A3902174E0BE004833DD /* NSAttributedStringExtensions.swift */,
+				2D4C488A217B94BA00A29019 /* NSLayoutConstraintExtensions.swift */,
 			);
 			path = extensions;
 			sourceTree = "<group>";
@@ -404,6 +429,7 @@
 				2DEE28FC216D079B0007A239 /* ProfileVC.swift */,
 				2DDC94E52177C99F002C6B5B /* ProfileEditView.xib */,
 				2DDC94E72177C9B1002C6B5B /* ProfileEditView.swift */,
+				2D4C4885217B8E7200A29019 /* biz_tools_slider */,
 			);
 			path = profile;
 			sourceTree = "<group>";
@@ -525,6 +551,7 @@
 				2DDC94E62177C99F002C6B5B /* ProfileEditView.xib in Resources */,
 				2DEE28F1216CF8E90007A239 /* Lato-BlackItalic.ttf in Resources */,
 				2DEE28F4216CF8E90007A239 /* Lato-Hairline.ttf in Resources */,
+				2D4C4882217B891400A29019 /* BizToolsSlideOne.xib in Resources */,
 				2DEE28F0216CF8E90007A239 /* Lato-Black.ttf in Resources */,
 				2DEE28F7216CF8E90007A239 /* Lato-HairlineItalic.ttf in Resources */,
 				2D12590F2177704400691077 /* ProfileContactView.xib in Resources */,
@@ -541,6 +568,7 @@
 				2D3E6641216E3CD100CD96FC /* ProfileHeaderStatsView.xib in Resources */,
 				2D2C88622170DA80009F7894 /* StoryBtnView.xib in Resources */,
 				2DC1A382217390CF004833DD /* ProfileHeaderView.xib in Resources */,
+				2D4C4887217B8E9900A29019 /* BizToolsSlideTwo.xib in Resources */,
 				2DDC94EC2178200C002C6B5B /* StandardFormFieldView.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -568,6 +596,7 @@
 			files = (
 				2D515A29217A9D9A007DC6A6 /* StandardSliderView.swift in Sources */,
 				2D86594D21598905003A5B67 /* UIViewExtensions.swift in Sources */,
+				2D4C4884217B893400A29019 /* BizToolsSlideOne.swift in Sources */,
 				2D449FC72171AD7000351D9B /* ProfileContactBtn.swift in Sources */,
 				2D314C9F2159711A00B74FBA /* AppDelegate.swift in Sources */,
 				2DC1A38D21742734004833DD /* StandardStackSubView.swift in Sources */,
@@ -580,10 +609,13 @@
 				2DEE28FD216D079B0007A239 /* ProfileVC.swift in Sources */,
 				2D2C885C2170D97C009F7894 /* StoryStack.swift in Sources */,
 				2DC1A3892173AF2E004833DD /* DynamicHeightLabel.swift in Sources */,
+				2D4C488B217B94BA00A29019 /* NSLayoutConstraintExtensions.swift in Sources */,
 				2D2C885E2170DA63009F7894 /* StoryBtnView.swift in Sources */,
 				2DEE2900216D295C0007A239 /* ThemeGlobals.swift in Sources */,
 				2D8659512159F04F003A5B67 /* MediaCard.swift in Sources */,
+				2D4C4889217B8EB300A29019 /* BizToolsSlideTwo.swift in Sources */,
 				2DC1A38621739FF9004833DD /* ProfileOccupationView.swift in Sources */,
+				2D4C4880217B889600A29019 /* BizToolsSlider.swift in Sources */,
 				2DDC94F12178DDA7002C6B5B /* StandardFormSectionBtn.swift in Sources */,
 				2DC1A38B2174252F004833DD /* ProfileFollowersListView.swift in Sources */,
 				2DC1A3842173911D004833DD /* ProfileHeaderView.swift in Sources */,
