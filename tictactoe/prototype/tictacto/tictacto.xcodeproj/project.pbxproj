@@ -21,6 +21,7 @@
 		2D6D79292171524F004B061B /* ControlPanel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D6D79282171524F004B061B /* ControlPanel.swift */; };
 		2D6D792C217152B9004B061B /* TicTacToeVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D6D792B217152B9004B061B /* TicTacToeVC.swift */; };
 		2DC1A39321750469004833DD /* GameBoardAnswerView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2DC1A39221750469004833DD /* GameBoardAnswerView.xib */; };
+		69E852D1217A95FC007D9C3D /* GamePieceButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 69E852D0217A95FC007D9C3D /* GamePieceButton.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -61,6 +62,7 @@
 		2D6D79282171524F004B061B /* ControlPanel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ControlPanel.swift; sourceTree = "<group>"; };
 		2D6D792B217152B9004B061B /* TicTacToeVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TicTacToeVC.swift; sourceTree = "<group>"; };
 		2DC1A39221750469004833DD /* GameBoardAnswerView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = GameBoardAnswerView.xib; sourceTree = "<group>"; };
+		69E852D0217A95FC007D9C3D /* GamePieceButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GamePieceButton.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -165,6 +167,7 @@
 			isa = PBXGroup;
 			children = (
 				2D6D79202171506E004B061B /* ControlPanelBtn.swift */,
+				69E852D0217A95FC007D9C3D /* GamePieceButton.swift */,
 			);
 			path = buttons;
 			sourceTree = "<group>";
@@ -331,6 +334,7 @@
 				2D6D79212171506E004B061B /* ControlPanelBtn.swift in Sources */,
 				2D6D792721715225004B061B /* GameBoard.swift in Sources */,
 				2D6D7924217151E0004B061B /* PlayerView.swift in Sources */,
+				69E852D1217A95FC007D9C3D /* GamePieceButton.swift in Sources */,
 				2D6D792C217152B9004B061B /* TicTacToeVC.swift in Sources */,
 				2D6D79292171524F004B061B /* ControlPanel.swift in Sources */,
 				2D6D78EB21714F18004B061B /* AppDelegate.swift in Sources */,

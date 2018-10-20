@@ -35,16 +35,18 @@ class ControlPanel: UIView {
         self.backgroundColor = UIColor(hexFromString: "#F8F8F8")
         self.availableHeight = self.frame.height
         
-        displayRedoBtn()
-        displayUndoBtn()
-        displayResetBtn()
+	
     }
     
     /** Custom Methods **/
     func displayUndoBtn()
     {
         /** Properties **/
-        let undoBtnFrame = CGRect.init(x: self.frame.origin.x, y: 0, width: self.frame.width * 0.25, height: availableHeight)
+        let undoBtnFrame = CGRect.init(
+			x: self.frame.origin.x,
+			y: 0,
+			width: self.frame.width * 0.25,
+			height: availableHeight)
 
         print(undoBtnFrame)
         
@@ -56,7 +58,11 @@ class ControlPanel: UIView {
     func displayResetBtn()
     {
         /** Properties **/
-        let resetBtnFrame = CGRect.init(x: self.frame.width * 0.25, y: 0, width: self.frame.width * 0.50, height: availableHeight)
+        let resetBtnFrame = CGRect.init(
+			x: self.undoBtn.frame.width * 0.75,
+			y: 0,
+			width: self.frame.width * 0.50,
+			height: availableHeight)
         
         self.resetBtn = ControlPanelBtn.init(frame: resetBtnFrame, andColor: .yellow, andText: "RESET")
         self.addSubview(resetBtn)
@@ -65,7 +71,11 @@ class ControlPanel: UIView {
     func displayRedoBtn()
     {
         /** Properties **/
-        let redoBtnFrame = CGRect.init(x: self.frame.width * 0.75, y: 0, width: self.frame.width * 0.25, height: availableHeight)
+        let redoBtnFrame = CGRect.init(
+			x: self.frame.width * 0.75,
+			y: 0,
+			width: self.frame.width * 0.25,
+			height: availableHeight)
         
         self.redoBtn = ControlPanelBtn.init(frame: redoBtnFrame, andColor: .blue, andText: "REDO")
         self.addSubview(redoBtn)

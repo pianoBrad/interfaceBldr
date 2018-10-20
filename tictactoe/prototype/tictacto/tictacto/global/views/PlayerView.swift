@@ -8,8 +8,16 @@
 
 import UIKit
 
-class PlayerView: UIView {
-    override init(frame: CGRect) {
+
+class PlayerView: UIView
+{
+	/** Properties **/
+	
+
+	
+	
+	/** Overrides **/
+	override init(frame: CGRect) {
         super.init(frame: frame)
         commonInit()
     }
