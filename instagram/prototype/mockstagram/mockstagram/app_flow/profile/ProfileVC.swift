@@ -137,7 +137,7 @@ extension ProfileVC : ProfileHeaderViewDelegate
     {
         let vc = UIViewController()
         let nav = StandardFormNavController(rootViewController: vc)
-        vc.view = ProfileEditView()
+        vc.view = ProfileEditView(withNav: nav)
         vc.navigationItem.title = "Edit Profile"
         self.present(nav, animated: true, completion: nil)
     }

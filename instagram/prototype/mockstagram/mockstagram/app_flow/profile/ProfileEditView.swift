@@ -13,6 +13,10 @@ class ProfileEditView: UIView
     /** Properties **/
     @IBOutlet var contentView: UIView!
     
+    @IBOutlet weak var bizToolsBtn: StandardFormSectionBtn!
+    
+    var curNav : UINavigationController?
+    
     /** Overrides **/
     override init(frame: CGRect)
     {
@@ -26,6 +30,12 @@ class ProfileEditView: UIView
         commonInit()
     }
     
+    convenience init(withNav: UINavigationController)
+    {
+        self.init(frame: .zero)
+        self.curNav = withNav
+    }
+    
     /** Custom methods **/
     func commonInit()
     {
@@ -37,11 +47,31 @@ class ProfileEditView: UIView
         self.addSubview(contentView)
         contentView.frame = self.bounds
         contentView.autoresizingMask = [.flexibleWidth, .flexibleHeight]
-    
+        
+        self.bizToolsBtn.btnDelegate = self
+        
         loadForm()
     }
     
     func loadForm()
     {
+    }
+}
+
+extension ProfileEditView : StandardFormSectionBtnDelegate
+{
+    func btnPressed(_ sender: StandardFormSectionBtn)
+    {
+        switch sender
+        {
+        case bizToolsBtn:
+            let vc = UIViewController()
+            vc.view = StandardSliderView()
+            vc.title = "Try Mockstagram Biz Tools!"
+            self.curNav?.pushViewController(vc, animated: true)
+            break
+        default:
+            break
+        }
     }
 }

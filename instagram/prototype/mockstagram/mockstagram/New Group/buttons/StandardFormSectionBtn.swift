@@ -8,6 +8,11 @@
 
 import UIKit
 
+protocol StandardFormSectionBtnDelegate: class
+{
+    func btnPressed(_ sender : StandardFormSectionBtn)
+}
+
 @IBDesignable
 class StandardFormSectionBtn: UIButton
 {
@@ -15,6 +20,8 @@ class StandardFormSectionBtn: UIButton
     var topDivider = UIView()
     var botDivider = UIView()
     var borders : [UIView] = []
+    
+    weak var btnDelegate : StandardFormSectionBtnDelegate?
     
     /** Overrides **/
     override init(frame: CGRect)
@@ -53,6 +60,8 @@ class StandardFormSectionBtn: UIButton
             top: 0, left: theme.primaryStackSpacingX * 2,
             bottom: 0, right: theme.primaryStackSpacingX * 2
         )
+        
+        self.addTarget(self, action: #selector(btnPressed), for: .touchUpInside)
     }
     
     func setBorderConstraints(forBorder: UIView, isTop: Bool = false)
@@ -90,5 +99,10 @@ class StandardFormSectionBtn: UIButton
         self.addConstraints([
             leadingConst, trailingConst, verticalConst, heightConst
         ])
+    }
+    
+    @objc func btnPressed(_ sender: UIButton)
+    {
+        btnDelegate?.btnPressed(self)
     }
 }
