@@ -15,6 +15,8 @@ class ProfileVC: UIViewController {
     @IBOutlet weak var contentScrollView: UIScrollView!
     @IBOutlet weak var contentStack: UIStackView!
 
+    var rightNavIconImage = UIImage(named: "icon_hamburger")!
+    
     var headerView : ProfileHeaderView?
     var occupationView : ProfileOccupationView?
     var bioView : DynamicHeightLabel?
@@ -30,7 +32,6 @@ class ProfileVC: UIViewController {
     {
         super.viewDidLoad()
         
-        self.view.backgroundColor = .blue
         addProfileHeader()
         addOccupation(titled: "test occupation")
         addBio(withText: bio)
@@ -60,6 +61,20 @@ class ProfileVC: UIViewController {
         { (context) in
             // After rotation
         }
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        let hamburger = UIBarButtonItem(
+            image: rightNavIconImage, style: .plain,
+            target: self, action: #selector(hamburgerPressed)
+        )
+        self.navigationController?.navigationBar.topItem?.setRightBarButtonItems(
+            [hamburger], animated: false)
+    }
+    
+    override func viewWillDisappear(_ animated: Bool) {
+        self.navigationController?.navigationBar.topItem?.setRightBarButtonItems(
+            [], animated: false)
     }
     
     /** Custom methods **/
@@ -130,6 +145,12 @@ class ProfileVC: UIViewController {
         contentStack.insertArrangedSubview(
             contactView!, at: contentStack.arrangedSubviews.count
         )
+    }
+    
+    /** Actions **/
+    @objc func hamburgerPressed(_ sender : UIBarButtonItem)
+    {
+        print("test!")
     }
 }
 
