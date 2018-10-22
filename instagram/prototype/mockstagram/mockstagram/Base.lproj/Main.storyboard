@@ -132,7 +132,6 @@
         <!--Master ContainerVC-->
         <scene sceneID="tqA-bm-sYg">
             <objects>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="f6D-Qc-XqE" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <viewController id="iGM-24-pQ4" customClass="MasterContainerVC" customModule="mockstagram" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="Zr8-2n-kGq">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
@@ -153,25 +152,36 @@
                                     <segue destination="C4Y-WN-9ak" kind="embed" id="QiD-hj-Byx"/>
                                 </connections>
                             </containerView>
+                            <view userInteractionEnabled="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="TEN-dU-3FE" userLabel="Touch Listener">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            </view>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
+                            <constraint firstItem="TEN-dU-3FE" firstAttribute="height" secondItem="Oct-Qe-s01" secondAttribute="height" id="1QH-e3-3TZ"/>
                             <constraint firstItem="eId-LQ-NhW" firstAttribute="height" secondItem="Zr8-2n-kGq" secondAttribute="height" id="6Sc-dd-tTr"/>
+                            <constraint firstItem="TEN-dU-3FE" firstAttribute="leading" secondItem="Oct-Qe-s01" secondAttribute="leading" id="AoU-nZ-VvO"/>
+                            <constraint firstItem="TEN-dU-3FE" firstAttribute="top" secondItem="Oct-Qe-s01" secondAttribute="top" id="Iiq-eL-hmr"/>
                             <constraint firstItem="Oct-Qe-s01" firstAttribute="width" secondItem="Zr8-2n-kGq" secondAttribute="width" id="J2j-aL-mCr"/>
                             <constraint firstItem="Oct-Qe-s01" firstAttribute="trailing" secondItem="eId-LQ-NhW" secondAttribute="leading" id="TcG-BT-6mU"/>
                             <constraint firstItem="Oct-Qe-s01" firstAttribute="height" secondItem="Zr8-2n-kGq" secondAttribute="height" id="WeS-be-Ad7"/>
+                            <constraint firstItem="TEN-dU-3FE" firstAttribute="width" secondItem="Oct-Qe-s01" secondAttribute="width" id="Y4a-lN-MRb"/>
                             <constraint firstItem="eId-LQ-NhW" firstAttribute="top" secondItem="Zr8-2n-kGq" secondAttribute="top" id="fUJ-rL-LcM"/>
                             <constraint firstItem="Oct-Qe-s01" firstAttribute="leading" secondItem="Zr8-2n-kGq" secondAttribute="leading" id="m3Q-C5-eEo"/>
                             <constraint firstItem="Oct-Qe-s01" firstAttribute="top" secondItem="Zr8-2n-kGq" secondAttribute="top" id="p79-oG-PPl"/>
                         </constraints>
+                        <viewLayoutGuide key="safeArea" id="Yb2-Mz-17V"/>
                     </view>
                     <connections>
                         <outlet property="profileHamburgerContainer" destination="eId-LQ-NhW" id="8Oa-f8-KAY"/>
                         <outlet property="profileHamburgerWidthConst" destination="syD-xA-wun" id="mDO-Sp-exw"/>
                         <outlet property="tabControllerContainer" destination="Oct-Qe-s01" id="KvS-s4-oQw"/>
                         <outlet property="tabControllerLeadingConst" destination="m3Q-C5-eEo" id="ZA1-9k-HJp"/>
+                        <outlet property="touchListenerView" destination="TEN-dU-3FE" id="R8i-9s-EDM"/>
                     </connections>
                 </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="f6D-Qc-XqE" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-1177" y="-574"/>
         </scene>
@@ -249,6 +259,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="200" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" red="0.14901960780000001" green="0.73725490199999999" blue="0.67450980390000004" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <viewLayoutGuide key="safeArea" id="zxv-4A-E8N"/>
                     </view>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="5dB-Gu-LFD" userLabel="First Responder" sceneMemberID="firstResponder"/>

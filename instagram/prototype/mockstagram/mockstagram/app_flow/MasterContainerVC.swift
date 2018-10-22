@@ -15,6 +15,7 @@ class MasterContainerVC: UIViewController
     @IBOutlet weak var profileHamburgerContainer: UIView!
     @IBOutlet weak var tabControllerLeadingConst: NSLayoutConstraint!
     @IBOutlet weak var profileHamburgerWidthConst: NSLayoutConstraint!
+    @IBOutlet weak var touchListenerView: UIView!
     
     var profileMenuIsOpen : Bool = false
     
@@ -22,6 +23,10 @@ class MasterContainerVC: UIViewController
     override func viewDidLoad()
     {
         super.viewDidLoad()
+        touchListenerView.isUserInteractionEnabled = false
+        let gesture = UITapGestureRecognizer(
+            target: self, action: #selector(openProfileMenu))
+        touchListenerView.addGestureRecognizer(gesture)
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?)
@@ -33,7 +38,7 @@ class MasterContainerVC: UIViewController
     }
     
     /** Custom methods **/
-    func openProfileMenu()
+    @objc func openProfileMenu()
     {
         var leadingConstant : CGFloat = 0
         
@@ -49,6 +54,7 @@ class MasterContainerVC: UIViewController
             break
         }
         
+        self.touchListenerView.isUserInteractionEnabled = profileMenuIsOpen
         self.tabControllerLeadingConst.constant = leadingConstant
         
         UIView.animate(
