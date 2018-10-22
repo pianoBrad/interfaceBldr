@@ -8,14 +8,18 @@
 
 import UIKit
 
-@IBDesignable
-class ProfileVC: UIViewController {
+protocol ProfileVCDelegate : class
+{
+    func hamburgerItemPressed(_ sender: UIBarButtonItem)
+}
 
+@IBDesignable
+class ProfileVC: UIViewController
+{
     /** Properties **/
+    @IBOutlet weak var hamburgerItem: UIBarButtonItem!
     @IBOutlet weak var contentScrollView: UIScrollView!
     @IBOutlet weak var contentStack: UIStackView!
-
-    var rightNavIconImage = UIImage(named: "icon_hamburger")!
     
     var headerView : ProfileHeaderView?
     var occupationView : ProfileOccupationView?
@@ -26,6 +30,8 @@ class ProfileVC: UIViewController {
     
     var bio : String = "Tester bio! Tester bio! Tester bio! Tester bio! Tester bio! Tester bio! Tester bio! Tester bio! Tester bio! Tester bio! Tester bio! Tester bio! Tester bio! Tester bio! Tester bio! Tester bio! Tester bio! Tester bio! Tester bio! Tester bio! Tester bio! Tester bio! Tester bio!"
     var followers : [String] = ["myFriend", "someDude", "anotherHomie"]
+    
+    weak var profileDelegate : ProfileVCDelegate?
     
     /** Overrides **/
     override func viewDidLoad()
@@ -61,20 +67,6 @@ class ProfileVC: UIViewController {
         { (context) in
             // After rotation
         }
-    }
-    
-    override func viewWillAppear(_ animated: Bool) {
-        let hamburger = UIBarButtonItem(
-            image: rightNavIconImage, style: .plain,
-            target: self, action: #selector(hamburgerPressed)
-        )
-        self.navigationController?.navigationBar.topItem?.setRightBarButtonItems(
-            [hamburger], animated: false)
-    }
-    
-    override func viewWillDisappear(_ animated: Bool) {
-        self.navigationController?.navigationBar.topItem?.setRightBarButtonItems(
-            [], animated: false)
     }
     
     /** Custom methods **/
@@ -148,9 +140,9 @@ class ProfileVC: UIViewController {
     }
     
     /** Actions **/
-    @objc func hamburgerPressed(_ sender : UIBarButtonItem)
+    @IBAction func hamburgerTapped(_ sender: UIBarButtonItem)
     {
-        print("test!")
+        self.profileDelegate?.hamburgerItemPressed(sender)
     }
 }
 

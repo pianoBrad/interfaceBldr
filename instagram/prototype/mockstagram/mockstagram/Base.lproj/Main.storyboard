@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14313.18" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="Lmd-On-Wha">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14313.18" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="iGM-24-pQ4">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
@@ -59,7 +59,24 @@
             </objects>
             <point key="canvasLocation" x="1089" y="1127"/>
         </scene>
-        <!--ProfileVC-->
+        <!--Item-->
+        <scene sceneID="AJF-TZ-4Pf">
+            <objects>
+                <navigationController id="7fZ-E6-KGh" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="Item" selectedImage="icon_active_profile" id="NXj-Ce-Gpt"/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="bfO-sU-5kB">
+                        <rect key="frame" x="0.0" y="20" width="375" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <connections>
+                        <segue destination="cqs-Fu-qec" kind="relationship" relationship="rootViewController" id="6gy-oe-sJ3"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="edC-4J-FAM" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1089" y="1836"/>
+        </scene>
+        <!--Mockstagram-->
         <scene sceneID="mVh-Hr-nEj">
             <objects>
                 <viewController id="cqs-Fu-qec" customClass="ProfileVC" customModule="mockstagram" customModuleProvider="target" sceneMemberID="viewController">
@@ -94,15 +111,69 @@
                         <viewLayoutGuide key="safeArea" id="tZy-Br-zsZ"/>
                     </view>
                     <tabBarItem key="tabBarItem" image="icon_profile" selectedImage="icon_active_profile" id="T6b-oK-xt8"/>
+                    <navigationItem key="navigationItem" title="Mockstagram" id="Hzz-50-lkX">
+                        <barButtonItem key="rightBarButtonItem" title="Item" image="icon_hamburger" id="7PJ-B8-J9m">
+                            <connections>
+                                <action selector="hamburgerTapped:" destination="cqs-Fu-qec" id="1BY-Sm-Xlk"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                     <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
                     <connections>
                         <outlet property="contentScrollView" destination="eg6-Zb-rBx" id="fa6-ep-yZa"/>
                         <outlet property="contentStack" destination="ogO-a2-jby" id="dka-Fq-gDG"/>
+                        <outlet property="hamburgerItem" destination="7PJ-B8-J9m" id="4Zm-sf-Uc4"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="MmP-IA-HwZ" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1088.8" y="1835.5322338830586"/>
+            <point key="canvasLocation" x="1951" y="1836"/>
+        </scene>
+        <!--Master ContainerVC-->
+        <scene sceneID="tqA-bm-sYg">
+            <objects>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="f6D-Qc-XqE" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <viewController id="iGM-24-pQ4" customClass="MasterContainerVC" customModule="mockstagram" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="Zr8-2n-kGq">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <containerView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Oct-Qe-s01" userLabel="Tab Controller Container">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                                <connections>
+                                    <segue destination="TAl-yO-P6j" kind="embed" id="gVL-Tk-pvZ"/>
+                                </connections>
+                            </containerView>
+                            <containerView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="eId-LQ-NhW" userLabel="Hamburger Container">
+                                <rect key="frame" x="375" y="0.0" width="200" height="667"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="200" id="syD-xA-wun"/>
+                                </constraints>
+                                <connections>
+                                    <segue destination="C4Y-WN-9ak" kind="embed" id="QiD-hj-Byx"/>
+                                </connections>
+                            </containerView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="eId-LQ-NhW" firstAttribute="height" secondItem="Zr8-2n-kGq" secondAttribute="height" id="6Sc-dd-tTr"/>
+                            <constraint firstItem="Oct-Qe-s01" firstAttribute="width" secondItem="Zr8-2n-kGq" secondAttribute="width" id="J2j-aL-mCr"/>
+                            <constraint firstItem="Oct-Qe-s01" firstAttribute="trailing" secondItem="eId-LQ-NhW" secondAttribute="leading" id="TcG-BT-6mU"/>
+                            <constraint firstItem="Oct-Qe-s01" firstAttribute="height" secondItem="Zr8-2n-kGq" secondAttribute="height" id="WeS-be-Ad7"/>
+                            <constraint firstItem="eId-LQ-NhW" firstAttribute="top" secondItem="Zr8-2n-kGq" secondAttribute="top" id="fUJ-rL-LcM"/>
+                            <constraint firstItem="Oct-Qe-s01" firstAttribute="leading" secondItem="Zr8-2n-kGq" secondAttribute="leading" id="m3Q-C5-eEo"/>
+                            <constraint firstItem="Oct-Qe-s01" firstAttribute="top" secondItem="Zr8-2n-kGq" secondAttribute="top" id="p79-oG-PPl"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="profileHamburgerContainer" destination="eId-LQ-NhW" id="8Oa-f8-KAY"/>
+                        <outlet property="profileHamburgerWidthConst" destination="syD-xA-wun" id="mDO-Sp-exw"/>
+                        <outlet property="tabControllerContainer" destination="Oct-Qe-s01" id="KvS-s4-oQw"/>
+                        <outlet property="tabControllerLeadingConst" destination="m3Q-C5-eEo" id="ZA1-9k-HJp"/>
+                    </connections>
+                </viewController>
+            </objects>
+            <point key="canvasLocation" x="-1177" y="-574"/>
         </scene>
         <!--MainFeed-->
         <scene sceneID="qIZ-SB-4gI">
@@ -113,10 +184,10 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Ini-xV-mT4">
-                                <rect key="frame" x="0.0" y="64" width="375" height="554"/>
+                                <rect key="frame" x="0.0" y="20" width="375" height="598"/>
                                 <subviews>
                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="equalSpacing" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="yWH-l6-qyw">
-                                        <rect key="frame" x="0.0" y="0.0" width="375" height="554"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="375" height="598"/>
                                     </stackView>
                                 </subviews>
                                 <constraints>
@@ -151,7 +222,7 @@
         <!--mockstagram-->
         <scene sceneID="dVS-hR-jsM">
             <objects>
-                <tabBarController title="mockstagram" id="TAl-yO-P6j" sceneMemberID="viewController">
+                <tabBarController title="mockstagram" id="TAl-yO-P6j" customClass="MainTabBC" customModule="mockstagram" customModuleProvider="target" sceneMemberID="viewController">
                     <navigationItem key="navigationItem" title="mockstagram" id="HSm-dl-ySB"/>
                     <tabBar key="tabBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" translucent="NO" id="VZQ-oD-1h7" customClass="MainNavTabBar" customModule="mockstagram" customModuleProvider="target">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="49"/>
@@ -163,28 +234,26 @@
                         <segue destination="Azc-tT-5NT" kind="relationship" relationship="viewControllers" id="5nf-qv-UUQ"/>
                         <segue destination="Fbx-47-INv" kind="relationship" relationship="viewControllers" id="umU-50-pj8"/>
                         <segue destination="HTb-ei-lTu" kind="relationship" relationship="viewControllers" id="pjb-av-ey7"/>
-                        <segue destination="cqs-Fu-qec" kind="relationship" relationship="viewControllers" id="tr4-yc-Ag7"/>
+                        <segue destination="7fZ-E6-KGh" kind="relationship" relationship="viewControllers" id="cMG-Iv-kjC"/>
                     </connections>
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="qMu-da-zE4" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="140" y="-574"/>
         </scene>
-        <!--Navigation Controller-->
-        <scene sceneID="1PQ-w3-5xJ">
+        <!--View Controller-->
+        <scene sceneID="GTm-rT-Knh">
             <objects>
-                <navigationController id="Lmd-On-Wha" sceneMemberID="viewController">
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="rrb-FX-q3f">
-                        <rect key="frame" x="0.0" y="20" width="375" height="44"/>
-                        <autoresizingMask key="autoresizingMask"/>
-                    </navigationBar>
-                    <connections>
-                        <segue destination="TAl-yO-P6j" kind="relationship" relationship="rootViewController" id="uTR-3x-c2A"/>
-                    </connections>
-                </navigationController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="reo-G8-d79" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <viewController id="C4Y-WN-9ak" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="gYf-A4-cMN">
+                        <rect key="frame" x="0.0" y="0.0" width="200" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" red="0.14901960780000001" green="0.73725490199999999" blue="0.67450980390000004" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="5dB-Gu-LFD" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-751" y="-574"/>
+            <point key="canvasLocation" x="-1178" y="1836"/>
         </scene>
     </scenes>
     <resources>
@@ -193,6 +262,7 @@
         <image name="icon_active_profile" width="50" height="54"/>
         <image name="icon_active_rect-add" width="50" height="50"/>
         <image name="icon_active_search" width="50" height="51"/>
+        <image name="icon_hamburger" width="48" height="48"/>
         <image name="icon_heart" width="50" height="46"/>
         <image name="icon_home" width="50" height="53"/>
         <image name="icon_profile" width="50" height="54"/>

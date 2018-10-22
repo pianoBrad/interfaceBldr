@@ -24,6 +24,8 @@
 		2D3E6641216E3CD100CD96FC /* ProfileHeaderStatsView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2D3E6640216E3CD100CD96FC /* ProfileHeaderStatsView.xib */; };
 		2D3E6643216E3D3200CD96FC /* ProfileHeaderStatsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D3E6642216E3D3200CD96FC /* ProfileHeaderStatsView.swift */; };
 		2D449FC72171AD7000351D9B /* ProfileContactBtn.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D449FC62171AD7000351D9B /* ProfileContactBtn.swift */; };
+		2D4569FF217D5D9000C91E40 /* MasterContainerVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D4569FE217D5D9000C91E40 /* MasterContainerVC.swift */; };
+		2D456A01217D79D700C91E40 /* MainTabBC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D456A00217D79D700C91E40 /* MainTabBC.swift */; };
 		2D4C4880217B889600A29019 /* BizToolsSlider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D4C487F217B889600A29019 /* BizToolsSlider.swift */; };
 		2D4C4882217B891400A29019 /* BizToolsSlideOne.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2D4C4881217B891400A29019 /* BizToolsSlideOne.xib */; };
 		2D4C4884217B893400A29019 /* BizToolsSlideOne.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D4C4883217B893400A29019 /* BizToolsSlideOne.swift */; };
@@ -109,6 +111,8 @@
 		2D3E6640216E3CD100CD96FC /* ProfileHeaderStatsView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ProfileHeaderStatsView.xib; sourceTree = "<group>"; };
 		2D3E6642216E3D3200CD96FC /* ProfileHeaderStatsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileHeaderStatsView.swift; sourceTree = "<group>"; };
 		2D449FC62171AD7000351D9B /* ProfileContactBtn.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileContactBtn.swift; sourceTree = "<group>"; };
+		2D4569FE217D5D9000C91E40 /* MasterContainerVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MasterContainerVC.swift; sourceTree = "<group>"; };
+		2D456A00217D79D700C91E40 /* MainTabBC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainTabBC.swift; sourceTree = "<group>"; };
 		2D4C487F217B889600A29019 /* BizToolsSlider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BizToolsSlider.swift; sourceTree = "<group>"; };
 		2D4C4881217B891400A29019 /* BizToolsSlideOne.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = BizToolsSlideOne.xib; sourceTree = "<group>"; };
 		2D4C4883217B893400A29019 /* BizToolsSlideOne.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BizToolsSlideOne.swift; sourceTree = "<group>"; };
@@ -318,6 +322,8 @@
 		2D8659412159746C003A5B67 /* app_flow */ = {
 			isa = PBXGroup;
 			children = (
+				2D4569FE217D5D9000C91E40 /* MasterContainerVC.swift */,
+				2D456A00217D79D700C91E40 /* MainTabBC.swift */,
 				2D865944215983F6003A5B67 /* feed */,
 				2DEE28FE216D07A10007A239 /* profile */,
 			);
@@ -608,6 +614,7 @@
 				2DF206782170E93A008A6A6A /* UIStackViewExtensions.swift in Sources */,
 				2DEE28FD216D079B0007A239 /* ProfileVC.swift in Sources */,
 				2D2C885C2170D97C009F7894 /* StoryStack.swift in Sources */,
+				2D456A01217D79D700C91E40 /* MainTabBC.swift in Sources */,
 				2DC1A3892173AF2E004833DD /* DynamicHeightLabel.swift in Sources */,
 				2D4C488B217B94BA00A29019 /* NSLayoutConstraintExtensions.swift in Sources */,
 				2D2C885E2170DA63009F7894 /* StoryBtnView.swift in Sources */,
@@ -616,6 +623,7 @@
 				2D4C4889217B8EB300A29019 /* BizToolsSlideTwo.swift in Sources */,
 				2DC1A38621739FF9004833DD /* ProfileOccupationView.swift in Sources */,
 				2D4C4880217B889600A29019 /* BizToolsSlider.swift in Sources */,
+				2D4569FF217D5D9000C91E40 /* MasterContainerVC.swift in Sources */,
 				2DDC94F12178DDA7002C6B5B /* StandardFormSectionBtn.swift in Sources */,
 				2DC1A38B2174252F004833DD /* ProfileFollowersListView.swift in Sources */,
 				2DC1A3842173911D004833DD /* ProfileHeaderView.swift in Sources */,
