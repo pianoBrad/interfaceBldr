@@ -251,10 +251,10 @@
             </objects>
             <point key="canvasLocation" x="140" y="-574"/>
         </scene>
-        <!--View Controller-->
+        <!--Profile MenuVC-->
         <scene sceneID="GTm-rT-Knh">
             <objects>
-                <viewController id="C4Y-WN-9ak" sceneMemberID="viewController">
+                <viewController id="C4Y-WN-9ak" customClass="ProfileMenuVC" customModule="mockstagram" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="gYf-A4-cMN">
                         <rect key="frame" x="0.0" y="0.0" width="200" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -279,6 +279,7 @@
                                 </constraints>
                                 <userDefinedRuntimeAttributes>
                                     <userDefinedRuntimeAttribute type="string" keyPath="menuTitle" value="Your Activity"/>
+                                    <userDefinedRuntimeAttribute type="image" keyPath="iconImage" value="icon_heart"/>
                                 </userDefinedRuntimeAttributes>
                             </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="50J-Uz-nZh" userLabel="Nametag Menu Item" customClass="HamburgerMenuItemView" customModule="mockstagram" customModuleProvider="target">
@@ -289,6 +290,7 @@
                                 </constraints>
                                 <userDefinedRuntimeAttributes>
                                     <userDefinedRuntimeAttribute type="string" keyPath="menuTitle" value="Nametag"/>
+                                    <userDefinedRuntimeAttribute type="image" keyPath="iconImage" value="icon_active_search"/>
                                 </userDefinedRuntimeAttributes>
                             </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="h0E-An-2MV" userLabel="Saved Menu Item" customClass="HamburgerMenuItemView" customModule="mockstagram" customModuleProvider="target">
@@ -299,6 +301,7 @@
                                 </constraints>
                                 <userDefinedRuntimeAttributes>
                                     <userDefinedRuntimeAttribute type="string" keyPath="menuTitle" value="Saved"/>
+                                    <userDefinedRuntimeAttribute type="image" keyPath="iconImage" value="icon_hamburger"/>
                                 </userDefinedRuntimeAttributes>
                             </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="fp5-cU-XIO" userLabel="Discover Menu Item" customClass="HamburgerMenuItemView" customModule="mockstagram" customModuleProvider="target">
@@ -309,6 +312,7 @@
                                 </constraints>
                                 <userDefinedRuntimeAttributes>
                                     <userDefinedRuntimeAttribute type="string" keyPath="menuTitle" value="Discover People"/>
+                                    <userDefinedRuntimeAttribute type="image" keyPath="iconImage" value="icon_home"/>
                                 </userDefinedRuntimeAttributes>
                             </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="J9k-cc-nGd" userLabel="Facebook Menu Item" customClass="HamburgerMenuItemView" customModule="mockstagram" customModuleProvider="target">
@@ -319,6 +323,30 @@
                                 </constraints>
                                 <userDefinedRuntimeAttributes>
                                     <userDefinedRuntimeAttribute type="string" keyPath="menuTitle" value="Open Facebook"/>
+                                    <userDefinedRuntimeAttribute type="image" keyPath="iconImage" value="icon_rect-add"/>
+                                </userDefinedRuntimeAttributes>
+                            </view>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="qLc-nm-5EP" customClass="HamburgerMenuItemView" customModule="mockstagram" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="617" width="200" height="50"/>
+                                <subviews>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="g1d-3A-sR4" userLabel="Top Border View">
+                                        <rect key="frame" x="0.0" y="0.0" width="200" height="1"/>
+                                        <color key="backgroundColor" red="0.93333333333333335" green="0.93333333333333335" blue="0.93333333333333335" alpha="1" colorSpace="calibratedRGB"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="1" id="OKa-hb-nod"/>
+                                        </constraints>
+                                    </view>
+                                </subviews>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstItem="g1d-3A-sR4" firstAttribute="top" secondItem="qLc-nm-5EP" secondAttribute="top" id="C5f-GL-cum"/>
+                                    <constraint firstAttribute="trailing" secondItem="g1d-3A-sR4" secondAttribute="trailing" id="U48-4R-R6j"/>
+                                    <constraint firstItem="g1d-3A-sR4" firstAttribute="leading" secondItem="qLc-nm-5EP" secondAttribute="leading" id="ZNA-CN-9qV"/>
+                                    <constraint firstAttribute="height" constant="50" id="mnn-j2-VoF"/>
+                                </constraints>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="string" keyPath="menuTitle" value="Settings"/>
+                                    <userDefinedRuntimeAttribute type="image" keyPath="iconImage" value="icon_active_profile"/>
                                 </userDefinedRuntimeAttributes>
                             </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="2Q3-g1-zFY" userLabel="Left Border View">
@@ -334,6 +362,7 @@
                             <constraint firstItem="h0E-An-2MV" firstAttribute="top" secondItem="50J-Uz-nZh" secondAttribute="bottom" id="1NA-o3-ewX"/>
                             <constraint firstItem="sBt-Hw-xRr" firstAttribute="leading" secondItem="gYf-A4-cMN" secondAttribute="leading" id="1g2-53-rfb"/>
                             <constraint firstItem="2Q3-g1-zFY" firstAttribute="top" secondItem="gYf-A4-cMN" secondAttribute="top" id="3OR-3K-qqc"/>
+                            <constraint firstItem="qLc-nm-5EP" firstAttribute="leading" secondItem="Ghr-Ua-Fwr" secondAttribute="leading" id="3tY-Ov-DnB"/>
                             <constraint firstItem="h0E-An-2MV" firstAttribute="trailing" secondItem="Ghr-Ua-Fwr" secondAttribute="trailing" id="5IK-rj-CQ7"/>
                             <constraint firstItem="2Q3-g1-zFY" firstAttribute="bottom" secondItem="gYf-A4-cMN" secondAttribute="bottom" id="6w4-1Q-Tg7"/>
                             <constraint firstItem="sBt-Hw-xRr" firstAttribute="top" secondItem="Ghr-Ua-Fwr" secondAttribute="top" id="7Rt-XW-2Tl"/>
@@ -344,9 +373,11 @@
                             <constraint firstItem="J9k-cc-nGd" firstAttribute="leading" secondItem="Ghr-Ua-Fwr" secondAttribute="leading" id="OY0-ac-irW"/>
                             <constraint firstItem="50J-Uz-nZh" firstAttribute="trailing" secondItem="Ghr-Ua-Fwr" secondAttribute="trailing" id="Otd-Q9-7Ou"/>
                             <constraint firstItem="2Q3-g1-zFY" firstAttribute="leading" secondItem="Ghr-Ua-Fwr" secondAttribute="leading" id="PJf-ra-AzO"/>
+                            <constraint firstItem="qLc-nm-5EP" firstAttribute="bottom" secondItem="Ghr-Ua-Fwr" secondAttribute="bottom" id="PQS-Jd-AVK"/>
                             <constraint firstItem="Ghr-Ua-Fwr" firstAttribute="trailing" secondItem="fp5-cU-XIO" secondAttribute="trailing" id="PXa-4x-Z5C"/>
                             <constraint firstItem="J9k-cc-nGd" firstAttribute="top" secondItem="fp5-cU-XIO" secondAttribute="bottom" id="SAn-Bs-CYx"/>
                             <constraint firstItem="6Oc-WB-H6D" firstAttribute="top" secondItem="sBt-Hw-xRr" secondAttribute="bottom" constant="1" id="WbM-65-9eu"/>
+                            <constraint firstItem="qLc-nm-5EP" firstAttribute="trailing" secondItem="gYf-A4-cMN" secondAttribute="trailing" id="Whb-ZN-3Zy"/>
                             <constraint firstItem="50J-Uz-nZh" firstAttribute="top" secondItem="6Oc-WB-H6D" secondAttribute="bottom" id="Wyf-IN-wCS"/>
                             <constraint firstItem="sBt-Hw-xRr" firstAttribute="width" secondItem="gYf-A4-cMN" secondAttribute="width" id="aie-O1-a2L"/>
                             <constraint firstItem="h0E-An-2MV" firstAttribute="leading" secondItem="Ghr-Ua-Fwr" secondAttribute="leading" id="i5T-Kz-nAP"/>
