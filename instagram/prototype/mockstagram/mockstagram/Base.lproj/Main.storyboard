@@ -279,7 +279,7 @@
                                 </constraints>
                                 <userDefinedRuntimeAttributes>
                                     <userDefinedRuntimeAttribute type="string" keyPath="menuTitle" value="Your Activity"/>
-                                    <userDefinedRuntimeAttribute type="image" keyPath="iconImage" value="icon_heart"/>
+                                    <userDefinedRuntimeAttribute type="image" keyPath="iconImage" value="icon_clock"/>
                                 </userDefinedRuntimeAttributes>
                             </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="50J-Uz-nZh" userLabel="Nametag Menu Item" customClass="HamburgerMenuItemView" customModule="mockstagram" customModuleProvider="target">
@@ -290,7 +290,7 @@
                                 </constraints>
                                 <userDefinedRuntimeAttributes>
                                     <userDefinedRuntimeAttribute type="string" keyPath="menuTitle" value="Nametag"/>
-                                    <userDefinedRuntimeAttribute type="image" keyPath="iconImage" value="icon_active_search"/>
+                                    <userDefinedRuntimeAttribute type="image" keyPath="iconImage" value="icon_nametag"/>
                                 </userDefinedRuntimeAttributes>
                             </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="h0E-An-2MV" userLabel="Saved Menu Item" customClass="HamburgerMenuItemView" customModule="mockstagram" customModuleProvider="target">
@@ -301,7 +301,7 @@
                                 </constraints>
                                 <userDefinedRuntimeAttributes>
                                     <userDefinedRuntimeAttribute type="string" keyPath="menuTitle" value="Saved"/>
-                                    <userDefinedRuntimeAttribute type="image" keyPath="iconImage" value="icon_hamburger"/>
+                                    <userDefinedRuntimeAttribute type="image" keyPath="iconImage" value="icon_badge"/>
                                 </userDefinedRuntimeAttributes>
                             </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="fp5-cU-XIO" userLabel="Discover Menu Item" customClass="HamburgerMenuItemView" customModule="mockstagram" customModuleProvider="target">
@@ -312,7 +312,7 @@
                                 </constraints>
                                 <userDefinedRuntimeAttributes>
                                     <userDefinedRuntimeAttribute type="string" keyPath="menuTitle" value="Discover People"/>
-                                    <userDefinedRuntimeAttribute type="image" keyPath="iconImage" value="icon_home"/>
+                                    <userDefinedRuntimeAttribute type="image" keyPath="iconImage" value="icon_person_plus"/>
                                 </userDefinedRuntimeAttributes>
                             </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="J9k-cc-nGd" userLabel="Facebook Menu Item" customClass="HamburgerMenuItemView" customModule="mockstagram" customModuleProvider="target">
@@ -323,7 +323,7 @@
                                 </constraints>
                                 <userDefinedRuntimeAttributes>
                                     <userDefinedRuntimeAttribute type="string" keyPath="menuTitle" value="Open Facebook"/>
-                                    <userDefinedRuntimeAttribute type="image" keyPath="iconImage" value="icon_rect-add"/>
+                                    <userDefinedRuntimeAttribute type="image" keyPath="iconImage" value="icon_fb"/>
                                 </userDefinedRuntimeAttributes>
                             </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="qLc-nm-5EP" customClass="HamburgerMenuItemView" customModule="mockstagram" customModuleProvider="target">
@@ -346,7 +346,7 @@
                                 </constraints>
                                 <userDefinedRuntimeAttributes>
                                     <userDefinedRuntimeAttribute type="string" keyPath="menuTitle" value="Settings"/>
-                                    <userDefinedRuntimeAttribute type="image" keyPath="iconImage" value="icon_active_profile"/>
+                                    <userDefinedRuntimeAttribute type="image" keyPath="iconImage" value="icon_settings"/>
                                 </userDefinedRuntimeAttributes>
                             </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="2Q3-g1-zFY" userLabel="Left Border View">
@@ -399,11 +399,17 @@
         <image name="icon_active_profile" width="50" height="54"/>
         <image name="icon_active_rect-add" width="50" height="50"/>
         <image name="icon_active_search" width="50" height="51"/>
+        <image name="icon_badge" width="48" height="56"/>
+        <image name="icon_clock" width="48" height="49"/>
+        <image name="icon_fb" width="48" height="48"/>
         <image name="icon_hamburger" width="48" height="48"/>
         <image name="icon_heart" width="50" height="46"/>
         <image name="icon_home" width="50" height="53"/>
+        <image name="icon_nametag" width="48" height="48"/>
+        <image name="icon_person_plus" width="48" height="37"/>
         <image name="icon_profile" width="50" height="54"/>
         <image name="icon_rect-add" width="50" height="50"/>
         <image name="icon_search" width="50" height="50"/>
+        <image name="icon_settings" width="48" height="48"/>
     </resources>
 </document>
