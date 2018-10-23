@@ -22,6 +22,8 @@
 		2D6D792C217152B9004B061B /* TicTacToeVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D6D792B217152B9004B061B /* TicTacToeVC.swift */; };
 		2DC1A39321750469004833DD /* GameBoardAnswerView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2DC1A39221750469004833DD /* GameBoardAnswerView.xib */; };
 		69E852D1217A95FC007D9C3D /* GamePieceButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 69E852D0217A95FC007D9C3D /* GamePieceButton.swift */; };
+		69F49A62217FC99B00BE3C5E /* PlayerButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 69F49A61217FC99B00BE3C5E /* PlayerButton.swift */; };
+		69F49A64217FC9DF00BE3C5E /* PlayerButton.xib in Resources */ = {isa = PBXBuildFile; fileRef = 69F49A63217FC9DF00BE3C5E /* PlayerButton.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -63,6 +65,8 @@
 		2D6D792B217152B9004B061B /* TicTacToeVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TicTacToeVC.swift; sourceTree = "<group>"; };
 		2DC1A39221750469004833DD /* GameBoardAnswerView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = GameBoardAnswerView.xib; sourceTree = "<group>"; };
 		69E852D0217A95FC007D9C3D /* GamePieceButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GamePieceButton.swift; sourceTree = "<group>"; };
+		69F49A61217FC99B00BE3C5E /* PlayerButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayerButton.swift; sourceTree = "<group>"; };
+		69F49A63217FC9DF00BE3C5E /* PlayerButton.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PlayerButton.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -168,6 +172,8 @@
 			children = (
 				2D6D79202171506E004B061B /* ControlPanelBtn.swift */,
 				69E852D0217A95FC007D9C3D /* GamePieceButton.swift */,
+				69F49A61217FC99B00BE3C5E /* PlayerButton.swift */,
+				69F49A63217FC9DF00BE3C5E /* PlayerButton.xib */,
 			);
 			path = buttons;
 			sourceTree = "<group>";
@@ -302,6 +308,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				2D6D78F821714F19004B061B /* LaunchScreen.storyboard in Resources */,
+				69F49A64217FC9DF00BE3C5E /* PlayerButton.xib in Resources */,
 				2DC1A39321750469004833DD /* GameBoardAnswerView.xib in Resources */,
 				2D6D78F521714F19004B061B /* Assets.xcassets in Resources */,
 				2D6D78F021714F18004B061B /* Main.storyboard in Resources */,
@@ -333,6 +340,7 @@
 				2D6D791E21714F45004B061B /* UIColorExtensions.swift in Sources */,
 				2D6D79212171506E004B061B /* ControlPanelBtn.swift in Sources */,
 				2D6D792721715225004B061B /* GameBoard.swift in Sources */,
+				69F49A62217FC99B00BE3C5E /* PlayerButton.swift in Sources */,
 				2D6D7924217151E0004B061B /* PlayerView.swift in Sources */,
 				69E852D1217A95FC007D9C3D /* GamePieceButton.swift in Sources */,
 				2D6D792C217152B9004B061B /* TicTacToeVC.swift in Sources */,

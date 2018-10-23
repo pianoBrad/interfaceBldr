@@ -23,85 +23,19 @@
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="15R-zu-aCK" userLabel="PlayerStatus View">
                                         <rect key="frame" x="20" y="75.333333333333329" width="335" height="53.999999999999986"/>
                                         <subviews>
-                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="UML-lT-qtK" userLabel="PlayerX View" customClass="PlayerView" customModule="tictacto" customModuleProvider="target">
+                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="UML-lT-qtK" userLabel="PlayerX View" customClass="PlayerButton" customModule="tictacto" customModuleProvider="target">
                                                 <rect key="frame" x="0.0" y="0.0" width="157.66666666666666" height="54"/>
-                                                <subviews>
-                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="7sO-E6-cfu" userLabel="PlayerX Button">
-                                                        <rect key="frame" x="0.0" y="0.0" width="157.66666666666666" height="54"/>
-                                                    </button>
-                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="X" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="sYX-xd-4vn" userLabel="PlayerX Label">
-                                                        <rect key="frame" x="10" y="7" width="17" height="40"/>
-                                                        <fontDescription key="fontDescription" name="ZapfDingbatsITC" family="Zapf Dingbats" pointSize="25"/>
-                                                        <nil key="textColor"/>
-                                                        <nil key="highlightedColor"/>
-                                                    </label>
-                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="-" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5UI-t1-hmY" userLabel="PlayerX Score">
-                                                        <rect key="frame" x="136.66666666666666" y="7" width="11" height="40"/>
-                                                        <fontDescription key="fontDescription" name="Noteworthy-Bold" family="Noteworthy" pointSize="25"/>
-                                                        <nil key="textColor"/>
-                                                        <nil key="highlightedColor"/>
-                                                    </label>
-                                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="UV5-Uv-cCq" userLabel="PlayerX TurnIndicator View">
-                                                        <rect key="frame" x="0.0" y="50.333333333333343" width="157.66666666666666" height="3.6666666666666643"/>
-                                                        <color key="backgroundColor" red="0.14901960784313725" green="0.73725490196078436" blue="0.67450980392156867" alpha="1" colorSpace="calibratedRGB"/>
-                                                    </view>
-                                                </subviews>
                                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                                <constraints>
-                                                    <constraint firstItem="7sO-E6-cfu" firstAttribute="centerY" secondItem="UML-lT-qtK" secondAttribute="centerY" id="FvI-gF-Ynj"/>
-                                                    <constraint firstItem="sYX-xd-4vn" firstAttribute="leading" secondItem="UML-lT-qtK" secondAttribute="leading" constant="10" id="GM4-gN-bEr"/>
-                                                    <constraint firstItem="UV5-Uv-cCq" firstAttribute="centerX" secondItem="UML-lT-qtK" secondAttribute="centerX" id="RAG-ie-sIr"/>
-                                                    <constraint firstItem="sYX-xd-4vn" firstAttribute="top" secondItem="UML-lT-qtK" secondAttribute="top" constant="7.0000000000000426" id="Rr4-ph-QYQ"/>
-                                                    <constraint firstItem="7sO-E6-cfu" firstAttribute="width" secondItem="UML-lT-qtK" secondAttribute="width" id="TJt-SZ-NfG"/>
-                                                    <constraint firstAttribute="bottom" secondItem="UV5-Uv-cCq" secondAttribute="bottom" id="Vuv-5B-rxX"/>
-                                                    <constraint firstItem="UV5-Uv-cCq" firstAttribute="height" secondItem="UML-lT-qtK" secondAttribute="height" multiplier="1:14" id="Xak-cA-7t2"/>
-                                                    <constraint firstItem="sYX-xd-4vn" firstAttribute="centerY" secondItem="UML-lT-qtK" secondAttribute="centerY" id="aJL-Db-Vmc"/>
-                                                    <constraint firstItem="7sO-E6-cfu" firstAttribute="height" secondItem="UML-lT-qtK" secondAttribute="height" id="fYf-xn-FEd"/>
-                                                    <constraint firstAttribute="trailing" secondItem="5UI-t1-hmY" secondAttribute="trailing" constant="10" id="gcj-SV-oKT"/>
-                                                    <constraint firstItem="UV5-Uv-cCq" firstAttribute="width" secondItem="UML-lT-qtK" secondAttribute="width" id="l5A-61-WiP"/>
-                                                    <constraint firstItem="5UI-t1-hmY" firstAttribute="centerY" secondItem="UML-lT-qtK" secondAttribute="centerY" id="mLZ-7V-7qw"/>
-                                                    <constraint firstItem="7sO-E6-cfu" firstAttribute="centerX" secondItem="UML-lT-qtK" secondAttribute="centerX" id="zLI-yT-w5G"/>
-                                                </constraints>
+                                                <userDefinedRuntimeAttributes>
+                                                    <userDefinedRuntimeAttribute type="boolean" keyPath="isActive" value="NO"/>
+                                                </userDefinedRuntimeAttributes>
                                             </view>
-                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="k1O-1L-5ha" userLabel="PlayerO View" customClass="PlayerView" customModule="tictacto" customModuleProvider="target">
+                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="k1O-1L-5ha" userLabel="PlayerO View" customClass="PlayerButton" customModule="tictacto" customModuleProvider="target">
                                                 <rect key="frame" x="167.66666666666663" y="0.0" width="157.33333333333337" height="54"/>
-                                                <subviews>
-                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Tuw-dW-qCx" userLabel="PlayerO Button">
-                                                        <rect key="frame" x="0.0" y="0.0" width="157.33333333333334" height="54"/>
-                                                    </button>
-                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="O" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="PeB-kG-Ase" userLabel="PlayerO Label">
-                                                        <rect key="frame" x="10" y="7" width="20" height="40"/>
-                                                        <fontDescription key="fontDescription" name="ZapfDingbatsITC" family="Zapf Dingbats" pointSize="25"/>
-                                                        <nil key="textColor"/>
-                                                        <nil key="highlightedColor"/>
-                                                    </label>
-                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="-" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Xn1-Zq-AQl" userLabel="PlayerO Score">
-                                                        <rect key="frame" x="136.33333333333334" y="7" width="11" height="40"/>
-                                                        <fontDescription key="fontDescription" name="Noteworthy-Bold" family="Noteworthy" pointSize="25"/>
-                                                        <nil key="textColor"/>
-                                                        <nil key="highlightedColor"/>
-                                                    </label>
-                                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="FeS-Ty-FJ0" userLabel="PlayerO TurnIndicator View">
-                                                        <rect key="frame" x="0.0" y="50.333333333333343" width="157.33333333333334" height="3.6666666666666643"/>
-                                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                                    </view>
-                                                </subviews>
                                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                                <constraints>
-                                                    <constraint firstItem="FeS-Ty-FJ0" firstAttribute="centerX" secondItem="k1O-1L-5ha" secondAttribute="centerX" id="1na-RB-8qQ"/>
-                                                    <constraint firstItem="Xn1-Zq-AQl" firstAttribute="centerY" secondItem="k1O-1L-5ha" secondAttribute="centerY" id="5V8-hU-jpg"/>
-                                                    <constraint firstAttribute="trailing" secondItem="Xn1-Zq-AQl" secondAttribute="trailing" constant="10" id="DIU-7G-eAQ"/>
-                                                    <constraint firstItem="Tuw-dW-qCx" firstAttribute="centerX" secondItem="k1O-1L-5ha" secondAttribute="centerX" id="N58-p2-WB7"/>
-                                                    <constraint firstItem="FeS-Ty-FJ0" firstAttribute="height" secondItem="k1O-1L-5ha" secondAttribute="height" multiplier="1:14" id="SMp-Gd-Ypd"/>
-                                                    <constraint firstItem="Tuw-dW-qCx" firstAttribute="centerY" secondItem="k1O-1L-5ha" secondAttribute="centerY" id="cCD-3R-Cik"/>
-                                                    <constraint firstItem="Tuw-dW-qCx" firstAttribute="width" secondItem="k1O-1L-5ha" secondAttribute="width" id="fuH-sx-brb"/>
-                                                    <constraint firstItem="PeB-kG-Ase" firstAttribute="centerY" secondItem="k1O-1L-5ha" secondAttribute="centerY" id="jPW-l1-wGS"/>
-                                                    <constraint firstItem="PeB-kG-Ase" firstAttribute="leading" secondItem="k1O-1L-5ha" secondAttribute="leading" constant="10" id="ngo-Sr-7mo"/>
-                                                    <constraint firstItem="FeS-Ty-FJ0" firstAttribute="width" secondItem="k1O-1L-5ha" secondAttribute="width" id="oBh-W0-HjF"/>
-                                                    <constraint firstAttribute="bottom" secondItem="FeS-Ty-FJ0" secondAttribute="bottom" id="wTj-TF-2WB"/>
-                                                    <constraint firstItem="PeB-kG-Ase" firstAttribute="top" secondItem="k1O-1L-5ha" secondAttribute="top" constant="7.0000000000000426" id="wtg-ow-GUs"/>
-                                                    <constraint firstItem="Tuw-dW-qCx" firstAttribute="height" secondItem="k1O-1L-5ha" secondAttribute="height" id="yno-zL-hEz"/>
-                                                </constraints>
+                                                <userDefinedRuntimeAttributes>
+                                                    <userDefinedRuntimeAttribute type="boolean" keyPath="isActive" value="NO"/>
+                                                </userDefinedRuntimeAttributes>
                                             </view>
                                         </subviews>
                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -109,11 +43,8 @@
                                             <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="38" id="38j-OL-e2g"/>
                                             <constraint firstItem="UML-lT-qtK" firstAttribute="width" secondItem="15R-zu-aCK" secondAttribute="width" multiplier="1:2" constant="-10" id="Eat-Kh-xnV"/>
                                             <constraint firstItem="UML-lT-qtK" firstAttribute="leading" secondItem="15R-zu-aCK" secondAttribute="leading" id="GPF-gH-WFx"/>
-                                            <constraint firstItem="sYX-xd-4vn" firstAttribute="centerY" secondItem="15R-zu-aCK" secondAttribute="centerY" id="UF9-qn-21r"/>
-                                            <constraint firstItem="sYX-xd-4vn" firstAttribute="top" secondItem="15R-zu-aCK" secondAttribute="top" constant="7.0000000000000426" id="WrD-Xz-1Xm"/>
                                             <constraint firstItem="UML-lT-qtK" firstAttribute="centerY" secondItem="15R-zu-aCK" secondAttribute="centerY" id="Y0c-TG-W8e"/>
                                             <constraint firstItem="k1O-1L-5ha" firstAttribute="height" secondItem="UML-lT-qtK" secondAttribute="height" id="ca3-9d-mVg"/>
-                                            <constraint firstItem="sYX-xd-4vn" firstAttribute="leading" secondItem="15R-zu-aCK" secondAttribute="leading" constant="10" id="imj-AY-3LG"/>
                                             <constraint firstItem="k1O-1L-5ha" firstAttribute="width" secondItem="UML-lT-qtK" secondAttribute="width" id="lFm-ZY-Lmm"/>
                                             <constraint firstItem="k1O-1L-5ha" firstAttribute="centerY" secondItem="UML-lT-qtK" secondAttribute="centerY" id="md2-vZ-fgh"/>
                                             <constraint firstItem="UML-lT-qtK" firstAttribute="height" secondItem="15R-zu-aCK" secondAttribute="height" id="n5D-MF-3uM"/>
@@ -410,7 +341,9 @@
                     <connections>
                         <outlet property="controlPanel" destination="4GH-M7-OMM" id="0jM-Bm-OzF"/>
                         <outlet property="gameBoard" destination="oLX-ft-3x4" id="kez-8a-bpY"/>
+                        <outlet property="playerOButton" destination="k1O-1L-5ha" id="9Pu-Ik-gci"/>
                         <outlet property="playerView" destination="Zrz-rs-kFH" id="CqI-QI-XEy"/>
+                        <outlet property="playerXButton" destination="UML-lT-qtK" id="Hf1-3h-KIj"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
