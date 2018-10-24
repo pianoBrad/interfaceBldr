@@ -23,16 +23,13 @@ class PlayerButton: UIView
 	@IBOutlet weak var playerNameLabel: UILabel!
 	@IBOutlet weak var playerScoreLabel: UILabel!
 	
-	
-	
 	weak var buttonDelegate: PlayerButtonDelegate?
-	
 	
 	@IBInspectable var isActive: Bool = false
 	{
 		didSet
 		{
-			changeButtonState(toState: isActive)
+			changeButtonState(setActive: isActive, shouldUpdateSelf: nil)
 		}
 	}
 	
@@ -65,13 +62,31 @@ class PlayerButton: UIView
 		self.addGestureRecognizer(gesture)
 	}
 	
-	func changeButtonState(toState: Bool)
+    func changeButtonState(setActive: Bool? = nil, shouldUpdateSelf : Bool? = true)
 	{
-		
-		switch toState
+        // update our isActive property to be opposite of itself,
+        // unless storyboard rendering (this avoids an error in Interface Builder)
+        if (shouldUpdateSelf != nil)
+        {
+            self.isActive = setActive != nil
+                ? setActive!
+                : !self.isActive
+        }
+    
+        // set active state to check against,
+        // using the new isActive property, unless we pass an explicit parameter
+        // into this method (setActive), then we use that
+        let activeState = setActive != nil
+            ? setActive
+            : self.isActive
+        
+        // Update button to reflect new state
+		switch activeState
 		{
 		case true:
-			self.playerTurnIndicator.backgroundColor = UIColor.init(hexFromString: "#26BCAC")
+			self.playerTurnIndicator.backgroundColor = UIColor.init(
+                hexFromString: "#26BCAC"
+            )
 			break
 		default:
 			self.playerTurnIndicator.backgroundColor = .clear

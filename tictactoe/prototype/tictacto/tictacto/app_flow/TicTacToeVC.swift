@@ -25,6 +25,9 @@ class TicTacToeVC: UIViewController {
 		playerOButton.buttonDelegate = self
 		
 		playerOButton.playerNameLabel.text = "O"
+        
+        playerXButton.changeButtonState(setActive: true)
+        playerOButton.changeButtonState(setActive: false)
     }
 }
 
@@ -33,16 +36,13 @@ extension TicTacToeVC: PlayerButtonDelegate
 {
 	func buttonTapped(_ sender: PlayerButton)
 	{
-		sender.changeButtonState(toState: !sender.isActive)
-		sender.isActive = !sender.isActive
-		
+		sender.changeButtonState()
+    		
 		switch sender {
 		case playerXButton:
-			playerOButton.changeButtonState(toState: !sender.isActive)
-			playerOButton.isActive = !sender.isActive
+            playerOButton.changeButtonState(setActive: !sender.isActive)
 		default:
-			playerXButton.changeButtonState(toState: !sender.isActive)
-			playerXButton.isActive = !sender.isActive
+			playerXButton.changeButtonState(setActive: !sender.isActive)
 			break
 		}
 	}
