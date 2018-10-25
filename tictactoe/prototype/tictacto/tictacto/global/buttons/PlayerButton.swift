@@ -11,6 +11,7 @@ import UIKit
 protocol PlayerButtonDelegate : class
 {
 	func buttonTapped(_ sender: PlayerButton)
+	func updateCurPlayerStatus()
 }
 
 @IBDesignable
@@ -104,6 +105,7 @@ class PlayerButton: UIView
 	@objc func checkTap(_ sender: UITapGestureRecognizer)
 	{
 		buttonDelegate?.buttonTapped(self)
+		buttonDelegate?.updateCurPlayerStatus()
 	}
 	
 

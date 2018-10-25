@@ -23,7 +23,7 @@ class TicTacToeVC: UIViewController {
     	playerXButton.buttonDelegate = self
 		playerOButton.buttonDelegate = self
 		
-		playerOButton.playerNameLabel.text = "O"
+		// playerOButton.playerNameLabel.text = "O"
         
         playerXButton.changeButtonState(setActive: true)
         playerOButton.changeButtonState(setActive: false)
@@ -49,13 +49,15 @@ extension TicTacToeVC: PlayerButtonDelegate
 	}
     
     // To-do: Finish the function & decide where it should be called
-    func updateCurPlayerStatus()
+	func updateCurPlayerStatus()
     {
         switch playerXButton.isActive
         {
         case true:
+			gameStatusLabel.text = "Player X Turn"
             break
         default:
+			gameStatusLabel.text = "Player O Turn"
             break
         }
     }
