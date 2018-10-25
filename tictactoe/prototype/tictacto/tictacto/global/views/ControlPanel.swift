@@ -12,7 +12,7 @@ class ControlPanel: UIView {
 
     /* Properties */
     var undoBtn : ControlPanelBtn!
-    var resetBtn : ControlPanelBtn!
+    var restartBtn : ControlPanelBtn!
     var redoBtn : ControlPanelBtn!
     
     var availableHeight : CGFloat = 0
@@ -55,17 +55,17 @@ class ControlPanel: UIView {
         self.addSubview(undoBtn)
     }
     
-    func displayResetBtn()
+    func displayRestartBtn()
     {
         /** Properties **/
-        let resetBtnFrame = CGRect.init(
+        let restartBtnFrame = CGRect.init(
 			x: self.undoBtn.frame.width * 0.75,
 			y: 0,
 			width: self.frame.width * 0.50,
 			height: availableHeight)
         
-        self.resetBtn = ControlPanelBtn.init(frame: resetBtnFrame, andColor: .yellow, andText: "RESET")
-        self.addSubview(resetBtn)
+        self.restartBtn = ControlPanelBtn.init(frame: restartBtnFrame, andColor: .yellow, andText: "RESET")
+        self.addSubview(restartBtn)
     }
     
     func displayRedoBtn()
