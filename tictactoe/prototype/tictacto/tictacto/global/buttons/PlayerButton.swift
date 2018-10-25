@@ -33,6 +33,13 @@ class PlayerButton: UIView
 		}
 	}
 	
+	@IBInspectable var playerLabel: String = ""
+		{
+		didSet
+		{
+			playerNameLabel.text = playerLabel
+		}
+	}
 	
 	/** Overrides **/
 	override init(frame: CGRect)

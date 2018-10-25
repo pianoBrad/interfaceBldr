@@ -341,6 +341,7 @@
                     <connections>
                         <outlet property="controlPanel" destination="4GH-M7-OMM" id="0jM-Bm-OzF"/>
                         <outlet property="gameBoard" destination="oLX-ft-3x4" id="kez-8a-bpY"/>
+                        <outlet property="gameStatusLabel" destination="nr9-n3-PGz" id="YEQ-Tp-xOp"/>
                         <outlet property="playerOButton" destination="k1O-1L-5ha" id="9Pu-Ik-gci"/>
                         <outlet property="playerView" destination="Zrz-rs-kFH" id="CqI-QI-XEy"/>
                         <outlet property="playerXButton" destination="UML-lT-qtK" id="Hf1-3h-KIj"/>
