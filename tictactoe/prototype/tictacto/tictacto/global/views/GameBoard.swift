@@ -8,10 +8,21 @@
 
 import UIKit
 
+@IBDesignable
 class GameBoard: GameSectionVIew
 {
+	
+	/** Properties **/
+	@IBOutlet var contentView: UIView!
+	
+	
     override func commonInit()
     {
-        self.backgroundColor = UIColor(hexFromString: "#26BCAC")
+        let bundle = Bundle.init(for: GameBoard.self)
+		bundle.loadNibNamed(
+			String.init(describing: GameBoard.self), owner:  self, options: nil)
+		self.addSubview(contentView)
+		contentView.frame = self.bounds
+		contentView.autoresizingMask = [.flexibleWidth, .flexibleHeight]
     }
 }
