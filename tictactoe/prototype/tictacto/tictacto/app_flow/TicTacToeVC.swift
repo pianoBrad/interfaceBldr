@@ -8,8 +8,8 @@
 
 import UIKit
 
-class TicTacToeVC: UIViewController {
-    
+class TicTacToeVC: UIViewController
+{
     @IBOutlet weak var playerView: PlayerView!
     @IBOutlet weak var gameBoard: GameBoard!
     @IBOutlet weak var controlPanel: ControlPanel!
@@ -17,6 +17,23 @@ class TicTacToeVC: UIViewController {
 	override func viewDidLoad()
 	{
     }
+    
+    /** Custom methods **/
+    func startGame()
+    {
+        playerView.reset()
+    }
+    
+    func endGame()
+    {
+        playerView.end()
+    }
 }
 
-
+extension TicTacToeVC : ControlPanelDelegate
+{
+    func restartBtnWasPress(_ sender: ControlPanelBtn)
+    {
+        self.startGame()
+    }
+}

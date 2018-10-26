@@ -8,16 +8,20 @@
 
 import UIKit
 
+protocol ControlPanelDelegate : class
+{
+    func restartBtnWasPress(_ sender : ControlPanelBtn);
+}
+
+@IBDesignable
 class ControlPanel: UIView {
 
     /** Properties **/
-    var undoBtn : ControlPanelBtn!
-    var restartBtn : ControlPanelBtn!
-    var redoBtn : ControlPanelBtn!
-	
-	
+    @IBOutlet var contentView: UIView!
+    @IBOutlet weak var restartBtn: ControlPanelBtn!
     
     var availableHeight : CGFloat = 0
+    weak var panelDelegate : ControlPanelDelegate?
     
     override init(frame: CGRect)
     {
@@ -37,49 +41,28 @@ class ControlPanel: UIView {
         self.backgroundColor = UIColor(hexFromString: "#F8F8F8")
         self.availableHeight = self.frame.height
         
-	
-    }
+        let bundle = Bundle(for: ControlPanel.self)
+        bundle.loadNibNamed(
+            String(describing: ControlPanel.self), owner: self, options: nil)
+        self.addSubview(contentView)
+        contentView.frame = self.bounds
+        contentView.autoresizingMask = [.flexibleHeight, .flexibleWidth]
     
-    /** Custom Methods **/
-    func displayUndoBtn()
-    {
-        /** Properties **/
-        let undoBtnFrame = CGRect.init(
-			x: self.frame.origin.x,
-			y: 0,
-			width: self.frame.width * 0.25,
-			height: availableHeight)
+        restartBtn.btnDelegate = self
+    }
+}
 
-        print(undoBtnFrame)
-        
-        /** Custom Methods **/
-        self.undoBtn = ControlPanelBtn.init(frame: undoBtnFrame, andColor: .red, andText: "UNDO")
-        self.addSubview(undoBtn)
-    }
-    
-    func displayRestartBtn()
+extension ControlPanel : ControlPanelBtnDelegate
+{
+    func controlBtnPressed(_ sender: ControlPanelBtn)
     {
-        /** Properties **/
-        let restartBtnFrame = CGRect.init(
-			x: self.undoBtn.frame.width * 0.75,
-			y: 0,
-			width: self.frame.width * 0.50,
-			height: availableHeight)
-        
-        self.restartBtn = ControlPanelBtn.init(frame: restartBtnFrame, andColor: .yellow, andText: "RESET")
-        self.addSubview(restartBtn)
-    }
-    
-    func displayRedoBtn()
-    {
-        /** Properties **/
-        let redoBtnFrame = CGRect.init(
-			x: self.frame.width * 0.75,
-			y: 0,
-			width: self.frame.width * 0.25,
-			height: availableHeight)
-        
-        self.redoBtn = ControlPanelBtn.init(frame: redoBtnFrame, andColor: .blue, andText: "REDO")
-        self.addSubview(redoBtn)
+        switch sender
+        {
+        case restartBtn:
+            panelDelegate?.restartBtnWasPress(sender)
+            break
+        default:
+            break
+        }
     }
 }

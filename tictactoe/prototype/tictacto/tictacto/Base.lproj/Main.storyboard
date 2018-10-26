@@ -220,44 +220,7 @@
                             </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="4GH-M7-OMM" userLabel="Control Panel" customClass="ControlPanel" customModule="tictacto" customModuleProvider="target">
                                 <rect key="frame" x="0.0" y="642.66666666666663" width="375" height="135.33333333333337"/>
-                                <subviews>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="g8M-so-bg8" userLabel="Restart Button">
-                                        <rect key="frame" x="103.66666666666667" y="34.000000000000007" width="167.66666666666663" height="67.666666666666686"/>
-                                        <state key="normal" title="RESTART">
-                                            <color key="titleColor" red="0.14901960780000001" green="0.73725490199999999" blue="0.67450980390000004" alpha="1" colorSpace="calibratedRGB"/>
-                                        </state>
-                                        <connections>
-                                            <action selector="restartBtnAction:" destination="bZ0-cw-RJD" eventType="touchUpInside" id="UTY-oW-dO4"/>
-                                        </connections>
-                                    </button>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="4C3-CA-bpB" userLabel="Undo Button">
-                                        <rect key="frame" x="10" y="34.000000000000007" width="93.666666666666671" height="67.666666666666686"/>
-                                        <state key="normal" title="UNDO">
-                                            <color key="titleColor" red="0.14901960780000001" green="0.73725490199999999" blue="0.67450980390000004" alpha="1" colorSpace="calibratedRGB"/>
-                                        </state>
-                                    </button>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="LyX-6Y-XOR" userLabel="Redo Button">
-                                        <rect key="frame" x="271.33333333333331" y="34.000000000000007" width="93.666666666666686" height="67.666666666666686"/>
-                                        <state key="normal" title="REDO">
-                                            <color key="titleColor" red="0.14901960780000001" green="0.73725490199999999" blue="0.67450980390000004" alpha="1" colorSpace="calibratedRGB"/>
-                                        </state>
-                                    </button>
-                                </subviews>
                                 <color key="backgroundColor" red="0.97254901960784312" green="0.97254901960784312" blue="0.97254901960784312" alpha="1" colorSpace="calibratedRGB"/>
-                                <constraints>
-                                    <constraint firstItem="LyX-6Y-XOR" firstAttribute="width" secondItem="4GH-M7-OMM" secondAttribute="width" multiplier="1:4" id="5UB-pj-jsS"/>
-                                    <constraint firstItem="4C3-CA-bpB" firstAttribute="height" secondItem="g8M-so-bg8" secondAttribute="height" id="5tV-sY-uDX"/>
-                                    <constraint firstItem="g8M-so-bg8" firstAttribute="width" secondItem="4GH-M7-OMM" secondAttribute="width" multiplier="1:2" constant="-20" id="6Pe-NA-J2e"/>
-                                    <constraint firstItem="LyX-6Y-XOR" firstAttribute="centerY" secondItem="g8M-so-bg8" secondAttribute="centerY" id="E1T-dL-S8z"/>
-                                    <constraint firstItem="g8M-so-bg8" firstAttribute="centerX" secondItem="4GH-M7-OMM" secondAttribute="centerX" id="Fiq-tj-3qo"/>
-                                    <constraint firstItem="LyX-6Y-XOR" firstAttribute="height" secondItem="g8M-so-bg8" secondAttribute="height" id="QLB-4i-HSt"/>
-                                    <constraint firstItem="g8M-so-bg8" firstAttribute="height" secondItem="4GH-M7-OMM" secondAttribute="height" multiplier="1:2" id="Sv2-wM-kK3"/>
-                                    <constraint firstAttribute="trailing" secondItem="LyX-6Y-XOR" secondAttribute="trailing" constant="10" id="Wvx-f1-x1H"/>
-                                    <constraint firstItem="4C3-CA-bpB" firstAttribute="leading" secondItem="4GH-M7-OMM" secondAttribute="leading" constant="10" id="hX3-Lb-ihR"/>
-                                    <constraint firstItem="4C3-CA-bpB" firstAttribute="centerY" secondItem="g8M-so-bg8" secondAttribute="centerY" id="ijn-4v-RSd"/>
-                                    <constraint firstItem="4C3-CA-bpB" firstAttribute="width" secondItem="4GH-M7-OMM" secondAttribute="width" multiplier="1:4" id="k6d-Zl-MbO"/>
-                                    <constraint firstItem="g8M-so-bg8" firstAttribute="centerY" secondItem="4GH-M7-OMM" secondAttribute="centerY" id="lCa-dB-vpR"/>
-                                </constraints>
                             </view>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -284,7 +247,6 @@
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
-                <exit id="bZ0-cw-RJD" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
             <point key="canvasLocation" x="140" y="132.26600985221674"/>
         </scene>

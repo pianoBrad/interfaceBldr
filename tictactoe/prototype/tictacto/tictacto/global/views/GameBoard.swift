@@ -8,21 +8,9 @@
 
 import UIKit
 
-class GameBoard: UIView {
-
-    override init(frame: CGRect)
-    {
-        super.init(frame: frame)
-        commonInit()
-    }
-    
-    required init?(coder aDecoder: NSCoder)
-    {
-        super.init(coder: aDecoder)
-        commonInit()
-    }
-    
-    func commonInit()
+class GameBoard: GameSectionVIew
+{
+    override func commonInit()
     {
         self.backgroundColor = UIColor(hexFromString: "#26BCAC")
     }

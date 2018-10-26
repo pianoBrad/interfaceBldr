@@ -9,7 +9,7 @@
 import UIKit
 
 @IBDesignable
-class PlayerView: UIView
+class PlayerView: GameSectionVIew
 {
 	/** Properties **/
     @IBOutlet var contentView: UIView!
@@ -19,21 +19,11 @@ class PlayerView: UIView
     @IBOutlet weak var gameStatusLabel: UILabel!
     
 	/** Overrides **/
-	override init(frame: CGRect)
-    {
-        super.init(frame: frame)
-        commonInit()
-    }
-    
-    required init?(coder aDecoder: NSCoder)
-    {
-        super.init(coder: aDecoder)
-        commonInit()
-    }
     
     /** Custom Methods **/
-    func commonInit()
+    override func commonInit()
     {
+        super.commonInit()
         let bundle = Bundle(for: PlayerView.self)
         bundle.loadNibNamed(
             String(describing: PlayerView.self), owner: self, options: nil)
@@ -41,6 +31,20 @@ class PlayerView: UIView
         self.addSubview(contentView)
         contentView.frame = self.bounds
         contentView.autoresizingMask = [.flexibleWidth, .flexibleHeight]
+    }
+    
+    override func reset()
+    {
+        super.reset()
+        // Handle reset biz
+        // Make sure playerX is active
+        // Reset gamestatus text
+    }
+    
+    override func end()
+    {
+        super.end()
+        // Change gamestatus text to gameover text
     }
 }
 
