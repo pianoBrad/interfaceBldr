@@ -10,6 +10,15 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="GameBoard" customModule="tictacto" customModuleProvider="target">
             <connections>
+                <outlet property="btnEight" destination="imy-5l-ybB" id="TeL-oI-agl"/>
+                <outlet property="btnFive" destination="lyJ-sa-3JY" id="2t9-tR-c1p"/>
+                <outlet property="btnFour" destination="xo5-QT-iBm" id="UkH-p6-7xb"/>
+                <outlet property="btnNine" destination="chz-XN-cx0" id="wmI-Ce-KTO"/>
+                <outlet property="btnOne" destination="tnC-X5-Ukz" id="ZK2-p1-Pwk"/>
+                <outlet property="btnSeven" destination="eKh-Vu-6p3" id="4SU-ta-hy9"/>
+                <outlet property="btnSix" destination="Jzo-P1-jrF" id="pTn-xr-cqt"/>
+                <outlet property="btnThree" destination="UdU-Il-vEH" id="1AQ-6h-Qsa"/>
+                <outlet property="btnTwo" destination="XVj-gu-rtR" id="Juk-qw-d4W"/>
                 <outlet property="contentView" destination="iN0-l3-epB" id="Y4b-Bl-uLb"/>
             </connections>
         </placeholder>
@@ -67,8 +76,8 @@
                 <view contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0Kq-gi-tIA" userLabel="TTT View">
                     <rect key="frame" x="0.0" y="52.5" width="375" height="375"/>
                     <subviews>
-                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="tnC-X5-Ukz" customClass="GamePieceButton" customModule="tictacto" customModuleProvider="target">
-                            <rect key="frame" x="0.0" y="0.0" width="125" height="125"/>
+                        <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="tnC-X5-Ukz" customClass="GamePieceButton" customModule="tictacto" customModuleProvider="target">
+                            <rect key="frame" x="1" y="0.0" width="125" height="125"/>
                             <constraints>
                                 <constraint firstAttribute="width" secondItem="tnC-X5-Ukz" secondAttribute="height" multiplier="1:1" id="kkx-4W-oOF"/>
                             </constraints>
@@ -81,7 +90,7 @@
                                 </userDefinedRuntimeAttribute>
                             </userDefinedRuntimeAttributes>
                         </button>
-                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="XVj-gu-rtR">
+                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="XVj-gu-rtR" customClass="GamePieceButton" customModule="tictacto" customModuleProvider="target">
                             <rect key="frame" x="125" y="0.0" width="125" height="125"/>
                             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             <constraints>
@@ -91,14 +100,14 @@
                                 <color key="titleColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             </state>
                         </button>
-                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="UdU-Il-vEH">
+                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="UdU-Il-vEH" customClass="GamePieceButton" customModule="tictacto" customModuleProvider="target">
                             <rect key="frame" x="250" y="0.0" width="125" height="125"/>
                             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             <state key="normal" title="3">
                                 <color key="titleColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             </state>
                         </button>
-                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="xo5-QT-iBm">
+                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="xo5-QT-iBm" customClass="GamePieceButton" customModule="tictacto" customModuleProvider="target">
                             <rect key="frame" x="0.0" y="125" width="125" height="125"/>
                             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             <constraints>
@@ -108,7 +117,7 @@
                                 <color key="titleColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             </state>
                         </button>
-                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="lyJ-sa-3JY">
+                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="lyJ-sa-3JY" customClass="GamePieceButton" customModule="tictacto" customModuleProvider="target">
                             <rect key="frame" x="125" y="125" width="125" height="125"/>
                             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             <constraints>
@@ -118,7 +127,7 @@
                                 <color key="titleColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             </state>
                         </button>
-                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Jzo-P1-jrF">
+                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Jzo-P1-jrF" customClass="GamePieceButton" customModule="tictacto" customModuleProvider="target">
                             <rect key="frame" x="250" y="125" width="125" height="125"/>
                             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             <constraints>
@@ -128,7 +137,7 @@
                                 <color key="titleColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             </state>
                         </button>
-                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="eKh-Vu-6p3">
+                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="eKh-Vu-6p3" customClass="GamePieceButton" customModule="tictacto" customModuleProvider="target">
                             <rect key="frame" x="0.0" y="250" width="125" height="125"/>
                             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             <constraints>
@@ -138,7 +147,7 @@
                                 <color key="titleColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             </state>
                         </button>
-                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="imy-5l-ybB">
+                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="imy-5l-ybB" customClass="GamePieceButton" customModule="tictacto" customModuleProvider="target">
                             <rect key="frame" x="125" y="250" width="125" height="125"/>
                             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             <constraints>
@@ -148,7 +157,7 @@
                                 <color key="titleColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             </state>
                         </button>
-                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="chz-XN-cx0">
+                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="chz-XN-cx0" customClass="GamePieceButton" customModule="tictacto" customModuleProvider="target">
                             <rect key="frame" x="250" y="250" width="125" height="125"/>
                             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             <constraints>

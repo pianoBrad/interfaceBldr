@@ -8,20 +8,19 @@
 
 import UIKit
 
+protocol GamePieceButtonDelegate: class
+{
+	func gamePieceTapped(_ sender : GamePieceButton)
+}
+
 @IBDesignable
 class GamePieceButton: UIButton
 {
 
 	/** Properties **/
-	@IBInspectable var  btnColor : UIColor = .black
-	{
-		didSet
-		{
-			self.setBGColor(color: btnColor)
-		}
-	}
+	weak var btnDelegate : GamePieceButtonDelegate?
 	
-	
+	/** Overrides **/
 	override init(frame: CGRect)
 	{
 		super.init(frame: frame)
@@ -38,12 +37,14 @@ class GamePieceButton: UIButton
 	/** Custom Methods **/
 	func commonInit()
 	{
-		self.backgroundColor = .yellow
+		self.addTarget(self, action: #selector(handleBtnPress), for: .touchUpInside)
+		
 	}
 	
-	func setBGColor(color: UIColor)
+	@objc func handleBtnPress(_ sender : GamePieceButton)
 	{
-		self.backgroundColor = color
+		btnDelegate?.gamePieceTapped(self)
 	}
+	
 	
 }
