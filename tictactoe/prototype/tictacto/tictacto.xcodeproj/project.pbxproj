@@ -20,7 +20,6 @@
 		2D6D792721715225004B061B /* GameBoard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D6D792621715225004B061B /* GameBoard.swift */; };
 		2D6D79292171524F004B061B /* ControlPanel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D6D79282171524F004B061B /* ControlPanel.swift */; };
 		2D6D792C217152B9004B061B /* TicTacToeVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D6D792B217152B9004B061B /* TicTacToeVC.swift */; };
-		2DC1A39321750469004833DD /* GameBoardAnswerView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2DC1A39221750469004833DD /* GameBoardAnswerView.xib */; };
 		69E852D1217A95FC007D9C3D /* GamePieceButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 69E852D0217A95FC007D9C3D /* GamePieceButton.swift */; };
 		69F49A62217FC99B00BE3C5E /* PlayerButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 69F49A61217FC99B00BE3C5E /* PlayerButton.swift */; };
 		69F49A64217FC9DF00BE3C5E /* PlayerButton.xib in Resources */ = {isa = PBXBuildFile; fileRef = 69F49A63217FC9DF00BE3C5E /* PlayerButton.xib */; };
@@ -63,7 +62,6 @@
 		2D6D792621715225004B061B /* GameBoard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameBoard.swift; sourceTree = "<group>"; };
 		2D6D79282171524F004B061B /* ControlPanel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ControlPanel.swift; sourceTree = "<group>"; };
 		2D6D792B217152B9004B061B /* TicTacToeVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TicTacToeVC.swift; sourceTree = "<group>"; };
-		2DC1A39221750469004833DD /* GameBoardAnswerView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = GameBoardAnswerView.xib; sourceTree = "<group>"; };
 		69E852D0217A95FC007D9C3D /* GamePieceButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GamePieceButton.swift; sourceTree = "<group>"; };
 		69F49A61217FC99B00BE3C5E /* PlayerButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayerButton.swift; sourceTree = "<group>"; };
 		69F49A63217FC9DF00BE3C5E /* PlayerButton.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PlayerButton.xib; sourceTree = "<group>"; };
@@ -118,7 +116,6 @@
 			isa = PBXGroup;
 			children = (
 				2D6D78EE21714F18004B061B /* Main.storyboard */,
-				2DC1A39221750469004833DD /* GameBoardAnswerView.xib */,
 				2D6D792A2171526E004B061B /* app_flow */,
 				2D6D791B21714F33004B061B /* global */,
 				2D6D78EA21714F18004B061B /* AppDelegate.swift */,
@@ -309,7 +306,6 @@
 			files = (
 				2D6D78F821714F19004B061B /* LaunchScreen.storyboard in Resources */,
 				69F49A64217FC9DF00BE3C5E /* PlayerButton.xib in Resources */,
-				2DC1A39321750469004833DD /* GameBoardAnswerView.xib in Resources */,
 				2D6D78F521714F19004B061B /* Assets.xcassets in Resources */,
 				2D6D78F021714F18004B061B /* Main.storyboard in Resources */,
 			);
@@ -521,7 +517,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = KWRG283N5S;
+				DEVELOPMENT_TEAM = A46J4WF27R;
 				INFOPLIST_FILE = tictacto/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -539,7 +535,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = KWRG283N5S;
+				DEVELOPMENT_TEAM = A46J4WF27R;
 				INFOPLIST_FILE = tictacto/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",

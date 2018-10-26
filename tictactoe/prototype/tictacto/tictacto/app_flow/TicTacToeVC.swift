@@ -40,12 +40,12 @@ extension TicTacToeVC: PlayerButtonDelegate
 		switch sender {
 		case playerXButton:
 			playerOButton.changeButtonState(setActive: !sender.isActive)
-			//gameStatusLabel.text = "Player X Turn"
 		default:
 			playerXButton.changeButtonState(setActive: !sender.isActive)
-			//gameStatusLabel.text = "Player O Turn"
 			break
 		}
+        
+        updateCurPlayerStatus()
 	}
     
     // To-do: Finish the function & decide where it should be called
