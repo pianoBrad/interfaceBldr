@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		2D636F782183B52F00EB2F28 /* PlayerView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2D636F772183B52F00EB2F28 /* PlayerView.xib */; };
 		2D6D78EB21714F18004B061B /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D6D78EA21714F18004B061B /* AppDelegate.swift */; };
 		2D6D78F021714F18004B061B /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2D6D78EE21714F18004B061B /* Main.storyboard */; };
 		2D6D78F321714F18004B061B /* tictacto.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 2D6D78F121714F18004B061B /* tictacto.xcdatamodeld */; };
@@ -44,6 +45,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		2D636F772183B52F00EB2F28 /* PlayerView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PlayerView.xib; sourceTree = "<group>"; };
 		2D6D78E721714F18004B061B /* tictacto.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = tictacto.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		2D6D78EA21714F18004B061B /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		2D6D78EF21714F18004B061B /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -187,6 +189,7 @@
 		2D6D792521715209004B061B /* views */ = {
 			isa = PBXGroup;
 			children = (
+				2D636F772183B52F00EB2F28 /* PlayerView.xib */,
 				2D6D7923217151E0004B061B /* PlayerView.swift */,
 				2D6D792621715225004B061B /* GameBoard.swift */,
 				2D6D79282171524F004B061B /* ControlPanel.swift */,
@@ -311,6 +314,7 @@
 				69F49A64217FC9DF00BE3C5E /* PlayerButton.xib in Resources */,
 				2D6D78F521714F19004B061B /* Assets.xcassets in Resources */,
 				2D6D78F021714F18004B061B /* Main.storyboard in Resources */,
+				2D636F782183B52F00EB2F28 /* PlayerView.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -521,7 +525,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = KWRG283N5S;
+				DEVELOPMENT_TEAM = A46J4WF27R;
 				INFOPLIST_FILE = tictacto/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -539,7 +543,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = KWRG283N5S;
+				DEVELOPMENT_TEAM = A46J4WF27R;
 				INFOPLIST_FILE = tictacto/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",

@@ -19,71 +19,7 @@
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Zrz-rs-kFH" userLabel="Player View" customClass="PlayerView" customModule="tictacto" customModuleProvider="target">
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="162.33333333333334"/>
-                                <subviews>
-                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="15R-zu-aCK" userLabel="PlayerStatus View">
-                                        <rect key="frame" x="20" y="75.333333333333329" width="335" height="53.999999999999986"/>
-                                        <subviews>
-                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="UML-lT-qtK" userLabel="PlayerX View" customClass="PlayerButton" customModule="tictacto" customModuleProvider="target">
-                                                <rect key="frame" x="0.0" y="0.0" width="157.66666666666666" height="54"/>
-                                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                                <userDefinedRuntimeAttributes>
-                                                    <userDefinedRuntimeAttribute type="boolean" keyPath="isActive" value="YES"/>
-                                                </userDefinedRuntimeAttributes>
-                                            </view>
-                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="k1O-1L-5ha" userLabel="PlayerO View" customClass="PlayerButton" customModule="tictacto" customModuleProvider="target">
-                                                <rect key="frame" x="167.66666666666663" y="0.0" width="157.33333333333337" height="54"/>
-                                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                                <userDefinedRuntimeAttributes>
-                                                    <userDefinedRuntimeAttribute type="boolean" keyPath="isActive" value="NO"/>
-                                                    <userDefinedRuntimeAttribute type="string" keyPath="playerLabel" value="O"/>
-                                                </userDefinedRuntimeAttributes>
-                                            </view>
-                                        </subviews>
-                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                        <constraints>
-                                            <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="38" id="38j-OL-e2g"/>
-                                            <constraint firstItem="UML-lT-qtK" firstAttribute="width" secondItem="15R-zu-aCK" secondAttribute="width" multiplier="1:2" constant="-10" id="Eat-Kh-xnV"/>
-                                            <constraint firstItem="UML-lT-qtK" firstAttribute="leading" secondItem="15R-zu-aCK" secondAttribute="leading" id="GPF-gH-WFx"/>
-                                            <constraint firstItem="UML-lT-qtK" firstAttribute="centerY" secondItem="15R-zu-aCK" secondAttribute="centerY" id="Y0c-TG-W8e"/>
-                                            <constraint firstItem="k1O-1L-5ha" firstAttribute="height" secondItem="UML-lT-qtK" secondAttribute="height" id="ca3-9d-mVg"/>
-                                            <constraint firstItem="k1O-1L-5ha" firstAttribute="width" secondItem="UML-lT-qtK" secondAttribute="width" id="lFm-ZY-Lmm"/>
-                                            <constraint firstItem="k1O-1L-5ha" firstAttribute="centerY" secondItem="UML-lT-qtK" secondAttribute="centerY" id="md2-vZ-fgh"/>
-                                            <constraint firstItem="UML-lT-qtK" firstAttribute="height" secondItem="15R-zu-aCK" secondAttribute="height" id="n5D-MF-3uM"/>
-                                            <constraint firstAttribute="trailing" secondItem="k1O-1L-5ha" secondAttribute="trailing" constant="10" id="qYr-R4-fnY"/>
-                                        </constraints>
-                                    </view>
-                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="BPw-gU-34n" userLabel="GameStatus View">
-                                        <rect key="frame" x="0.0" y="130.33333333333334" width="375" height="27"/>
-                                        <subviews>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Start game or select player" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="nr9-n3-PGz" userLabel="GameStatus Label">
-                                                <rect key="frame" x="0.0" y="5.3333333333333144" width="375" height="16.333333333333332"/>
-                                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                                <fontDescription key="fontDescription" name="Helvetica" family="Helvetica" pointSize="14"/>
-                                                <color key="textColor" cocoaTouchSystemColor="scrollViewTexturedBackgroundColor"/>
-                                                <nil key="highlightedColor"/>
-                                            </label>
-                                        </subviews>
-                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                        <constraints>
-                                            <constraint firstItem="nr9-n3-PGz" firstAttribute="leading" secondItem="BPw-gU-34n" secondAttribute="leading" id="8Ph-Fz-mn2"/>
-                                            <constraint firstItem="nr9-n3-PGz" firstAttribute="width" secondItem="BPw-gU-34n" secondAttribute="width" id="IgO-6v-9JK"/>
-                                            <constraint firstItem="nr9-n3-PGz" firstAttribute="centerY" secondItem="BPw-gU-34n" secondAttribute="centerY" id="Wzy-uE-MIS"/>
-                                            <constraint firstItem="nr9-n3-PGz" firstAttribute="centerX" secondItem="BPw-gU-34n" secondAttribute="centerX" id="l4m-Po-SnH"/>
-                                        </constraints>
-                                    </view>
-                                </subviews>
                                 <color key="backgroundColor" red="0.97254901960784312" green="0.97254901960784312" blue="0.97254901960784312" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                <constraints>
-                                    <constraint firstAttribute="bottom" secondItem="BPw-gU-34n" secondAttribute="bottom" constant="5" id="2WR-N6-tLw"/>
-                                    <constraint firstItem="15R-zu-aCK" firstAttribute="leading" secondItem="Zrz-rs-kFH" secondAttribute="leading" constant="20" id="H40-Ck-eRl"/>
-                                    <constraint firstItem="15R-zu-aCK" firstAttribute="height" secondItem="Zrz-rs-kFH" secondAttribute="height" multiplier="1:3" priority="999" id="QGB-Pk-ZOS"/>
-                                    <constraint firstItem="BPw-gU-34n" firstAttribute="width" secondItem="Zrz-rs-kFH" secondAttribute="width" id="SPY-DT-5Qu"/>
-                                    <constraint firstAttribute="trailing" secondItem="15R-zu-aCK" secondAttribute="trailing" constant="20" id="ZGo-TO-z6A"/>
-                                    <constraint firstItem="BPw-gU-34n" firstAttribute="centerX" secondItem="Zrz-rs-kFH" secondAttribute="centerX" id="bKf-Qx-oes"/>
-                                    <constraint firstItem="15R-zu-aCK" firstAttribute="centerX" secondItem="Zrz-rs-kFH" secondAttribute="centerX" id="nvg-57-nU5"/>
-                                    <constraint firstItem="BPw-gU-34n" firstAttribute="leading" secondItem="Zrz-rs-kFH" secondAttribute="leading" id="p08-P0-auA"/>
-                                    <constraint firstItem="BPw-gU-34n" firstAttribute="height" secondItem="Zrz-rs-kFH" secondAttribute="height" multiplier="1:6" id="xND-6d-Nkk"/>
-                                </constraints>
                             </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="oLX-ft-3x4" userLabel="Game Board" customClass="GameBoard" customModule="tictacto" customModuleProvider="target">
                                 <rect key="frame" x="0.0" y="162.33333333333334" width="375" height="480.33333333333326"/>
@@ -331,7 +267,6 @@
                             <constraint firstItem="4GH-M7-OMM" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="9Gs-8G-ljB"/>
                             <constraint firstItem="4GH-M7-OMM" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="GFj-iV-7mX"/>
                             <constraint firstItem="oLX-ft-3x4" firstAttribute="centerX" secondItem="6Tk-OE-BBY" secondAttribute="centerX" id="QBV-MQ-AvL"/>
-                            <constraint firstItem="oLX-ft-3x4" firstAttribute="top" secondItem="15R-zu-aCK" secondAttribute="bottom" constant="33" id="T1V-cn-FgT"/>
                             <constraint firstItem="4GH-M7-OMM" firstAttribute="height" secondItem="8bC-Xf-vdC" secondAttribute="height" multiplier="1:6" id="WXE-Wj-LaD"/>
                             <constraint firstItem="Zrz-rs-kFH" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="XAL-ex-xsw"/>
                             <constraint firstItem="Zrz-rs-kFH" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" id="f72-Je-TAF"/>
@@ -345,10 +280,7 @@
                     <connections>
                         <outlet property="controlPanel" destination="4GH-M7-OMM" id="0jM-Bm-OzF"/>
                         <outlet property="gameBoard" destination="oLX-ft-3x4" id="kez-8a-bpY"/>
-                        <outlet property="gameStatusLabel" destination="nr9-n3-PGz" id="YEQ-Tp-xOp"/>
-                        <outlet property="playerOButton" destination="k1O-1L-5ha" id="9Pu-Ik-gci"/>
                         <outlet property="playerView" destination="Zrz-rs-kFH" id="CqI-QI-XEy"/>
-                        <outlet property="playerXButton" destination="UML-lT-qtK" id="Hf1-3h-KIj"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
