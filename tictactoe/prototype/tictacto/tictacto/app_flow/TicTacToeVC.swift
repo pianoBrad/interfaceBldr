@@ -48,7 +48,6 @@ extension TicTacToeVC: PlayerButtonDelegate
         updateCurPlayerStatus()
 	}
     
-    // To-do: Finish the function & decide where it should be called
 	func updateCurPlayerStatus()
     {
         switch playerXButton.isActive
@@ -62,3 +61,5 @@ extension TicTacToeVC: PlayerButtonDelegate
         }
     }
 }
+
+

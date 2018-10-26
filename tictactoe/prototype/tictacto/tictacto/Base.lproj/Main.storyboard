@@ -290,14 +290,17 @@
                                         <state key="normal" title="RESTART">
                                             <color key="titleColor" red="0.14901960780000001" green="0.73725490199999999" blue="0.67450980390000004" alpha="1" colorSpace="calibratedRGB"/>
                                         </state>
+                                        <connections>
+                                            <action selector="restartBtnAction:" destination="bZ0-cw-RJD" eventType="touchUpInside" id="UTY-oW-dO4"/>
+                                        </connections>
                                     </button>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="4C3-CA-bpB" userLabel="Restart Button">
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="4C3-CA-bpB" userLabel="Undo Button">
                                         <rect key="frame" x="10" y="34.000000000000007" width="93.666666666666671" height="67.666666666666686"/>
                                         <state key="normal" title="UNDO">
                                             <color key="titleColor" red="0.14901960780000001" green="0.73725490199999999" blue="0.67450980390000004" alpha="1" colorSpace="calibratedRGB"/>
                                         </state>
                                     </button>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="LyX-6Y-XOR" userLabel="Restart Button">
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="LyX-6Y-XOR" userLabel="Redo Button">
                                         <rect key="frame" x="271.33333333333331" y="34.000000000000007" width="93.666666666666686" height="67.666666666666686"/>
                                         <state key="normal" title="REDO">
                                             <color key="titleColor" red="0.14901960780000001" green="0.73725490199999999" blue="0.67450980390000004" alpha="1" colorSpace="calibratedRGB"/>
@@ -349,6 +352,7 @@
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+                <exit id="bZ0-cw-RJD" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
             <point key="canvasLocation" x="140" y="132.26600985221674"/>
         </scene>

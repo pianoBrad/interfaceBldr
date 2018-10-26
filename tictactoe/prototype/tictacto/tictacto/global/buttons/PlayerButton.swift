@@ -34,7 +34,7 @@ class PlayerButton: UIView
 	}
 	
 	@IBInspectable var playerLabel: String = ""
-		{
+	{
 		didSet
 		{
 			playerNameLabel.text = playerLabel
@@ -69,7 +69,7 @@ class PlayerButton: UIView
 		self.addGestureRecognizer(gesture)
 	}
 	
-    func changeButtonState(setActive: Bool? = nil, shouldUpdateSelf : Bool? = true)
+	func changeButtonState(setActive: Bool? = nil, shouldUpdateSelf : Bool? = true)
 	{
         // update our isActive property to be opposite of itself,
         // unless storyboard rendering (this avoids an error in Interface Builder)

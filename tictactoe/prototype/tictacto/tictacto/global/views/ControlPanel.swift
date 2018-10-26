@@ -10,10 +10,12 @@ import UIKit
 
 class ControlPanel: UIView {
 
-    /* Properties */
+    /** Properties **/
     var undoBtn : ControlPanelBtn!
     var restartBtn : ControlPanelBtn!
     var redoBtn : ControlPanelBtn!
+	
+	
     
     var availableHeight : CGFloat = 0
     
