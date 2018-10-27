@@ -76,8 +76,8 @@
                 <view contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0Kq-gi-tIA" userLabel="TTT View">
                     <rect key="frame" x="0.0" y="52.5" width="375" height="375"/>
                     <subviews>
-                        <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="tnC-X5-Ukz" customClass="GamePieceButton" customModule="tictacto" customModuleProvider="target">
-                            <rect key="frame" x="1" y="0.0" width="125" height="125"/>
+                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="tnC-X5-Ukz" customClass="GamePieceButton" customModule="tictacto" customModuleProvider="target">
+                            <rect key="frame" x="0.0" y="0.0" width="125" height="125"/>
                             <constraints>
                                 <constraint firstAttribute="width" secondItem="tnC-X5-Ukz" secondAttribute="height" multiplier="1:1" id="kkx-4W-oOF"/>
                             </constraints>
