@@ -59,11 +59,11 @@
             </objects>
             <point key="canvasLocation" x="1089" y="1127"/>
         </scene>
-        <!--Item-->
+        <!--Navigation Controller-->
         <scene sceneID="AJF-TZ-4Pf">
             <objects>
                 <navigationController id="7fZ-E6-KGh" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Item" selectedImage="icon_active_profile" id="NXj-Ce-Gpt"/>
+                    <tabBarItem key="tabBarItem" title="" image="icon_profile" selectedImage="icon_active_profile" id="NXj-Ce-Gpt"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="bfO-sU-5kB">
                         <rect key="frame" x="0.0" y="20" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
@@ -76,7 +76,7 @@
             </objects>
             <point key="canvasLocation" x="1089" y="1836"/>
         </scene>
-        <!--Mockstagram-->
+        <!--user_name-->
         <scene sceneID="mVh-Hr-nEj">
             <objects>
                 <viewController id="cqs-Fu-qec" customClass="ProfileVC" customModule="mockstagram" customModuleProvider="target" sceneMemberID="viewController">
@@ -111,7 +111,7 @@
                         <viewLayoutGuide key="safeArea" id="tZy-Br-zsZ"/>
                     </view>
                     <tabBarItem key="tabBarItem" image="icon_profile" selectedImage="icon_active_profile" id="T6b-oK-xt8"/>
-                    <navigationItem key="navigationItem" title="Mockstagram" id="Hzz-50-lkX">
+                    <navigationItem key="navigationItem" title="user_name" id="Hzz-50-lkX">
                         <barButtonItem key="rightBarButtonItem" title="Item" image="icon_hamburger" id="7PJ-B8-J9m">
                             <connections>
                                 <action selector="hamburgerTapped:" destination="cqs-Fu-qec" id="1BY-Sm-Xlk"/>
@@ -123,11 +123,56 @@
                         <outlet property="contentScrollView" destination="eg6-Zb-rBx" id="fa6-ep-yZa"/>
                         <outlet property="contentStack" destination="ogO-a2-jby" id="dka-Fq-gDG"/>
                         <outlet property="hamburgerItem" destination="7PJ-B8-J9m" id="4Zm-sf-Uc4"/>
+                        <segue destination="3T6-EV-bEf" kind="show" identifier="ProfileSettingsSegue" id="2Gd-aR-y8p"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="MmP-IA-HwZ" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1951" y="1836"/>
+        </scene>
+        <!--Options-->
+        <scene sceneID="zKB-q8-H5e">
+            <objects>
+                <tableViewController title="Options" id="3T6-EV-bEf" customClass="ProfileOptionsTVC" customModule="mockstagram" customModuleProvider="target" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="grouped" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="18" sectionFooterHeight="18" id="KN2-IJ-9Kp">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
+                        <prototypes>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="basicDisclosureCell" id="PFK-PR-hrU">
+                                <rect key="frame" x="0.0" y="55.5" width="375" height="44"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="PFK-PR-hrU" id="blD-nv-YJf">
+                                    <rect key="frame" x="0.0" y="0.0" width="375" height="43.5"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                </tableViewCellContentView>
+                            </tableViewCell>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="leftIconDisclosureCell" id="IfD-Nf-9sX">
+                                <rect key="frame" x="0.0" y="99.5" width="375" height="44"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="IfD-Nf-9sX" id="4sl-vx-LLQ">
+                                    <rect key="frame" x="0.0" y="0.0" width="375" height="43.5"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                </tableViewCellContentView>
+                            </tableViewCell>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="linkCell" id="vhZ-Bq-EIR">
+                                <rect key="frame" x="0.0" y="143.5" width="375" height="44"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="vhZ-Bq-EIR" id="PKe-U9-FRn">
+                                    <rect key="frame" x="0.0" y="0.0" width="375" height="43.5"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                </tableViewCellContentView>
+                            </tableViewCell>
+                        </prototypes>
+                        <connections>
+                            <outlet property="dataSource" destination="3T6-EV-bEf" id="Gjn-Jt-5Al"/>
+                            <outlet property="delegate" destination="3T6-EV-bEf" id="e9v-08-4FU"/>
+                        </connections>
+                    </tableView>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="XJZ-jv-YtJ" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2791" y="1836"/>
         </scene>
         <!--Master ContainerVC-->
         <scene sceneID="tqA-bm-sYg">
@@ -149,7 +194,7 @@
                                     <constraint firstAttribute="width" constant="200" id="syD-xA-wun"/>
                                 </constraints>
                                 <connections>
-                                    <segue destination="C4Y-WN-9ak" kind="embed" id="QiD-hj-Byx"/>
+                                    <segue destination="C4Y-WN-9ak" kind="embed" identifier="profileMenuEmbedSegue" id="QiD-hj-Byx"/>
                                 </connections>
                             </containerView>
                             <view userInteractionEnabled="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="TEN-dU-3FE" userLabel="Touch Listener">
@@ -347,6 +392,7 @@
                                 <userDefinedRuntimeAttributes>
                                     <userDefinedRuntimeAttribute type="string" keyPath="menuTitle" value="Settings"/>
                                     <userDefinedRuntimeAttribute type="image" keyPath="iconImage" value="icon_settings"/>
+                                    <userDefinedRuntimeAttribute type="string" keyPath="segueID" value="ProfileSettingsSegue"/>
                                 </userDefinedRuntimeAttributes>
                             </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="2Q3-g1-zFY" userLabel="Left Border View">

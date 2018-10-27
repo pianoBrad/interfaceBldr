@@ -18,6 +18,7 @@ class MasterContainerVC: UIViewController
     @IBOutlet weak var touchListenerView: UIView!
     
     var profileMenuIsOpen : Bool = false
+    var mainTabBar : MainTabBC?
     
     /** Overrides **/
     override func viewDidLoad()
@@ -33,7 +34,12 @@ class MasterContainerVC: UIViewController
     {
         if let destination = segue.destination as? MainTabBC
         {
-            destination.tabDelegate = self
+            mainTabBar = destination
+            mainTabBar?.tabDelegate = self
+        }
+        else if let destination = segue.destination as? ProfileMenuVC
+        {
+            destination.itemDelegate = self
         }
     }
     
@@ -74,5 +80,14 @@ extension MasterContainerVC : MainTabBCDelegate
     func profileRightNavItemTapped(_ sender: UIBarButtonItem)
     {
         self.openProfileMenu()
+    }
+}
+
+extension MasterContainerVC : ProfileMenuVCDelegate
+{
+    func menuItemTapped(_ sender: HamburgerMenuItemView)
+    {
+        self.openProfileMenu()
+        mainTabBar?.handleProfileMenuItemPress(sender)
     }
 }

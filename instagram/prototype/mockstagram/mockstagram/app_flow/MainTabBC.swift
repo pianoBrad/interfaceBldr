@@ -17,6 +17,7 @@ class MainTabBC: UITabBarController
 {
     /** Properties **/
     weak var tabDelegate : MainTabBCDelegate?
+    var profileTab : ProfileVC?
     
     /** Overrides **/
     override func viewDidLoad()
@@ -30,13 +31,25 @@ class MainTabBC: UITabBarController
                 if let profileNav = vc as? UINavigationController,
                    let profileVC = profileNav.viewControllers.first as? ProfileVC
                 {
-                    profileVC.profileDelegate = self
+                    profileTab = profileVC
+                    profileTab?.profileDelegate = self
                 }
             }
         }
     }
     
     /** Custom methods **/
+    func handleProfileMenuItemPress(_ sender : HamburgerMenuItemView)
+    {
+        switch sender.segueID
+        {
+        case segue.profileSettingsSegueID:
+            profileTab?.performSegue(
+                withIdentifier: segue.profileSettingsSegueID, sender: profileTab)
+        default:
+            break
+        }
+    }
 }
 
 extension MainTabBC : ProfileVCDelegate

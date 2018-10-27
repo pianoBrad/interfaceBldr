@@ -35,6 +35,8 @@ class HamburgerMenuItemView: UIView
             setIconViewImage(withImage: iconImage)
         }
     }
+    @IBInspectable var segueID : String = ""
+    
     weak var itemDelegate : HamburgerMenuItemViewDelegate?
     
     /** Overrides **/

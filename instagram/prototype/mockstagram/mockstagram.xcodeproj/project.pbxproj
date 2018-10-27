@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		2D12590F2177704400691077 /* ProfileContactView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2D12590E2177704400691077 /* ProfileContactView.xib */; };
 		2D1259112177707D00691077 /* ProfileContactView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D1259102177707D00691077 /* ProfileContactView.swift */; };
+		2D18DBF52184EC06003CED4D /* SegueGlobals.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D18DBF42184EC06003CED4D /* SegueGlobals.swift */; };
 		2D2C88582170373C009F7894 /* ProfileBtn.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D2C88572170373C009F7894 /* ProfileBtn.swift */; };
 		2D2C885A2170D8DC009F7894 /* StoryStack.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2D2C88592170D8DC009F7894 /* StoryStack.xib */; };
 		2D2C885C2170D97C009F7894 /* StoryStack.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D2C885B2170D97C009F7894 /* StoryStack.swift */; };
@@ -48,6 +49,7 @@
 		2DC1A38D21742734004833DD /* StandardStackSubView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2DC1A38C21742734004833DD /* StandardStackSubView.swift */; };
 		2DC1A38F2174E07F004833DD /* StringExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2DC1A38E2174E07F004833DD /* StringExtensions.swift */; };
 		2DC1A3912174E0BE004833DD /* NSAttributedStringExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2DC1A3902174E0BE004833DD /* NSAttributedStringExtensions.swift */; };
+		2DCBB7AA2184F3B50025DBCD /* ProfileOptionsTVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2DCBB7A92184F3B50025DBCD /* ProfileOptionsTVC.swift */; };
 		2DDC94E62177C99F002C6B5B /* ProfileEditView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2DDC94E52177C99F002C6B5B /* ProfileEditView.xib */; };
 		2DDC94E82177C9B1002C6B5B /* ProfileEditView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2DDC94E72177C9B1002C6B5B /* ProfileEditView.swift */; };
 		2DDC94EA2177DA1F002C6B5B /* StandardFormNavController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2DDC94E92177DA1F002C6B5B /* StandardFormNavController.swift */; };
@@ -92,6 +94,7 @@
 /* Begin PBXFileReference section */
 		2D12590E2177704400691077 /* ProfileContactView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ProfileContactView.xib; sourceTree = "<group>"; };
 		2D1259102177707D00691077 /* ProfileContactView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileContactView.swift; sourceTree = "<group>"; };
+		2D18DBF42184EC06003CED4D /* SegueGlobals.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SegueGlobals.swift; sourceTree = "<group>"; };
 		2D2C88572170373C009F7894 /* ProfileBtn.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileBtn.swift; sourceTree = "<group>"; };
 		2D2C88592170D8DC009F7894 /* StoryStack.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = StoryStack.xib; sourceTree = "<group>"; };
 		2D2C885B2170D97C009F7894 /* StoryStack.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StoryStack.swift; sourceTree = "<group>"; };
@@ -137,6 +140,7 @@
 		2DC1A38C21742734004833DD /* StandardStackSubView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StandardStackSubView.swift; sourceTree = "<group>"; };
 		2DC1A38E2174E07F004833DD /* StringExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StringExtensions.swift; sourceTree = "<group>"; };
 		2DC1A3902174E0BE004833DD /* NSAttributedStringExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NSAttributedStringExtensions.swift; sourceTree = "<group>"; };
+		2DCBB7A92184F3B50025DBCD /* ProfileOptionsTVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileOptionsTVC.swift; sourceTree = "<group>"; };
 		2DDC94E52177C99F002C6B5B /* ProfileEditView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ProfileEditView.xib; sourceTree = "<group>"; };
 		2DDC94E72177C9B1002C6B5B /* ProfileEditView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileEditView.swift; sourceTree = "<group>"; };
 		2DDC94E92177DA1F002C6B5B /* StandardFormNavController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StandardFormNavController.swift; sourceTree = "<group>"; };
@@ -381,6 +385,14 @@
 			path = labels;
 			sourceTree = "<group>";
 		};
+		2DCBB7A82184F3860025DBCD /* sub_sections */ = {
+			isa = PBXGroup;
+			children = (
+				2DCBB7A92184F3B50025DBCD /* ProfileOptionsTVC.swift */,
+			);
+			path = sub_sections;
+			sourceTree = "<group>";
+		};
 		2DDC94E32177940E002C6B5B /* details */ = {
 			isa = PBXGroup;
 			children = (
@@ -442,6 +454,7 @@
 				2DDC94E72177C9B1002C6B5B /* ProfileEditView.swift */,
 				2DE70069217E8A0700EEE624 /* ProfileMenuVC.swift */,
 				2D4C4885217B8E7200A29019 /* biz_tools_slider */,
+				2DCBB7A82184F3860025DBCD /* sub_sections */,
 			);
 			path = profile;
 			sourceTree = "<group>";
@@ -450,6 +463,7 @@
 			isa = PBXGroup;
 			children = (
 				2DEE28FF216D295C0007A239 /* ThemeGlobals.swift */,
+				2D18DBF42184EC06003CED4D /* SegueGlobals.swift */,
 			);
 			path = classes;
 			sourceTree = "<group>";
@@ -608,6 +622,7 @@
 			files = (
 				2D515A29217A9D9A007DC6A6 /* StandardSliderView.swift in Sources */,
 				2D86594D21598905003A5B67 /* UIViewExtensions.swift in Sources */,
+				2D18DBF52184EC06003CED4D /* SegueGlobals.swift in Sources */,
 				2D4C4884217B893400A29019 /* BizToolsSlideOne.swift in Sources */,
 				2D449FC72171AD7000351D9B /* ProfileContactBtn.swift in Sources */,
 				2D314C9F2159711A00B74FBA /* AppDelegate.swift in Sources */,
@@ -632,6 +647,7 @@
 				2DE70068217E782F00EEE624 /* HamburgerMenuItemView.swift in Sources */,
 				2D4C4880217B889600A29019 /* BizToolsSlider.swift in Sources */,
 				2D4569FF217D5D9000C91E40 /* MasterContainerVC.swift in Sources */,
+				2DCBB7AA2184F3B50025DBCD /* ProfileOptionsTVC.swift in Sources */,
 				2DDC94F12178DDA7002C6B5B /* StandardFormSectionBtn.swift in Sources */,
 				2DC1A38B2174252F004833DD /* ProfileFollowersListView.swift in Sources */,
 				2DC1A3842173911D004833DD /* ProfileHeaderView.swift in Sources */,
@@ -818,7 +834,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = KWRG283N5S;
+				DEVELOPMENT_TEAM = A46J4WF27R;
 				INFOPLIST_FILE = mockstagram/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -836,7 +852,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = KWRG283N5S;
+				DEVELOPMENT_TEAM = A46J4WF27R;
 				INFOPLIST_FILE = mockstagram/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",

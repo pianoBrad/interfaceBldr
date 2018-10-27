@@ -8,9 +8,15 @@
 
 import UIKit
 
+protocol ProfileMenuVCDelegate : class
+{
+    func menuItemTapped(_ sender : HamburgerMenuItemView)
+}
+
 class ProfileMenuVC: UIViewController {
 
     /** Properties **/
+    weak var itemDelegate : ProfileMenuVCDelegate?
     
     /** Overrides **/
     override func viewDidLoad()
@@ -33,6 +39,6 @@ extension ProfileMenuVC : HamburgerMenuItemViewDelegate
 {
     func menuItemTapped(_ sender: HamburgerMenuItemView)
     {
-        print("take action on menu item now..")
+        itemDelegate?.menuItemTapped(sender)
     }
 }
