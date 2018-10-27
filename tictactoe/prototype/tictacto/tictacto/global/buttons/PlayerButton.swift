@@ -65,24 +65,24 @@ class PlayerButton: UIView
 		contentView.frame = self.bounds
 		contentView.autoresizingMask = [.flexibleWidth, .flexibleHeight]
 		
+        contentView.layer.shadowColor = UIColor.black.cgColor
+        contentView.layer.shadowOpacity = 0.25
+        self.clipsToBounds = false
+        setShadowDepth()
+        
 		let gesture = UITapGestureRecognizer(target: self, action: #selector(checkTap))
 		self.addGestureRecognizer(gesture)
 	}
 	
 	func changeButtonState(setActive: Bool? = nil, shouldUpdateSelf : Bool? = true)
 	{
-        // update our isActive property to be opposite of itself,
-        // unless storyboard rendering (this avoids an error in Interface Builder)
         if (shouldUpdateSelf != nil)
         {
             self.isActive = setActive != nil
                 ? setActive!
                 : !self.isActive
         }
-    
-        // set active state to check against,
-        // using the new isActive property, unless we pass an explicit parameter
-        // into this method (setActive), then we use that
+
         let activeState = setActive != nil
             ? setActive
             : self.isActive
@@ -99,8 +99,26 @@ class PlayerButton: UIView
 			self.playerTurnIndicator.backgroundColor = .clear
 			break
 		}
+        
+        setShadowDepth()
 	}
 	
+    func setShadowDepth()
+    {
+        switch self.isActive
+        {
+        case true:
+            contentView.layer.shadowOffset = CGSize(width: 0, height: 3)
+            contentView.layer.shadowRadius = 2
+            break
+        default:
+            contentView.layer.shadowOffset = CGSize(width: 0, height: 1)
+            contentView.layer.shadowRadius = 1
+            break
+        }
+    }
+    
+    /** Actions **/
 	@objc func checkTap(_ sender: UITapGestureRecognizer)
 	{
 		buttonDelegate?.buttonTapped(self)

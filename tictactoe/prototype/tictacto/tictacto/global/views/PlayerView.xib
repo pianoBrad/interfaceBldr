@@ -5,7 +5,6 @@
     </device>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14283.14"/>
-        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <objects>
@@ -22,7 +21,7 @@
             <rect key="frame" x="0.0" y="0.0" width="375" height="160"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
-                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="2ap-lj-anY" userLabel="PlayerStatus View">
+                <view contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2ap-lj-anY" userLabel="PlayerStatus View">
                     <rect key="frame" x="47" y="80" width="281" height="40"/>
                     <subviews>
                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="xlr-82-Vrv" userLabel="PlayerX View" customClass="PlayerButton" customModule="tictacto" customModuleProvider="target">
@@ -53,7 +52,6 @@
                         <constraint firstItem="BhD-oT-QX2" firstAttribute="width" secondItem="xlr-82-Vrv" secondAttribute="width" id="hhu-Qq-9Uh"/>
                         <constraint firstItem="xlr-82-Vrv" firstAttribute="width" secondItem="2ap-lj-anY" secondAttribute="width" multiplier="1:2" constant="-10" id="p6F-eQ-cVS"/>
                     </constraints>
-                    <viewLayoutGuide key="safeArea" id="kCY-MI-XWD"/>
                 </view>
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Start game or select player" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rBY-0L-dwV" userLabel="GameStatus Label">
                     <rect key="frame" x="0.0" y="120" width="375" height="40"/>

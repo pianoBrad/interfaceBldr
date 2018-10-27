@@ -50,8 +50,9 @@ extension GameBoard : GamePieceButtonDelegate
 {
 	func gamePieceTapped(_ sender: GamePieceButton)
 	{
-		print("btn \(sender.titleLabel!.text) was pressed")
-	}
-	
-	
+        if let btnTitle = sender.titleLabel {
+            let btnName = btnTitle.text ?? ""
+            print("btn \(btnName) was pressed")
+        }
+    }
 }
