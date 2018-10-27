@@ -81,8 +81,8 @@
                             <constraints>
                                 <constraint firstAttribute="width" secondItem="tnC-X5-Ukz" secondAttribute="height" multiplier="1:1" id="kkx-4W-oOF"/>
                             </constraints>
-                            <state key="normal" title="1">
-                                <color key="titleColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            <state key="normal" title="Test">
+                                <color key="titleColor" red="0.20000000000000001" green="0.20000000000000001" blue="0.20000000000000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                             </state>
                         </button>
                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="XVj-gu-rtR" customClass="GamePieceButton" customModule="tictacto" customModuleProvider="target">

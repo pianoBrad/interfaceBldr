@@ -39,16 +39,14 @@ class GamePieceButton: UIButton
 	{
 		self.addTarget(self, action: #selector(handleBtnPress), for: .touchUpInside)
 		
-        // To-Do:
-        // * Add additional logic:
-        // * * update font size and color for button title label
+        self.titleLabel?.font = UIFont.systemFont(ofSize: 60, weight: .black)
+        self.setTitleColor(UIColor(hexFromString: "#333333"), for: .normal)
+        self.setTitle("", for: .normal)
 	}
     
     func draw(symbol: String)
     {
-        // To-Do:
-        // * Complete function
-        // * * given passed in property symbol, update title label
+        self.setTitle(symbol, for: .normal)
     }
 	
     /** Actions **/

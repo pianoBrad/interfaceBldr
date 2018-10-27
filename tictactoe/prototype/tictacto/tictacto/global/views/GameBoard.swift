@@ -46,20 +46,26 @@ class GameBoard: GameSectionVIew
 		btnEight.btnDelegate = self
 		btnNine.btnDelegate = self
     }
+    
+    /** Custom methods **/
+    func updateSymbolToDraw()
+    {
+        switch symbolToDraw
+        {
+        case "X":
+            symbolToDraw = "O"
+            break
+        default:
+            symbolToDraw = "X"
+        }
+    }
 }
 
 extension GameBoard : GamePieceButtonDelegate
 {
 	func gamePieceTapped(_ sender: GamePieceButton)
 	{
-        if let btnTitle = sender.titleLabel {
-            let btnName = btnTitle.text ?? ""
-            print("btn \(btnName) was pressed")
-        }
-        
-        // To-Do:
-        // * Add additional logic
-        // * Whomever was tapped, we need to call the draw() function on that button
-        // * * Determine which symbol to draw next, and pass it to draw
+        sender.draw(symbol: symbolToDraw)
+        updateSymbolToDraw()
     }
 }
