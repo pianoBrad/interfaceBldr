@@ -1,0 +1,23 @@
+* Game States:
+  * Ready:
+    * Player taps a space in the game board
+      * Gameboard updates the tapped space with appropriate symbol
+      * If no winner:
+        * PlayerButton deactivates
+        * Next PlayerButton activates
+        * Game Status Label updates to reflect current active player
+      * If winner, or game board squares are all filled:
+        * End game
+    * Player taps the active player button
+      * Animate button
+    * Player taps the inactive player button
+      * If no player has acted
+        * Game Status Label updates to reflect current active player 
+        * Player tap event fires on a random square in the grid
+    * If Player taps restart button
+      * Reset game to initial ready state
+  
+  * End:
+    * Game Status Label updates to indicate "Game Over"
+    * Gameboard upates to display winning player symbol
+    * PlayerButton of winning player updates it's win count display
