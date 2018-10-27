@@ -39,12 +39,21 @@ class GamePieceButton: UIButton
 	{
 		self.addTarget(self, action: #selector(handleBtnPress), for: .touchUpInside)
 		
+        // To-Do:
+        // * Add additional logic:
+        // * * update font size and color for button title label
 	}
+    
+    func draw(symbol: String)
+    {
+        // To-Do:
+        // * Complete function
+        // * * given passed in property symbol, update title label
+    }
 	
+    /** Actions **/
 	@objc func handleBtnPress(_ sender : GamePieceButton)
 	{
 		btnDelegate?.gamePieceTapped(self)
 	}
-	
-	
 }

@@ -25,6 +25,8 @@ class GameBoard: GameSectionVIew
 	@IBOutlet var btnEight: GamePieceButton!
 	@IBOutlet var btnNine: GamePieceButton!
 	
+    var symbolToDraw : String = "X"
+    
     override func commonInit()
     {
         let bundle = Bundle.init(for: GameBoard.self)
@@ -54,5 +56,10 @@ extension GameBoard : GamePieceButtonDelegate
             let btnName = btnTitle.text ?? ""
             print("btn \(btnName) was pressed")
         }
+        
+        // To-Do:
+        // * Add additional logic
+        // * Whomever was tapped, we need to call the draw() function on that button
+        // * * Determine which symbol to draw next, and pass it to draw
     }
 }
