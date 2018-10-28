@@ -8,24 +8,24 @@
 
 import UIKit
 
+protocol GameBoardDelegate : class
+{
+    func foundThreeInARow(forPlayer: String)
+    func filledWithoutThreeInARow()
+    func readyForNextTurn()
+}
+
 @IBDesignable
 class GameBoard: GameSectionVIew
 {
-	
 	/** Properties **/
 	@IBOutlet var contentView: UIView!
-	
-	@IBOutlet var btnOne: GamePieceButton!
-	@IBOutlet var btnTwo: GamePieceButton!
-	@IBOutlet var btnThree: GamePieceButton!
-	@IBOutlet var btnFour: GamePieceButton!
-	@IBOutlet var btnFive: GamePieceButton!
-	@IBOutlet var btnSix: GamePieceButton!
-	@IBOutlet var btnSeven: GamePieceButton!
-	@IBOutlet var btnEight: GamePieceButton!
-	@IBOutlet var btnNine: GamePieceButton!
+    @IBOutlet var btnContainerView: UIView!
 	
     var symbolToDraw : String = "X"
+    var btns : [GamePieceButton] = []
+    var numRows : Int = 0
+    weak var boardDelegate : GameBoardDelegate?
     
     override func commonInit()
     {
@@ -36,15 +36,24 @@ class GameBoard: GameSectionVIew
 		contentView.frame = self.bounds
 		contentView.autoresizingMask = [.flexibleWidth, .flexibleHeight]
 		
-		btnOne.btnDelegate = self
-		btnTwo.btnDelegate = self
-		btnThree.btnDelegate = self
-		btnFour.btnDelegate = self
-		btnFive.btnDelegate = self
-		btnSix.btnDelegate = self
-		btnSeven.btnDelegate = self
-		btnEight.btnDelegate = self
-		btnNine.btnDelegate = self
+        for view in btnContainerView.subviews
+        {
+            if let btn = view as? GamePieceButton
+            {
+                btns.append(btn)
+                btn.btnDelegate = self
+            }
+        }
+        
+        numRows = Int(Float(btns.count).squareRoot())
+    }
+    
+    override func end(winner: String?)
+    {
+        for btn in btns
+        {
+            btn.disable()
+        }
     }
     
     /** Custom methods **/
@@ -59,13 +68,77 @@ class GameBoard: GameSectionVIew
             symbolToDraw = "X"
         }
     }
+    
+    func checkForThreeInARow() -> Bool
+    {
+        if (findThreeHorizontal())
+        {
+            return true
+        }
+        // check rows vertically for 3 matching labels
+        // check diagonals for 3 matching labels
+     
+        // return draw if no wins and all btn labels assigned
+        return false
+    }
+    
+    func findThreeHorizontal() -> Bool
+    {
+        for row in stride(from: 1, to: numRows, by: 1)
+        {
+            var btnRow = get(row: row)
+
+            let matches = btnRow.filter{$0 == btnRow[0]}.count
+            
+            if matches >= numRows
+            {
+                return true
+            }
+        }
+        
+        return false
+    }
+    
+    func get(row: Int = 1) -> [String]
+    {
+        var btnRow : [String] = []
+        for btn in btns
+        {
+            if btn.row == row
+            {
+                btnRow.append(btn.titleLabel?.text ?? "")
+            }
+        }
+        return btnRow
+    }
+    
+    func findThreeVertical() -> Bool
+    {
+        return false
+    }
+    
+    func findThreeDiagonal() -> Bool
+    {
+        return false
+    }
 }
 
 extension GameBoard : GamePieceButtonDelegate
 {
+    func gamePieceTitleUpdated(_ sender: GamePieceButton) {
+        if (!checkForThreeInARow())
+        {
+            updateSymbolToDraw()
+            boardDelegate?.readyForNextTurn()
+        }
+        else
+        {
+            boardDelegate?.foundThreeInARow(forPlayer: symbolToDraw)
+        }
+    }
+    
 	func gamePieceTapped(_ sender: GamePieceButton)
 	{
         sender.draw(symbol: symbolToDraw)
-        updateSymbolToDraw()
     }
 }

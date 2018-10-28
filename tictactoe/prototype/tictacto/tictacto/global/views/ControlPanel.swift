@@ -14,31 +14,18 @@ protocol ControlPanelDelegate : class
 }
 
 @IBDesignable
-class ControlPanel: UIView {
+class ControlPanel: GameSectionVIew
+{
 
     /** Properties **/
     @IBOutlet var contentView: UIView!
     @IBOutlet weak var restartBtn: ControlPanelBtn!
-	
-	
     
     var availableHeight : CGFloat = 0
     weak var panelDelegate : ControlPanelDelegate?
-    
-    override init(frame: CGRect)
-    {
-        super.init(frame: frame)
-        commonInit()
-    }
-    
-    required init?(coder aDecoder: NSCoder)
-    {
-        super.init(coder: aDecoder)
-        commonInit()
-    }
-    
+
     /** Custom Method **/
-    func commonInit()
+    override func commonInit()
     {
         self.backgroundColor = UIColor(hexFromString: "#F8F8F8")
         self.availableHeight = self.frame.height

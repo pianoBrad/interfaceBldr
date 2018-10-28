@@ -34,7 +34,7 @@ class GameSectionVIew: UIView
     {
     }
     
-    func end()
+    func end(winner: String? = nil)
     {
     }
 }

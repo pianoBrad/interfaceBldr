@@ -16,6 +16,7 @@ class TicTacToeVC: UIViewController
 	
 	override func viewDidLoad()
 	{
+        gameBoard.boardDelegate = self
     }
     
     /** Custom methods **/
@@ -24,9 +25,10 @@ class TicTacToeVC: UIViewController
         playerView.reset()
     }
     
-    func endGame()
+    func endGame(winner: String? = nil)
     {
-        playerView.end()
+        playerView.end(winner: winner)
+        gameBoard.end(winner: winner)
     }
 }
 
@@ -35,5 +37,21 @@ extension TicTacToeVC : ControlPanelDelegate
     func restartBtnWasPress(_ sender: ControlPanelBtn)
     {
         self.startGame()
+    }
+}
+
+extension TicTacToeVC : GameBoardDelegate
+{
+    func foundThreeInARow(forPlayer: String)
+    {
+        endGame(winner: forPlayer)
+    }
+    
+    func filledWithoutThreeInARow()
+    {
+    }
+    
+    func readyForNextTurn()
+    {
     }
 }
