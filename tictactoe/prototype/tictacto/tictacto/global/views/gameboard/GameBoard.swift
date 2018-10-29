@@ -73,6 +73,7 @@ class GameBoard: GameSectionView
     
     override func reset()
     {
+        symbolToDraw = "X"
         for btn in btns
         {
             btn.setTitle("", for: .normal)
@@ -114,7 +115,6 @@ class GameBoard: GameSectionView
 
             let matches = btnRow.filter{$0 == btnRow[0]}.count
             
-            print(btnRow)
             if matches >= numRows && btnRow[0].count > 0
             {
                 return true
