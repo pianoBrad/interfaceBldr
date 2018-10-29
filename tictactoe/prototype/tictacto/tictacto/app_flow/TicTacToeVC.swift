@@ -16,19 +16,30 @@ class TicTacToeVC: UIViewController
 	
 	override func viewDidLoad()
 	{
+        playerView.playersDelegate = self
         gameBoard.boardDelegate = self
+        controlPanel.panelDelegate = self
     }
     
     /** Custom methods **/
     func startGame()
     {
         playerView.reset()
+        gameBoard.reset()
     }
     
     func endGame(winner: String? = nil)
     {
         playerView.end(winner: winner)
         gameBoard.end(winner: winner)
+    }
+}
+
+extension TicTacToeVC : PlayerViewDelegate
+{
+    func nextPlayerShouldTakeTurn()
+    {
+        gameBoard.beginTurn()
     }
 }
 
@@ -53,5 +64,6 @@ extension TicTacToeVC : GameBoardDelegate
     
     func readyForNextTurn()
     {
+        playerView.changeActivePlayer()
     }
 }

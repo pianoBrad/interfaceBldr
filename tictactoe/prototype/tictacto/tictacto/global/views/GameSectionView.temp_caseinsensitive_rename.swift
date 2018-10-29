@@ -8,7 +8,7 @@
 
 import UIKit
 
-class GameSectionVIew: UIView
+class GameSectionView: UIView
 {
     /** Properties **/
     

@@ -53,7 +53,7 @@
                         <constraint firstItem="xlr-82-Vrv" firstAttribute="width" secondItem="2ap-lj-anY" secondAttribute="width" multiplier="1:2" constant="-10" id="p6F-eQ-cVS"/>
                     </constraints>
                 </view>
-                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Start game or select player" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rBY-0L-dwV" userLabel="GameStatus Label">
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Start game or select player" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rBY-0L-dwV" userLabel="GameStatus Label" customClass="GameStatusLabel" customModule="tictacto" customModuleProvider="target">
                     <rect key="frame" x="0.0" y="120" width="375" height="40"/>
                     <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     <constraints>

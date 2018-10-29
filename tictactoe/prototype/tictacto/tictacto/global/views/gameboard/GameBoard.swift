@@ -16,7 +16,7 @@ protocol GameBoardDelegate : class
 }
 
 @IBDesignable
-class GameBoard: GameSectionVIew
+class GameBoard: GameSectionView
 {
 	/** Properties **/
 	@IBOutlet var contentView: UIView!
@@ -48,11 +48,35 @@ class GameBoard: GameSectionVIew
         numRows = Int(Float(btns.count).squareRoot())
     }
     
-    override func end(winner: String?)
+    override func beginTurn()
     {
+        super.beginTurn()
+        for btn in btns
+        {
+            btn.enable()
+        }
+    }
+    
+    override func endTurn()
+    {
+        super.endTurn()
         for btn in btns
         {
             btn.disable()
+        }
+    }
+    
+    override func end(winner: String?)
+    {
+        self.endTurn()
+    }
+    
+    override func reset()
+    {
+        for btn in btns
+        {
+            btn.setTitle("", for: .normal)
+            btn.enable()
         }
     }
     
@@ -75,22 +99,23 @@ class GameBoard: GameSectionVIew
         {
             return true
         }
+        // To-Do:
         // check rows vertically for 3 matching labels
         // check diagonals for 3 matching labels
      
-        // return draw if no wins and all btn labels assigned
-        return false
+        return false // draw
     }
     
     func findThreeHorizontal() -> Bool
     {
-        for row in stride(from: 1, to: numRows, by: 1)
+        for row in stride(from: 1, through: numRows, by: 1)
         {
             var btnRow = get(row: row)
 
             let matches = btnRow.filter{$0 == btnRow[0]}.count
             
-            if matches >= numRows
+            print(btnRow)
+            if matches >= numRows && btnRow[0].count > 0
             {
                 return true
             }
@@ -106,7 +131,7 @@ class GameBoard: GameSectionVIew
         {
             if btn.row == row
             {
-                btnRow.append(btn.titleLabel?.text ?? "")
+                btnRow.append(btn.title(for: .normal) ?? "")
             }
         }
         return btnRow
@@ -139,6 +164,7 @@ extension GameBoard : GamePieceButtonDelegate
     
 	func gamePieceTapped(_ sender: GamePieceButton)
 	{
+        endTurn()
         sender.draw(symbol: symbolToDraw)
     }
 }

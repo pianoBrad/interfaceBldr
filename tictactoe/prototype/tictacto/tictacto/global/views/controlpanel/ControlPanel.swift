@@ -14,9 +14,8 @@ protocol ControlPanelDelegate : class
 }
 
 @IBDesignable
-class ControlPanel: GameSectionVIew
+class ControlPanel: GameSectionView
 {
-
     /** Properties **/
     @IBOutlet var contentView: UIView!
     @IBOutlet weak var restartBtn: ControlPanelBtn!
