@@ -100,8 +100,11 @@ class GameBoard: GameSectionView
         {
             return true
         }
+        else if (findThreeVertical())
+        {
+            return true
+        }
         // To-Do:
-        // check rows vertically for 3 matching labels
         // check diagonals for 3 matching labels
      
         return false // draw
@@ -139,7 +142,32 @@ class GameBoard: GameSectionView
     
     func findThreeVertical() -> Bool
     {
+        for col in stride(from: 1, through: numRows, by: 1)
+        {
+            var btnCol = get(column: col)
+            
+            let matches = btnCol.filter{$0 == btnCol[0]}.count
+            
+            if matches >= numRows && btnCol[0].count > 0
+            {
+                return true
+            }
+        }
+        
         return false
+    }
+    
+    func get(column: Int = 1) -> [String]
+    {
+        var btnCol : [String] = []
+        for btn in btns
+        {
+            if btn.column == column
+            {
+                btnCol.append(btn.title(for: .normal) ?? "")
+            }
+        }
+        return btnCol
     }
     
     func findThreeDiagonal() -> Bool
