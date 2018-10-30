@@ -104,8 +104,10 @@ class GameBoard: GameSectionView
         {
             return true
         }
-        // To-Do:
-        // check diagonals for 3 matching labels
+        else if (findThreeDiagonal())
+        {
+            return true
+        }
      
         return false // draw
     }
@@ -172,7 +174,44 @@ class GameBoard: GameSectionView
     
     func findThreeDiagonal() -> Bool
     {
+        let diagonals = [
+            getDiagonal(),
+            getDiagonal(startRow: numRows)
+        ]
+        
+        for diagonal in diagonals
+        {
+            let matches = diagonal.filter{$0 == diagonal[0]}.count
+            
+            if matches >= numRows && diagonal[0].count > 0
+            {
+                return true
+            }
+        }
+        
         return false
+    }
+    
+    func getDiagonal(startRow: Int = 1) -> [String]
+    {
+        var btnGroup : [String] = []
+        let nextRowIterator = startRow > 1 ? -1 : 1
+        var curRow = startRow
+        var curCol = 1
+        
+        for _ in stride(from: 1, through: numRows, by: 1)
+        {
+            for btn in btns
+            {
+                if btn.column == curCol && btn.row == curRow
+                {
+                    btnGroup.append(btn.title(for: .normal) ?? "")
+                    curRow += nextRowIterator
+                    curCol += 1
+                }
+            }
+        }
+        return btnGroup
     }
 }
 
