@@ -158,6 +158,7 @@
                             <constraints>
                                 <constraint firstAttribute="width" secondItem="chz-XN-cx0" secondAttribute="height" multiplier="1:1" id="On3-9m-2Kr"/>
                             </constraints>
+                            <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="17"/>
                             <state key="normal" title="9">
                                 <color key="titleColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             </state>
