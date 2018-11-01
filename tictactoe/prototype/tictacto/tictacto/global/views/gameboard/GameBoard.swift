@@ -26,10 +26,11 @@ class GameBoard: GameSectionView
     var btns : [GamePieceButton] = []
     var btnsHorizontal : [[GamePieceButton]] = []
     var btnsVertical : [[GamePieceButton]] = []
-    var btnsDiagonal : [[GamePieceButton]] = []
+    var btnsDiagonal : [[GamePieceButton]] = [[]]
     var numRows : Int = 0
     weak var boardDelegate : GameBoardDelegate?
     
+    /** Overrides **/
     override func commonInit()
     {
         let bundle = Bundle.init(for: GameBoard.self)
@@ -99,9 +100,16 @@ class GameBoard: GameSectionView
         {
             btnsHorizontal.append(btns.filter{ $0.row == rowOrColNum })
             btnsVertical.append(btns.filter{ $0.column == rowOrColNum })
+            
+            let diagonalFilter = btns.filter{
+                $0.row == rowOrColNum && $0.column == numRows - (rowOrColNum - 1)
+            }
+            if let match = diagonalFilter.first
+            {
+                btnsDiagonal[0].append(match)
+            }
         }
         btnsDiagonal.append(btns.filter{ $0.row == $0.column })
-        //btnsDiagonal.append(getDiagonal(startRow: numRows))
     }
     
     func checkForThreeInARow() -> Bool
@@ -118,8 +126,7 @@ class GameBoard: GameSectionView
         {
             return true
         }
-     
-        return false // draw
+        return false // no matches found
     }
     
     func findThree(direction: String) -> Bool
@@ -152,28 +159,6 @@ class GameBoard: GameSectionView
         }
         
         return false
-    }
-    
-    func getDiagonal(startRow: Int = 1) -> [GamePieceButton]
-    {
-        var btnGroup : [GamePieceButton] = []
-        let nextRowIterator = startRow > 1 ? -1 : 1
-        var curRow = startRow
-        var curCol = 1
-        
-        for _ in stride(from: 1, through: numRows, by: 1)
-        {
-            for btn in btns
-            {
-                if btn.column == curCol && btn.row == curRow
-                {
-                    btnGroup.append(btn)
-                    curRow += nextRowIterator
-                    curCol += 1
-                }
-            }
-        }
-        return btnGroup
     }
 }
 
