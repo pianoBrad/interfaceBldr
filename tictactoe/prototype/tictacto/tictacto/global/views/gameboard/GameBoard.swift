@@ -24,6 +24,9 @@ class GameBoard: GameSectionView
 	
     var symbolToDraw : String = "X"
     var btns : [GamePieceButton] = []
+    var btnsHorizontal : [[GamePieceButton]] = []
+    var btnsVertical : [[GamePieceButton]] = []
+    var btnsDiagonal : [[GamePieceButton]] = []
     var numRows : Int = 0
     weak var boardDelegate : GameBoardDelegate?
     
@@ -36,16 +39,7 @@ class GameBoard: GameSectionView
 		contentView.frame = self.bounds
 		contentView.autoresizingMask = [.flexibleWidth, .flexibleHeight]
 		
-        for view in btnContainerView.subviews
-        {
-            if let btn = view as? GamePieceButton
-            {
-                btns.append(btn)
-                btn.btnDelegate = self
-            }
-        }
-        
-        numRows = Int(Float(btns.count).squareRoot())
+        loadBtnsToCheck()
     }
     
     override func beginTurn()
@@ -94,13 +88,33 @@ class GameBoard: GameSectionView
         }
     }
     
+    func loadBtnsToCheck()
+    {
+        for view in btnContainerView.subviews
+        {
+            if let btn = view as? GamePieceButton
+            {
+                btns.append(btn)
+                btn.btnDelegate = self
+            }
+        }
+        
+        numRows = Int(Float(btns.count).squareRoot())
+        
+        for rowOrColNum in stride(from: 1, through: numRows, by: 1)
+        {
+            btnsHorizontal.append(btns.filter{ $0.row == rowOrColNum })
+            btnsVertical.append(btns.filter{ $0.column == rowOrColNum })
+        }
+    }
+    
     func checkForThreeInARow() -> Bool
     {
-        if (findThreeHorizontal())
+        if (findThree(direction: "horizontal"))
         {
             return true
         }
-        else if (findThreeVertical())
+        else if (findThree(direction: "vertical"))
         {
             return true
         }
@@ -112,64 +126,36 @@ class GameBoard: GameSectionView
         return false // draw
     }
     
-    func findThreeHorizontal() -> Bool
+    func findThree(direction: String) -> Bool
     {
-        for row in stride(from: 1, through: numRows, by: 1)
+        var rowsToCheck : [[GamePieceButton]] = []
+        switch direction
         {
-            var btnRow = get(row: row)
-
-            let matches = btnRow.filter{$0 == btnRow[0]}.count
+        case "horizontal":
+            rowsToCheck = btnsHorizontal
+            break
+        case "vertical":
+            rowsToCheck = btnsVertical
+            break
+        default:
+            rowsToCheck = btnsDiagonal
+        }
+        
+        for btnRow in rowsToCheck
+        {
+            let symbolToMatch = btnRow[0].title(for: .normal) ?? ""
+            let matches = btnRow.filter
+            {
+                $0.title(for: .normal)?.contains(symbolToMatch) == true
+            }.count
             
-            if matches >= numRows && btnRow[0].count > 0
+            if matches >= numRows && symbolToMatch.count > 0
             {
                 return true
             }
         }
         
         return false
-    }
-    
-    func get(row: Int = 1) -> [String]
-    {
-        var btnRow : [String] = []
-        for btn in btns
-        {
-            if btn.row == row
-            {
-                btnRow.append(btn.title(for: .normal) ?? "")
-            }
-        }
-        return btnRow
-    }
-    
-    func findThreeVertical() -> Bool
-    {
-        for col in stride(from: 1, through: numRows, by: 1)
-        {
-            var btnCol = get(column: col)
-            
-            let matches = btnCol.filter{$0 == btnCol[0]}.count
-            
-            if matches >= numRows && btnCol[0].count > 0
-            {
-                return true
-            }
-        }
-        
-        return false
-    }
-    
-    func get(column: Int = 1) -> [String]
-    {
-        var btnCol : [String] = []
-        for btn in btns
-        {
-            if btn.column == column
-            {
-                btnCol.append(btn.title(for: .normal) ?? "")
-            }
-        }
-        return btnCol
     }
     
     func findThreeDiagonal() -> Bool
