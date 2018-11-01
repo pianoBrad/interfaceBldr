@@ -106,6 +106,8 @@ class GameBoard: GameSectionView
             btnsHorizontal.append(btns.filter{ $0.row == rowOrColNum })
             btnsVertical.append(btns.filter{ $0.column == rowOrColNum })
         }
+        btnsDiagonal.append(getDiagonal(startRow: 1))
+        btnsDiagonal.append(getDiagonal(startRow: numRows))
     }
     
     func checkForThreeInARow() -> Bool
@@ -118,7 +120,7 @@ class GameBoard: GameSectionView
         {
             return true
         }
-        else if (findThreeDiagonal())
+        else if (findThree(direction: "diagonal"))
         {
             return true
         }
@@ -158,29 +160,9 @@ class GameBoard: GameSectionView
         return false
     }
     
-    func findThreeDiagonal() -> Bool
+    func getDiagonal(startRow: Int = 1) -> [GamePieceButton]
     {
-        let diagonals = [
-            getDiagonal(),
-            getDiagonal(startRow: numRows)
-        ]
-        
-        for diagonal in diagonals
-        {
-            let matches = diagonal.filter{$0 == diagonal[0]}.count
-            
-            if matches >= numRows && diagonal[0].count > 0
-            {
-                return true
-            }
-        }
-        
-        return false
-    }
-    
-    func getDiagonal(startRow: Int = 1) -> [String]
-    {
-        var btnGroup : [String] = []
+        var btnGroup : [GamePieceButton] = []
         let nextRowIterator = startRow > 1 ? -1 : 1
         var curRow = startRow
         var curCol = 1
@@ -191,7 +173,7 @@ class GameBoard: GameSectionView
             {
                 if btn.column == curCol && btn.row == curRow
                 {
-                    btnGroup.append(btn.title(for: .normal) ?? "")
+                    btnGroup.append(btn)
                     curRow += nextRowIterator
                     curCol += 1
                 }
