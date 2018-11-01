@@ -56,7 +56,7 @@ class PlayerButton: UIView
 	
 	
 	/** Custom Methods **/
-	func commonInit()
+	private func commonInit()
 	{
 		let bundle = Bundle(for: PlayerButton.self)
 		bundle.loadNibNamed(String(describing: PlayerButton.self), owner: self, options: nil)
@@ -74,7 +74,8 @@ class PlayerButton: UIView
 		self.addGestureRecognizer(gesture)
 	}
 	
-	func changeButtonState(setActive: Bool? = nil, shouldUpdateSelf : Bool? = true)
+	public func changeButtonState(
+        setActive: Bool? = nil, shouldUpdateSelf : Bool? = true)
 	{
         if (shouldUpdateSelf != nil)
         {
@@ -102,8 +103,8 @@ class PlayerButton: UIView
         
         setShadowDepth()
 	}
-	
-    func setShadowDepth()
+    
+    private func setShadowDepth()
     {
         switch self.isActive
         {

@@ -22,7 +22,6 @@ class GameBoard: GameSectionView
 	@IBOutlet var contentView: UIView!
     @IBOutlet var btnContainerView: UIView!
 	
-    var symbolToDraw : String = "X"
     var btns : [GamePieceButton] = []
     var btnsHorizontal : [[GamePieceButton]] = []
     var btnsVertical : [[GamePieceButton]] = []
@@ -62,7 +61,6 @@ class GameBoard: GameSectionView
     
     override func reset()
     {
-        symbolToDraw = "X"
         for btn in btns
         {
             btn.setTitle("", for: .normal)
@@ -71,18 +69,6 @@ class GameBoard: GameSectionView
     }
     
     /** Custom methods **/
-    func updateSymbolToDraw()
-    {
-        switch symbolToDraw
-        {
-        case "X":
-            symbolToDraw = "O"
-            break
-        default:
-            symbolToDraw = "X"
-        }
-    }
-    
     func loadBtnsToCheck()
     {
         for view in btnContainerView.subviews
@@ -126,6 +112,7 @@ class GameBoard: GameSectionView
         {
             return true
         }
+        
         return false // no matches found
     }
     
@@ -157,28 +144,31 @@ class GameBoard: GameSectionView
                 return true
             }
         }
-        
+
         return false
     }
 }
 
 extension GameBoard : GamePieceButtonDelegate
 {
-    func gamePieceTitleUpdated(_ sender: GamePieceButton) {
-        if (!checkForThreeInARow())
+    func gamePieceTitleUpdated(_ sender: GamePieceButton)
+    {
+        if !checkForThreeInARow()
         {
-            updateSymbolToDraw()
             boardDelegate?.readyForNextTurn()
         }
-        else
+        else if let curPlayer = currentGame.getCurrentPlayer()
         {
-            boardDelegate?.foundThreeInARow(forPlayer: symbolToDraw)
+            boardDelegate?.foundThreeInARow(forPlayer: curPlayer.symbol)
         }
     }
     
 	func gamePieceTapped(_ sender: GamePieceButton)
 	{
         endTurn()
-        sender.draw(symbol: symbolToDraw)
+        if let curPlayer = currentGame.getCurrentPlayer()
+        {
+            sender.draw(symbol: curPlayer.symbol)
+        }
     }
 }

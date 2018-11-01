@@ -24,6 +24,7 @@ class PlayerView: GameSectionView
     @IBOutlet weak var gameStatusLabel: GameStatusLabel!
     
     weak var playersDelegate : PlayerViewDelegate?
+    var playerBtns : [PlayerButton] = []
     
 	/** Overrides **/
     
@@ -39,16 +40,19 @@ class PlayerView: GameSectionView
         contentView.frame = self.bounds
         contentView.autoresizingMask = [.flexibleWidth, .flexibleHeight]
         
-        playerXBtn.buttonDelegate = self
-        playerOBtn.buttonDelegate = self
+        playerBtns = [playerXBtn, playerOBtn]
+        
+        for btn in playerBtns
+        {
+            btn.buttonDelegate = self
+            let player = Player(withButton: btn)
+            currentGame.add(player: player)
+        }
     }
     
     override func reset()
     {
         super.reset()
-        
-        playerXBtn.changeButtonState(setActive: true)
-        playerOBtn.changeButtonState(setActive: false)
         gameStatusLabel.reset()
     }
     
@@ -77,14 +81,18 @@ class PlayerView: GameSectionView
     
     func updateCurPlayerStatus()
     {
-        let curSymbol = playerXBtn.isActive ? "X" : "O"
-        gameStatusLabel.text = "Player \(curSymbol) Turn"
+        if let curPlayer = currentGame.getCurrentPlayer()
+        {
+            gameStatusLabel.text = "Player \(curPlayer.symbol) Turn"
+        }
+        else
+        {
+            gameStatusLabel.text = "No players available"
+        }
     }
 }
 
 extension PlayerView: PlayerButtonDelegate
 {
-    func buttonTapped(_ sender: PlayerButton)
-    {
-    }
+    func buttonTapped(_ sender: PlayerButton) {}
 }

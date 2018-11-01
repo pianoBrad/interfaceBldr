@@ -24,6 +24,7 @@ class TicTacToeVC: UIViewController
     /** Custom methods **/
     func startGame()
     {
+        currentGame.reset()
         playerView.reset()
         gameBoard.reset()
     }
