@@ -45,19 +45,13 @@ class GameBoard: GameSectionView
     override func beginTurn()
     {
         super.beginTurn()
-        for btn in btns
-        {
-            btn.enable()
-        }
+        for btn in btns { btn.enable() }
     }
     
     override func endTurn()
     {
         super.endTurn()
-        for btn in btns
-        {
-            btn.disable()
-        }
+        for btn in btns { btn.disable() }
     }
     
     override func end(winner: String?)
@@ -106,8 +100,8 @@ class GameBoard: GameSectionView
             btnsHorizontal.append(btns.filter{ $0.row == rowOrColNum })
             btnsVertical.append(btns.filter{ $0.column == rowOrColNum })
         }
-        btnsDiagonal.append(getDiagonal(startRow: 1))
-        btnsDiagonal.append(getDiagonal(startRow: numRows))
+        btnsDiagonal.append(btns.filter{ $0.row == $0.column })
+        //btnsDiagonal.append(getDiagonal(startRow: numRows))
     }
     
     func checkForThreeInARow() -> Bool
