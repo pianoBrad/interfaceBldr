@@ -100,15 +100,9 @@ class GameBoard: GameSectionView
     
     func checkForThreeInARow() -> Bool
     {
-        if (findThree(direction: "horizontal"))
-        {
-            return true
-        }
-        else if (findThree(direction: "vertical"))
-        {
-            return true
-        }
-        else if (findThree(direction: "diagonal"))
+        if (findThree(direction: "horizontal")
+            || findThree(direction: "vertical")
+            || findThree(direction: "diagonal"))
         {
             return true
         }
@@ -165,9 +159,12 @@ extension GameBoard : GamePieceButtonDelegate
     
 	func gamePieceTapped(_ sender: GamePieceButton)
 	{
-        endTurn()
-        if let curPlayer = currentGame.getCurrentPlayer()
+        if sender.hasBeenPlayed() {
+            return
+        }
+        else if let curPlayer = currentGame.getCurrentPlayer()
         {
+            endTurn()
             sender.draw(symbol: curPlayer.symbol)
         }
     }

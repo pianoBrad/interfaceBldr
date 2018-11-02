@@ -70,6 +70,16 @@ class GamePieceButton: UIButton
     {
         self.removeTarget(nil, action: nil, for: .allEvents)
     }
+    
+    func hasBeenPlayed() -> Bool
+    {
+        if let symbol = self.title(for: .normal), symbol.count > 0
+        {
+            return true
+        }
+        
+        return false
+    }
 	
     /** Actions **/
 	@objc func handleBtnPress(_ sender : GamePieceButton)
