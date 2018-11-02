@@ -42,7 +42,7 @@ class GameSectionView: UIView
     {
     }
     
-    func end(winner: String? = nil)
+    func end()
     {
     }
 }

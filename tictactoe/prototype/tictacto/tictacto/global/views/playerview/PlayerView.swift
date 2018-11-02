@@ -56,13 +56,13 @@ class PlayerView: GameSectionView
         gameStatusLabel.reset()
     }
     
-    override func end(winner: String? = nil)
+    override func end()
     {
         super.end()
         
-        if let winningSymbol = winner
+        if let winner = currentGame.winner
         {
-            gameStatusLabel.text = "Player \(winningSymbol) wins!"
+            gameStatusLabel.text = "Player \(winner.symbol) wins!"
             return
         }
         

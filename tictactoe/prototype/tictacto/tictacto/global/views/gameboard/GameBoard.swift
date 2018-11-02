@@ -10,7 +10,7 @@ import UIKit
 
 protocol GameBoardDelegate : class
 {
-    func foundThreeInARow(forPlayer: String)
+    func foundThreeInARow(forPlayer: Player)
     func filledWithoutThreeInARow()
     func readyForNextTurn()
 }
@@ -54,7 +54,7 @@ class GameBoard: GameSectionView
         for btn in btns { btn.disable() }
     }
     
-    override func end(winner: String?)
+    override func end()
     {
         self.endTurn()
     }
@@ -63,8 +63,7 @@ class GameBoard: GameSectionView
     {
         for btn in btns
         {
-            btn.setTitle("", for: .normal)
-            btn.enable()
+            btn.reset()
         }
     }
     
@@ -141,6 +140,19 @@ class GameBoard: GameSectionView
 
         return false
     }
+    
+    func checkIsBoardFilled() -> Bool
+    {
+        for btn in btns
+        {
+            if !btn.hasBeenPlayed()
+            {
+                return false
+            }
+        }
+        
+        return true
+    }
 }
 
 extension GameBoard : GamePieceButtonDelegate
@@ -149,11 +161,17 @@ extension GameBoard : GamePieceButtonDelegate
     {
         if !checkForThreeInARow()
         {
+            if checkIsBoardFilled()
+            {
+                boardDelegate?.filledWithoutThreeInARow()
+                return
+            }
+            
             boardDelegate?.readyForNextTurn()
         }
         else if let curPlayer = currentGame.getCurrentPlayer()
         {
-            boardDelegate?.foundThreeInARow(forPlayer: curPlayer.symbol)
+            boardDelegate?.foundThreeInARow(forPlayer: curPlayer)
         }
     }
     
@@ -165,7 +183,7 @@ extension GameBoard : GamePieceButtonDelegate
         else if let curPlayer = currentGame.getCurrentPlayer()
         {
             endTurn()
-            sender.draw(symbol: curPlayer.symbol)
+            sender.mark(forPlayer: curPlayer)
         }
     }
 }

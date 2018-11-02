@@ -29,10 +29,10 @@ class TicTacToeVC: UIViewController
         gameBoard.reset()
     }
     
-    func endGame(winner: String? = nil)
+    func endGame()
     {
-        playerView.end(winner: winner)
-        gameBoard.end(winner: winner)
+        playerView.end()
+        gameBoard.end()
     }
 }
 
@@ -54,13 +54,16 @@ extension TicTacToeVC : ControlPanelDelegate
 
 extension TicTacToeVC : GameBoardDelegate
 {
-    func foundThreeInARow(forPlayer: String)
+    func foundThreeInARow(forPlayer: Player)
     {
-        endGame(winner: forPlayer)
+        currentGame.declareWinner(player: forPlayer)
+        endGame()
     }
     
     func filledWithoutThreeInARow()
     {
+        currentGame.declareDraw()
+        endGame()
     }
     
     func readyForNextTurn()

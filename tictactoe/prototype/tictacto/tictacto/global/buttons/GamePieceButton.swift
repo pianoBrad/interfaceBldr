@@ -22,7 +22,8 @@ class GamePieceButton: UIButton
 	weak var btnDelegate : GamePieceButtonDelegate?
     @IBInspectable var column : Int = 0
     @IBInspectable var row : Int = 0
-	
+    var owner : Player?
+    
 	/** Overrides **/
 	override init(frame: CGRect)
 	{
@@ -46,7 +47,13 @@ class GamePieceButton: UIButton
         self.enable()
     }
     
-    func draw(symbol: String)
+    public func mark(forPlayer: Player)
+    {
+        self.owner = forPlayer
+        self.draw(symbol: forPlayer.symbol)
+    }
+    
+    private func draw(symbol: String)
     {
         self.setTitle(symbol, for: .normal)
         // Adding a delay b/c of the animation in setTitle
@@ -59,26 +66,28 @@ class GamePieceButton: UIButton
         )
     }
     
-    func enable()
+    public func enable()
     {
         self.addTarget(
             self, action: #selector(handleBtnPress), for: .touchUpInside
         )
     }
     
-    func disable()
+    public func disable()
     {
         self.removeTarget(nil, action: nil, for: .allEvents)
     }
     
-    func hasBeenPlayed() -> Bool
+    public func reset()
     {
-        if let symbol = self.title(for: .normal), symbol.count > 0
-        {
-            return true
-        }
-        
-        return false
+        self.owner = nil
+        self.setTitle("", for: .normal)
+        self.enable()
+    }
+    
+    public func hasBeenPlayed() -> Bool
+    {
+        return self.owner != nil ? true : false
     }
 	
     /** Actions **/

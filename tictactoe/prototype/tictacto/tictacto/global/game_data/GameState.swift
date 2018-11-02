@@ -13,6 +13,7 @@ class GameState: NSObject
     /** Properties **/
     var players : [Player] = []
     var curPlayer : Player?
+    var winner : Player?
     
     /** Custom methods **/
     public func add(player : Player)
@@ -38,6 +39,16 @@ class GameState: NSObject
     public func reset()
     {
         self.resetPlayerTurns()
+    }
+    
+    public func declareWinner(player: Player)
+    {
+        self.winner = player
+    }
+    
+    public func declareDraw()
+    {
+        self.winner = nil
     }
     
     private func resetPlayerTurns()
