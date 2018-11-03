@@ -1,0 +1,6 @@
+framework module Pods_mockstagramTests {
+  umbrella header "Pods-mockstagramTests-umbrella.h"
+
+  export *
+  module * { export * }
+}
