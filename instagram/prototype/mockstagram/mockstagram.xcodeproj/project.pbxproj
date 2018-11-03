@@ -42,6 +42,9 @@
 		2D86594D21598905003A5B67 /* UIViewExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D86594C21598905003A5B67 /* UIViewExtensions.swift */; };
 		2D86594F2159EFC4003A5B67 /* MediaCard.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2D86594E2159EFC4003A5B67 /* MediaCard.xib */; };
 		2D8659512159F04F003A5B67 /* MediaCard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D8659502159F04F003A5B67 /* MediaCard.swift */; };
+		2DAEAEE5218E1DD50037D971 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2DAEAEE4218E1DD50037D971 /* User.swift */; };
+		2DAEAEE7218E1FF90037D971 /* UserSettings.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2DAEAEE6218E1FF90037D971 /* UserSettings.swift */; };
+		2DAEAEE9218E213E0037D971 /* Post.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2DAEAEE8218E213E0037D971 /* Post.swift */; };
 		2DC1A382217390CF004833DD /* ProfileHeaderView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2DC1A381217390CF004833DD /* ProfileHeaderView.xib */; };
 		2DC1A3842173911D004833DD /* ProfileHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2DC1A3832173911D004833DD /* ProfileHeaderView.swift */; };
 		2DC1A38621739FF9004833DD /* ProfileOccupationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2DC1A38521739FF9004833DD /* ProfileOccupationView.swift */; };
@@ -137,6 +140,9 @@
 		2D86594C21598905003A5B67 /* UIViewExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIViewExtensions.swift; sourceTree = "<group>"; };
 		2D86594E2159EFC4003A5B67 /* MediaCard.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MediaCard.xib; sourceTree = "<group>"; };
 		2D8659502159F04F003A5B67 /* MediaCard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MediaCard.swift; sourceTree = "<group>"; };
+		2DAEAEE4218E1DD50037D971 /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
+		2DAEAEE6218E1FF90037D971 /* UserSettings.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserSettings.swift; sourceTree = "<group>"; };
+		2DAEAEE8218E213E0037D971 /* Post.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Post.swift; sourceTree = "<group>"; };
 		2DC1A381217390CF004833DD /* ProfileHeaderView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ProfileHeaderView.xib; sourceTree = "<group>"; };
 		2DC1A3832173911D004833DD /* ProfileHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileHeaderView.swift; sourceTree = "<group>"; };
 		2DC1A38521739FF9004833DD /* ProfileOccupationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileOccupationView.swift; sourceTree = "<group>"; };
@@ -264,6 +270,7 @@
 		2D314CCF2159734B00B74FBA /* global */ = {
 			isa = PBXGroup;
 			children = (
+				2DAEAEE3218E1DB80037D971 /* objects */,
 				2D865943215974BE003A5B67 /* assets */,
 				2D86594B21598883003A5B67 /* extensions */,
 				2D86593E21597447003A5B67 /* buttons */,
@@ -272,7 +279,7 @@
 				2DC1A3872173AF00004833DD /* labels */,
 				2D86594021597461003A5B67 /* navigation */,
 				2D86593D2159743B003A5B67 /* views */,
-				2DEE2901216D29630007A239 /* classes */,
+				2DEE2901216D29630007A239 /* variables */,
 			);
 			name = global;
 			path = "New Group";
@@ -397,6 +404,16 @@
 			path = extensions;
 			sourceTree = "<group>";
 		};
+		2DAEAEE3218E1DB80037D971 /* objects */ = {
+			isa = PBXGroup;
+			children = (
+				2DAEAEE4218E1DD50037D971 /* User.swift */,
+				2DAEAEE6218E1FF90037D971 /* UserSettings.swift */,
+				2DAEAEE8218E213E0037D971 /* Post.swift */,
+			);
+			path = objects;
+			sourceTree = "<group>";
+		};
 		2DC1A3872173AF00004833DD /* labels */ = {
 			isa = PBXGroup;
 			children = (
@@ -479,13 +496,13 @@
 			path = profile;
 			sourceTree = "<group>";
 		};
-		2DEE2901216D29630007A239 /* classes */ = {
+		2DEE2901216D29630007A239 /* variables */ = {
 			isa = PBXGroup;
 			children = (
 				2DEE28FF216D295C0007A239 /* ThemeGlobals.swift */,
 				2D18DBF42184EC06003CED4D /* SegueGlobals.swift */,
 			);
-			path = classes;
+			path = variables;
 			sourceTree = "<group>";
 		};
 		62AE47273B976C9C34F3F2BF /* Frameworks */ = {
@@ -673,14 +690,32 @@
 			);
 			inputPaths = (
 				"${SRCROOT}/Pods/Target Support Files/Pods-mockstagram/Pods-mockstagram-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/BoringSSL/openssl.framework",
+				"${BUILT_PRODUCTS_DIR}/GTMSessionFetcher/GTMSessionFetcher.framework",
 				"${BUILT_PRODUCTS_DIR}/GoogleUtilities/GoogleUtilities.framework",
+				"${BUILT_PRODUCTS_DIR}/Protobuf/Protobuf.framework",
+				"${BUILT_PRODUCTS_DIR}/gRPC/GRPCClient.framework",
+				"${BUILT_PRODUCTS_DIR}/gRPC-C++/grpcpp.framework",
+				"${BUILT_PRODUCTS_DIR}/gRPC-Core/grpc.framework",
+				"${BUILT_PRODUCTS_DIR}/gRPC-ProtoRPC/ProtoRPC.framework",
+				"${BUILT_PRODUCTS_DIR}/gRPC-RxLibrary/RxLibrary.framework",
+				"${BUILT_PRODUCTS_DIR}/leveldb-library/leveldb.framework",
 				"${BUILT_PRODUCTS_DIR}/nanopb/nanopb.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputFileListPaths = (
 			);
 			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/openssl.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GTMSessionFetcher.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GoogleUtilities.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Protobuf.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GRPCClient.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/grpcpp.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/grpc.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/ProtoRPC.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RxLibrary.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/leveldb.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/nanopb.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -774,6 +809,7 @@
 				2D2C88582170373C009F7894 /* ProfileBtn.swift in Sources */,
 				2DDC94EF21782065002C6B5B /* StandardFormFieldView.swift in Sources */,
 				2DF206782170E93A008A6A6A /* UIStackViewExtensions.swift in Sources */,
+				2DAEAEE7218E1FF90037D971 /* UserSettings.swift in Sources */,
 				2DEE28FD216D079B0007A239 /* ProfileVC.swift in Sources */,
 				2D2C885C2170D97C009F7894 /* StoryStack.swift in Sources */,
 				2D456A01217D79D700C91E40 /* MainTabBC.swift in Sources */,
@@ -789,9 +825,11 @@
 				2D4C4880217B889600A29019 /* BizToolsSlider.swift in Sources */,
 				2D4569FF217D5D9000C91E40 /* MasterContainerVC.swift in Sources */,
 				2DCBB7AA2184F3B50025DBCD /* ProfileOptionsTVC.swift in Sources */,
+				2DAEAEE5218E1DD50037D971 /* User.swift in Sources */,
 				2DDC94F12178DDA7002C6B5B /* StandardFormSectionBtn.swift in Sources */,
 				2DC1A38B2174252F004833DD /* ProfileFollowersListView.swift in Sources */,
 				2DC1A3842173911D004833DD /* ProfileHeaderView.swift in Sources */,
+				2DAEAEE9218E213E0037D971 /* Post.swift in Sources */,
 				2DEE2903216D29CD0007A239 /* UIColorExtensions.swift in Sources */,
 				2D1259112177707D00691077 /* ProfileContactView.swift in Sources */,
 				2DDC94EA2177DA1F002C6B5B /* StandardFormNavController.swift in Sources */,
