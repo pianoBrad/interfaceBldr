@@ -29,11 +29,11 @@ class MainFeedVC: UIViewController
     func loadPosts()
     {
         let db = Firestore.firestore()
-        db.collection("posts").getDocuments() {
+        db.collection(remoteData.posts).getDocuments() {
             (querySnapshot, err) in
             if let err = err
             {
-                print("Error getting posts: \(err)")
+                print("Error getting \(remoteData.posts): \(err)")
             }
             else if let snapshot = querySnapshot
             {
@@ -43,17 +43,20 @@ class MainFeedVC: UIViewController
                     {
                         let card = MediaCard(withPost: post)
                         self.cardsList.append(card)
-                        
-                        self.contentFeed.insertArrangedSubview(
-                            card, at: self.contentFeed.arrangedSubviews.count
-                        )
-                    }
-                    else
-                    {
-                        print("Error creating post.")
                     }
                 }
+                
+                self.addPostsToFeed()
             }
         }
+    }
+    
+    func addPostsToFeed()
+    {
+        for (index, card) in self.cardsList.enumerated()
+        {
+            self.contentFeed.insertArrangedSubview(card, at: index)
+        }
+        self.view.layoutIfNeeded()
     }
 }

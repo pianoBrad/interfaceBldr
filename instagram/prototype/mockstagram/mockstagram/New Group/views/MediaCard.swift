@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import Kingfisher
 
 class MediaCard: UIView {
 
@@ -17,6 +18,7 @@ class MediaCard: UIView {
     @IBOutlet var subtitleHeightConst: NSLayoutConstraint!
     @IBOutlet var headerUserNameLabel: UILabel!
     @IBOutlet var headerSubtitleLabel: UILabel!
+    @IBOutlet var postImage: UIImageView!
     
     /** Overrides **/
     override init(frame: CGRect)
@@ -47,6 +49,10 @@ class MediaCard: UIView {
     {
         self.init(frame: .zero)
         self.headerUserNameLabel.text = withPost.author
+        
+        let postImageUrl = URL(string: withPost.mediaUrl)
+        self.postImage.contentMode = .scaleAspectFill
+        self.postImage.kf.setImage(with: postImageUrl)
     }
     
     /** Custom methods **/

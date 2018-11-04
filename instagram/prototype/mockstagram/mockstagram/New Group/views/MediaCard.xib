@@ -22,6 +22,7 @@
                 <outlet property="headerLabelContainer" destination="GiF-gK-htn" id="qSx-6Y-4Yu"/>
                 <outlet property="headerSubtitleLabel" destination="EiR-ca-h6h" id="Yag-Ga-3fm"/>
                 <outlet property="headerUserNameLabel" destination="Mq6-lF-KQt" id="7jJ-Zm-Po7"/>
+                <outlet property="postImage" destination="VsF-pV-mIn" id="uOB-f7-IjM"/>
                 <outlet property="profileImageView" destination="7U6-gW-Tmm" id="pQg-eQ-tit"/>
                 <outlet property="subtitleHeightConst" destination="fSL-qx-Js4" id="6F9-Ud-Dvb"/>
             </connections>
@@ -83,11 +84,20 @@
                         <constraint firstAttribute="bottom" secondItem="7U6-gW-Tmm" secondAttribute="bottom" constant="15" id="wPy-s3-x3E"/>
                     </constraints>
                 </view>
-                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="xEN-l9-6cd" userLabel="Media">
+                <view clipsSubviews="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="xEN-l9-6cd" userLabel="Media">
                     <rect key="frame" x="0.0" y="65" width="375" height="310"/>
+                    <subviews>
+                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="VsF-pV-mIn" userLabel="Post Image">
+                            <rect key="frame" x="0.0" y="0.0" width="375" height="310"/>
+                        </imageView>
+                    </subviews>
                     <color key="backgroundColor" red="0.1041785851" green="0.68433547019999996" blue="0.64102190729999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                     <constraints>
-                        <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="310" id="Pke-G2-X1d"/>
+                        <constraint firstItem="VsF-pV-mIn" firstAttribute="leading" secondItem="xEN-l9-6cd" secondAttribute="leading" id="1Zp-iy-YeC"/>
+                        <constraint firstAttribute="trailing" secondItem="VsF-pV-mIn" secondAttribute="trailing" id="PWy-de-Hpb"/>
+                        <constraint firstAttribute="height" constant="310" id="Pke-G2-X1d"/>
+                        <constraint firstItem="VsF-pV-mIn" firstAttribute="top" secondItem="xEN-l9-6cd" secondAttribute="top" id="X3e-le-hch"/>
+                        <constraint firstAttribute="bottom" secondItem="VsF-pV-mIn" secondAttribute="bottom" id="Xq4-0J-QT9"/>
                     </constraints>
                 </view>
             </subviews>

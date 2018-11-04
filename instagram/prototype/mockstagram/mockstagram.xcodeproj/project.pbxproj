@@ -63,6 +63,7 @@
 		2DDC94F12178DDA7002C6B5B /* StandardFormSectionBtn.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2DDC94F02178DDA7002C6B5B /* StandardFormSectionBtn.swift */; };
 		2DE70068217E782F00EEE624 /* HamburgerMenuItemView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2DE70067217E782F00EEE624 /* HamburgerMenuItemView.swift */; };
 		2DE7006A217E8A0700EEE624 /* ProfileMenuVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2DE70069217E8A0700EEE624 /* ProfileMenuVC.swift */; };
+		2DE972A6218FBB820002ED45 /* DataGlobals.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2DE972A5218FBB820002ED45 /* DataGlobals.swift */; };
 		2DEE28EF216CF8E90007A239 /* Lato-Light.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 2DEE28E5216CF8E80007A239 /* Lato-Light.ttf */; };
 		2DEE28F0216CF8E90007A239 /* Lato-Black.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 2DEE28E6216CF8E80007A239 /* Lato-Black.ttf */; };
 		2DEE28F1216CF8E90007A239 /* Lato-BlackItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 2DEE28E7216CF8E80007A239 /* Lato-BlackItalic.ttf */; };
@@ -162,6 +163,7 @@
 		2DDC94F02178DDA7002C6B5B /* StandardFormSectionBtn.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StandardFormSectionBtn.swift; sourceTree = "<group>"; };
 		2DE70067217E782F00EEE624 /* HamburgerMenuItemView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HamburgerMenuItemView.swift; sourceTree = "<group>"; };
 		2DE70069217E8A0700EEE624 /* ProfileMenuVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileMenuVC.swift; sourceTree = "<group>"; };
+		2DE972A5218FBB820002ED45 /* DataGlobals.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataGlobals.swift; sourceTree = "<group>"; };
 		2DEE28E5216CF8E80007A239 /* Lato-Light.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Lato-Light.ttf"; sourceTree = "<group>"; };
 		2DEE28E6216CF8E80007A239 /* Lato-Black.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Lato-Black.ttf"; sourceTree = "<group>"; };
 		2DEE28E7216CF8E80007A239 /* Lato-BlackItalic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Lato-BlackItalic.ttf"; sourceTree = "<group>"; };
@@ -504,6 +506,7 @@
 			children = (
 				2DEE28FF216D295C0007A239 /* ThemeGlobals.swift */,
 				2D18DBF42184EC06003CED4D /* SegueGlobals.swift */,
+				2DE972A5218FBB820002ED45 /* DataGlobals.swift */,
 			);
 			path = variables;
 			sourceTree = "<group>";
@@ -696,6 +699,7 @@
 				"${BUILT_PRODUCTS_DIR}/BoringSSL/openssl.framework",
 				"${BUILT_PRODUCTS_DIR}/GTMSessionFetcher/GTMSessionFetcher.framework",
 				"${BUILT_PRODUCTS_DIR}/GoogleUtilities/GoogleUtilities.framework",
+				"${BUILT_PRODUCTS_DIR}/Kingfisher/Kingfisher.framework",
 				"${BUILT_PRODUCTS_DIR}/Protobuf/Protobuf.framework",
 				"${BUILT_PRODUCTS_DIR}/gRPC/GRPCClient.framework",
 				"${BUILT_PRODUCTS_DIR}/gRPC-C++/grpcpp.framework",
@@ -712,6 +716,7 @@
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/openssl.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GTMSessionFetcher.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GoogleUtilities.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Kingfisher.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Protobuf.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GRPCClient.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/grpcpp.framework",
@@ -813,6 +818,7 @@
 				2DDC94EF21782065002C6B5B /* StandardFormFieldView.swift in Sources */,
 				2DF206782170E93A008A6A6A /* UIStackViewExtensions.swift in Sources */,
 				2DAEAEE7218E1FF90037D971 /* UserSettings.swift in Sources */,
+				2DE972A6218FBB820002ED45 /* DataGlobals.swift in Sources */,
 				2DEE28FD216D079B0007A239 /* ProfileVC.swift in Sources */,
 				2D2C885C2170D97C009F7894 /* StoryStack.swift in Sources */,
 				2D456A01217D79D700C91E40 /* MainTabBC.swift in Sources */,
