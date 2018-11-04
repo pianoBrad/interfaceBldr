@@ -52,13 +52,19 @@ extension GameBoard : GamePieceButtonDelegate
 {
 	func gamePieceTapped(_ sender: GamePieceButton)
 	{
-        if let btnTitle = sender.titleLabel {
+        if let btnTitle = sender.titleLabel
+		{
             let btnName = btnTitle.text ?? ""
             print("btn \(btnName) was pressed")
-			
-	
         }
-        
+		
+		if let currentPlayer = currentGame.getCurrentPlayer() as Player?
+		{
+			sender.claim(forPlayer: currentPlayer)
+			
+
+		}
+		
         // To-Do:
         // * Add additional logic
         // * Whomever was tapped, we need to call the draw() function on that button

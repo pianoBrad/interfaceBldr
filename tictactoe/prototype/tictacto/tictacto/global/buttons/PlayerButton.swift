@@ -99,7 +99,7 @@ class PlayerButton: UIView
 			self.playerTurnIndicator.backgroundColor = .clear
 			break
 		}
-        
+	
         setShadowDepth()
 	}
 	

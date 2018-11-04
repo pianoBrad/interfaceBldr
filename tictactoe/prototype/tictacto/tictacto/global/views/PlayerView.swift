@@ -17,6 +17,8 @@ class PlayerView: GameSectionVIew
     @IBOutlet weak var playerXBtn: PlayerButton!
     @IBOutlet weak var playerOBtn: PlayerButton!
     @IBOutlet weak var gameStatusLabel: UILabel!
+	
+	var btnsArray: [PlayerButton] = []
     
 	/** Overrides **/
     
@@ -31,6 +33,17 @@ class PlayerView: GameSectionVIew
         self.addSubview(contentView)
         contentView.frame = self.bounds
         contentView.autoresizingMask = [.flexibleWidth, .flexibleHeight]
+		
+		btnsArray = [playerXBtn, playerOBtn]
+		
+		for btn in btnsArray
+		{
+			let newPlayer : Player = Player.init(withSymbol: btn.playerLabel)
+			
+			newPlayer.button = btn
+			currentGame.create(player: newPlayer)
+			
+		}
     }
     
     override func reset()

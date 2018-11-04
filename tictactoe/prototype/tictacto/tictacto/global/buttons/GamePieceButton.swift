@@ -19,6 +19,8 @@ class GamePieceButton: UIButton
 
 	/** Properties **/
 	weak var btnDelegate : GamePieceButtonDelegate?
+	var owner : Player?
+
 	
 	/** Overrides **/
 	override init(frame: CGRect)
@@ -31,8 +33,8 @@ class GamePieceButton: UIButton
 	{
 		super.init(coder: aDecoder)
 		commonInit()
-	
 	}
+	
 	
 	/** Custom Methods **/
 	func commonInit()
@@ -43,22 +45,18 @@ class GamePieceButton: UIButton
         // * Add additional logic:
         // * * update font size and color for button title label
 		setColorAndFont()
+	
 	}
 	
 	
 	func setColorAndFont()
 	{
 		self.setTitleColor(.white, for: .normal)
-		self.setTitle("X", for: .normal)
+		self.setTitle("", for: .normal)
 		self.titleLabel?.font = UIFont.init(name: "Arial", size: self.frame.width)
-		self.titleLabel?.layer.opacity = 0.0
+		
 	}
 	
-	
-	func showText()
-	{
-		self.titleLabel?.layer.opacity = 100.0
-	}
 	
     func draw(symbol: String)
     {
@@ -68,10 +66,18 @@ class GamePieceButton: UIButton
     }
 	
 	
+	func claim(forPlayer: Player)
+	{
+		self.owner = forPlayer
+		self.setTitle(owner?.playerSymbol, for: .normal)
+		print(owner?.playerSymbol)
+		
+	}
+	
+	
     /** Actions **/
 	@objc func handleBtnPress(_ sender : GamePieceButton)
 	{
 		btnDelegate?.gamePieceTapped(self)
-		showText()
 	}
 }

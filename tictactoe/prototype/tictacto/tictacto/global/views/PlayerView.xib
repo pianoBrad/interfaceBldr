@@ -29,6 +29,7 @@
                             <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             <userDefinedRuntimeAttributes>
                                 <userDefinedRuntimeAttribute type="boolean" keyPath="isActive" value="YES"/>
+                                <userDefinedRuntimeAttribute type="string" keyPath="playerLabel" value="X"/>
                             </userDefinedRuntimeAttributes>
                         </view>
                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="BhD-oT-QX2" userLabel="PlayerO View" customClass="PlayerButton" customModule="tictacto" customModuleProvider="target">
