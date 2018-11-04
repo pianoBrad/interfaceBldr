@@ -8,12 +8,12 @@
 
 import UIKit
 
-struct Post: Decodable
+struct Post: Codable
 {
     /** Properties **/
-    var data_created : String
+    var author : String
+    var dateCreated : String
     var description : String
-    var media_url : String
+    var mediaUrl : String
     var type : String
-    var user_id : String
 }

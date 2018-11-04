@@ -10,9 +10,15 @@ import UIKit
 
 class MediaCard: UIView {
 
+    /** Properties **/
     @IBOutlet var contentView: UIView!
-    @IBOutlet weak var cardTitle: UILabel!
+    @IBOutlet var profileImageView: UIImageView!
+    @IBOutlet var headerLabelContainer: UIView!
+    @IBOutlet var subtitleHeightConst: NSLayoutConstraint!
+    @IBOutlet var headerUserNameLabel: UILabel!
+    @IBOutlet var headerSubtitleLabel: UILabel!
     
+    /** Overrides **/
     override init(frame: CGRect)
     {
         super.init(frame: frame)
@@ -36,4 +42,12 @@ class MediaCard: UIView {
         contentView.frame = self.bounds
         contentView.autoresizingMask = [.flexibleHeight, .flexibleWidth]
     }
+    
+    convenience init(withPost: Post)
+    {
+        self.init(frame: .zero)
+        self.headerUserNameLabel.text = withPost.author
+    }
+    
+    /** Custom methods **/
 }

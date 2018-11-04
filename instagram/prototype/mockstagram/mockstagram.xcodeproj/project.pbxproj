@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		2D090DCF218F761500086A7A /* DecodableExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D090DCE218F761500086A7A /* DecodableExtensions.swift */; };
 		2D12590F2177704400691077 /* ProfileContactView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2D12590E2177704400691077 /* ProfileContactView.xib */; };
 		2D1259112177707D00691077 /* ProfileContactView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D1259102177707D00691077 /* ProfileContactView.swift */; };
 		2D18DBF52184EC06003CED4D /* SegueGlobals.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D18DBF42184EC06003CED4D /* SegueGlobals.swift */; };
@@ -99,6 +100,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		2D090DCE218F761500086A7A /* DecodableExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DecodableExtensions.swift; sourceTree = "<group>"; };
 		2D12590E2177704400691077 /* ProfileContactView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ProfileContactView.xib; sourceTree = "<group>"; };
 		2D1259102177707D00691077 /* ProfileContactView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileContactView.swift; sourceTree = "<group>"; };
 		2D18DBF42184EC06003CED4D /* SegueGlobals.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SegueGlobals.swift; sourceTree = "<group>"; };
@@ -400,6 +402,7 @@
 				2DC1A38E2174E07F004833DD /* StringExtensions.swift */,
 				2DC1A3902174E0BE004833DD /* NSAttributedStringExtensions.swift */,
 				2D4C488A217B94BA00A29019 /* NSLayoutConstraintExtensions.swift */,
+				2D090DCE218F761500086A7A /* DecodableExtensions.swift */,
 			);
 			path = extensions;
 			sourceTree = "<group>";
@@ -825,6 +828,7 @@
 				2D4C4880217B889600A29019 /* BizToolsSlider.swift in Sources */,
 				2D4569FF217D5D9000C91E40 /* MasterContainerVC.swift in Sources */,
 				2DCBB7AA2184F3B50025DBCD /* ProfileOptionsTVC.swift in Sources */,
+				2D090DCF218F761500086A7A /* DecodableExtensions.swift in Sources */,
 				2DAEAEE5218E1DD50037D971 /* User.swift in Sources */,
 				2DDC94F12178DDA7002C6B5B /* StandardFormSectionBtn.swift in Sources */,
 				2DC1A38B2174252F004833DD /* ProfileFollowersListView.swift in Sources */,

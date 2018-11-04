@@ -39,24 +39,21 @@ class MainFeedVC: UIViewController
             {
                 for document in snapshot.documents
                 {
-                    print(document.data())
-                    
-                    let card = MediaCard()
-                    self.cardsList.append(card)
+                    if let post = Post(dictionary: document.data())
+                    {
+                        let card = MediaCard(withPost: post)
+                        self.cardsList.append(card)
+                        
+                        self.contentFeed.insertArrangedSubview(
+                            card, at: self.contentFeed.arrangedSubviews.count
+                        )
+                    }
+                    else
+                    {
+                        print("Error creating post.")
+                    }
                 }
-                
-                self.addPostsToFeed()
             }
         }
-    }
-    
-    func addPostsToFeed()
-    {
-        for (index, card) in self.cardsList.enumerated()
-        {
-            print("adding now..")
-            self.contentFeed.insertArrangedSubview(card, at: index)
-        }
-        self.view.layoutIfNeeded()
     }
 }
