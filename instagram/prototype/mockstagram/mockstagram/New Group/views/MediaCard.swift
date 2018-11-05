@@ -47,12 +47,15 @@ class MediaCard: UIView {
     
     convenience init(withPost: Post)
     {
-        self.init(frame: .zero)
-        self.headerUserNameLabel.text = withPost.author
-        
+        let avatarImageUrl = URL(string: withPost.avatarUrl)
         let postImageUrl = URL(string: withPost.mediaUrl)
+        
+        self.init(frame: .zero)
+        
+        self.headerUserNameLabel.text = withPost.author
         self.postImage.contentMode = .scaleAspectFill
         self.postImage.kf.setImage(with: postImageUrl)
+        self.profileImageView.kf.setImage(with: avatarImageUrl)
     }
     
     /** Custom methods **/

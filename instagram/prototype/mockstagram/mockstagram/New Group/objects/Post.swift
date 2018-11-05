@@ -12,6 +12,7 @@ struct Post: Codable
 {
     /** Properties **/
     var author : String
+    var avatarUrl : String
     var dateCreated : String
     var description : String
     var mediaUrl : String
