@@ -16,6 +16,7 @@ class MediaCard: UIView
     @IBOutlet var profileImageView: UIImageView!
     
     // Header props
+    @IBOutlet var headerContainerView: UIView!
     @IBOutlet var headerLabelContainer: UIView!
     @IBOutlet var subtitleHeightConst: NSLayoutConstraint!
     @IBOutlet var headerUserNameLabel: UILabel!
@@ -23,7 +24,9 @@ class MediaCard: UIView
     @IBOutlet var postImage: UIImageView!
     
     // Footer props
+    @IBOutlet var footerContainerView: UIView!
     @IBOutlet var likeFooterIcon: MediaCardFooterIcon!
+    @IBOutlet var addToCollectionIcon: MediaCardFooterIcon!
     
     
     /** Overrides **/
@@ -50,7 +53,8 @@ class MediaCard: UIView
         contentView.frame = self.bounds
         contentView.autoresizingMask = [.flexibleHeight, .flexibleWidth]
         
-        likeFooterIcon.iconDelegate = self
+        setupHeaderComponents()
+        setupFooterComponents()
     }
     
     convenience init(withPost: Post)
@@ -67,12 +71,39 @@ class MediaCard: UIView
     }
     
     /** Custom methods **/
+    func setupHeaderComponents()
+    {
+        profileImageView.layer.cornerRadius = profileImageView.frame.size.height / 2
+        profileImageView.layer.masksToBounds = true
+        profileImageView.layer.borderWidth = 1
+        profileImageView.layer.borderColor = theme.borderBtnLightGrey.cgColor
+    }
+    
+    func setupFooterComponents()
+    {
+        for subview in footerContainerView.subviews
+        {
+            if let icon = subview as? MediaCardFooterIcon
+            {
+                icon.iconDelegate = self
+            }
+        }
+    }
 }
 
 extension MediaCard : MediaCardFooterIconDelegate
 {
     func iconTapped(_ sender: MediaCardFooterIcon)
     {
-        print("image liked!")
+        switch sender
+        {
+        case addToCollectionIcon:
+            print("add to collection tapped!")
+            break
+        default:
+            // defaulting to heart icon
+            print("like tapped!")
+            break
+        }
     }
 }

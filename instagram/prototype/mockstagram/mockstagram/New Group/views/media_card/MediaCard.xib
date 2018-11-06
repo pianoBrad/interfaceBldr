@@ -18,7 +18,10 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="MediaCard" customModule="mockstagram" customModuleProvider="target">
             <connections>
+                <outlet property="addToCollectionIcon" destination="zov-Ix-zrG" id="ICG-YU-N3x"/>
                 <outlet property="contentView" destination="iN0-l3-epB" id="hEo-tb-z3s"/>
+                <outlet property="footerContainerView" destination="zxf-i8-HQW" id="mfZ-K8-yYU"/>
+                <outlet property="headerContainerView" destination="ADV-Ts-QqK" id="mxU-A0-03I"/>
                 <outlet property="headerLabelContainer" destination="GiF-gK-htn" id="qSx-6Y-4Yu"/>
                 <outlet property="headerSubtitleLabel" destination="EiR-ca-h6h" id="Yag-Ga-3fm"/>
                 <outlet property="headerUserNameLabel" destination="Mq6-lF-KQt" id="7jJ-Zm-Po7"/>
@@ -36,7 +39,7 @@
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ADV-Ts-QqK" userLabel="Header">
                     <rect key="frame" x="0.0" y="0.0" width="375" height="65"/>
                     <subviews>
-                        <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="icon_active_profile" translatesAutoresizingMaskIntoConstraints="NO" id="7U6-gW-Tmm" userLabel="Profile Image">
+                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="icon_active_profile" translatesAutoresizingMaskIntoConstraints="NO" id="7U6-gW-Tmm" userLabel="Profile Image">
                             <rect key="frame" x="15" y="15" width="35" height="35"/>
                             <constraints>
                                 <constraint firstAttribute="width" secondItem="7U6-gW-Tmm" secondAttribute="height" multiplier="1:1" id="s1S-c6-f1E"/>
@@ -104,7 +107,7 @@
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="zxf-i8-HQW" userLabel="Footer">
                     <rect key="frame" x="0.0" y="375" width="375" height="55"/>
                     <subviews>
-                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="QPh-RH-6CV" customClass="MediaCardFooterIcon" customModule="mockstagram" customModuleProvider="target">
+                        <view clipsSubviews="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="QPh-RH-6CV" customClass="MediaCardFooterIcon" customModule="mockstagram" customModuleProvider="target">
                             <rect key="frame" x="15" y="15" width="25" height="25"/>
                             <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             <constraints>
@@ -115,9 +118,22 @@
                                 <userDefinedRuntimeAttribute type="image" keyPath="iconImage" value="icon_heart"/>
                             </userDefinedRuntimeAttributes>
                         </view>
+                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="zov-Ix-zrG" customClass="MediaCardFooterIcon" customModule="mockstagram" customModuleProvider="target">
+                            <rect key="frame" x="335" y="15" width="25" height="25"/>
+                            <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            <constraints>
+                                <constraint firstAttribute="width" secondItem="zov-Ix-zrG" secondAttribute="height" multiplier="1:1" id="2BW-RA-32r"/>
+                                <constraint firstAttribute="height" constant="25" id="THS-kT-ehe"/>
+                            </constraints>
+                            <userDefinedRuntimeAttributes>
+                                <userDefinedRuntimeAttribute type="image" keyPath="iconImage" value="icon_badge"/>
+                            </userDefinedRuntimeAttributes>
+                        </view>
                     </subviews>
                     <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     <constraints>
+                        <constraint firstAttribute="trailing" secondItem="zov-Ix-zrG" secondAttribute="trailing" constant="15" id="22C-wo-4lH"/>
+                        <constraint firstItem="zov-Ix-zrG" firstAttribute="top" secondItem="zxf-i8-HQW" secondAttribute="top" constant="15" id="KWk-8N-RfY"/>
                         <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="55" id="ahj-B0-L9C"/>
                         <constraint firstItem="QPh-RH-6CV" firstAttribute="top" secondItem="zxf-i8-HQW" secondAttribute="top" constant="15" id="heq-s3-FCO"/>
                         <constraint firstItem="QPh-RH-6CV" firstAttribute="leading" secondItem="zxf-i8-HQW" secondAttribute="leading" constant="15" id="iSu-2w-HZq"/>
@@ -143,6 +159,7 @@
     </objects>
     <resources>
         <image name="icon_active_profile" width="50" height="54"/>
+        <image name="icon_badge" width="48" height="56"/>
         <image name="icon_heart" width="50" height="46"/>
     </resources>
 </document>
