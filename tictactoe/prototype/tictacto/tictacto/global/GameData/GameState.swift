@@ -26,11 +26,6 @@ class GameState: NSObject
 		self.players.append(player)
 	}
 	
-	//create function to set current player
-		// check each players button for isActive
-		// If button is active, turn it off
-		// If buttons is not active, turn it on
-		// store new active player, based on who we just turned on
 	
 	func getCurrentPlayer() -> Player?
 	{
@@ -44,6 +39,10 @@ class GameState: NSObject
 		}
 		return nil
 	}
+	
+	
 }
+
+
 
 let currentGame = GameState.init()

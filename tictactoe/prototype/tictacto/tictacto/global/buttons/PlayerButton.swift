@@ -72,6 +72,8 @@ class PlayerButton: UIView
         
 		let gesture = UITapGestureRecognizer(target: self, action: #selector(checkTap))
 		self.addGestureRecognizer(gesture)
+		
+		
 	}
 	
 	func changeButtonState(setActive: Bool? = nil, shouldUpdateSelf : Bool? = true)

@@ -16,6 +16,7 @@ class TicTacToeVC: UIViewController
 	
 	override func viewDidLoad()
 	{
+		gameBoard.boardDelegate = self
     }
     
     /** Custom methods **/
@@ -36,4 +37,14 @@ extension TicTacToeVC : ControlPanelDelegate
     {
         self.startGame()
     }
+}
+
+extension TicTacToeVC : GameBoardDelegate
+{
+	func noMatchFound() {
+		// When method is fired, it will tell the PlayerView that it needs to change players.
+		playerView.changePlayer()
+	}
+	
+	
 }

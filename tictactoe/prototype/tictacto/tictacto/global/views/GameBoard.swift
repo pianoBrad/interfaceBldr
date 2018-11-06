@@ -8,6 +8,11 @@
 
 import UIKit
 
+protocol GameBoardDelegate: class
+{
+	func noMatchFound()
+}
+
 @IBDesignable
 class GameBoard: GameSectionVIew
 {
@@ -26,6 +31,8 @@ class GameBoard: GameSectionVIew
 	@IBOutlet var btnNine: GamePieceButton!
 	
     var symbolToDraw : String = "X"
+	
+	var boardDelegate : GameBoardDelegate?
     
     override func commonInit()
     {
@@ -52,18 +59,19 @@ extension GameBoard : GamePieceButtonDelegate
 {
 	func gamePieceTapped(_ sender: GamePieceButton)
 	{
-        if let btnTitle = sender.titleLabel
-		{
-            let btnName = btnTitle.text ?? ""
-            print("btn \(btnName) was pressed")
-        }
+//		we don't need this...
+//        if let btnTitle = sender.titleLabel
+//		{
+//			let btnName = btnTitle.text ?? ""
+//			print("btn \(btnName) was pressed")
+//        }
 		
 		if let currentPlayer = currentGame.getCurrentPlayer() as Player?
 		{
 			sender.claim(forPlayer: currentPlayer)
-			
 
 		}
+		boardDelegate?.noMatchFound()
 		
         // To-Do:
         // * Add additional logic
@@ -71,3 +79,7 @@ extension GameBoard : GamePieceButtonDelegate
         // * * Determine which symbol to draw next, and pass it to draw
     }
 }
+
+
+
+

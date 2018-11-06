@@ -201,8 +201,8 @@
 			isa = PBXGroup;
 			children = (
 				2DA557C82183C4670046648D /* GameSectionVIew.swift */,
-				2D636F772183B52F00EB2F28 /* PlayerView.xib */,
 				2D6D7923217151E0004B061B /* PlayerView.swift */,
+				2D636F772183B52F00EB2F28 /* PlayerView.xib */,
 				2D6D792621715225004B061B /* GameBoard.swift */,
 				698F82D52183C8A8000D35E8 /* GameBoard.xib */,
 				2D6D79282171524F004B061B /* ControlPanel.swift */,

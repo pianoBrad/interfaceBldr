@@ -11,6 +11,7 @@ import UIKit
 protocol GamePieceButtonDelegate: class
 {
 	func gamePieceTapped(_ sender : GamePieceButton)
+	
 }
 
 @IBDesignable
@@ -45,6 +46,7 @@ class GamePieceButton: UIButton
         // * Add additional logic:
         // * * update font size and color for button title label
 		setColorAndFont()
+		
 	
 	}
 	
@@ -70,7 +72,7 @@ class GamePieceButton: UIButton
 	{
 		self.owner = forPlayer
 		self.setTitle(owner?.playerSymbol, for: .normal)
-		print(owner?.playerSymbol)
+		//  print(owner?.playerSymbol)
 		
 	}
 	
@@ -79,5 +81,8 @@ class GamePieceButton: UIButton
 	@objc func handleBtnPress(_ sender : GamePieceButton)
 	{
 		btnDelegate?.gamePieceTapped(self)
+		
 	}
 }
+
+

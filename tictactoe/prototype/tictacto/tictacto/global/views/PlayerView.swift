@@ -18,11 +18,13 @@ class PlayerView: GameSectionVIew
     @IBOutlet weak var playerOBtn: PlayerButton!
     @IBOutlet weak var gameStatusLabel: UILabel!
 	
+	
 	var btnsArray: [PlayerButton] = []
+
+
+	
     
 	/** Overrides **/
-    
-    /** Custom Methods **/
     override func commonInit()
     {
         super.commonInit()
@@ -44,8 +46,11 @@ class PlayerView: GameSectionVIew
 			currentGame.create(player: newPlayer)
 			
 		}
+		
+		
+		
     }
-    
+
     override func reset()
     {
         super.reset()
@@ -59,35 +64,99 @@ class PlayerView: GameSectionVIew
         super.end()
         // Change gamestatus text to gameover text
     }
+	
+	/** Custom Methods **/
+	
+	func changePlayer()//(toIsActive: Bool) // -> PlayerStatus
+	{
+		// check each playerButtons for isActive
+		// If button isActive=True, turn it off: isActive=False
+		// If button isActive=False, turn it on: isActive=True
+		// Store new active player, based on who we just turned on.
+	
+//		if Player().button?.isActive == true
+//		{
+//			print("this sucks")
+//		}
+		
+		for btn in btnsArray
+		{
+			btn.changeButtonState()
+		}
+		
+	}
+	
+	
+	
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 extension PlayerView: PlayerButtonDelegate
 {
-    func buttonTapped(_ sender: PlayerButton)
-    {
-        sender.changeButtonState()
-        
-        switch sender {
-        case playerXBtn:
-            playerOBtn.changeButtonState(setActive: !sender.isActive)
-        default:
-            playerXBtn.changeButtonState(setActive: !sender.isActive)
-            break
-        }
-        
-        updateCurPlayerStatus()
-    }
-    
-    func updateCurPlayerStatus()
-    {
-        switch playerXBtn.isActive
-        {
-        case true:
-            gameStatusLabel.text = "Player X Turn"
-            break
-        default:
-            gameStatusLabel.text = "Player O Turn"
-            break
-        }
-    }
+	func buttonTapped(_ sender: PlayerButton) {
+		//
+	}
+	
+	
+//    func buttonTapped(_ sender: PlayerButton)
+//    {
+//
+//        sender.changeButtonState()
+//
+//        switch sender
+//		{
+//        	case playerXBtn:
+//            	playerOBtn.changeButtonState(setActive: !sender.isActive)
+//        	default:
+//            	playerXBtn.changeButtonState(setActive: !sender.isActive)
+//            	break
+//        }
+//
+//        updateCurPlayerStatus()
+//    }
+//
+//    func updateCurPlayerStatus()
+//    {
+//
+//        switch playerXBtn.isActive
+//        {
+//
+//			case true:
+//				gameStatusLabel.text = "Player X Turn"
+//				break
+//			default:
+//				gameStatusLabel.text = "Player O Turn"
+//				break
+//        }
+//    }
 }
