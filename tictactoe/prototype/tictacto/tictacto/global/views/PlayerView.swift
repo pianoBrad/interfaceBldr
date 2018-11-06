@@ -21,7 +21,7 @@ class PlayerView: GameSectionVIew
 	
 	var btnsArray: [PlayerButton] = []
 
-
+	var startGameMessage : String = "Start game or select player"
 	
     
 	/** Overrides **/
@@ -35,6 +35,8 @@ class PlayerView: GameSectionVIew
         self.addSubview(contentView)
         contentView.frame = self.bounds
         contentView.autoresizingMask = [.flexibleWidth, .flexibleHeight]
+		
+		gameStatusLabel.text = startGameMessage
 		
 		btnsArray = [playerXBtn, playerOBtn]
 		
@@ -54,6 +56,8 @@ class PlayerView: GameSectionVIew
     override func reset()
     {
         super.reset()
+		
+		gameStatusLabel.text = startGameMessage
         // Handle reset biz
         // Make sure playerX is active
         // Reset gamestatus text
@@ -67,22 +71,21 @@ class PlayerView: GameSectionVIew
 	
 	/** Custom Methods **/
 	
-	func changePlayer()//(toIsActive: Bool) // -> PlayerStatus
+	func changePlayer()
 	{
-		// check each playerButtons for isActive
-		// If button isActive=True, turn it off: isActive=False
-		// If button isActive=False, turn it on: isActive=True
-		// Store new active player, based on who we just turned on.
-	
-//		if Player().button?.isActive == true
-//		{
-//			print("this sucks")
-//		}
 		
 		for btn in btnsArray
 		{
 			btn.changeButtonState()
+			
 		}
+		
+		if  let currentPlayer = currentGame.getCurrentPlayer(),
+			let symbol = currentPlayer.playerSymbol
+		{
+			gameStatusLabel.text = "Player \(symbol) Turn"
+		}
+		
 		
 	}
 	

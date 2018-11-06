@@ -41,8 +41,8 @@ extension TicTacToeVC : ControlPanelDelegate
 
 extension TicTacToeVC : GameBoardDelegate
 {
-	func noMatchFound() {
-		// When method is fired, it will tell the PlayerView that it needs to change players.
+	func noMatchFound()
+	{
 		playerView.changePlayer()
 	}
 	

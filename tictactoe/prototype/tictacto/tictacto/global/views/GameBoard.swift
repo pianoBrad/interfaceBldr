@@ -69,14 +69,10 @@ extension GameBoard : GamePieceButtonDelegate
 		if let currentPlayer = currentGame.getCurrentPlayer() as Player?
 		{
 			sender.claim(forPlayer: currentPlayer)
-
 		}
+		
 		boardDelegate?.noMatchFound()
 		
-        // To-Do:
-        // * Add additional logic
-        // * Whomever was tapped, we need to call the draw() function on that button
-        // * * Determine which symbol to draw next, and pass it to draw
     }
 }
 
