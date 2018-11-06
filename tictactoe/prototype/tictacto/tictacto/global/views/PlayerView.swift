@@ -58,9 +58,8 @@ class PlayerView: GameSectionVIew
         super.reset()
 		
 		gameStatusLabel.text = startGameMessage
-        // Handle reset biz
-        // Make sure playerX is active
-        // Reset gamestatus text
+		playerXBtn.changeButtonState(setActive: true)
+		playerOBtn.changeButtonState(setActive: false)
     }
     
     override func end()

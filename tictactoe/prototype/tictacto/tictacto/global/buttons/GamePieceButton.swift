@@ -76,6 +76,12 @@ class GamePieceButton: UIButton
 		
 	}
 	
+	func reset()
+	{
+		self.owner = nil
+		self.setTitle("", for: .normal)
+	}
+	
 	
     /** Actions **/
 	@objc func handleBtnPress(_ sender : GamePieceButton)

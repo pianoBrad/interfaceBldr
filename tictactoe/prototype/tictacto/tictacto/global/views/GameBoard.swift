@@ -33,7 +33,10 @@ class GameBoard: GameSectionVIew
     var symbolToDraw : String = "X"
 	
 	var boardDelegate : GameBoardDelegate?
-    
+	
+	var btnsArray : [GamePieceButton] = []
+	
+	/** Overrides **/
     override func commonInit()
     {
         let bundle = Bundle.init(for: GameBoard.self)
@@ -43,29 +46,40 @@ class GameBoard: GameSectionVIew
 		contentView.frame = self.bounds
 		contentView.autoresizingMask = [.flexibleWidth, .flexibleHeight]
 		
-		btnOne.btnDelegate = self
-		btnTwo.btnDelegate = self
-		btnThree.btnDelegate = self
-		btnFour.btnDelegate = self
-		btnFive.btnDelegate = self
-		btnSix.btnDelegate = self
-		btnSeven.btnDelegate = self
-		btnEight.btnDelegate = self
-		btnNine.btnDelegate = self
+		btnsArray =
+		[
+			btnOne,
+			btnTwo,
+			btnThree,
+			btnFour,
+			btnFive,
+			btnSix,
+			btnSeven,
+			btnEight,
+			btnNine,
+		]
+		
+		for btn in btnsArray
+		{
+			btn.btnDelegate = self
+		}
     }
+	
+	override func reset() {
+		super.reset()
+		
+		for btn in btnsArray
+		{
+			btn.reset()
+		}
+	}
+	
 }
 
 extension GameBoard : GamePieceButtonDelegate
 {
 	func gamePieceTapped(_ sender: GamePieceButton)
 	{
-//		we don't need this...
-//        if let btnTitle = sender.titleLabel
-//		{
-//			let btnName = btnTitle.text ?? ""
-//			print("btn \(btnName) was pressed")
-//        }
-		
 		if let currentPlayer = currentGame.getCurrentPlayer() as Player?
 		{
 			sender.claim(forPlayer: currentPlayer)

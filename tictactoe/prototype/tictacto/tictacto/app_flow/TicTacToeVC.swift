@@ -14,15 +14,19 @@ class TicTacToeVC: UIViewController
     @IBOutlet weak var gameBoard: GameBoard!
     @IBOutlet weak var controlPanel: ControlPanel!
 	
+	
+	
 	override func viewDidLoad()
 	{
 		gameBoard.boardDelegate = self
+		controlPanel.panelDelegate = self
     }
     
     /** Custom methods **/
     func startGame()
     {
         playerView.reset()
+		gameBoard.reset()
     }
     
     func endGame()
@@ -35,7 +39,7 @@ extension TicTacToeVC : ControlPanelDelegate
 {
     func restartBtnWasPress(_ sender: ControlPanelBtn)
     {
-        self.startGame()
+		self.startGame()
     }
 }
 
