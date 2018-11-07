@@ -97,6 +97,17 @@ extension GameBoard : GamePieceButtonDelegate
 			sender.claim(forPlayer: currentPlayer)
 		}
 		
+//         check three in a row ->
+//             am I horizontally
+//                 match found
+//                 return
+//             am I vertically
+//                 match found
+//                 return
+//             am I diagonally
+//                 match found
+//                 return
+		
 		boardDelegate?.noMatchFound()
 		
     }
