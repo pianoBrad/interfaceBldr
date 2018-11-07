@@ -45,7 +45,19 @@ class GameBoard: GameSectionVIew
 		self.addSubview(contentView)
 		contentView.frame = self.bounds
 		contentView.autoresizingMask = [.flexibleWidth, .flexibleHeight]
-		
+        
+        /**
+        Another way of doing btnsArray assignment (below)
+         
+        for view in btnContainerView.subviews
+        {
+            if let btn = view as? GamePieceButton
+            {
+                btnsArray.append(btn)
+            }
+        }
+        **/
+        
 		btnsArray =
 		[
 			btnOne,
