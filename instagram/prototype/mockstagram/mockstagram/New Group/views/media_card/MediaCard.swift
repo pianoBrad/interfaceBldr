@@ -26,6 +26,7 @@ class MediaCard: UIView
     // Footer props
     @IBOutlet var footerContainerView: UIView!
     @IBOutlet var likeFooterIcon: MediaCardFooterIcon!
+    @IBOutlet var commentFooterIcon: MediaCardFooterIcon!
     @IBOutlet var addToCollectionIcon: MediaCardFooterIcon!
     
     
@@ -99,6 +100,9 @@ extension MediaCard : MediaCardFooterIconDelegate
         {
         case addToCollectionIcon:
             print("add to collection tapped!")
+            break
+        case commentFooterIcon:
+            print("load comment view")
             break
         default:
             // defaulting to heart icon

@@ -19,6 +19,7 @@
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="MediaCard" customModule="mockstagram" customModuleProvider="target">
             <connections>
                 <outlet property="addToCollectionIcon" destination="zov-Ix-zrG" id="ICG-YU-N3x"/>
+                <outlet property="commentFooterIcon" destination="kjy-rZ-xMP" id="HDh-Lm-sQj"/>
                 <outlet property="contentView" destination="iN0-l3-epB" id="hEo-tb-z3s"/>
                 <outlet property="footerContainerView" destination="zxf-i8-HQW" id="mfZ-K8-yYU"/>
                 <outlet property="headerContainerView" destination="ADV-Ts-QqK" id="mxU-A0-03I"/>
@@ -129,14 +130,28 @@
                                 <userDefinedRuntimeAttribute type="image" keyPath="iconImage" value="icon_badge"/>
                             </userDefinedRuntimeAttributes>
                         </view>
+                        <view clipsSubviews="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="kjy-rZ-xMP" customClass="MediaCardFooterIcon" customModule="mockstagram" customModuleProvider="target">
+                            <rect key="frame" x="55" y="15" width="25" height="25"/>
+                            <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            <constraints>
+                                <constraint firstAttribute="width" secondItem="kjy-rZ-xMP" secondAttribute="height" multiplier="1:1" id="Cym-Ic-EQC"/>
+                                <constraint firstAttribute="height" constant="25" id="JJX-Zp-fPB"/>
+                            </constraints>
+                            <userDefinedRuntimeAttributes>
+                                <userDefinedRuntimeAttribute type="image" keyPath="iconImage" value="icon_comment"/>
+                            </userDefinedRuntimeAttributes>
+                        </view>
                     </subviews>
                     <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     <constraints>
+                        <constraint firstItem="kjy-rZ-xMP" firstAttribute="width" secondItem="kjy-rZ-xMP" secondAttribute="height" multiplier="1:1" id="1D2-jZ-nGN"/>
                         <constraint firstAttribute="trailing" secondItem="zov-Ix-zrG" secondAttribute="trailing" constant="15" id="22C-wo-4lH"/>
+                        <constraint firstItem="kjy-rZ-xMP" firstAttribute="top" secondItem="QPh-RH-6CV" secondAttribute="top" id="3Xx-TG-VNz"/>
                         <constraint firstItem="zov-Ix-zrG" firstAttribute="top" secondItem="zxf-i8-HQW" secondAttribute="top" constant="15" id="KWk-8N-RfY"/>
                         <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="55" id="ahj-B0-L9C"/>
                         <constraint firstItem="QPh-RH-6CV" firstAttribute="top" secondItem="zxf-i8-HQW" secondAttribute="top" constant="15" id="heq-s3-FCO"/>
                         <constraint firstItem="QPh-RH-6CV" firstAttribute="leading" secondItem="zxf-i8-HQW" secondAttribute="leading" constant="15" id="iSu-2w-HZq"/>
+                        <constraint firstItem="kjy-rZ-xMP" firstAttribute="leading" secondItem="QPh-RH-6CV" secondAttribute="trailing" constant="15" id="qbD-1y-bbV"/>
                     </constraints>
                 </view>
             </subviews>
@@ -160,6 +175,7 @@
     <resources>
         <image name="icon_active_profile" width="50" height="54"/>
         <image name="icon_badge" width="48" height="56"/>
+        <image name="icon_comment" width="50" height="50"/>
         <image name="icon_heart" width="50" height="46"/>
     </resources>
 </document>
