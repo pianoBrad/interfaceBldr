@@ -7,3 +7,13 @@
 //
 
 import Foundation
+
+struct Comment : Codable
+{
+    /** Properties **/
+    var author : String
+    var avatarUrl : String
+    var comment : String
+    var created : String
+    var postId : String
+}

@@ -13,6 +13,7 @@ class SegueGlobals : NSObject
 {
     /** Profile Section **/
     let profileSettingsSegueID = "ProfileSettingsSegue"
+    let commentsListSegue = "commentsSegue"
 }
 
 let segue = SegueGlobals()

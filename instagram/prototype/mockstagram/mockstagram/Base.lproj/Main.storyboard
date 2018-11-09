@@ -64,7 +64,6 @@
         <!--Navigation Controller-->
         <scene sceneID="ORc-qc-ji6">
             <objects>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="gco-vy-Q2S" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <navigationController id="yJp-yC-DJw" sceneMemberID="viewController">
                     <tabBarItem key="tabBarItem" title="" image="icon_heart" selectedImage="icon_active_heart" id="Glp-BE-FqX"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="Ov7-IY-hny">
@@ -75,6 +74,7 @@
                         <segue destination="HTb-ei-lTu" kind="relationship" relationship="rootViewController" id="706-SP-Lu4"/>
                     </connections>
                 </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="gco-vy-Q2S" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1089" y="1142"/>
         </scene>
@@ -323,11 +323,41 @@
                     <connections>
                         <outlet property="contentFeed" destination="yWH-l6-qyw" id="ZGp-Tj-9cx"/>
                         <outlet property="contentScrollView" destination="Ini-xV-mT4" id="pGU-sj-wcf"/>
+                        <segue destination="d6O-ab-J4K" kind="show" identifier="commentsSegue" id="5Hq-Wo-8bJ"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="xdE-qp-ZAb" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1950" y="-943"/>
+        </scene>
+        <!--Comments-->
+        <scene sceneID="MK9-z3-Swi">
+            <objects>
+                <viewController title="Comments" hidesBottomBarWhenPushed="YES" id="d6O-ab-J4K" customClass="CommentsListVC" customModule="mockstagram" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="1Jo-wU-YiO">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="gZo-xb-6ii">
+                                <rect key="frame" x="0.0" y="64" width="375" height="603"/>
+                            </scrollView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="gZo-xb-6ii" firstAttribute="trailing" secondItem="NMb-Bb-f9h" secondAttribute="trailing" id="Ifl-gT-egl"/>
+                            <constraint firstAttribute="bottom" secondItem="gZo-xb-6ii" secondAttribute="bottom" id="m37-S9-Vgb"/>
+                            <constraint firstItem="gZo-xb-6ii" firstAttribute="leading" secondItem="NMb-Bb-f9h" secondAttribute="leading" id="mEy-WP-5zR"/>
+                            <constraint firstItem="gZo-xb-6ii" firstAttribute="top" secondItem="NMb-Bb-f9h" secondAttribute="top" id="tXV-2s-jG6"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="NMb-Bb-f9h"/>
+                    </view>
+                    <connections>
+                        <outlet property="commentsScrollView" destination="gZo-xb-6ii" id="SxR-z5-Lyx"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="xtI-1R-2kB" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2790" y="-943"/>
         </scene>
         <!--mockstagram-->
         <scene sceneID="dVS-hR-jsM">
@@ -354,7 +384,6 @@
         <!--Navigation Controller-->
         <scene sceneID="P6d-CC-N45">
             <objects>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="mBs-kN-L9l" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <navigationController id="ty0-f4-Vx3" sceneMemberID="viewController">
                     <tabBarItem key="tabBarItem" title="" image="icon_search" selectedImage="icon_active_search" id="Q2H-TR-UpV"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="TUa-Ah-jAH">
@@ -365,6 +394,7 @@
                         <segue destination="Azc-tT-5NT" kind="relationship" relationship="rootViewController" id="hEW-G0-tQg"/>
                     </connections>
                 </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="mBs-kN-L9l" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1089" y="-251"/>
         </scene>

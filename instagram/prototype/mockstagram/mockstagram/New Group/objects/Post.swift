@@ -17,4 +17,5 @@ struct Post: Codable
     var description : String
     var mediaUrl : String
     var type : String
+    var commentCount : Int
 }

@@ -42,6 +42,7 @@ class MainFeedVC: UIViewController
                     if let post = Post(dictionary: document.data())
                     {
                         let card = MediaCard(withPost: post)
+                        card.cardDelegate = self
                         self.cardsList.append(card)
                     }
                 }
@@ -58,5 +59,13 @@ class MainFeedVC: UIViewController
             self.contentFeed.insertArrangedSubview(card, at: index)
         }
         self.view.layoutIfNeeded()
+    }
+}
+
+extension MainFeedVC : MediaCardDelegate
+{
+    func commentIconTappedFor(post: Post)
+    {
+        self.performSegue(withIdentifier: segue.commentsListSegue, sender: self)
     }
 }

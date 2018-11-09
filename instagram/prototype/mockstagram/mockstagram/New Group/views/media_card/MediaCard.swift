@@ -9,11 +9,19 @@
 import UIKit
 import Kingfisher
 
+protocol MediaCardDelegate : class
+{
+    //func loadCommentListFor(post: Post)
+    func commentIconTappedFor(post: Post)
+}
+
 class MediaCard: UIView
 {
     /** Properties **/
     @IBOutlet var contentView: UIView!
     @IBOutlet var profileImageView: UIImageView!
+    var post : Post?
+    weak var cardDelegate : MediaCardDelegate?
     
     // Header props
     @IBOutlet var headerContainerView: UIView!
@@ -64,6 +72,7 @@ class MediaCard: UIView
         let postImageUrl = URL(string: withPost.mediaUrl)
         
         self.init(frame: .zero)
+        self.post = withPost
         
         self.headerUserNameLabel.text = withPost.author
         self.postImage.contentMode = .scaleAspectFill
@@ -96,13 +105,18 @@ extension MediaCard : MediaCardFooterIconDelegate
 {
     func iconTapped(_ sender: MediaCardFooterIcon)
     {
+        guard let tappedPost = self.post else
+        {
+            return
+        }
+        
         switch sender
         {
         case addToCollectionIcon:
             print("add to collection tapped!")
             break
         case commentFooterIcon:
-            print("load comment view")
+            cardDelegate?.commentIconTappedFor(post: tappedPost)
             break
         default:
             // defaulting to heart icon
