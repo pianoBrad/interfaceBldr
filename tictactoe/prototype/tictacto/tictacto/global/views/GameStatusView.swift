@@ -27,7 +27,6 @@ class GameStatusView: UIView
 	/** Custom Methods **/
 	func commonInit()
 	{
-//		Waiting for button to say, HEY I've been pressed. The same as, hey the burger is ready for you to grab and do whatever with...
 	}
 	
 }

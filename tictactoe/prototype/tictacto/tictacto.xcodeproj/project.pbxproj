@@ -166,6 +166,7 @@
 				2D6D792521715209004B061B /* views */,
 				2D6D7922217151CA004B061B /* navigation */,
 				2D6D791F21715056004B061B /* buttons */,
+				690873ED2195252100831498 /* Xib Files */,
 				2D6D791C21714F37004B061B /* extensions */,
 			);
 			path = global;
@@ -185,7 +186,6 @@
 				2D6D79202171506E004B061B /* ControlPanelBtn.swift */,
 				69E852D0217A95FC007D9C3D /* GamePieceButton.swift */,
 				69F49A61217FC99B00BE3C5E /* PlayerButton.swift */,
-				69F49A63217FC9DF00BE3C5E /* PlayerButton.xib */,
 			);
 			path = buttons;
 			sourceTree = "<group>";
@@ -202,11 +202,8 @@
 			children = (
 				2DA557C82183C4670046648D /* GameSectionVIew.swift */,
 				2D6D7923217151E0004B061B /* PlayerView.swift */,
-				2D636F772183B52F00EB2F28 /* PlayerView.xib */,
 				2D6D792621715225004B061B /* GameBoard.swift */,
-				698F82D52183C8A8000D35E8 /* GameBoard.xib */,
 				2D6D79282171524F004B061B /* ControlPanel.swift */,
-				2DA557C62183BF040046648D /* ControlPanel.xib */,
 				6908B65D21839EB000C86752 /* GameStatusView.swift */,
 			);
 			path = views;
@@ -218,6 +215,17 @@
 				2D6D792B217152B9004B061B /* TicTacToeVC.swift */,
 			);
 			path = app_flow;
+			sourceTree = "<group>";
+		};
+		690873ED2195252100831498 /* Xib Files */ = {
+			isa = PBXGroup;
+			children = (
+				2D636F772183B52F00EB2F28 /* PlayerView.xib */,
+				69F49A63217FC9DF00BE3C5E /* PlayerButton.xib */,
+				698F82D52183C8A8000D35E8 /* GameBoard.xib */,
+				2DA557C62183BF040046648D /* ControlPanel.xib */,
+			);
+			path = "Xib Files";
 			sourceTree = "<group>";
 		};
 		69408741218CF58F006F6619 /* GameData */ = {

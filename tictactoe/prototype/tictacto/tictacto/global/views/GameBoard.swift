@@ -46,7 +46,7 @@ class GameBoard: GameSectionVIew
 		contentView.frame = self.bounds
 		contentView.autoresizingMask = [.flexibleWidth, .flexibleHeight]
         
-        /**
+        /****************BRAD_KNOWLEDGE******************
         Another way of doing btnsArray assignment (below)
          
         for view in btnContainerView.subviews
@@ -56,7 +56,7 @@ class GameBoard: GameSectionVIew
                 btnsArray.append(btn)
             }
         }
-        **/
+        **************************************************/
         
 		btnsArray =
 		[
@@ -85,34 +85,32 @@ class GameBoard: GameSectionVIew
 			btn.reset()
 		}
 	}
-	
 }
+
 
 extension GameBoard : GamePieceButtonDelegate
 {
 	func gamePieceTapped(_ sender: GamePieceButton)
 	{
+		
 		if let currentPlayer = currentGame.getCurrentPlayer() as Player?
 		{
+			
 			sender.claim(forPlayer: currentPlayer)
 		}
 		
-//         check three in a row ->
-//             am I horizontally
-//                 match found
-//                 return
-//             am I vertically
-//                 match found
-//                 return
-//             am I diagonally
-//                 match found
-//                 return
+		//         check three in a row ->
+		//             am I horizontally
+		//                 match found
+		//                 return
+		//             am I vertically
+		//                 match found
+		//                 return
+		//             am I diagonally
+		//                 match found
+		//                 return
 		
 		boardDelegate?.noMatchFound()
 		
-    }
+	}
 }
-
-
-
-

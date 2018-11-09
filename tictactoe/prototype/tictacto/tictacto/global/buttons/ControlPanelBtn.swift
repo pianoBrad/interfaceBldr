@@ -44,7 +44,6 @@ class ControlPanelBtn: UIButton
     {
         self.init(frame: frame)
         self.backgroundColor = bgColor
-        // self.titleLabel?.text = andText
         setTitle(andText, for: .normal)
     }
     

@@ -48,9 +48,6 @@ class PlayerView: GameSectionVIew
 			currentGame.create(player: newPlayer)
 			
 		}
-		
-		
-		
     }
 
     override func reset()
@@ -84,8 +81,6 @@ class PlayerView: GameSectionVIew
 		{
 			gameStatusLabel.text = "Player \(symbol) Turn"
 		}
-		
-		
 	}
 	
 	
