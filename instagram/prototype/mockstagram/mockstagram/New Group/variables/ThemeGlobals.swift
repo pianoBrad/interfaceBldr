@@ -32,6 +32,7 @@ class ThemeGlobals: NSObject
     /** Spacing **/
     var primaryStackSpacingX : CGFloat = 10
     var primaryStackSpacingY : CGFloat = 8
+    var primaryCardComponentSpacingX : CGFloat = 15
     
     override init()
     {

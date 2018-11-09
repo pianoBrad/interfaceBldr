@@ -19,6 +19,8 @@
 		2D2C88622170DA80009F7894 /* StoryBtnView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2D2C88612170DA80009F7894 /* StoryBtnView.xib */; };
 		2D30C89B21954323000BD1DA /* Comment.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D30C89A21954323000BD1DA /* Comment.swift */; };
 		2D30C89D21954662000BD1DA /* CommentsListVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D30C89C21954662000BD1DA /* CommentsListVC.swift */; };
+		2D30C8A02195E307000BD1DA /* LikesCountLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D30C89F2195E307000BD1DA /* LikesCountLabel.swift */; };
+		2D30C8A22195E580000BD1DA /* StandardBoldLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D30C8A12195E580000BD1DA /* StandardBoldLabel.swift */; };
 		2D314C9F2159711A00B74FBA /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D314C9E2159711A00B74FBA /* AppDelegate.swift */; };
 		2D314CA42159711A00B74FBA /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2D314CA22159711A00B74FBA /* Main.storyboard */; };
 		2D314CA72159711A00B74FBA /* mockstagram.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 2D314CA52159711A00B74FBA /* mockstagram.xcdatamodeld */; };
@@ -116,6 +118,8 @@
 		2D2C88612170DA80009F7894 /* StoryBtnView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = StoryBtnView.xib; sourceTree = "<group>"; };
 		2D30C89A21954323000BD1DA /* Comment.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Comment.swift; sourceTree = "<group>"; };
 		2D30C89C21954662000BD1DA /* CommentsListVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommentsListVC.swift; sourceTree = "<group>"; };
+		2D30C89F2195E307000BD1DA /* LikesCountLabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LikesCountLabel.swift; sourceTree = "<group>"; };
+		2D30C8A12195E580000BD1DA /* StandardBoldLabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StandardBoldLabel.swift; sourceTree = "<group>"; };
 		2D314C9B2159711A00B74FBA /* mockstagram.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = mockstagram.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		2D314C9E2159711A00B74FBA /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		2D314CA32159711A00B74FBA /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -223,6 +227,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		2D30C89E2195E2BF000BD1DA /* Footer */ = {
+			isa = PBXGroup;
+			children = (
+				2DFF5D5B2190F99C001A71C4 /* MediaCardFooterIcon.swift */,
+				2D30C89F2195E307000BD1DA /* LikesCountLabel.swift */,
+			);
+			path = Footer;
+			sourceTree = "<group>";
+		};
 		2D314C922159711A00B74FBA = {
 			isa = PBXGroup;
 			children = (
@@ -430,6 +443,7 @@
 			isa = PBXGroup;
 			children = (
 				2DC1A3882173AF2E004833DD /* DynamicHeightLabel.swift */,
+				2D30C8A12195E580000BD1DA /* StandardBoldLabel.swift */,
 			);
 			path = labels;
 			sourceTree = "<group>";
@@ -523,7 +537,7 @@
 			children = (
 				2D86594E2159EFC4003A5B67 /* MediaCard.xib */,
 				2D8659502159F04F003A5B67 /* MediaCard.swift */,
-				2DFF5D5B2190F99C001A71C4 /* MediaCardFooterIcon.swift */,
+				2D30C89E2195E2BF000BD1DA /* Footer */,
 			);
 			path = media_card;
 			sourceTree = "<group>";
@@ -836,8 +850,10 @@
 				2DDC94EF21782065002C6B5B /* StandardFormFieldView.swift in Sources */,
 				2DF206782170E93A008A6A6A /* UIStackViewExtensions.swift in Sources */,
 				2DFF5D5C2190F99C001A71C4 /* MediaCardFooterIcon.swift in Sources */,
+				2D30C8A22195E580000BD1DA /* StandardBoldLabel.swift in Sources */,
 				2DAEAEE7218E1FF90037D971 /* UserSettings.swift in Sources */,
 				2DE972A6218FBB820002ED45 /* DataGlobals.swift in Sources */,
+				2D30C8A02195E307000BD1DA /* LikesCountLabel.swift in Sources */,
 				2DEE28FD216D079B0007A239 /* ProfileVC.swift in Sources */,
 				2D2C885C2170D97C009F7894 /* StoryStack.swift in Sources */,
 				2D456A01217D79D700C91E40 /* MainTabBC.swift in Sources */,

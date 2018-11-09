@@ -11,7 +11,6 @@ import Kingfisher
 
 protocol MediaCardDelegate : class
 {
-    //func loadCommentListFor(post: Post)
     func commentIconTappedFor(post: Post)
 }
 
@@ -36,6 +35,7 @@ class MediaCard: UIView
     @IBOutlet var likeFooterIcon: MediaCardFooterIcon!
     @IBOutlet var commentFooterIcon: MediaCardFooterIcon!
     @IBOutlet var addToCollectionIcon: MediaCardFooterIcon!
+    @IBOutlet var likesCountLabel: LikesCountLabel!
     
     
     /** Overrides **/
@@ -78,6 +78,15 @@ class MediaCard: UIView
         self.postImage.contentMode = .scaleAspectFill
         self.postImage.kf.setImage(with: postImageUrl)
         self.profileImageView.kf.setImage(with: avatarImageUrl)
+        
+        if withPost.likesCount < 1
+        {
+            likesCountLabel.removeFromSuperview()
+        }
+        else
+        {
+            likesCountLabel.updateLikesWith(count: withPost.likesCount)
+        }
     }
     
     /** Custom methods **/
