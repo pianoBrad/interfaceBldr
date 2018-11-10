@@ -89,6 +89,17 @@ class MediaCard: UIView
         {
             likesCountLabel.updateLikesWith(count: withPost.likesCount)
         }
+        
+        if withPost.description.count < 1
+        {
+            descriptionLabel.removeFromSuperview()
+        }
+        else
+        {
+            descriptionLabel.set(
+                authorName: withPost.author, andComment: withPost.description
+            )
+        }
     }
     
     /** Custom methods **/

@@ -12,6 +12,7 @@ class PostDescriptionLabel: UILabel
 {
     /** Properties **/
     var authorName : String = ""
+    var comment : String = ""
     var mainFeedScrollView : UIScrollView?
     
     /** Overrides **/
@@ -31,16 +32,22 @@ class PostDescriptionLabel: UILabel
     func commonInit()
     {
         self.isUserInteractionEnabled = true
-        self.text = "Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum"
         let tapGesture = UITapGestureRecognizer(
             target: self, action: #selector(handleTap(_:))
         )
         self.addGestureRecognizer(tapGesture)
     }
     
-    func set(authorName: String)
+    func set(authorName: String, andComment: String)
     {
         self.authorName = authorName
+        self.comment = andComment
+        
+        let attributedText = NSMutableAttributedString()
+        attributedText
+            .bold(self.authorName, 14.0)
+            .normal(" \(self.comment)")
+        self.attributedText = attributedText
     }
 
     @objc func handleTap(_ sender: UITapGestureRecognizer)
@@ -53,6 +60,7 @@ class PostDescriptionLabel: UILabel
                 withDuration: 0.3, animations:
                 {
                     scrollView.layoutIfNeeded()
+                    self.superview?.layoutIfNeeded()
                 }
             )
         }
