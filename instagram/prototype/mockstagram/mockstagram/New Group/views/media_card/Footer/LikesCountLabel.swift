@@ -33,6 +33,5 @@ class LikesCountLabel: StandardBoldLabel
         let plural = count > 1 ? "s" : ""
         
         self.text = "\(count) like\(plural)"
-    
     }
 }

@@ -43,6 +43,7 @@ class MainFeedVC: UIViewController
                     {
                         let card = MediaCard(withPost: post)
                         card.cardDelegate = self
+                        card.setContentRef(scrollView : self.contentScrollView)
                         self.cardsList.append(card)
                     }
                 }

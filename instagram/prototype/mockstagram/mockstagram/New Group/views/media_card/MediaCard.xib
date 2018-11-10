@@ -21,6 +21,7 @@
                 <outlet property="addToCollectionIcon" destination="zov-Ix-zrG" id="ICG-YU-N3x"/>
                 <outlet property="commentFooterIcon" destination="kjy-rZ-xMP" id="HDh-Lm-sQj"/>
                 <outlet property="contentView" destination="iN0-l3-epB" id="hEo-tb-z3s"/>
+                <outlet property="descriptionLabel" destination="fMj-U8-Pm3" id="gUG-mQ-TaY"/>
                 <outlet property="footerContainerView" destination="zxf-i8-HQW" id="mfZ-K8-yYU"/>
                 <outlet property="headerContainerView" destination="ADV-Ts-QqK" id="mxU-A0-03I"/>
                 <outlet property="headerLabelContainer" destination="GiF-gK-htn" id="qSx-6Y-4Yu"/>
@@ -35,7 +36,7 @@
         </placeholder>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
         <view contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="iN0-l3-epB">
-            <rect key="frame" x="0.0" y="0.0" width="375" height="530"/>
+            <rect key="frame" x="0.0" y="0.0" width="375" height="700"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ADV-Ts-QqK" userLabel="Header">
@@ -107,7 +108,7 @@
                     </constraints>
                 </view>
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="zxf-i8-HQW" userLabel="Footer">
-                    <rect key="frame" x="0.0" y="375" width="375" height="155"/>
+                    <rect key="frame" x="0.0" y="375" width="375" height="325"/>
                     <subviews>
                         <view clipsSubviews="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="QPh-RH-6CV" customClass="MediaCardFooterIcon" customModule="mockstagram" customModuleProvider="target">
                             <rect key="frame" x="15" y="15" width="25" height="25"/>
@@ -143,8 +144,16 @@
                             </userDefinedRuntimeAttributes>
                         </view>
                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="10 likes" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="oUa-kf-fsk" userLabel="Likes Count" customClass="LikesCountLabel" customModule="mockstagram" customModuleProvider="target">
-                            <rect key="frame" x="15" y="55" width="345" height="17"/>
+                            <rect key="frame" x="15" y="50" width="345" height="17"/>
                             <fontDescription key="fontDescription" name="Lato-Bold" family="Lato" pointSize="14"/>
+                            <nil key="textColor"/>
+                            <nil key="highlightedColor"/>
+                        </label>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fMj-U8-Pm3" userLabel="Description Label" customClass="PostDescriptionLabel" customModule="mockstagram" customModuleProvider="target">
+                            <rect key="frame" x="15" y="77" width="345" height="33"/>
+                            <color key="backgroundColor" red="0.99215686270000003" green="0.74117647060000003" blue="0.01176470588" alpha="0.75993603190000003" colorSpace="calibratedRGB"/>
+                            <string key="text">Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum</string>
+                            <fontDescription key="fontDescription" name="Lato-Regular" family="Lato" pointSize="14"/>
                             <nil key="textColor"/>
                             <nil key="highlightedColor"/>
                         </label>
@@ -155,13 +164,18 @@
                         <constraint firstAttribute="trailing" secondItem="zov-Ix-zrG" secondAttribute="trailing" constant="15" id="22C-wo-4lH"/>
                         <constraint firstItem="oUa-kf-fsk" firstAttribute="leading" secondItem="zxf-i8-HQW" secondAttribute="leading" constant="15" id="2Oq-NE-9b2"/>
                         <constraint firstItem="kjy-rZ-xMP" firstAttribute="top" secondItem="QPh-RH-6CV" secondAttribute="top" id="3Xx-TG-VNz"/>
+                        <constraint firstItem="fMj-U8-Pm3" firstAttribute="leading" secondItem="QPh-RH-6CV" secondAttribute="leading" id="7Es-bH-cry"/>
                         <constraint firstItem="zov-Ix-zrG" firstAttribute="top" secondItem="zxf-i8-HQW" secondAttribute="top" constant="15" id="KWk-8N-RfY"/>
-                        <constraint firstItem="oUa-kf-fsk" firstAttribute="top" secondItem="QPh-RH-6CV" secondAttribute="bottom" constant="15" id="Qg9-Dh-wNM"/>
+                        <constraint firstItem="oUa-kf-fsk" firstAttribute="top" secondItem="QPh-RH-6CV" secondAttribute="bottom" constant="10" id="Qg9-Dh-wNM"/>
+                        <constraint firstItem="fMj-U8-Pm3" firstAttribute="top" relation="greaterThanOrEqual" secondItem="QPh-RH-6CV" secondAttribute="bottom" constant="15" id="Xyf-gx-wr7"/>
+                        <constraint firstItem="fMj-U8-Pm3" firstAttribute="trailing" secondItem="zov-Ix-zrG" secondAttribute="trailing" id="Y9D-XB-bCe"/>
                         <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="55" id="ahj-B0-L9C"/>
+                        <constraint firstItem="fMj-U8-Pm3" firstAttribute="top" secondItem="oUa-kf-fsk" secondAttribute="bottom" constant="10" id="bWK-rc-9z8"/>
                         <constraint firstAttribute="trailing" secondItem="oUa-kf-fsk" secondAttribute="trailing" constant="15" id="gSg-Wn-3AN"/>
                         <constraint firstItem="QPh-RH-6CV" firstAttribute="top" secondItem="zxf-i8-HQW" secondAttribute="top" constant="15" id="heq-s3-FCO"/>
                         <constraint firstAttribute="bottom" relation="greaterThanOrEqual" secondItem="oUa-kf-fsk" secondAttribute="bottom" constant="15" id="hoD-Tq-8fX"/>
                         <constraint firstItem="QPh-RH-6CV" firstAttribute="leading" secondItem="zxf-i8-HQW" secondAttribute="leading" constant="15" id="iSu-2w-HZq"/>
+                        <constraint firstAttribute="bottom" relation="greaterThanOrEqual" secondItem="fMj-U8-Pm3" secondAttribute="bottom" constant="15" id="lyT-mv-1lH"/>
                         <constraint firstItem="kjy-rZ-xMP" firstAttribute="leading" secondItem="QPh-RH-6CV" secondAttribute="trailing" constant="15" id="qbD-1y-bbV"/>
                     </constraints>
                 </view>
@@ -175,12 +189,12 @@
                 <constraint firstItem="ADV-Ts-QqK" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" id="IJg-EG-rKJ"/>
                 <constraint firstAttribute="trailing" secondItem="xEN-l9-6cd" secondAttribute="trailing" id="Qdv-KS-lll"/>
                 <constraint firstAttribute="trailing" secondItem="ADV-Ts-QqK" secondAttribute="trailing" id="kzO-qe-lsj"/>
-                <constraint firstAttribute="bottom" secondItem="zxf-i8-HQW" secondAttribute="bottom" id="qr9-Rg-0UP"/>
+                <constraint firstAttribute="bottom" secondItem="zxf-i8-HQW" secondAttribute="bottom" priority="750" id="qr9-Rg-0UP"/>
                 <constraint firstItem="xEN-l9-6cd" firstAttribute="top" secondItem="ADV-Ts-QqK" secondAttribute="bottom" id="sLF-aZ-ERT"/>
                 <constraint firstItem="zxf-i8-HQW" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" id="vmO-yn-ahH"/>
             </constraints>
             <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
-            <point key="canvasLocation" x="138.40000000000001" y="152.47376311844079"/>
+            <point key="canvasLocation" x="138.40000000000001" y="152.02398800599701"/>
         </view>
     </objects>
     <resources>

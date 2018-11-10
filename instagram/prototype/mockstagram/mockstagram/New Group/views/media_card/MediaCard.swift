@@ -21,6 +21,7 @@ class MediaCard: UIView
     @IBOutlet var profileImageView: UIImageView!
     var post : Post?
     weak var cardDelegate : MediaCardDelegate?
+    var parentScrollView : UIScrollView?
     
     // Header props
     @IBOutlet var headerContainerView: UIView!
@@ -36,6 +37,7 @@ class MediaCard: UIView
     @IBOutlet var commentFooterIcon: MediaCardFooterIcon!
     @IBOutlet var addToCollectionIcon: MediaCardFooterIcon!
     @IBOutlet var likesCountLabel: LikesCountLabel!
+    @IBOutlet var descriptionLabel: PostDescriptionLabel!
     
     
     /** Overrides **/
@@ -107,6 +109,13 @@ class MediaCard: UIView
                 icon.iconDelegate = self
             }
         }
+    }
+    
+    // Stores the main parent scrollview for proper animation purposes
+    func setContentRef(scrollView : UIScrollView)
+    {
+        self.parentScrollView = scrollView
+        self.descriptionLabel.mainFeedScrollView = scrollView
     }
 }
 
