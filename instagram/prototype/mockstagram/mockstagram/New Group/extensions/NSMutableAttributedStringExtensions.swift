@@ -27,6 +27,20 @@ extension NSMutableAttributedString
         return self
     }
     
+    @discardableResult func colored(_ text: String, _ color: UIColor) -> NSMutableAttributedString
+    {
+        let attrs : [NSAttributedString.Key: Any] = [
+            .foregroundColor : theme.lightGrey
+        ]
+        
+        let coloredString = NSMutableAttributedString(
+            string: text, attributes: attrs
+        )
+        append(coloredString)
+        
+        return self
+    }
+    
     @discardableResult func normal(_ text: String) -> NSMutableAttributedString
     {
         let normal = NSAttributedString(string: text)

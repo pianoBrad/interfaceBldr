@@ -12,6 +12,7 @@ import Kingfisher
 protocol MediaCardDelegate : class
 {
     func commentIconTappedFor(post: Post)
+    func expandedDescriptionTapped(for post: Post)
 }
 
 class MediaCard: UIView
@@ -120,6 +121,7 @@ class MediaCard: UIView
                 icon.iconDelegate = self
             }
         }
+        descriptionLabel.descriptionDelegate = self
     }
     
     // Stores the main parent scrollview for proper animation purposes
@@ -151,6 +153,17 @@ extension MediaCard : MediaCardFooterIconDelegate
             // defaulting to heart icon
             print("like tapped!")
             break
+        }
+    }
+}
+
+extension MediaCard : PostDescriptionLabelDelegate
+{
+    func expandedDescriptionWasTapped(_ sender: PostDescriptionLabel)
+    {
+        if let curPost = self.post
+        {
+            cardDelegate?.expandedDescriptionTapped(for: curPost)
         }
     }
 }

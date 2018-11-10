@@ -12,6 +12,7 @@
 		2D1259112177707D00691077 /* ProfileContactView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D1259102177707D00691077 /* ProfileContactView.swift */; };
 		2D18DBF52184EC06003CED4D /* SegueGlobals.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D18DBF42184EC06003CED4D /* SegueGlobals.swift */; };
 		2D23B94221974F310091B428 /* NSMutableAttributedStringExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D23B94121974F310091B428 /* NSMutableAttributedStringExtensions.swift */; };
+		2D23B94421975A060091B428 /* UILabelExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D23B94321975A060091B428 /* UILabelExtensions.swift */; };
 		2D254F51218DF01500B6C42F /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 2D254F50218DF01500B6C42F /* GoogleService-Info.plist */; };
 		2D2C88582170373C009F7894 /* ProfileBtn.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D2C88572170373C009F7894 /* ProfileBtn.swift */; };
 		2D2C885A2170D8DC009F7894 /* StoryStack.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2D2C88592170D8DC009F7894 /* StoryStack.xib */; };
@@ -113,6 +114,7 @@
 		2D1259102177707D00691077 /* ProfileContactView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileContactView.swift; sourceTree = "<group>"; };
 		2D18DBF42184EC06003CED4D /* SegueGlobals.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SegueGlobals.swift; sourceTree = "<group>"; };
 		2D23B94121974F310091B428 /* NSMutableAttributedStringExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NSMutableAttributedStringExtensions.swift; sourceTree = "<group>"; };
+		2D23B94321975A060091B428 /* UILabelExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UILabelExtensions.swift; sourceTree = "<group>"; };
 		2D254F50218DF01500B6C42F /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		2D2C88572170373C009F7894 /* ProfileBtn.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileBtn.swift; sourceTree = "<group>"; };
 		2D2C88592170D8DC009F7894 /* StoryStack.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = StoryStack.xib; sourceTree = "<group>"; };
@@ -430,6 +432,7 @@
 				2D4C488A217B94BA00A29019 /* NSLayoutConstraintExtensions.swift */,
 				2D090DCE218F761500086A7A /* DecodableExtensions.swift */,
 				2D23B94121974F310091B428 /* NSMutableAttributedStringExtensions.swift */,
+				2D23B94321975A060091B428 /* UILabelExtensions.swift */,
 			);
 			path = extensions;
 			sourceTree = "<group>";
@@ -857,6 +860,7 @@
 				2DF206782170E93A008A6A6A /* UIStackViewExtensions.swift in Sources */,
 				2DFF5D5C2190F99C001A71C4 /* MediaCardFooterIcon.swift in Sources */,
 				2D30C8A22195E580000BD1DA /* StandardBoldLabel.swift in Sources */,
+				2D23B94421975A060091B428 /* UILabelExtensions.swift in Sources */,
 				2DAEAEE7218E1FF90037D971 /* UserSettings.swift in Sources */,
 				2DE972A6218FBB820002ED45 /* DataGlobals.swift in Sources */,
 				2D30C8A02195E307000BD1DA /* LikesCountLabel.swift in Sources */,

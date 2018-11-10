@@ -65,6 +65,11 @@ class MainFeedVC: UIViewController
 
 extension MainFeedVC : MediaCardDelegate
 {
+    func expandedDescriptionTapped(for post: Post)
+    {
+        self.performSegue(withIdentifier: segue.commentsListSegue, sender: self)
+    }
+    
     func commentIconTappedFor(post: Post)
     {
         self.performSegue(withIdentifier: segue.commentsListSegue, sender: self)
