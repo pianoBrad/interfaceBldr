@@ -36,6 +36,7 @@ class GameBoard: GameSectionVIew
 	
 	var btnsArray : [GamePieceButton] = []
 	
+	
 	/** Overrides **/
     override func commonInit()
     {
@@ -71,13 +72,16 @@ class GameBoard: GameSectionVIew
 			btnNine,
 		]
 		
+		
 		for btn in btnsArray
 		{
 			btn.btnDelegate = self
 		}
+		
     }
 	
-	override func reset() {
+	override func reset()
+	{
 		super.reset()
 		
 		for btn in btnsArray
@@ -109,6 +113,35 @@ extension GameBoard : GamePieceButtonDelegate
 		//             am I diagonally
 		//                 match found
 		//                 return
+		
+		//******************* WORK ZONE *********************
+		
+		func checkThreeInRow()
+		{
+			// the switch statment needs to go here:
+			// something like...
+			//
+			// var horizontalMatch = btns123, 456, 789
+			// var verticalMatch = btns147, 258, 369
+			// var diagonalMatch = btns159, 357
+			//
+			// switch on sender which is the buttonsTappedSender or
+			// case horizontal
+				// load the line for the combination
+				// break
+			// case vertical
+				// load the line for the combination
+				// break
+			// case diagonal
+				// load the line fot the combination
+				// break
+			// default
+				// break
+			
+			
+		}
+		
+		//******************* WORK ZONE *********************
 		
 		boardDelegate?.noMatchFound()
 		
