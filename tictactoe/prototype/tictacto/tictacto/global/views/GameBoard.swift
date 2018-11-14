@@ -11,6 +11,7 @@ import UIKit
 protocol GameBoardDelegate: class
 {
 	func noMatchFound()
+	func matchFound(for player: Player)
 }
 
 @IBDesignable
@@ -89,6 +90,75 @@ class GameBoard: GameSectionVIew
 			btn.reset()
 		}
 	}
+	
+	func checkThreeInRow()
+	{
+		
+		let btnRows =
+			[
+				[0,1,2,],
+				[3,4,5,],
+				[6,7,8,],
+			]
+		
+		for horizontalRow in btnRows
+		{
+			if let firstOwner = btnsArray[horizontalRow[0]].owner
+			{
+				for btnKey in horizontalRow
+				{
+					let btnOwner = btnsArray[btnKey].owner
+					
+					if btnOwner != firstOwner
+					{
+						if horizontalRow == btnRows.last
+						{
+							boardDelegate?.noMatchFound()
+							return
+						}
+						break
+					}
+					
+					if btnKey == horizontalRow.last
+					{
+						boardDelegate?.matchFound(for: firstOwner)
+						return
+					}
+				}
+			}
+				
+			else if horizontalRow == btnRows.last
+			{
+				boardDelegate?.noMatchFound()
+				return
+			}
+			
+			
+		}
+		
+		// the switch statment needs to go here:
+		// something like...
+		//
+		// var horizontalMatch = btns123, 456, 789
+		// var verticalMatch = btns147, 258, 369
+		// var diagonalMatch = btns159, 357
+		//
+		// switch on sender which is the buttonsTappedSender or
+		// case horizontal
+		// load the line for the combination
+		// break
+		// case vertical
+		// load the line for the combination
+		// break
+		// case diagonal
+		// load the line fot the combination
+		// break
+		// default
+		// break
+		
+		
+	}
+	
 }
 
 
@@ -114,36 +184,10 @@ extension GameBoard : GamePieceButtonDelegate
 		//                 match found
 		//                 return
 		
-		//******************* WORK ZONE *********************
 		
-		func checkThreeInRow()
-		{
-			// the switch statment needs to go here:
-			// something like...
-			//
-			// var horizontalMatch = btns123, 456, 789
-			// var verticalMatch = btns147, 258, 369
-			// var diagonalMatch = btns159, 357
-			//
-			// switch on sender which is the buttonsTappedSender or
-			// case horizontal
-				// load the line for the combination
-				// break
-			// case vertical
-				// load the line for the combination
-				// break
-			// case diagonal
-				// load the line fot the combination
-				// break
-			// default
-				// break
-			
-			
-		}
+		checkThreeInRow()
 		
-		//******************* WORK ZONE *********************
 		
-		boardDelegate?.noMatchFound()
 		
 	}
 }

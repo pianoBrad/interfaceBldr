@@ -203,48 +203,6 @@
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="P7A-Lb-P9i" userLabel="Matching View">
                     <rect key="frame" x="0.0" y="52" width="375" height="375"/>
                     <subviews>
-                        <view contentMode="scaleToFill" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="E7x-VL-YfY" userLabel="VerticalLftView">
-                            <rect key="frame" x="0.0" y="0.0" width="119" height="375"/>
-                            <subviews>
-                                <view contentMode="scaleToFill" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="5Jt-3p-xMd" userLabel="VertLineLft">
-                                    <rect key="frame" x="54.5" y="7.5" width="10" height="360"/>
-                                    <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                </view>
-                            </subviews>
-                            <constraints>
-                                <constraint firstItem="5Jt-3p-xMd" firstAttribute="centerX" secondItem="E7x-VL-YfY" secondAttribute="centerX" id="q0J-Ut-n6Z"/>
-                            </constraints>
-                        </view>
-                        <view contentMode="scaleToFill" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="JwT-ea-wSP" userLabel="VerticalMidView">
-                            <rect key="frame" x="128" y="0.0" width="119" height="375"/>
-                            <subviews>
-                                <view contentMode="scaleToFill" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="UW3-nR-b1a" userLabel="VertLineMid">
-                                    <rect key="frame" x="54.5" y="7.5" width="10" height="360"/>
-                                    <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                    <constraints>
-                                        <constraint firstAttribute="width" constant="10" id="931-Hm-mRG"/>
-                                        <constraint firstAttribute="height" constant="360" id="pKT-pS-8sf"/>
-                                    </constraints>
-                                </view>
-                            </subviews>
-                            <constraints>
-                                <constraint firstAttribute="width" constant="119" id="Fkb-ic-VEu"/>
-                                <constraint firstItem="UW3-nR-b1a" firstAttribute="centerX" secondItem="JwT-ea-wSP" secondAttribute="centerX" id="blG-lv-FsW"/>
-                                <constraint firstItem="UW3-nR-b1a" firstAttribute="centerY" secondItem="JwT-ea-wSP" secondAttribute="centerY" id="fEM-L2-5l1"/>
-                            </constraints>
-                        </view>
-                        <view contentMode="scaleToFill" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Wff-bv-8M3" userLabel="VerticalRghtView">
-                            <rect key="frame" x="256" y="0.0" width="119" height="375"/>
-                            <subviews>
-                                <view contentMode="scaleToFill" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="tlN-VC-FgY" userLabel="VertLineRight">
-                                    <rect key="frame" x="54.5" y="7.5" width="10" height="360"/>
-                                    <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                </view>
-                            </subviews>
-                            <constraints>
-                                <constraint firstItem="tlN-VC-FgY" firstAttribute="centerX" secondItem="Wff-bv-8M3" secondAttribute="centerX" id="baj-da-mCl"/>
-                            </constraints>
-                        </view>
                         <view contentMode="scaleToFill" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="B94-oE-mCf" userLabel="HorizontalTopView">
                             <rect key="frame" x="0.0" y="0.0" width="375" height="119"/>
                             <subviews>
@@ -302,6 +260,48 @@
                                     <exclude reference="fNo-sE-CMp"/>
                                 </mask>
                             </variation>
+                        </view>
+                        <view contentMode="scaleToFill" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="E7x-VL-YfY" userLabel="VerticalLftView">
+                            <rect key="frame" x="0.0" y="0.0" width="119" height="375"/>
+                            <subviews>
+                                <view contentMode="scaleToFill" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="5Jt-3p-xMd" userLabel="VertLineLft">
+                                    <rect key="frame" x="54.5" y="7.5" width="10" height="360"/>
+                                    <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </view>
+                            </subviews>
+                            <constraints>
+                                <constraint firstItem="5Jt-3p-xMd" firstAttribute="centerX" secondItem="E7x-VL-YfY" secondAttribute="centerX" id="q0J-Ut-n6Z"/>
+                            </constraints>
+                        </view>
+                        <view contentMode="scaleToFill" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="JwT-ea-wSP" userLabel="VerticalMidView">
+                            <rect key="frame" x="128" y="0.0" width="119" height="375"/>
+                            <subviews>
+                                <view contentMode="scaleToFill" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="UW3-nR-b1a" userLabel="VertLineMid">
+                                    <rect key="frame" x="54.5" y="7.5" width="10" height="360"/>
+                                    <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                    <constraints>
+                                        <constraint firstAttribute="width" constant="10" id="931-Hm-mRG"/>
+                                        <constraint firstAttribute="height" constant="360" id="pKT-pS-8sf"/>
+                                    </constraints>
+                                </view>
+                            </subviews>
+                            <constraints>
+                                <constraint firstAttribute="width" constant="119" id="Fkb-ic-VEu"/>
+                                <constraint firstItem="UW3-nR-b1a" firstAttribute="centerX" secondItem="JwT-ea-wSP" secondAttribute="centerX" id="blG-lv-FsW"/>
+                                <constraint firstItem="UW3-nR-b1a" firstAttribute="centerY" secondItem="JwT-ea-wSP" secondAttribute="centerY" id="fEM-L2-5l1"/>
+                            </constraints>
+                        </view>
+                        <view contentMode="scaleToFill" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Wff-bv-8M3" userLabel="VerticalRghtView">
+                            <rect key="frame" x="256" y="0.0" width="119" height="375"/>
+                            <subviews>
+                                <view contentMode="scaleToFill" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="tlN-VC-FgY" userLabel="VertLineRight">
+                                    <rect key="frame" x="54.5" y="7.5" width="10" height="360"/>
+                                    <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </view>
+                            </subviews>
+                            <constraints>
+                                <constraint firstItem="tlN-VC-FgY" firstAttribute="centerX" secondItem="Wff-bv-8M3" secondAttribute="centerX" id="baj-da-mCl"/>
+                            </constraints>
                         </view>
                     </subviews>
                     <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>

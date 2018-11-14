@@ -16,6 +16,7 @@ class Player: NSObject
 	var playerStatus : Bool?	// representing a on and off state... my turn or not, true or false.
 	var playerScore : Int?		// the players score, passed in via int.
 	var button : PlayerButton?	// the button in the PlayerView object.
+	var isWinner : Bool = false
 	
 	/** Overrides **/
 	override init()

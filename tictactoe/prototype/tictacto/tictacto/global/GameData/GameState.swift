@@ -40,6 +40,19 @@ class GameState: NSObject
 		return nil
 	}
 	
+	func getWinner() -> Player?
+	{
+		for player in players
+		{
+			if player.isWinner == true
+			{
+				return player
+			}
+			
+		}
+		return nil
+	}
+	
 	
 }
 

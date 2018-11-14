@@ -53,6 +53,12 @@ extension TicTacToeVC : ControlPanelDelegate
 
 extension TicTacToeVC : GameBoardDelegate
 {
+	func matchFound(for player: Player) {
+		player.isWinner = true
+		endGame()
+		
+	}
+	
 	func noMatchFound()
 	{
 		playerView.changePlayer()

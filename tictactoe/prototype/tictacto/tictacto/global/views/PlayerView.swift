@@ -62,6 +62,18 @@ class PlayerView: GameSectionVIew
     override func end()
     {
         super.end()
+		
+		if let winner = currentGame.getWinner(),
+			let symbol = winner.playerSymbol
+		{
+			gameStatusLabel.text = "Player \(symbol) is Winner!"
+		}
+		else
+		{
+			gameStatusLabel.text = "Draw!"
+		}
+		
+		
         // Change gamestatus text to gameover text
     }
 	
