@@ -23,8 +23,6 @@
 		2D6D792C217152B9004B061B /* TicTacToeVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D6D792B217152B9004B061B /* TicTacToeVC.swift */; };
 		2DA557C72183BF040046648D /* ControlPanel.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2DA557C62183BF040046648D /* ControlPanel.xib */; };
 		2DA557C92183C4670046648D /* GameSectionVIew.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2DA557C82183C4670046648D /* GameSectionVIew.swift */; };
-		690873EF219624EF00831498 /* lineMatchView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 690873EE219624EF00831498 /* lineMatchView.swift */; };
-		690873F12196268F00831498 /* lineMatchView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 690873F02196268F00831498 /* lineMatchView.xib */; };
 		6908B65E21839EB000C86752 /* GameStatusView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6908B65D21839EB000C86752 /* GameStatusView.swift */; };
 		69408743218CF61C006F6619 /* Player.swift in Sources */ = {isa = PBXBuildFile; fileRef = 69408742218CF61C006F6619 /* Player.swift */; };
 		69408745218CF662006F6619 /* GameState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 69408744218CF662006F6619 /* GameState.swift */; };
@@ -74,8 +72,6 @@
 		2D6D792B217152B9004B061B /* TicTacToeVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TicTacToeVC.swift; sourceTree = "<group>"; };
 		2DA557C62183BF040046648D /* ControlPanel.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ControlPanel.xib; sourceTree = "<group>"; };
 		2DA557C82183C4670046648D /* GameSectionVIew.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameSectionVIew.swift; sourceTree = "<group>"; };
-		690873EE219624EF00831498 /* lineMatchView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = lineMatchView.swift; sourceTree = "<group>"; };
-		690873F02196268F00831498 /* lineMatchView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = lineMatchView.xib; path = "tictacto/global/Xib Files/lineMatchView.xib"; sourceTree = SOURCE_ROOT; };
 		6908B65D21839EB000C86752 /* GameStatusView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameStatusView.swift; sourceTree = "<group>"; };
 		69408742218CF61C006F6619 /* Player.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Player.swift; sourceTree = "<group>"; };
 		69408744218CF662006F6619 /* GameState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameState.swift; sourceTree = "<group>"; };
@@ -209,7 +205,6 @@
 				2D6D792621715225004B061B /* GameBoard.swift */,
 				2D6D79282171524F004B061B /* ControlPanel.swift */,
 				6908B65D21839EB000C86752 /* GameStatusView.swift */,
-				690873EE219624EF00831498 /* lineMatchView.swift */,
 			);
 			path = views;
 			sourceTree = "<group>";
@@ -229,7 +224,6 @@
 				69F49A63217FC9DF00BE3C5E /* PlayerButton.xib */,
 				698F82D52183C8A8000D35E8 /* GameBoard.xib */,
 				2DA557C62183BF040046648D /* ControlPanel.xib */,
-				690873F02196268F00831498 /* lineMatchView.xib */,
 			);
 			path = "Xib Files";
 			sourceTree = "<group>";
@@ -349,7 +343,6 @@
 			files = (
 				2D6D78F821714F19004B061B /* LaunchScreen.storyboard in Resources */,
 				698F82D62183C8A8000D35E8 /* GameBoard.xib in Resources */,
-				690873F12196268F00831498 /* lineMatchView.xib in Resources */,
 				69F49A64217FC9DF00BE3C5E /* PlayerButton.xib in Resources */,
 				2D6D78F521714F19004B061B /* Assets.xcassets in Resources */,
 				2D6D78F021714F18004B061B /* Main.storyboard in Resources */,
@@ -389,7 +382,6 @@
 				69408745218CF662006F6619 /* GameState.swift in Sources */,
 				69F49A62217FC99B00BE3C5E /* PlayerButton.swift in Sources */,
 				2D6D7924217151E0004B061B /* PlayerView.swift in Sources */,
-				690873EF219624EF00831498 /* lineMatchView.swift in Sources */,
 				69E852D1217A95FC007D9C3D /* GamePieceButton.swift in Sources */,
 				2D6D792C217152B9004B061B /* TicTacToeVC.swift in Sources */,
 				2D6D79292171524F004B061B /* ControlPanel.swift in Sources */,

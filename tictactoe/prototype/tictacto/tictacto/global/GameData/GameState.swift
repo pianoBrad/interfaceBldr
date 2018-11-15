@@ -48,7 +48,6 @@ class GameState: NSObject
 			{
 				return player
 			}
-			
 		}
 		return nil
 	}

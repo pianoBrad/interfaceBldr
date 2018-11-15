@@ -132,33 +132,8 @@ class GameBoard: GameSectionVIew
 				boardDelegate?.noMatchFound()
 				return
 			}
-			
-			
 		}
-		
-		// the switch statment needs to go here:
-		// something like...
-		//
-		// var horizontalMatch = btns123, 456, 789
-		// var verticalMatch = btns147, 258, 369
-		// var diagonalMatch = btns159, 357
-		//
-		// switch on sender which is the buttonsTappedSender or
-		// case horizontal
-		// load the line for the combination
-		// break
-		// case vertical
-		// load the line for the combination
-		// break
-		// case diagonal
-		// load the line fot the combination
-		// break
-		// default
-		// break
-		
-		
 	}
-	
 }
 
 
@@ -173,21 +148,7 @@ extension GameBoard : GamePieceButtonDelegate
 			sender.claim(forPlayer: currentPlayer)
 		}
 		
-		//         check three in a row ->
-		//             am I horizontally
-		//                 match found
-		//                 return
-		//             am I vertically
-		//                 match found
-		//                 return
-		//             am I diagonally
-		//                 match found
-		//                 return
-		
-		
 		checkThreeInRow()
-		
-		
 		
 	}
 }

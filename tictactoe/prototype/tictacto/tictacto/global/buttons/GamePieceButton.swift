@@ -55,7 +55,8 @@ class GamePieceButton: UIButton
 
 	func claim(forPlayer: Player)
 	{
-		if self.owner == nil, self.isEnabled == true
+		if self.owner == nil,
+			self.isEnabled == true
 		{
 			self.owner = forPlayer
 			self.setTitle(owner?.playerSymbol, for: .normal)
