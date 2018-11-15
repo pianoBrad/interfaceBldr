@@ -39,6 +39,7 @@ class TicTacToeVC: UIViewController
     func endGame()
     {
         playerView.end()
+		
     }
 	
 }
@@ -61,8 +62,10 @@ extension TicTacToeVC : GameBoardDelegate
 		
 		// the line below is what fixed the bug of not changing winners.
 		player.isWinner = false
-
 		
+		// the line below is what fixed the bug that allowed buttons to be pressed after winner.
+		self.gameBoard.disableRemainingBtns()
+
 	}
 	
 	func noMatchFound()

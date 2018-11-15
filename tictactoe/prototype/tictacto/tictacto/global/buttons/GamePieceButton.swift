@@ -21,6 +21,8 @@ class GamePieceButton: UIButton
 	/** Properties **/
 	weak var btnDelegate : GamePieceButtonDelegate?
 	var owner : Player?
+	
+	
 
 	
 	/** Overrides **/

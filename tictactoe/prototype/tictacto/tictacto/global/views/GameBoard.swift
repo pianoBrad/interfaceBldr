@@ -134,6 +134,18 @@ class GameBoard: GameSectionVIew
 			}
 		}
 	}
+	
+	func disableRemainingBtns()
+	{
+		for btns in btnsArray
+		{
+			if btns.owner == nil
+			{
+				btns.isEnabled = false
+			}
+		}
+	}
+	
 }
 
 
