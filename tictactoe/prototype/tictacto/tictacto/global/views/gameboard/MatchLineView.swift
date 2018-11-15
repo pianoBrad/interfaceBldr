@@ -8,6 +8,12 @@
 
 import UIKit
 
+protocol MatchLineViewDelegate : class
+{
+    func lineAddedToSuperView(_ sender : MatchLineView)
+    func lineDrawComplete(_ sender : MatchLineView)
+}
+
 class MatchLineView: UIView
 {
     /** Properties **/
@@ -15,6 +21,10 @@ class MatchLineView: UIView
     var firstMatchingBtn : GamePieceButton?
     var startPoint : CGPoint = CGPoint(x: 0, y: 0)
     var endPoint : CGPoint = CGPoint(x: 0 , y: 0)
+    var widthConst : NSLayoutConstraint?
+    var heightConst : NSLayoutConstraint?
+    
+    weak var lineDelegate : MatchLineViewDelegate?
     
     /** Overrides **/
     override init(frame: CGRect)
@@ -42,7 +52,7 @@ class MatchLineView: UIView
     
     override func didMoveToSuperview()
     {
-        self.setupConstraints()
+        self.setupStartingConstraints()
     }
     
     /** Custom methods **/
@@ -102,7 +112,7 @@ class MatchLineView: UIView
         aPath.stroke()
     }
     
-    func setupConstraints()
+    func setupStartingConstraints()
     {
         guard
             let parent = self.superview
@@ -111,15 +121,71 @@ class MatchLineView: UIView
             return
         }
         
+        var widthConstant : CGFloat = 0
+        var heightConstant : CGFloat = 0
+        
+        switch self.matchType
+        {
+        case "vertical":
+            widthConstant = parent.frame.height
+            break
+        default: // horizontal
+            heightConstant = parent.frame.width
+            break
+        }
+        
         self.translatesAutoresizingMaskIntoConstraints = false
-        let topConst = NSLayoutConstraint(item: self, attribute: .top, relatedBy: .equal, toItem: parent, attribute: .top, multiplier: 1, constant: 0)
-        let leadingConst = NSLayoutConstraint(item: self, attribute: .leading, relatedBy: .equal, toItem: parent, attribute: .leading, multiplier: 1, constant: 0)
-        let trailingConst = NSLayoutConstraint(item: self, attribute: .trailing, relatedBy: .equal, toItem: parent, attribute: .trailing, multiplier: 1, constant: 0)
-        let botConst = NSLayoutConstraint(item: self, attribute: .bottom, relatedBy: .equal, toItem: parent, attribute: .bottom, multiplier: 1, constant: 0)
+        let topConst = NSLayoutConstraint(
+            item: self, attribute: .top,
+            relatedBy: .equal, toItem: parent, attribute: .top,
+            multiplier: 1, constant: 0
+        )
+        let leadingConst = NSLayoutConstraint(
+            item: self, attribute: .leading,
+            relatedBy: .equal, toItem: parent, attribute: .leading,
+            multiplier: 1, constant: 0
+        )
+        let wConst = NSLayoutConstraint(item: self, attribute: .width, relatedBy: .equal, toItem: nil, attribute: .notAnAttribute, multiplier: 1, constant: widthConstant)
+        let hConst = NSLayoutConstraint(item: self, attribute: .height, relatedBy: .equal, toItem: nil, attribute: .notAnAttribute, multiplier: 1, constant: heightConstant)
         
+        self.widthConst = wConst
+        self.heightConst = hConst
         parent.addConstraints([
-            topConst, leadingConst, trailingConst, botConst
+            topConst, leadingConst, wConst, hConst
         ])
+        parent.layoutIfNeeded()
         
+        lineDelegate?.lineAddedToSuperView(self)
+    }
+    
+    func animateLine()
+    {
+        guard
+            let parent = self.superview,
+            let wConst = self.widthConst,
+            let hConst = self.heightConst
+        else
+        {
+            return
+        }
+        
+        switch self.matchType
+        {
+        case "vertical":
+            hConst.constant = parent.frame.height
+            break
+        default: //horizontal
+            wConst.constant = parent.frame.width
+            break
+        }
+        
+        UIView.animate(withDuration: 0.4, animations:
+        { () -> Void in
+            parent.layoutIfNeeded()
+        })
+        {
+            complete in
+            self.lineDelegate?.lineDrawComplete(self)
+        }
     }
 }

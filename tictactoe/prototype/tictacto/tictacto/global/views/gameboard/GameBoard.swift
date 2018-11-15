@@ -183,13 +183,11 @@ class GameBoard: GameSectionView
         {
             let matchLine = MatchLineView(
                 with: direction, startingWith: firstMatchingBtn)
-            matchLine.frame = self.btnContainerView.bounds
+            matchLine.lineDelegate = self
             
             self.btnContainerView.addSubview(
                 matchLine
             )
-            
-            boardDelegate?.matchingAnimationComplete()
         }
     }
 }
@@ -224,5 +222,18 @@ extension GameBoard : GamePieceButtonDelegate
             endTurn()
             sender.mark(forPlayer: curPlayer)
         }
+    }
+}
+
+extension GameBoard : MatchLineViewDelegate
+{
+    func lineAddedToSuperView(_ sender: MatchLineView)
+    {
+        print("line added!")
+        sender.animateLine()
+    }
+    
+    func lineDrawComplete(_ sender: MatchLineView)
+    {
     }
 }
