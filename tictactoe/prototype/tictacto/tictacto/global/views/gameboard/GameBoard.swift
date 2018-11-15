@@ -13,6 +13,7 @@ protocol GameBoardDelegate : class
     func foundThreeInARow(forPlayer: Player)
     func filledWithoutThreeInARow()
     func readyForNextTurn()
+    func matchingAnimationComplete()
 }
 
 @IBDesignable
@@ -26,6 +27,7 @@ class GameBoard: GameSectionView
     var btnsHorizontal : [[GamePieceButton]] = []
     var btnsVertical : [[GamePieceButton]] = []
     var btnsDiagonal : [[GamePieceButton]] = [[]]
+    var matchingRow : [String : [GamePieceButton]] = [:]
     var numRows : Int = 0
     weak var boardDelegate : GameBoardDelegate?
     
@@ -57,13 +59,22 @@ class GameBoard: GameSectionView
     override func end()
     {
         self.endTurn()
+        self.animateMatch()
     }
     
     override func reset()
     {
-        for btn in btns
+        for view in btnContainerView.subviews
         {
-            btn.reset()
+            guard
+                let btnView = view as? GamePieceButton
+            else
+            {
+                view.removeFromSuperview()
+                break
+            }
+            
+            btnView.reset()
         }
     }
     
@@ -134,6 +145,7 @@ class GameBoard: GameSectionView
             
             if matches >= numRows && symbolToMatch.count > 0
             {
+                self.matchingRow = [direction : btnRow]
                 return true
             }
         }
@@ -152,6 +164,33 @@ class GameBoard: GameSectionView
         }
         
         return true
+    }
+    
+    func animateMatch()
+    {
+        /** Test match line drawing **/
+        //let matchLine = MatchLineView(with: "vertical")
+        guard
+            let matchingRow = self.matchingRow.first?.value,
+            let firstMatchingBtn = matchingRow.first
+        else
+        {
+            print("no matching data found..can't draw line")
+            return
+        }
+        
+        for (direction, _) in self.matchingRow
+        {
+            let matchLine = MatchLineView(
+                with: direction, startingWith: firstMatchingBtn)
+            matchLine.frame = self.btnContainerView.bounds
+            
+            self.btnContainerView.addSubview(
+                matchLine
+            )
+            
+            boardDelegate?.matchingAnimationComplete()
+        }
     }
 }
 

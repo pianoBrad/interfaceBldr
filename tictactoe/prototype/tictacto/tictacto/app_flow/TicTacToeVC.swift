@@ -70,4 +70,8 @@ extension TicTacToeVC : GameBoardDelegate
     {
         playerView.changeActivePlayer()
     }
+    
+    func matchingAnimationComplete()
+    {
+    }
 }
