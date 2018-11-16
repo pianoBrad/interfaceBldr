@@ -23,6 +23,7 @@ class MatchLineView: UIView
     var endPoint : CGPoint = CGPoint(x: 0 , y: 0)
     var widthConst : NSLayoutConstraint?
     var heightConst : NSLayoutConstraint?
+    let lineAnimator = UIViewPropertyAnimator(duration: 0.4, curve: .easeInOut)
     
     weak var lineDelegate : MatchLineViewDelegate?
     
@@ -169,23 +170,27 @@ class MatchLineView: UIView
             return
         }
         
-        switch self.matchType
-        {
-        case "vertical":
-            hConst.constant = parent.frame.height
-            break
-        default: //horizontal
-            wConst.constant = parent.frame.width
-            break
+        self.lineAnimator.addAnimations {
+            switch self.matchType
+            {
+            case "vertical":
+                hConst.constant = parent.frame.height
+                break
+            default: //horizontal
+                wConst.constant = parent.frame.width
+                break
+            }
+            
+            parent.layoutIfNeeded()
         }
         
-        UIView.animate(withDuration: 0.4, animations:
-        { () -> Void in
-            parent.layoutIfNeeded()
-        })
+        self.lineAnimator.addCompletion
         {
-            complete in
+            _ in
+            
             self.lineDelegate?.lineDrawComplete(self)
         }
+        
+        self.lineAnimator.startAnimation()
     }
 }

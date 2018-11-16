@@ -229,7 +229,6 @@ extension GameBoard : MatchLineViewDelegate
 {
     func lineAddedToSuperView(_ sender: MatchLineView)
     {
-        print("line added!")
         sender.animateLine()
     }
     
