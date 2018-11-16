@@ -22,13 +22,15 @@ class GameBoard: GameSectionView
 	/** Properties **/
 	@IBOutlet var contentView: UIView!
     @IBOutlet var btnContainerView: UIView!
-	
+    
     var btns : [GamePieceButton] = []
+    var btnFrames : [CGRect] = []
     var btnsHorizontal : [[GamePieceButton]] = []
     var btnsVertical : [[GamePieceButton]] = []
     var btnsDiagonal : [[GamePieceButton]] = [[]]
     var matchingRow : [String : [GamePieceButton]] = [:]
     var numRows : Int = 0
+    var matchingLine : MatchLineView?
     weak var boardDelegate : GameBoardDelegate?
     
     /** Overrides **/
@@ -66,15 +68,21 @@ class GameBoard: GameSectionView
     {
         for view in btnContainerView.subviews
         {
-            guard
-                let btnView = view as? GamePieceButton
-            else
+            if let lineView = view as? MatchLineView
             {
-                view.removeFromSuperview()
+                lineView.removeFromSuperview()
                 break
             }
             
-            btnView.reset()
+            if let btnView = view as? GamePieceButton
+            {
+                btnView.reset()
+            }
+        }
+        
+        for (key, btn) in btns.enumerated()
+        {
+            btn.frame = btnFrames[key]
         }
     }
     
@@ -87,6 +95,7 @@ class GameBoard: GameSectionView
             {
                 btns.append(btn)
                 btn.btnDelegate = self
+                btnFrames.append(btn.frame)
             }
         }
         
@@ -168,8 +177,6 @@ class GameBoard: GameSectionView
     
     func animateMatch()
     {
-        /** Test match line drawing **/
-        //let matchLine = MatchLineView(with: "vertical")
         guard
             let matchingRow = self.matchingRow.first?.value,
             let firstMatchingBtn = matchingRow.first
@@ -184,6 +191,7 @@ class GameBoard: GameSectionView
             let matchLine = MatchLineView(
                 with: direction, startingWith: firstMatchingBtn)
             matchLine.lineDelegate = self
+            self.matchingLine = matchLine
             
             self.btnContainerView.addSubview(
                 matchLine
@@ -234,5 +242,56 @@ extension GameBoard : MatchLineViewDelegate
     
     func lineDrawComplete(_ sender: MatchLineView)
     {
+        guard
+            let matchingBtns = self.matchingRow.first?.value,
+            let direction = self.matchingRow.first?.key,
+            let middleBtn = self.matchingRow.first?.value.middle,
+            let line = self.matchingLine,
+            matchingBtns.count > 0
+        else
+        {
+            return
+        }
+        
+        let animator = UIViewPropertyAnimator(duration: 0.4, curve: .easeInOut)
+        
+        var xPos : CGFloat = line.frame.origin.x
+        var yPos : CGFloat = line.frame.origin.y
+        var w : CGFloat = line.frame.width
+        var h : CGFloat = line.frame.height
+        
+        switch direction
+        {
+        case "vertical":
+            yPos = middleBtn.frame.origin.y
+            h = middleBtn.frame.height
+            break
+        default: // horizontal
+            xPos = middleBtn.frame.origin.x
+            w = middleBtn.frame.width
+        }
+        
+        animator.addAnimations
+        {
+            
+            line.frame = CGRect(
+                x: xPos, y: yPos, width: w, height: h
+            )
+        }
+        
+        for (_, btns) in matchingRow
+        {
+            for btn in btns
+            {
+                animator.addAnimations {
+                    btn.frame.origin = CGPoint(
+                        x: middleBtn.frame.origin.x,
+                        y: middleBtn.frame.origin.y
+                    )
+                }
+            }
+        }
+        
+        animator.startAnimation()
     }
 }
