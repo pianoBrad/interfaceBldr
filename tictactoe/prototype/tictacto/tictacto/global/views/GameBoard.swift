@@ -93,14 +93,12 @@ class GameBoard: GameSectionVIew
 	
 	func checkThreeInRow()
 	{
-		
 		let btnRows =
 			[
 				[0,1,2,],
 				[3,4,5,],
 				[6,7,8,],
 			]
-		
 		for horizontalRow in btnRows
 		{
 			if let firstOwner = btnsArray[horizontalRow[0]].owner
@@ -108,17 +106,16 @@ class GameBoard: GameSectionVIew
 				for btnKey in horizontalRow
 				{
 					let btnOwner = btnsArray[btnKey].owner
-					
+
 					if btnOwner != firstOwner
 					{
 						if horizontalRow == btnRows.last
 						{
-							boardDelegate?.noMatchFound()
-							return
+							//boardDelegate?.noMatchFound()
+							//return
 						}
 						break
 					}
-					
 					if btnKey == horizontalRow.last
 					{
 						boardDelegate?.matchFound(for: firstOwner)
@@ -126,13 +123,95 @@ class GameBoard: GameSectionVIew
 					}
 				}
 			}
-				
-			else if horizontalRow == btnRows.last
+//				else if horizontalRow == btnRows.last
+//				{
+//					boardDelegate?.noMatchFound()
+//					return
+//				}
+			}
+		
+		let btnColumns =
+			[
+				[0,3,6,],
+				[1,4,7,],
+				[2,5,8,],
+			]
+
+		for verticalColumn in btnColumns
+		{
+			if let firstOwner = btnsArray[verticalColumn[0]].owner
+			{
+				for btnKey in verticalColumn
+				{
+					let btnOwner = btnsArray[btnKey].owner
+
+					if btnOwner != firstOwner
+					{
+						if verticalColumn == btnColumns.last
+						{
+							//boardDelegate?.noMatchFound()
+							//return
+							
+						}
+						break
+					}
+
+					if btnKey == verticalColumn.last
+					{
+						boardDelegate?.matchFound(for: firstOwner)
+						return
+					}
+				}
+			}
+			
+
+//			else if verticalColumn == btnColumns.last
+//			{
+//				boardDelegate?.noMatchFound()
+//				return
+//			}
+		}
+		
+		let btnDiags =
+			[
+				[0,4,8,],
+				[2,4,6,],
+			]
+
+		for diag in btnDiags
+		{
+			if let firstOwner = btnsArray[diag[0]].owner
+			{
+				for btnKey in diag
+				{
+					let btnOwner = btnsArray[btnKey].owner
+					
+					if btnOwner != firstOwner
+					{
+						if diag == btnDiags.last
+						{
+							boardDelegate?.noMatchFound()
+							return
+						}
+						break
+					}
+					if btnKey == diag.last
+					{
+						boardDelegate?.matchFound(for: firstOwner)
+						return
+					}
+				}
+			}
+			else if diag == btnDiags.last
 			{
 				boardDelegate?.noMatchFound()
 				return
 			}
 		}
+
+		
+		
+		
 	}
 	
 	func disableRemainingBtns()
