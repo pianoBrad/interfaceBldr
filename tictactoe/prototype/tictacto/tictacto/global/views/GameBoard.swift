@@ -48,18 +48,6 @@ class GameBoard: GameSectionVIew
 		contentView.frame = self.bounds
 		contentView.autoresizingMask = [.flexibleWidth, .flexibleHeight]
         
-        /****************BRAD_KNOWLEDGE******************
-        Another way of doing btnsArray assignment (below)
-         
-        for view in btnContainerView.subviews
-        {
-            if let btn = view as? GamePieceButton
-            {
-                btnsArray.append(btn)
-            }
-        }
-        **************************************************/
-        
 		btnsArray =
 		[
 			btnOne,
@@ -72,7 +60,6 @@ class GameBoard: GameSectionVIew
 			btnEight,
 			btnNine,
 		]
-		
 		
 		for btn in btnsArray
 		{
@@ -91,127 +78,80 @@ class GameBoard: GameSectionVIew
 		}
 	}
 	
-	func checkThreeInRow()
+	/** Custom Methods **/
+	func findMatch(in btnRows: [[Int]]) -> Bool
 	{
-		let btnRows =
-			[
-				[0,1,2,],
-				[3,4,5,],
-				[6,7,8,],
-			]
-		for horizontalRow in btnRows
+		for row in btnRows
 		{
-			if let firstOwner = btnsArray[horizontalRow[0]].owner
+			if let firstOwner = btnsArray[row[0]].owner
 			{
-				for btnKey in horizontalRow
-				{
-					let btnOwner = btnsArray[btnKey].owner
-
-					if btnOwner != firstOwner
-					{
-						if horizontalRow == btnRows.last
-						{
-							//boardDelegate?.noMatchFound()
-							//return
-						}
-						break
-					}
-					if btnKey == horizontalRow.last
-					{
-						boardDelegate?.matchFound(for: firstOwner)
-						return
-					}
-				}
-			}
-//				else if horizontalRow == btnRows.last
-//				{
-//					boardDelegate?.noMatchFound()
-//					return
-//				}
-			}
-		
-		let btnColumns =
-			[
-				[0,3,6,],
-				[1,4,7,],
-				[2,5,8,],
-			]
-
-		for verticalColumn in btnColumns
-		{
-			if let firstOwner = btnsArray[verticalColumn[0]].owner
-			{
-				for btnKey in verticalColumn
-				{
-					let btnOwner = btnsArray[btnKey].owner
-
-					if btnOwner != firstOwner
-					{
-						if verticalColumn == btnColumns.last
-						{
-							//boardDelegate?.noMatchFound()
-							//return
-							
-						}
-						break
-					}
-
-					if btnKey == verticalColumn.last
-					{
-						boardDelegate?.matchFound(for: firstOwner)
-						return
-					}
-				}
-			}
-			
-
-//			else if verticalColumn == btnColumns.last
-//			{
-//				boardDelegate?.noMatchFound()
-//				return
-//			}
-		}
-		
-		let btnDiags =
-			[
-				[0,4,8,],
-				[2,4,6,],
-			]
-
-		for diag in btnDiags
-		{
-			if let firstOwner = btnsArray[diag[0]].owner
-			{
-				for btnKey in diag
+				for btnKey in row
 				{
 					let btnOwner = btnsArray[btnKey].owner
 					
 					if btnOwner != firstOwner
 					{
-						if diag == btnDiags.last
+						if row == btnRows.last
 						{
-							boardDelegate?.noMatchFound()
-							return
+							return false
 						}
 						break
 					}
-					if btnKey == diag.last
+					if btnKey == row.last
 					{
-						boardDelegate?.matchFound(for: firstOwner)
-						return
+						return true
 					}
 				}
 			}
-			else if diag == btnDiags.last
+			else if row == btnRows.last
 			{
-				boardDelegate?.noMatchFound()
-				return
+				return false
 			}
 		}
-
+		return false
+	}
+	
+	func checkThreeInRow()
+	{
+		let btnRows =
+		[
+			[0,1,2,],
+			[3,4,5,],
+			[6,7,8,],
+		]
 		
+		let btnColumns =
+		[
+			[0,3,6,],
+			[1,4,7,],
+			[2,5,8,],
+		]
 		
+		let btnDiags =
+		[
+			[0,4,8,],
+			[2,4,6,],
+		]
 		
+		guard
+			let currentPlayer = currentGame.getCurrentPlayer()
+		else
+		{
+			return
+		}
+		
+		if (
+			findMatch(in: btnRows)
+			|| findMatch(in: btnColumns)
+			|| findMatch(in: btnDiags)
+		)
+		{
+			boardDelegate?.matchFound(for: currentPlayer)
+		}
+		else
+		{
+			boardDelegate?.noMatchFound()
+		}
 	}
 	
 	func disableRemainingBtns()
