@@ -36,12 +36,12 @@ class MatchLineView: UIView
     convenience init(with matchType: String, for row: [GamePieceButton])
     {
         self.init(frame: .zero)
-        self.backgroundColor = .blue
-        //self.backgroundColor = .clear
-        self.alpha = 0.5
+        //self.backgroundColor = .blue
+        self.backgroundColor = .clear
+        //self.alpha = 0.5
         self.firstMatchingBtn = row.first
         self.middleMatchingBtn = row.middle
-        self.matchType = matchType
+        self.matchType = matchType        
     }
     
     override func didMoveToSuperview()
@@ -52,12 +52,17 @@ class MatchLineView: UIView
     /** Custom methods **/
     func getLineFrameForWin() -> CGRect?
     {
-        let newRect = CGRect(
+        var newRect = CGRect(
             x: 0,
             y: 0,
             width: self.matchType == "horizontal" ? 0 : self.frame.width,
             height: self.matchType == "vertical" ? 0 : self.frame.height
         )
+        
+        if self.matchType == "diagonal"
+        {
+            newRect = CGRect(x: 0, y: 0, width: 0, height: 0)
+        }
         
         return newRect
     }
@@ -65,6 +70,8 @@ class MatchLineView: UIView
     func drawLine()
     {
         guard
+            let winner = currentGame.winner,
+            let firstBtn = self.firstMatchingBtn,
             let middleBtn = self.middleMatchingBtn,
             self.frame.width > 0,
             self.frame.height > 0
@@ -97,9 +104,13 @@ class MatchLineView: UIView
         default: //diagonal
             self.frameCenterPoint = middleBtn.center
             lineStartPoint.x = 0
-            lineStartPoint.y = 0
+            lineStartPoint.y = firstBtn.center.x < middleBtn.center.x
+                ? 0
+                : self.frame.height
             lineEndPoint.x = self.frame.width
-            lineEndPoint.y = self.frame.height
+            lineEndPoint.y = firstBtn.center.x > middleBtn.center.x
+                ? 0
+                : self.frame.height
             break
         }
         
@@ -112,7 +123,7 @@ class MatchLineView: UIView
         
         aPath.close()
         
-        UIColor.red.setStroke()
+        winner.color.setStroke()
         aPath.lineWidth = 5.0
         aPath.stroke()
     }

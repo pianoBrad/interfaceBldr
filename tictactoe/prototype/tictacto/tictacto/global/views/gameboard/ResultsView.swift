@@ -42,6 +42,7 @@ class ResultsView: UIView
         contentView.autoresizingMask = [.flexibleWidth, .flexibleHeight]
         
         setupFontAttributes(for: playerLabel)
+        self.textLabel.textColor = UIColor(hexFromString: "#545454")
     }
     
     /** Custom methods **/
@@ -58,11 +59,13 @@ class ResultsView: UIView
     {
         if let winner = currentGame.winner
         {
+            self.playerLabel.textColor = winner.color
             self.playerLabel.text = winner.symbol
             self.textLabel.text = "WINNER!"
         }
         else
         {
+            self.playerLabel.textColor = UIColor(hexFromString: "#545454")
             self.playerLabel.text = "XO"
             self.textLabel.text = "DRAW!"
         }
@@ -74,10 +77,12 @@ class ResultsView: UIView
         {
         case true:
             self.alpha = 0
+            self.contentView.transform = CGAffineTransform(scaleX: 0.5, y: 0.5)
             self.contentView.center.y = self.center.y + 50
             break
         default:
             self.alpha = 1
+            self.contentView.transform = CGAffineTransform(scaleX: 1, y: 1)
             self.contentView.center.y = self.center.y - 50
         }
     }
