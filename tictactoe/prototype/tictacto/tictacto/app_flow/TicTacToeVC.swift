@@ -10,38 +10,31 @@ import UIKit
 
 class TicTacToeVC: UIViewController
 {
+	/** Properties **/
     @IBOutlet weak var playerView: PlayerView!
     @IBOutlet weak var gameBoard: GameBoard!
     @IBOutlet weak var controlPanel: ControlPanel!
-	
 
-	
 	/** Overrides **/
-	
 	override func viewDidLoad()
 	{
 		gameBoard.boardDelegate = self
 		controlPanel.panelDelegate = self
-		
-		
     }
-	
-	
-	
 	
     /** Custom methods **/
     func startGame()
     {
-        playerView.reset()
+		currentGame.reset()
+		playerView.reset()
 		gameBoard.reset()
     }
     
     func endGame()
     {
         playerView.end()
-		
+		gameBoard.end()
     }
-	
 }
 
 extension TicTacToeVC : ControlPanelDelegate
@@ -54,24 +47,15 @@ extension TicTacToeVC : ControlPanelDelegate
 
 extension TicTacToeVC : GameBoardDelegate
 {
-	func matchFound(for player: Player) {
-		
-		player.isWinner = true
-		
+	func matchFound(for player: Player)
+	{
+		currentGame.setWinner(toPlayer: player)
 		endGame()
-		
-		// the line below is what fixed the bug of not changing winners.
-		player.isWinner = false
-		
-		// the line below is what fixed the bug that allowed buttons to be pressed after winner.
-		self.gameBoard.disableRemainingBtns()
-
 	}
 	
 	func noMatchFound()
 	{
 		playerView.changePlayer()
 	}
-	
-	
+
 }

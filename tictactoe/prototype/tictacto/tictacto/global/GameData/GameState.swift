@@ -26,7 +26,6 @@ class GameState: NSObject
 		self.players.append(player)
 	}
 	
-	
 	func getCurrentPlayer() -> Player?
 	{
 		for player in players
@@ -52,9 +51,22 @@ class GameState: NSObject
 		return nil
 	}
 	
+	func setWinner(toPlayer: Player)
+	{
+		toPlayer.set(winner: true)
+	}
+	
+	
+	
+	func reset()
+	{
+		for player in players
+		{
+			player.set(winner: false)
+		}
+	}
+	
 	
 }
-
-
 
 let currentGame = GameState.init()

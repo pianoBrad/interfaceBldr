@@ -34,8 +34,11 @@ class GameBoard: GameSectionVIew
     var symbolToDraw : String = "X"
 	
 	var boardDelegate : GameBoardDelegate?
-	
 	var btnsArray : [GamePieceButton] = []
+	
+	var btnRows: [[GamePieceButton]] = []
+	var btnColumns: [[GamePieceButton]] = []
+	var btnDiags: [[GamePieceButton]] = []
 	
 	
 	/** Overrides **/
@@ -47,24 +50,8 @@ class GameBoard: GameSectionVIew
 		self.addSubview(contentView)
 		contentView.frame = self.bounds
 		contentView.autoresizingMask = [.flexibleWidth, .flexibleHeight]
-        
-		btnsArray =
-		[
-			btnOne,
-			btnTwo,
-			btnThree,
-			btnFour,
-			btnFive,
-			btnSix,
-			btnSeven,
-			btnEight,
-			btnNine,
-		]
 		
-		for btn in btnsArray
-		{
-			btn.btnDelegate = self
-		}
+		setupBtns()
 		
     }
 	
@@ -78,16 +65,62 @@ class GameBoard: GameSectionVIew
 		}
 	}
 	
+	override func end()
+	{
+		disableRemainingBtns()
+	}
+	
 	/** Custom Methods **/
-	func findMatch(in btnRows: [[Int]]) -> Bool
+	func setupBtns()
+	{
+		btnsArray =
+			[
+				btnOne,
+				btnTwo,
+				btnThree,
+				btnFour,
+				btnFive,
+				btnSix,
+				btnSeven,
+				btnEight,
+				btnNine,
+			]
+		
+		btnRows =
+			[
+				[btnOne, btnTwo, btnThree,],
+				[btnFour, btnFive, btnSix,],
+				[btnSeven, btnEight, btnNine,],
+			]
+		
+		btnColumns =
+			[
+				[btnOne, btnFour, btnSeven,],
+				[btnTwo, btnFive, btnEight,],
+				[btnThree, btnSix, btnNine,],
+			]
+		
+		btnDiags =
+			[
+				[btnOne, btnFive, btnNine,],
+				[btnThree, btnFive, btnSeven,],
+			]
+		
+		for btn in btnsArray
+		{
+			btn.btnDelegate = self
+		}
+	}
+	
+	func findMatch(in btnRows: [[GamePieceButton]]) -> Bool
 	{
 		for row in btnRows
 		{
-			if let firstOwner = btnsArray[row[0]].owner
+			if let firstOwner = row.first?.owner
 			{
-				for btnKey in row
+				for btn in row
 				{
-					let btnOwner = btnsArray[btnKey].owner
+					let btnOwner = btn.owner
 					
 					if btnOwner != firstOwner
 					{
@@ -97,7 +130,7 @@ class GameBoard: GameSectionVIew
 						}
 						break
 					}
-					if btnKey == row.last
+					if btn == row.last
 					{
 						return true
 					}
@@ -113,26 +146,6 @@ class GameBoard: GameSectionVIew
 	
 	func checkThreeInRow()
 	{
-		let btnRows =
-		[
-			[0,1,2,],
-			[3,4,5,],
-			[6,7,8,],
-		]
-		
-		let btnColumns =
-		[
-			[0,3,6,],
-			[1,4,7,],
-			[2,5,8,],
-		]
-		
-		let btnDiags =
-		[
-			[0,4,8,],
-			[2,4,6,],
-		]
-		
 		guard
 			let currentPlayer = currentGame.getCurrentPlayer()
 		else
@@ -141,9 +154,9 @@ class GameBoard: GameSectionVIew
 		}
 		
 		if (
-			findMatch(in: btnRows)
-			|| findMatch(in: btnColumns)
-			|| findMatch(in: btnDiags)
+			findMatch(in: self.btnRows)
+			|| findMatch(in: self.btnColumns)
+			|| findMatch(in: self.btnDiags)
 		)
 		{
 			boardDelegate?.matchFound(for: currentPlayer)
@@ -152,6 +165,11 @@ class GameBoard: GameSectionVIew
 		{
 			boardDelegate?.noMatchFound()
 		}
+	}
+	
+	func allGamePiecesUsed()
+	{
+		
 	}
 	
 	func disableRemainingBtns()
@@ -164,6 +182,7 @@ class GameBoard: GameSectionVIew
 			}
 		}
 	}
+
 	
 }
 

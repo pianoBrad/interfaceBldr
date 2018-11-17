@@ -10,12 +10,11 @@ import UIKit
 
 class Player: NSObject
 {
-	
 	/** Properties **/
-	var playerSymbol : String?	// the symbol for each player, passed in through a string.
-	var playerStatus : Bool?	// representing a on and off state... my turn or not, true or false.
-	var playerScore : Int?		// the players score, passed in via int.
-	var button : PlayerButton?	// the button in the PlayerView object.
+	var playerSymbol : String?
+	var playerStatus : Bool?
+	var playerScore : Int = 0
+	var button : PlayerButton?
 	var isWinner : Bool = false
 	
 	/** Overrides **/
@@ -30,5 +29,20 @@ class Player: NSObject
 		self.playerSymbol = withSymbol
 	}
 	
-
+	/** Custom Methods **/
+	func set(winner: Bool)
+	{
+		if winner
+		{
+			self.isWinner = true
+			playerScore = playerScore + 1
+			self.button?.updateScore(score: playerScore)
+		}
+		else
+		{
+			self.isWinner = false
+		}
+	}
+	
+	
 }

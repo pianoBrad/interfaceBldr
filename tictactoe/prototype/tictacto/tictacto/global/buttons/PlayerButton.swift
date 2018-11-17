@@ -119,6 +119,11 @@ class PlayerButton: UIView
             break
         }
     }
+	
+	func updateScore(score: Int)
+	{
+		self.playerScoreLabel.text = String(score)
+	}
     
     /** Actions **/
 	@objc func checkTap(_ sender: UITapGestureRecognizer)
