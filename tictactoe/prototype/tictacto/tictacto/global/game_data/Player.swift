@@ -13,6 +13,7 @@ class Player: NSObject
     /** Properties **/
     public var btn : PlayerButton?
     public var symbol : String = "X"
+    public var color : UIColor = .black
     
     /** Overrides **/
     override init() {}

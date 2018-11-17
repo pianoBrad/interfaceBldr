@@ -20,8 +20,6 @@ class MatchLineView: UIView
     var matchType : String = "horizontal"
     var firstMatchingBtn : GamePieceButton?
     var middleMatchingBtn : GamePieceButton?
-    var startPoint : CGPoint = CGPoint(x: 0, y: 0)
-    var endPoint : CGPoint = CGPoint(x: 0 , y: 0)
     var frameCenterPoint : CGPoint = CGPoint(x: 0, y: 0)
     var widthConst : NSLayoutConstraint?
     var heightConst : NSLayoutConstraint?
@@ -38,9 +36,9 @@ class MatchLineView: UIView
     convenience init(with matchType: String, for row: [GamePieceButton])
     {
         self.init(frame: .zero)
-        //self.backgroundColor = .blue
-        self.backgroundColor = .clear
-        //self.alpha = 0.5
+        self.backgroundColor = .blue
+        //self.backgroundColor = .clear
+        self.alpha = 0.5
         self.firstMatchingBtn = row.first
         self.middleMatchingBtn = row.middle
         self.matchType = matchType
@@ -75,6 +73,9 @@ class MatchLineView: UIView
             return
         }
         
+        var lineStartPoint = CGPoint(x: self.frame.width/2, y: self.frame.height/2)
+        var lineEndPoint = CGPoint(x: self.frame.width/2, y: self.frame.height/2)
+        
         switch self.matchType
         {
         case "vertical":
@@ -82,12 +83,23 @@ class MatchLineView: UIView
                 x: middleBtn.frame.origin.x + (middleBtn.frame.width/2),
                 y: self.center.y
             )
+            lineStartPoint.y = 0
+            lineEndPoint.y = self.frame.height
             break
-        default: // horizontal
+        case "horizontal":
             self.frameCenterPoint = CGPoint(
                 x: self.center.x,
                 y: middleBtn.frame.origin.y + (middleBtn.frame.height/2)
             )
+            lineStartPoint.x = 0
+            lineEndPoint.x = self.frame.width
+            break
+        default: //diagonal
+            self.frameCenterPoint = middleBtn.center
+            lineStartPoint.x = 0
+            lineStartPoint.y = 0
+            lineEndPoint.x = self.frame.width
+            lineEndPoint.y = self.frame.height
             break
         }
         
@@ -95,23 +107,8 @@ class MatchLineView: UIView
         
         let aPath = UIBezierPath()
         
-        aPath.move(
-            to: CGPoint(
-                x: self.matchType == "horizontal" ? 0 : self.frame.width/2,
-                y: self.matchType == "vertical" ? 0 : self.frame.height/2
-            )
-        )
-        
-        aPath.addLine(
-            to: CGPoint(
-                x: self.matchType == "horizontal"
-                    ? self.frame.width
-                    : self.frame.width/2,
-                y: self.matchType == "vertical"
-                    ? self.frame.height
-                    : self.frame.height / 2
-            )
-        )
+        aPath.move(to: CGPoint( x: lineStartPoint.x, y: lineStartPoint.y ) )
+        aPath.addLine( to: CGPoint( x: lineEndPoint.x, y: lineEndPoint.y ) )
         
         aPath.close()
         
@@ -137,8 +134,10 @@ class MatchLineView: UIView
         case "vertical":
             widthConstant = parent.frame.height
             break
-        default: // horizontal
+        case "horizontal" :
             heightConstant = parent.frame.width
+            break
+        default: // diagonal
             break
         }
         
@@ -192,9 +191,12 @@ class MatchLineView: UIView
             case "vertical":
                 hConst.constant = parent.frame.height
                 break
-            default: //horizontal
+            case "horizontal":
                 wConst.constant = parent.frame.width
                 break
+            default: // diagonal
+                hConst.constant = parent.frame.height
+                wConst.constant = parent.frame.width
             }
             
             parent.layoutIfNeeded()

@@ -50,6 +50,7 @@ class GamePieceButton: UIButton
     public func mark(forPlayer: Player)
     {
         self.owner = forPlayer
+        self.setTitleColor(forPlayer.color, for: .normal)
         self.draw(symbol: forPlayer.symbol)
     }
     
