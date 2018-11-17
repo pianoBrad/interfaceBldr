@@ -8,6 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		2D49FC8221A07FAD0046CE79 /* GridContainerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D49FC8121A07FAD0046CE79 /* GridContainerView.swift */; };
+		2D49FC8421A0849D0046CE79 /* ResultsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D49FC8321A0849D0046CE79 /* ResultsView.swift */; };
+		2D49FC8621A085370046CE79 /* ResultsView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2D49FC8521A085370046CE79 /* ResultsView.xib */; };
 		2D636F782183B52F00EB2F28 /* PlayerView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2D636F772183B52F00EB2F28 /* PlayerView.xib */; };
 		2D6D78EB21714F18004B061B /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D6D78EA21714F18004B061B /* AppDelegate.swift */; };
 		2D6D78F021714F18004B061B /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2D6D78EE21714F18004B061B /* Main.storyboard */; };
@@ -54,6 +56,8 @@
 
 /* Begin PBXFileReference section */
 		2D49FC8121A07FAD0046CE79 /* GridContainerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GridContainerView.swift; sourceTree = "<group>"; };
+		2D49FC8321A0849D0046CE79 /* ResultsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResultsView.swift; sourceTree = "<group>"; };
+		2D49FC8521A085370046CE79 /* ResultsView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ResultsView.xib; sourceTree = "<group>"; };
 		2D636F772183B52F00EB2F28 /* PlayerView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PlayerView.xib; sourceTree = "<group>"; };
 		2D6D78E721714F18004B061B /* tictacto.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = tictacto.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		2D6D78EA21714F18004B061B /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -249,6 +253,8 @@
 				2D6D792621715225004B061B /* GameBoard.swift */,
 				2D9D3F36219BE8400025A65B /* MatchLineView.swift */,
 				2D49FC8121A07FAD0046CE79 /* GridContainerView.swift */,
+				2D49FC8321A0849D0046CE79 /* ResultsView.swift */,
+				2D49FC8521A085370046CE79 /* ResultsView.xib */,
 			);
 			path = gameboard;
 			sourceTree = "<group>";
@@ -371,6 +377,7 @@
 				69F49A64217FC9DF00BE3C5E /* PlayerButton.xib in Resources */,
 				2D6D78F521714F19004B061B /* Assets.xcassets in Resources */,
 				2D6D78F021714F18004B061B /* Main.storyboard in Resources */,
+				2D49FC8621A085370046CE79 /* ResultsView.xib in Resources */,
 				2DA557C72183BF040046648D /* ControlPanel.xib in Resources */,
 				2D636F782183B52F00EB2F28 /* PlayerView.xib in Resources */,
 			);
@@ -398,6 +405,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				2D6D78F321714F18004B061B /* tictacto.xcdatamodeld in Sources */,
+				2D49FC8421A0849D0046CE79 /* ResultsView.swift in Sources */,
 				2DA557C92183C4670046648D /* GameSectionView.swift in Sources */,
 				2D6D791E21714F45004B061B /* UIColorExtensions.swift in Sources */,
 				2D6D79212171506E004B061B /* ControlPanelBtn.swift in Sources */,

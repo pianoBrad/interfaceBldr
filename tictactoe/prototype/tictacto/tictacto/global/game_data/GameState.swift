@@ -38,6 +38,7 @@ class GameState: NSObject
     
     public func reset()
     {
+        self.winner = nil
         self.resetPlayerTurns()
     }
     

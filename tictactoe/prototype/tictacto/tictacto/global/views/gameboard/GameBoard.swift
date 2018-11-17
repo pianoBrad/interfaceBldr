@@ -23,6 +23,7 @@ class GameBoard: GameSectionView
 	@IBOutlet var contentView: UIView!
     @IBOutlet var btnContainerView: UIView!
     @IBOutlet var gridContainerView: GridContainerView!
+    @IBOutlet var resultsView: ResultsView!
     
     var btns : [GamePieceButton] = []
     var btnFrames : [CGRect] = []
@@ -43,7 +44,9 @@ class GameBoard: GameSectionView
 		self.addSubview(contentView)
 		contentView.frame = self.bounds
 		contentView.autoresizingMask = [.flexibleWidth, .flexibleHeight]
-		
+		//resultsView.alpha = 0
+        resultsView.setPosition(hidden: true)
+        
         loadBtnsToCheck()
     }
     
@@ -56,6 +59,7 @@ class GameBoard: GameSectionView
     override func endTurn()
     {
         super.endTurn()
+        self.resultsView.updateDisplay()
         for btn in btns { btn.disable() }
     }
     
@@ -209,17 +213,18 @@ class GameBoard: GameSectionView
             duration: 0.4, curve: .easeInOut)
         
         fadeAnimator.addAnimations
+        {
+            switch show
             {
-                switch show
-                {
-                case false:
-                    self.btnContainerView.alpha = 1
-                    self.gridContainerView.reappear()
-                    break
-                default:
-                    self.btnContainerView.alpha = 0
-                    self.gridContainerView.disappear()
-                }
+            case false:
+                self.btnContainerView.alpha = 1
+                self.gridContainerView.reappear()
+                break
+            default:
+                self.btnContainerView.alpha = 0
+                self.gridContainerView.disappear()
+            }
+            self.resultsView.setPosition(hidden: !show)
         }
         
         fadeAnimator.startAnimation()

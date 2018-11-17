@@ -13,6 +13,7 @@
                 <outlet property="btnContainerView" destination="0Kq-gi-tIA" id="jZD-Bi-tyS"/>
                 <outlet property="contentView" destination="iN0-l3-epB" id="Y4b-Bl-uLb"/>
                 <outlet property="gridContainerView" destination="4Wd-dV-pqX" id="nnM-Is-fmK"/>
+                <outlet property="resultsView" destination="Y6i-RA-ZM6" id="AU0-cu-Dmb"/>
             </connections>
         </placeholder>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
@@ -264,20 +265,28 @@
                         <constraint firstItem="Jzo-P1-jrF" firstAttribute="width" secondItem="UdU-Il-vEH" secondAttribute="width" id="rEr-AH-JJJ"/>
                     </constraints>
                 </view>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Y6i-RA-ZM6" userLabel="Results View" customClass="ResultsView" customModule="tictacto" customModuleProvider="target">
+                    <rect key="frame" x="0.0" y="52.5" width="375" height="375"/>
+                    <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                </view>
             </subviews>
             <color key="backgroundColor" red="0.14901960784313725" green="0.73725490196078436" blue="0.67450980392156867" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
             <constraints>
                 <constraint firstItem="aCG-bg-9PH" firstAttribute="top" secondItem="xo5-QT-iBm" secondAttribute="bottom" constant="-6" id="2kv-MP-a4i"/>
                 <constraint firstItem="4Wd-dV-pqX" firstAttribute="centerX" secondItem="0Kq-gi-tIA" secondAttribute="centerX" id="6da-oR-12O"/>
                 <constraint firstItem="4Wd-dV-pqX" firstAttribute="height" secondItem="0Kq-gi-tIA" secondAttribute="height" id="Boe-vv-7hw"/>
+                <constraint firstItem="Y6i-RA-ZM6" firstAttribute="centerY" secondItem="4Wd-dV-pqX" secondAttribute="centerY" id="Grh-sC-b3v"/>
                 <constraint firstItem="0Kq-gi-tIA" firstAttribute="height" relation="lessThanOrEqual" secondItem="iN0-l3-epB" secondAttribute="height" constant="-50" id="Lwf-Uv-KX6"/>
                 <constraint firstItem="4Wd-dV-pqX" firstAttribute="centerY" secondItem="0Kq-gi-tIA" secondAttribute="centerY" id="Opm-XV-sE7"/>
                 <constraint firstItem="0Kq-gi-tIA" firstAttribute="centerX" secondItem="iN0-l3-epB" secondAttribute="centerX" id="Sgt-72-Vg9"/>
+                <constraint firstItem="Y6i-RA-ZM6" firstAttribute="centerX" secondItem="4Wd-dV-pqX" secondAttribute="centerX" id="Vrd-04-HbB"/>
+                <constraint firstItem="Y6i-RA-ZM6" firstAttribute="width" secondItem="4Wd-dV-pqX" secondAttribute="width" id="YJd-PE-guM"/>
                 <constraint firstItem="0Kq-gi-tIA" firstAttribute="centerY" secondItem="iN0-l3-epB" secondAttribute="centerY" id="Ytr-nb-vvg"/>
                 <constraint firstItem="XyX-sc-E0s" firstAttribute="leading" secondItem="tnC-X5-Ukz" secondAttribute="trailing" constant="-6" id="Zdw-Zg-ZAX"/>
                 <constraint firstItem="EUg-E2-Zsh" firstAttribute="top" secondItem="tnC-X5-Ukz" secondAttribute="bottom" constant="-6" id="fSf-Nh-v0L"/>
                 <constraint firstItem="0Kq-gi-tIA" firstAttribute="width" secondItem="iN0-l3-epB" secondAttribute="width" priority="999" id="hch-K0-v7t"/>
                 <constraint firstItem="kLi-wK-G4j" firstAttribute="leading" secondItem="XVj-gu-rtR" secondAttribute="trailing" constant="-6" id="sDs-Ts-Rcf"/>
+                <constraint firstItem="Y6i-RA-ZM6" firstAttribute="height" secondItem="4Wd-dV-pqX" secondAttribute="height" id="zOc-QR-w50"/>
                 <constraint firstItem="4Wd-dV-pqX" firstAttribute="width" secondItem="0Kq-gi-tIA" secondAttribute="width" id="zi7-z8-77e"/>
             </constraints>
             <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
