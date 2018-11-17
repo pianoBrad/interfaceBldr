@@ -178,8 +178,7 @@ class GameBoard: GameSectionView
     func animateMatch()
     {
         guard
-            let matchingRow = self.matchingRow.first?.value,
-            let firstMatchingBtn = matchingRow.first
+            let matchingRow = self.matchingRow.first?.value
         else
         {
             print("no matching data found..can't draw line")
@@ -189,7 +188,7 @@ class GameBoard: GameSectionView
         for (direction, _) in self.matchingRow
         {
             let matchLine = MatchLineView(
-                with: direction, startingWith: firstMatchingBtn)
+                with: direction, for: matchingRow)
             matchLine.lineDelegate = self
             self.matchingLine = matchLine
             
@@ -244,50 +243,28 @@ extension GameBoard : MatchLineViewDelegate
     {
         guard
             let matchingBtns = self.matchingRow.first?.value,
-            let direction = self.matchingRow.first?.key,
-            let middleBtn = self.matchingRow.first?.value.middle,
             let line = self.matchingLine,
+            let newLineFrame = line.getLineFrameForWin(),
             matchingBtns.count > 0
         else
         {
             return
         }
         
+        let boardCenter = self.convert(
+            self.contentView.center, to: self.btnContainerView)
         let animator = UIViewPropertyAnimator(duration: 0.4, curve: .easeInOut)
-        
-        var xPos : CGFloat = line.frame.origin.x
-        var yPos : CGFloat = line.frame.origin.y
-        var w : CGFloat = line.frame.width
-        var h : CGFloat = line.frame.height
-        
-        switch direction
-        {
-        case "vertical":
-            yPos = middleBtn.frame.origin.y
-            h = middleBtn.frame.height
-            break
-        default: // horizontal
-            xPos = middleBtn.frame.origin.x
-            w = middleBtn.frame.width
-        }
         
         animator.addAnimations
         {
+            line.frame = newLineFrame
+            line.center = boardCenter
             
-            line.frame = CGRect(
-                x: xPos, y: yPos, width: w, height: h
-            )
-        }
-        
-        for (_, btns) in matchingRow
-        {
-            for btn in btns
+            for (_, btns) in self.matchingRow
             {
-                animator.addAnimations {
-                    btn.frame.origin = CGPoint(
-                        x: middleBtn.frame.origin.x,
-                        y: middleBtn.frame.origin.y
-                    )
+                for btn in btns
+                {
+                    btn.center = boardCenter
                 }
             }
         }

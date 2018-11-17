@@ -19,8 +19,10 @@ class MatchLineView: UIView
     /** Properties **/
     var matchType : String = "horizontal"
     var firstMatchingBtn : GamePieceButton?
+    var middleMatchingBtn : GamePieceButton?
     var startPoint : CGPoint = CGPoint(x: 0, y: 0)
     var endPoint : CGPoint = CGPoint(x: 0 , y: 0)
+    var frameCenterPoint : CGPoint = CGPoint(x: 0, y: 0)
     var widthConst : NSLayoutConstraint?
     var heightConst : NSLayoutConstraint?
     let lineAnimator = UIViewPropertyAnimator(duration: 0.4, curve: .easeInOut)
@@ -28,26 +30,19 @@ class MatchLineView: UIView
     weak var lineDelegate : MatchLineViewDelegate?
     
     /** Overrides **/
-    override init(frame: CGRect)
-    {
-        super.init(frame: frame)
-        self.backgroundColor = .clear
-    }
-    
-    required init?(coder aDecoder: NSCoder)
-    {
-        super.init(coder: aDecoder)
-    }
-    
     override func draw(_ rect: CGRect)
     {
         drawLine()
     }
     
-    convenience init(with matchType: String, startingWith btn: GamePieceButton)
+    convenience init(with matchType: String, for row: [GamePieceButton])
     {
         self.init(frame: .zero)
-        self.firstMatchingBtn = btn
+        //self.backgroundColor = .blue
+        self.backgroundColor = .clear
+        //self.alpha = 0.5
+        self.firstMatchingBtn = row.first
+        self.middleMatchingBtn = row.middle
         self.matchType = matchType
     }
     
@@ -57,10 +52,31 @@ class MatchLineView: UIView
     }
     
     /** Custom methods **/
+    
+    func getLineFrameForWin() -> CGRect?
+    {
+        guard
+            let btnH = self.firstMatchingBtn?.frame.height,
+            let btnW = self.firstMatchingBtn?.frame.width
+        else
+        {
+            return nil
+        }
+        
+        let newRect = CGRect(
+            x: 0,
+            y: 0,
+            width: self.matchType == "horizontal" ? btnW : self.frame.width,
+            height: self.matchType == "vertical" ? btnH : self.frame.height
+        )
+        
+        return newRect
+    }
+    
     func drawLine()
     {
         guard
-            let firstBtn = self.firstMatchingBtn,
+            let middleBtn = self.middleMatchingBtn,
             self.frame.width > 0,
             self.frame.height > 0
         else
@@ -71,40 +87,40 @@ class MatchLineView: UIView
         switch self.matchType
         {
         case "vertical":
-            self.startPoint = CGPoint(
-                x: firstBtn.frame.origin.x + (firstBtn.frame.width/2),
-                y: 0
+            self.frameCenterPoint = CGPoint(
+                x: middleBtn.frame.origin.x + (middleBtn.frame.width/2),
+                y: self.center.y
             )
-            self.endPoint = CGPoint(
-                x: firstBtn.frame.origin.x + (firstBtn.frame.width/2),
-                y: self.frame.height
-            )
-            break
-        case "diagonalTop":
-            self.startPoint = CGPoint(x: 0, y: 0)
-            self.endPoint = CGPoint(x: self.frame.width, y: self.frame.height)
-            break
-        case "diagonalBottom":
-            self.startPoint = CGPoint(x: 0, y: self.frame.height)
-            self.endPoint = CGPoint(x: self.frame.width, y: 0)
             break
         default: // horizontal
-            self.startPoint = CGPoint(
-                x: 0,
-                y: firstBtn.frame.origin.y + (firstBtn.frame.height/2)
-            )
-            self.endPoint = CGPoint(
-                x: self.frame.width,
-                y: firstBtn.frame.origin.y + (firstBtn.frame.height/2)
+            self.frameCenterPoint = CGPoint(
+                x: self.center.x,
+                y: middleBtn.frame.origin.y + (middleBtn.frame.height/2)
             )
             break
         }
         
+        self.center = self.frameCenterPoint
+        
         let aPath = UIBezierPath()
         
-        aPath.move(to: CGPoint(x: self.startPoint.x, y:self.startPoint.y))
+        aPath.move(
+            to: CGPoint(
+                x: self.matchType == "horizontal" ? 0 : self.frame.width/2,
+                y: self.matchType == "vertical" ? 0 : self.frame.height/2
+            )
+        )
         
-        aPath.addLine(to: CGPoint(x:self.endPoint.x, y:self.endPoint.y))
+        aPath.addLine(
+            to: CGPoint(
+                x: self.matchType == "horizontal"
+                    ? self.frame.width
+                    : self.frame.width/2,
+                y: self.matchType == "vertical"
+                    ? self.frame.height
+                    : self.frame.height / 2
+            )
+        )
         
         aPath.close()
         
