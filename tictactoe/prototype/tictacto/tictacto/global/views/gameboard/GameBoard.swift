@@ -22,6 +22,7 @@ class GameBoard: GameSectionView
 	/** Properties **/
 	@IBOutlet var contentView: UIView!
     @IBOutlet var btnContainerView: UIView!
+    @IBOutlet var gridContainerView: GridContainerView!
     
     var btns : [GamePieceButton] = []
     var btnFrames : [CGRect] = []
@@ -84,6 +85,8 @@ class GameBoard: GameSectionView
         {
             btn.frame = btnFrames[key]
         }
+        
+        animateResults(show: false)
     }
     
     /** Custom methods **/
@@ -175,6 +178,7 @@ class GameBoard: GameSectionView
         return true
     }
     
+    // Starts animation to draw line and move 3 to center of board
     func animateMatch()
     {
         guard
@@ -196,6 +200,29 @@ class GameBoard: GameSectionView
                 matchLine
             )
         }
+    }
+    
+    // Removes the current gameboard and brings in the winner display
+    func animateResults(show: Bool)
+    {
+        let fadeAnimator = UIViewPropertyAnimator(
+            duration: 0.4, curve: .easeInOut)
+        
+        fadeAnimator.addAnimations
+            {
+                switch show
+                {
+                case false:
+                    self.btnContainerView.alpha = 1
+                    self.gridContainerView.reappear()
+                    break
+                default:
+                    self.btnContainerView.alpha = 0
+                    self.gridContainerView.disappear()
+                }
+        }
+        
+        fadeAnimator.startAnimation()
     }
 }
 
@@ -267,6 +294,13 @@ extension GameBoard : MatchLineViewDelegate
                     btn.center = boardCenter
                 }
             }
+        }
+        
+        animator.addCompletion()
+        {
+            position in
+            
+            self.animateResults(show: true)
         }
         
         animator.startAnimation()

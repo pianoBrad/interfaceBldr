@@ -52,22 +52,13 @@ class MatchLineView: UIView
     }
     
     /** Custom methods **/
-    
     func getLineFrameForWin() -> CGRect?
     {
-        guard
-            let btnH = self.firstMatchingBtn?.frame.height,
-            let btnW = self.firstMatchingBtn?.frame.width
-        else
-        {
-            return nil
-        }
-        
         let newRect = CGRect(
             x: 0,
             y: 0,
-            width: self.matchType == "horizontal" ? btnW : self.frame.width,
-            height: self.matchType == "vertical" ? btnH : self.frame.height
+            width: self.matchType == "horizontal" ? 0 : self.frame.width,
+            height: self.matchType == "vertical" ? 0 : self.frame.height
         )
         
         return newRect
@@ -162,8 +153,16 @@ class MatchLineView: UIView
             relatedBy: .equal, toItem: parent, attribute: .leading,
             multiplier: 1, constant: 0
         )
-        let wConst = NSLayoutConstraint(item: self, attribute: .width, relatedBy: .equal, toItem: nil, attribute: .notAnAttribute, multiplier: 1, constant: widthConstant)
-        let hConst = NSLayoutConstraint(item: self, attribute: .height, relatedBy: .equal, toItem: nil, attribute: .notAnAttribute, multiplier: 1, constant: heightConstant)
+        let wConst = NSLayoutConstraint(
+            item: self, attribute: .width,
+            relatedBy: .equal, toItem: nil, attribute: .notAnAttribute,
+            multiplier: 1, constant: widthConstant
+        )
+        let hConst = NSLayoutConstraint(
+            item: self, attribute: .height,
+            relatedBy: .equal, toItem: nil, attribute: .notAnAttribute,
+            multiplier: 1, constant: heightConstant
+        )
         
         self.widthConst = wConst
         self.heightConst = hConst
@@ -186,7 +185,8 @@ class MatchLineView: UIView
             return
         }
         
-        self.lineAnimator.addAnimations {
+        self.lineAnimator.addAnimations
+        {
             switch self.matchType
             {
             case "vertical":
