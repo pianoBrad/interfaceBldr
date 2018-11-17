@@ -59,7 +59,7 @@ class GameBoard: GameSectionView
     override func endTurn()
     {
         super.endTurn()
-        self.resultsView.updateDisplay()
+        self.resultsView.updateMessage()
         for btn in btns { btn.disable() }
     }
     
@@ -90,6 +90,7 @@ class GameBoard: GameSectionView
             btn.frame = btnFrames[key]
         }
         
+        self.matchingRow = [:]
         animateResults(show: false)
     }
     
@@ -189,7 +190,7 @@ class GameBoard: GameSectionView
             let matchingRow = self.matchingRow.first?.value
         else
         {
-            print("no matching data found..can't draw line")
+            animateResults(show: true)
             return
         }
         

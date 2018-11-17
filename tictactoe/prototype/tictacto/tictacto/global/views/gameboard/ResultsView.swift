@@ -54,7 +54,7 @@ class ResultsView: UIView
         label.numberOfLines = 0
     }
     
-    func updateDisplay()
+    func updateMessage()
     {
         if let winner = currentGame.winner
         {
