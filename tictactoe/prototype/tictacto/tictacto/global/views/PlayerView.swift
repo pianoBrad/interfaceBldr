@@ -18,7 +18,7 @@ class PlayerView: GameSectionVIew
     @IBOutlet weak var gameStatusLabel: UILabel!
 	
 	var btnsArray: [PlayerButton] = []
-	var startGameMessage : String = "Start game or select player"
+	var startGameMessage : String = "Start Game!"
 	
 	/** Overrides **/
     override func commonInit()
@@ -59,12 +59,13 @@ class PlayerView: GameSectionVIew
 		if let winner = currentGame.getWinner(),
 			let symbol = winner.playerSymbol
 		{
-			gameStatusLabel.text = "Player \(symbol) is Winner!"
+			gameStatusLabel.text = "Player \(symbol) Wins!"
 		}
 		else
 		{
-			catWins()
+			self.gameStatusLabel.text = "Cat Wins!"
 		}
+
 	}
 	
 	/** Custom Methods **/
@@ -80,11 +81,6 @@ class PlayerView: GameSectionVIew
 		{
 			gameStatusLabel.text = "Player \(symbol) Turn"
 		}
-	}
-	
-	func catWins()
-	{
-		self.gameStatusLabel.text = "Cat Wins!"
 	}
 	
 	

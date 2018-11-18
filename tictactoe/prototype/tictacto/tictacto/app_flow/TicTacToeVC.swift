@@ -14,6 +14,7 @@ class TicTacToeVC: UIViewController
     @IBOutlet weak var playerView: PlayerView!
     @IBOutlet weak var gameBoard: GameBoard!
     @IBOutlet weak var controlPanel: ControlPanel!
+	
 
 	/** Overrides **/
 	override func viewDidLoad()
@@ -41,12 +42,23 @@ extension TicTacToeVC : ControlPanelDelegate
 {
     func restartBtnWasPress(_ sender: ControlPanelBtn)
     {
+		
 		self.startGame()
     }
 }
 
 extension TicTacToeVC : GameBoardDelegate
 {
+	
+	func boardEmpty() {
+		PlayerButton.resetScore(<#T##PlayerButton#>)
+	}
+	
+	func catWins()
+	{
+		endGame()
+	}
+	
 	func matchFound(for player: Player)
 	{
 		currentGame.setWinner(toPlayer: player)
@@ -57,5 +69,4 @@ extension TicTacToeVC : GameBoardDelegate
 	{
 		playerView.changePlayer()
 	}
-
 }

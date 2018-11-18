@@ -57,7 +57,6 @@ class GameState: NSObject
 	}
 	
 	
-	
 	func reset()
 	{
 		for player in players
@@ -65,7 +64,6 @@ class GameState: NSObject
 			player.set(winner: false)
 		}
 	}
-	
 	
 }
 

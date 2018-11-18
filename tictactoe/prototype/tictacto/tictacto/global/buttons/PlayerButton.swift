@@ -124,6 +124,11 @@ class PlayerButton: UIView
 	{
 		self.playerScoreLabel.text = String(score)
 	}
+	
+	func resetScore()
+	{
+		self.playerScoreLabel.text = "-"
+	}
     
     /** Actions **/
 	@objc func checkTap(_ sender: UITapGestureRecognizer)

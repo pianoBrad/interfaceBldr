@@ -38,6 +38,7 @@ class ControlPanelBtn: UIButton
         self.setTitleColor(UIColor.init(hexFromString: "#26BCAC"), for: .normal)
         
         self.addTarget(self, action: #selector(handleBtnPress), for: .touchUpInside)
+		
     }
 
     convenience init(frame: CGRect, andColor: UIColor, andText: String)
@@ -51,4 +52,5 @@ class ControlPanelBtn: UIButton
     {
         btnDelegate?.controlBtnPressed(self)
     }
+	
 }

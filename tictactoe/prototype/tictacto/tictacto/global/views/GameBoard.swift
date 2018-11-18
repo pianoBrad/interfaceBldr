@@ -12,6 +12,8 @@ protocol GameBoardDelegate: class
 {
 	func noMatchFound()
 	func matchFound(for player: Player)
+	func catWins()
+	func boardEmpty()
 }
 
 @IBDesignable
@@ -167,9 +169,18 @@ class GameBoard: GameSectionVIew
 		}
 	}
 	
-	func allGamePiecesUsed()
+	func gameOverCatWins()
 	{
+		let noWinner = btnsArray.allSatisfy({$0.owner != nil})
 		
+		if noWinner
+		{
+			boardDelegate?.catWins()
+		}
+		else
+		{
+			return
+		}
 	}
 	
 	func disableRemainingBtns()
@@ -180,6 +191,16 @@ class GameBoard: GameSectionVIew
 			{
 				btns.isEnabled = false
 			}
+		}
+	}
+	
+	func gameBoardEmpty()
+	{
+		let emptyBoard = btnsArray.allSatisfy({$0.owner == nil})
+		
+		if emptyBoard
+		{
+			boardDelegate?.boardEmpty()
 		}
 	}
 
@@ -199,6 +220,7 @@ extension GameBoard : GamePieceButtonDelegate
 		}
 		
 		checkThreeInRow()
+		gameOverCatWins()
 		
 	}
 }
