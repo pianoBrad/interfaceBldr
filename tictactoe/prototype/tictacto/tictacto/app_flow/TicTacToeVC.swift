@@ -42,7 +42,6 @@ extension TicTacToeVC : ControlPanelDelegate
 {
     func restartBtnWasPress(_ sender: ControlPanelBtn)
     {
-		
 		self.startGame()
     }
 }
@@ -50,8 +49,8 @@ extension TicTacToeVC : ControlPanelDelegate
 extension TicTacToeVC : GameBoardDelegate
 {
 	
-	func boardEmpty() {
-		PlayerButton.resetScore(<#T##PlayerButton#>)
+	func boardEmpty()
+	{
 	}
 	
 	func catWins()

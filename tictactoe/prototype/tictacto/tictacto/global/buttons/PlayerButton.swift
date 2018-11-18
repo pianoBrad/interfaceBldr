@@ -127,6 +127,8 @@ class PlayerButton: UIView
 	
 	func resetScore()
 	{
+		
+		
 		self.playerScoreLabel.text = "-"
 	}
     
@@ -135,4 +137,34 @@ class PlayerButton: UIView
 	{
 		buttonDelegate?.buttonTapped(self)
 	}
+}
+
+extension PlayerButton : GameBoardDelegate
+{
+	func noMatchFound()
+	{
+	}
+	
+	func matchFound(for player: Player)
+	{
+	}
+	
+	func catWins()
+	{
+	}
+	
+	func boardEmpty()
+	{
+		resetScore()
+	}
+}
+
+extension PlayerButton : ControlPanelDelegate
+{
+	func restartBtnWasPress(_ sender: ControlPanelBtn)
+	{
+		
+	}
+	
+
 }
