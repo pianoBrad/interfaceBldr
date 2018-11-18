@@ -125,3 +125,11 @@ class PlayerButton: UIView
 		buttonDelegate?.buttonTapped(self)
 	}
 }
+
+extension PlayerButton : PlayerDelegate
+{
+    func scoreWasUpdated(_ sender: Player)
+    {
+        self.playerScoreLabel.text = String(sender.score)
+    }
+}

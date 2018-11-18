@@ -65,6 +65,7 @@ class GameState: NSObject
     public func declareWinner(player: Player)
     {
         self.winner = player
+        player.updateScore()
     }
     
     public func declareDraw()
