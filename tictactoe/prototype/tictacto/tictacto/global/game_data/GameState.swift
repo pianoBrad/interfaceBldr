@@ -18,6 +18,7 @@ class GameState: NSObject
     ]
     var curPlayer : Player?
     var winner : Player?
+    var shouldRestart : Bool = false
     
     /** Custom methods **/
     public func add(player : Player)
@@ -58,12 +59,16 @@ class GameState: NSObject
     
     public func reset()
     {
-        if self.winner == nil
+        if self.checkShouldRestart()
         {
             for player in self.players
             {
                 player.resetScore()
             }
+        }
+        else
+        {
+            self.shouldRestart = true
         }
         
         self.winner = nil
@@ -72,12 +77,14 @@ class GameState: NSObject
     
     public func declareWinner(player: Player)
     {
+        self.shouldRestart = false
         self.winner = player
         player.updateScore()
     }
     
     public func declareDraw()
     {
+        self.shouldRestart = false
         self.winner = nil
     }
     
@@ -91,6 +98,17 @@ class GameState: NSObject
         {
             firstPlayer.btn?.changeButtonState(setActive: true)
         }
+    }
+    
+    private func checkShouldRestart() -> Bool
+    {
+        if (self.winner == nil && self.curPlayer == nil)
+            || self.shouldRestart
+        {
+            return true
+        }
+        
+        return false
     }
 }
 
