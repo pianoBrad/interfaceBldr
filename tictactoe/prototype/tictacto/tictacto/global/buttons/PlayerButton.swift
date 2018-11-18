@@ -130,6 +130,13 @@ extension PlayerButton : PlayerDelegate
 {
     func scoreWasUpdated(_ sender: Player)
     {
+        guard
+            sender.score > 0
+        else
+        {
+            self.playerScoreLabel.text = "-"
+            return
+        }
         self.playerScoreLabel.text = String(sender.score)
     }
 }

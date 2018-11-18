@@ -35,6 +35,11 @@ class Player: NSObject
     }
     
     /** Custom methods **/
+    public func resetScore()
+    {
+        self.score = 0
+        self.delegate?.scoreWasUpdated(self)
+    }
     public func updateScore(winner: Bool? = true)
     {
         guard

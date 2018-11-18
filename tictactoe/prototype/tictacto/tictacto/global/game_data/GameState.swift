@@ -58,6 +58,14 @@ class GameState: NSObject
     
     public func reset()
     {
+        if self.winner == nil
+        {
+            for player in self.players
+            {
+                player.resetScore()
+            }
+        }
+        
         self.winner = nil
         self.resetPlayerTurns()
     }
