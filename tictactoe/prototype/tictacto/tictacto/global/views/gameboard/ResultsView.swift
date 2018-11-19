@@ -53,6 +53,8 @@ class ResultsView: UIView
         label.adjustsFontSizeToFitWidth = true
         label.lineBreakMode = .byClipping
         label.numberOfLines = 0
+        
+        textLabel.font = UIFont.systemFont(ofSize: 50, weight: .bold)
     }
     
     func updateMessage()
