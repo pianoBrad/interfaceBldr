@@ -61,6 +61,13 @@ class GameBoard: GameSectionVIew
 	{
 		super.reset()
 		
+		
+		if btnsArray.allSatisfy({$0.owner == nil})
+		{
+			boardDelegate?.boardEmpty()
+		}
+		
+		
 		for btn in btnsArray
 		{
 			btn.reset()
@@ -163,24 +170,25 @@ class GameBoard: GameSectionVIew
 		{
 			boardDelegate?.matchFound(for: currentPlayer)
 		}
+		else if gameOverCatWins()
+		{
+			boardDelegate?.catWins()
+		}
 		else
 		{
 			boardDelegate?.noMatchFound()
 		}
 	}
 	
-	func gameOverCatWins()
+	func gameOverCatWins() -> Bool
 	{
 		let noWinner = btnsArray.allSatisfy({$0.owner != nil})
 		
 		if noWinner
 		{
-			boardDelegate?.catWins()
+			return true
 		}
-		else
-		{
-			return
-		}
+		return false
 	}
 	
 	func disableRemainingBtns()
@@ -194,19 +202,8 @@ class GameBoard: GameSectionVIew
 		}
 	}
 	
-	func gameBoardEmpty()
-	{
-		let emptyBoard = btnsArray.allSatisfy({$0.owner == nil})
-		
-		if emptyBoard
-		{
-			boardDelegate?.boardEmpty()
-		}
-	}
-
-	
+//****** Last Bracket for Class *******
 }
-
 
 extension GameBoard : GamePieceButtonDelegate
 {
@@ -218,7 +215,7 @@ extension GameBoard : GamePieceButtonDelegate
 			
 			sender.claim(forPlayer: currentPlayer)
 		}
-		
+
 		checkThreeInRow()
 		gameOverCatWins()
 		

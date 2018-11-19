@@ -57,14 +57,23 @@ class GameState: NSObject
 	}
 	
 	
-	func reset()
+	func reset(isComplete: Bool? = nil)
 	{
 		for player in players
 		{
 			player.set(winner: false)
 		}
+
+		if let shouldFullReset = isComplete,
+			shouldFullReset
+		{
+			for player in players
+			{
+				player.resetScore()
+			}
+		}
 	}
-	
+
 }
 
 let currentGame = GameState.init()

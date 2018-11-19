@@ -44,5 +44,10 @@ class Player: NSObject
 		}
 	}
 	
+	func resetScore()
+	{
+		playerScore = 0
+		self.button?.resetScore()
+	}
 	
 }

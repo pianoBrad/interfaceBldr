@@ -21,7 +21,6 @@ class ControlPanel: UIView {
     @IBOutlet weak var restartBtn: ControlPanelBtn!
 	
 	
-    
     var availableHeight : CGFloat = 0
     weak var panelDelegate : ControlPanelDelegate?
     

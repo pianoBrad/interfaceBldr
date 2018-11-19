@@ -23,8 +23,6 @@ class GamePieceButton: UIButton
 	var owner : Player?
 	
 	
-
-	
 	/** Overrides **/
 	override init(frame: CGRect)
 	{
@@ -66,7 +64,6 @@ class GamePieceButton: UIButton
 		}
 	}
 	
-
 	func reset()
 	{
 		self.owner = nil
@@ -74,12 +71,9 @@ class GamePieceButton: UIButton
 		self.isEnabled = true
 	}
 	
-	
     /** Actions **/
 	@objc func handleBtnPress(_ sender : GamePieceButton)
 	{
 		btnDelegate?.gamePieceTapped(self)
 	}
 }
-
-

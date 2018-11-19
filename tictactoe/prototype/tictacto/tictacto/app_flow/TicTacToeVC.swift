@@ -15,7 +15,6 @@ class TicTacToeVC: UIViewController
     @IBOutlet weak var gameBoard: GameBoard!
     @IBOutlet weak var controlPanel: ControlPanel!
 	
-
 	/** Overrides **/
 	override func viewDidLoad()
 	{
@@ -51,6 +50,7 @@ extension TicTacToeVC : GameBoardDelegate
 	
 	func boardEmpty()
 	{
+		currentGame.reset(isComplete: true)
 	}
 	
 	func catWins()
@@ -69,3 +69,6 @@ extension TicTacToeVC : GameBoardDelegate
 		playerView.changePlayer()
 	}
 }
+
+
+

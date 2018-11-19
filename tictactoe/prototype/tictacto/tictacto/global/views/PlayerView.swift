@@ -51,6 +51,7 @@ class PlayerView: GameSectionVIew
 		gameStatusLabel.text = startGameMessage
 		playerXBtn.changeButtonState(setActive: true)
 		playerOBtn.changeButtonState(setActive: false)
+		
     }
     
     override func end()
@@ -82,6 +83,5 @@ class PlayerView: GameSectionVIew
 			gameStatusLabel.text = "Player \(symbol) Turn"
 		}
 	}
-	
-	
+
 }
