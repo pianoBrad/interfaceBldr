@@ -20,6 +20,7 @@ class ControlPanel: GameSectionView
     @IBOutlet var contentView: UIView!
     @IBOutlet weak var restartBtn: ControlPanelBtn!
     
+    var shouldRespond : Bool = true
     var availableHeight : CGFloat = 0
     weak var panelDelegate : ControlPanelDelegate?
 
@@ -38,12 +39,29 @@ class ControlPanel: GameSectionView
     
         restartBtn.btnDelegate = self
     }
+    
+    func pause()
+    {
+        self.shouldRespond = false
+    }
+    
+    func unPause()
+    {
+        self.shouldRespond = true
+    }
 }
 
 extension ControlPanel : ControlPanelBtnDelegate
 {
     func controlBtnPressed(_ sender: ControlPanelBtn)
     {
+        guard
+            shouldRespond
+        else
+        {
+            return
+        }
+        
         switch sender
         {
         case restartBtn:

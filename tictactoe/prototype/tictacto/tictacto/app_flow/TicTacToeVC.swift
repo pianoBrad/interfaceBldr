@@ -71,7 +71,13 @@ extension TicTacToeVC : GameBoardDelegate
         playerView.changeActivePlayer()
     }
     
+    func matchingAnimationBegan()
+    {
+        self.controlPanel.pause()
+    }
+    
     func matchingAnimationComplete()
     {
+        self.controlPanel.unPause()
     }
 }

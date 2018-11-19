@@ -265,9 +265,9 @@
                         <constraint firstItem="Jzo-P1-jrF" firstAttribute="width" secondItem="UdU-Il-vEH" secondAttribute="width" id="rEr-AH-JJJ"/>
                     </constraints>
                 </view>
-                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Y6i-RA-ZM6" userLabel="Results View" customClass="ResultsView" customModule="tictacto" customModuleProvider="target">
+                <view alpha="0.0" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Y6i-RA-ZM6" userLabel="Results View" customClass="ResultsView" customModule="tictacto" customModuleProvider="target">
                     <rect key="frame" x="0.0" y="52.5" width="375" height="375"/>
-                    <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                 </view>
             </subviews>
             <color key="backgroundColor" red="0.14901960784313725" green="0.73725490196078436" blue="0.67450980392156867" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>

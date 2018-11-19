@@ -13,6 +13,7 @@ protocol GameBoardDelegate : class
     func foundThreeInARow(forPlayer: Player)
     func filledWithoutThreeInARow()
     func readyForNextTurn()
+    func matchingAnimationBegan()
     func matchingAnimationComplete()
 }
 
@@ -194,6 +195,8 @@ class GameBoard: GameSectionView
             return
         }
         
+        self.boardDelegate?.matchingAnimationBegan()
+        
         for (direction, _) in self.matchingRow
         {
             let matchLine = MatchLineView(
@@ -226,6 +229,12 @@ class GameBoard: GameSectionView
                 self.gridContainerView.disappear()
             }
             self.resultsView.setPosition(hidden: !show)
+        }
+        
+        fadeAnimator.addCompletion()
+        {
+            position in
+            self.boardDelegate?.matchingAnimationComplete()
         }
         
         fadeAnimator.startAnimation()
