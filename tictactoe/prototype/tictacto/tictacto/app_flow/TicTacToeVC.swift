@@ -27,12 +27,14 @@ class TicTacToeVC: UIViewController
         currentGame.reset()
         playerView.reset()
         gameBoard.reset()
+        controlPanel.reset()
     }
     
     func endGame()
     {
         playerView.end()
         gameBoard.end()
+        controlPanel.end()
     }
 }
 
@@ -68,7 +70,9 @@ extension TicTacToeVC : GameBoardDelegate
     
     func readyForNextTurn()
     {
+        currentGame.markShouldNotRestart()
         playerView.changeActivePlayer()
+        self.controlPanel.checkShouldMarkGameInProgress()
     }
     
     func matchingAnimationBegan()

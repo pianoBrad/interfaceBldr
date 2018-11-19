@@ -24,6 +24,17 @@ class ControlPanel: GameSectionView
     var availableHeight : CGFloat = 0
     weak var panelDelegate : ControlPanelDelegate?
 
+    /** Overrides **/
+    override func end()
+    {
+        self.checkRestartBtnTitleShouldChange()
+    }
+    
+    override func reset()
+    {
+        self.checkRestartBtnTitleShouldChange()
+    }
+    
     /** Custom Method **/
     override func commonInit()
     {
@@ -38,6 +49,43 @@ class ControlPanel: GameSectionView
         contentView.autoresizingMask = [.flexibleHeight, .flexibleWidth]
     
         restartBtn.btnDelegate = self
+    }
+    
+    func checkShouldMarkGameInProgress()
+    {
+        // Game is in progress, make sure restart btn says round, not game
+        guard
+            self.restartBtn.title(for: .normal)?.range(of: "ROUND") == nil
+        else
+        {
+            return
+        }
+        
+        self.checkRestartBtnTitleShouldChange()
+    }
+    
+    func checkRestartBtnTitleShouldChange()
+    {
+        let curBtnTitle = self.restartBtn.title(for: .normal)
+        let gameScope = curBtnTitle?.range(of: "ROUND") != nil ? "GAME" : "ROUND"
+        let scoresAboveZero = currentGame.getScore().filter {$0 > 0}
+        
+        guard
+            "RESTART \(gameScope)" != self.restartBtn.title(for: .normal)
+        else
+        {
+            return
+        }
+                
+        if scoresAboveZero.isEmpty { return }
+        else if currentGame.winner == nil
+        {
+            self.restartBtn.setTitle("RESTART \(gameScope)", for: .normal)
+        }
+        else
+        {
+            self.restartBtn.setTitle("START NEW ROUND", for: .normal)
+        }
     }
     
     func pause()

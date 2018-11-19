@@ -57,6 +57,17 @@ class GameState: NSObject
         return nil
     }
     
+    public func getScore() -> [Int]
+    {
+        var score : [Int] = []
+        for player in players
+        {
+            score.append(player.score)
+        }
+        
+        return score
+    }
+    
     public func reset()
     {
         if self.checkShouldRestart()
@@ -86,6 +97,11 @@ class GameState: NSObject
     {
         self.shouldRestart = false
         self.winner = nil
+    }
+    
+    public func markShouldNotRestart()
+    {
+        self.shouldRestart = false
     }
     
     private func resetPlayerTurns()
