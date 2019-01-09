@@ -18,6 +18,7 @@
 		2D36125121E5B40400660F72 /* StatView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2D36125021E5B40400660F72 /* StatView.xib */; };
 		2D36125321E5B4F800660F72 /* ExampleVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D36125221E5B4F800660F72 /* ExampleVC.swift */; };
 		2D36125521E5B51800660F72 /* ExampleTVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D36125421E5B51800660F72 /* ExampleTVC.swift */; };
+		2D36125921E5B5CB00660F72 /* StatView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D36125821E5B5CB00660F72 /* StatView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -55,6 +56,7 @@
 		2D36125021E5B40400660F72 /* StatView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = StatView.xib; sourceTree = "<group>"; };
 		2D36125221E5B4F800660F72 /* ExampleVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExampleVC.swift; sourceTree = "<group>"; };
 		2D36125421E5B51800660F72 /* ExampleTVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExampleTVC.swift; sourceTree = "<group>"; };
+		2D36125821E5B5CB00660F72 /* StatView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -109,6 +111,7 @@
 				2D36121C21E5A03300660F72 /* ViewController.swift */,
 				2D36121E21E5A03300660F72 /* Main.storyboard */,
 				2D36125021E5B40400660F72 /* StatView.xib */,
+				2D36125821E5B5CB00660F72 /* StatView.swift */,
 				2D36124D21E5A50D00660F72 /* controllers */,
 				2D36122421E5A03400660F72 /* Assets.xcassets */,
 				2D36122621E5A03400660F72 /* LaunchScreen.storyboard */,
@@ -277,6 +280,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2D36125921E5B5CB00660F72 /* StatView.swift in Sources */,
 				2D36121D21E5A03300660F72 /* ViewController.swift in Sources */,
 				2D36122321E5A03300660F72 /* tableOrScroll.xcdatamodeld in Sources */,
 				2D36125321E5B4F800660F72 /* ExampleVC.swift in Sources */,
