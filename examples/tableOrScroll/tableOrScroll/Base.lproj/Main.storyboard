@@ -86,7 +86,7 @@
                                                         </constraints>
                                                         <userDefinedRuntimeAttributes>
                                                             <userDefinedRuntimeAttribute type="string" keyPath="statLabelText" value="Second Stat:"/>
-                                                            <userDefinedRuntimeAttribute type="string" keyPath="statValueText" value="1000"/>
+                                                            <userDefinedRuntimeAttribute type="string" keyPath="statValueText" value="2000"/>
                                                         </userDefinedRuntimeAttributes>
                                                     </view>
                                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Ou0-lO-RF5" customClass="StatView" customModule="tableOrScroll" customModuleProvider="target">
@@ -97,7 +97,7 @@
                                                         </constraints>
                                                         <userDefinedRuntimeAttributes>
                                                             <userDefinedRuntimeAttribute type="string" keyPath="statLabelText" value="Third Stat:"/>
-                                                            <userDefinedRuntimeAttribute type="string" keyPath="statValueText" value="1000"/>
+                                                            <userDefinedRuntimeAttribute type="string" keyPath="statValueText" value="3000"/>
                                                         </userDefinedRuntimeAttributes>
                                                     </view>
                                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="iss-Hb-bKM" customClass="StatView" customModule="tableOrScroll" customModuleProvider="target">
@@ -108,7 +108,7 @@
                                                         </constraints>
                                                         <userDefinedRuntimeAttributes>
                                                             <userDefinedRuntimeAttribute type="string" keyPath="statLabelText" value="Fourth Stat:"/>
-                                                            <userDefinedRuntimeAttribute type="string" keyPath="statValueText" value="1000"/>
+                                                            <userDefinedRuntimeAttribute type="string" keyPath="statValueText" value="4000"/>
                                                         </userDefinedRuntimeAttributes>
                                                     </view>
                                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="8Dw-v3-oa9" customClass="StatView" customModule="tableOrScroll" customModuleProvider="target">
@@ -119,7 +119,7 @@
                                                         </constraints>
                                                         <userDefinedRuntimeAttributes>
                                                             <userDefinedRuntimeAttribute type="string" keyPath="statLabelText" value="Fifth Stat:"/>
-                                                            <userDefinedRuntimeAttribute type="string" keyPath="statValueText" value="1000"/>
+                                                            <userDefinedRuntimeAttribute type="string" keyPath="statValueText" value="5000"/>
                                                         </userDefinedRuntimeAttributes>
                                                     </view>
                                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="hJs-jo-QtJ" customClass="StatView" customModule="tableOrScroll" customModuleProvider="target">
@@ -130,7 +130,7 @@
                                                         </constraints>
                                                         <userDefinedRuntimeAttributes>
                                                             <userDefinedRuntimeAttribute type="string" keyPath="statLabelText" value="Sixth Stat:"/>
-                                                            <userDefinedRuntimeAttribute type="string" keyPath="statValueText" value="1000"/>
+                                                            <userDefinedRuntimeAttribute type="string" keyPath="statValueText" value="6000"/>
                                                         </userDefinedRuntimeAttributes>
                                                     </view>
                                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="BGS-L6-AoX" customClass="StatView" customModule="tableOrScroll" customModuleProvider="target">
@@ -141,7 +141,7 @@
                                                         </constraints>
                                                         <userDefinedRuntimeAttributes>
                                                             <userDefinedRuntimeAttribute type="string" keyPath="statLabelText" value="Seventh Stat:"/>
-                                                            <userDefinedRuntimeAttribute type="string" keyPath="statValueText" value="1000"/>
+                                                            <userDefinedRuntimeAttribute type="string" keyPath="statValueText" value="7000"/>
                                                         </userDefinedRuntimeAttributes>
                                                     </view>
                                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="S0K-i9-s1r" customClass="StatView" customModule="tableOrScroll" customModuleProvider="target">
@@ -151,8 +151,8 @@
                                                             <constraint firstAttribute="height" constant="50" id="bad-hk-Ie2"/>
                                                         </constraints>
                                                         <userDefinedRuntimeAttributes>
-                                                            <userDefinedRuntimeAttribute type="string" keyPath="statLabelText" value="Seventh Stat:"/>
-                                                            <userDefinedRuntimeAttribute type="string" keyPath="statValueText" value="1000"/>
+                                                            <userDefinedRuntimeAttribute type="string" keyPath="statLabelText" value="Eighth Stat:"/>
+                                                            <userDefinedRuntimeAttribute type="string" keyPath="statValueText" value="8000"/>
                                                         </userDefinedRuntimeAttributes>
                                                     </view>
                                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="HVW-ij-z7M" customClass="StatView" customModule="tableOrScroll" customModuleProvider="target">
@@ -162,8 +162,8 @@
                                                             <constraint firstAttribute="height" constant="50" id="QqP-h5-SnG"/>
                                                         </constraints>
                                                         <userDefinedRuntimeAttributes>
-                                                            <userDefinedRuntimeAttribute type="string" keyPath="statLabelText" value="Eighth Stat:"/>
-                                                            <userDefinedRuntimeAttribute type="string" keyPath="statValueText" value="1000"/>
+                                                            <userDefinedRuntimeAttribute type="string" keyPath="statLabelText" value="Ninth Stat:"/>
+                                                            <userDefinedRuntimeAttribute type="string" keyPath="statValueText" value="9000"/>
                                                         </userDefinedRuntimeAttributes>
                                                     </view>
                                                 </subviews>
@@ -255,20 +255,112 @@
         <scene sceneID="1ri-HF-vjm">
             <objects>
                 <tableViewController title="Table View" id="F9u-0p-8X7" customClass="ExampleTVC" customModule="tableOrScroll" customModuleProvider="target" sceneMemberID="viewController">
-                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="grouped" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="18" sectionFooterHeight="18" id="5Eb-1E-udW">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="static" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="5Eb-1E-udW">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
-                        <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="statCell" id="lyp-j2-lOT">
-                                <rect key="frame" x="0.0" y="55.5" width="375" height="44"/>
-                                <autoresizingMask key="autoresizingMask"/>
-                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="lyp-j2-lOT" id="5F9-vy-LIo">
-                                    <rect key="frame" x="0.0" y="0.0" width="375" height="43.5"/>
-                                    <autoresizingMask key="autoresizingMask"/>
-                                </tableViewCellContentView>
-                            </tableViewCell>
-                        </prototypes>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <sections>
+                            <tableViewSection id="DpC-rO-136">
+                                <cells>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="statCell" id="lyp-j2-lOT">
+                                        <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="lyp-j2-lOT" id="5F9-vy-LIo" customClass="StatView" customModule="tableOrScroll" customModuleProvider="target">
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="43.5"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <userDefinedRuntimeAttributes>
+                                                <userDefinedRuntimeAttribute type="string" keyPath="statLabelText" value="First Stat:"/>
+                                                <userDefinedRuntimeAttribute type="string" keyPath="statValueText" value="1000"/>
+                                            </userDefinedRuntimeAttributes>
+                                        </tableViewCellContentView>
+                                    </tableViewCell>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="statCell" id="SXt-C7-Vp3">
+                                        <rect key="frame" x="0.0" y="44" width="375" height="44"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="SXt-C7-Vp3" id="iwI-ti-6Ir" customClass="StatView" customModule="tableOrScroll" customModuleProvider="target">
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="43.5"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <userDefinedRuntimeAttributes>
+                                                <userDefinedRuntimeAttribute type="string" keyPath="statLabelText" value="Second Stat:"/>
+                                                <userDefinedRuntimeAttribute type="string" keyPath="statValueText" value="2000"/>
+                                            </userDefinedRuntimeAttributes>
+                                        </tableViewCellContentView>
+                                    </tableViewCell>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="statCell" id="VVT-gE-UTo">
+                                        <rect key="frame" x="0.0" y="88" width="375" height="44"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="VVT-gE-UTo" id="VHE-aG-OKn" customClass="StatView" customModule="tableOrScroll" customModuleProvider="target">
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="43.5"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <userDefinedRuntimeAttributes>
+                                                <userDefinedRuntimeAttribute type="string" keyPath="statLabelText" value="Third Stat:"/>
+                                                <userDefinedRuntimeAttribute type="string" keyPath="statValueText" value="3000"/>
+                                            </userDefinedRuntimeAttributes>
+                                        </tableViewCellContentView>
+                                    </tableViewCell>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="statCell" id="lm8-Qs-4as">
+                                        <rect key="frame" x="0.0" y="132" width="375" height="44"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="lm8-Qs-4as" id="opC-gH-bOj" customClass="StatView" customModule="tableOrScroll" customModuleProvider="target">
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="43.5"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <userDefinedRuntimeAttributes>
+                                                <userDefinedRuntimeAttribute type="string" keyPath="statLabelText" value="Fourth Stat:"/>
+                                                <userDefinedRuntimeAttribute type="string" keyPath="statValueText" value="4000"/>
+                                            </userDefinedRuntimeAttributes>
+                                        </tableViewCellContentView>
+                                    </tableViewCell>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="statCell" id="jQv-zQ-HrT">
+                                        <rect key="frame" x="0.0" y="176" width="375" height="44"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="jQv-zQ-HrT" id="p5G-Iz-gIm" customClass="StatView" customModule="tableOrScroll" customModuleProvider="target">
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="43.5"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <userDefinedRuntimeAttributes>
+                                                <userDefinedRuntimeAttribute type="string" keyPath="statLabelText" value="Fifth Stat:"/>
+                                                <userDefinedRuntimeAttribute type="string" keyPath="statValueText" value="5000"/>
+                                            </userDefinedRuntimeAttributes>
+                                        </tableViewCellContentView>
+                                    </tableViewCell>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="statCell" id="cuY-2Y-H8b">
+                                        <rect key="frame" x="0.0" y="220" width="375" height="44"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="cuY-2Y-H8b" id="gT2-xY-13X" customClass="StatView" customModule="tableOrScroll" customModuleProvider="target">
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="43.5"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <userDefinedRuntimeAttributes>
+                                                <userDefinedRuntimeAttribute type="string" keyPath="statLabelText" value="Sixth Stat:"/>
+                                                <userDefinedRuntimeAttribute type="string" keyPath="statValueText" value="6000"/>
+                                            </userDefinedRuntimeAttributes>
+                                        </tableViewCellContentView>
+                                    </tableViewCell>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="statCell" id="aZo-wY-DsX">
+                                        <rect key="frame" x="0.0" y="264" width="375" height="44"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="aZo-wY-DsX" id="m4a-FR-z6g" customClass="StatView" customModule="tableOrScroll" customModuleProvider="target">
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="43.5"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <userDefinedRuntimeAttributes>
+                                                <userDefinedRuntimeAttribute type="string" keyPath="statLabelText" value="Seventh Stat:"/>
+                                                <userDefinedRuntimeAttribute type="string" keyPath="statValueText" value="7000"/>
+                                            </userDefinedRuntimeAttributes>
+                                        </tableViewCellContentView>
+                                    </tableViewCell>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="statCell" id="g8e-RP-Lxm">
+                                        <rect key="frame" x="0.0" y="308" width="375" height="44"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="g8e-RP-Lxm" id="1EZ-Rm-daf" customClass="StatView" customModule="tableOrScroll" customModuleProvider="target">
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="43.5"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <userDefinedRuntimeAttributes>
+                                                <userDefinedRuntimeAttribute type="string" keyPath="statLabelText" value="Eighth Stat:"/>
+                                                <userDefinedRuntimeAttribute type="string" keyPath="statValueText" value="8000"/>
+                                            </userDefinedRuntimeAttributes>
+                                        </tableViewCellContentView>
+                                    </tableViewCell>
+                                </cells>
+                            </tableViewSection>
+                        </sections>
                         <connections>
                             <outlet property="dataSource" destination="F9u-0p-8X7" id="TDx-Qp-A9u"/>
                             <outlet property="delegate" destination="F9u-0p-8X7" id="Ffg-Ua-AaE"/>

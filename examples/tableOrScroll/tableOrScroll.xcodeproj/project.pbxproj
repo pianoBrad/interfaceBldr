@@ -110,9 +110,9 @@
 				2D36121A21E5A03300660F72 /* AppDelegate.swift */,
 				2D36121C21E5A03300660F72 /* ViewController.swift */,
 				2D36121E21E5A03300660F72 /* Main.storyboard */,
-				2D36125021E5B40400660F72 /* StatView.xib */,
-				2D36125821E5B5CB00660F72 /* StatView.swift */,
 				2D36124D21E5A50D00660F72 /* controllers */,
+				2DD2F35A21E5BC790038799D /* nibs */,
+				2DD2F35921E5BC6D0038799D /* views */,
 				2D36122421E5A03400660F72 /* Assets.xcassets */,
 				2D36122621E5A03400660F72 /* LaunchScreen.storyboard */,
 				2D36122921E5A03400660F72 /* Info.plist */,
@@ -146,6 +146,22 @@
 				2D36125421E5B51800660F72 /* ExampleTVC.swift */,
 			);
 			path = controllers;
+			sourceTree = "<group>";
+		};
+		2DD2F35921E5BC6D0038799D /* views */ = {
+			isa = PBXGroup;
+			children = (
+				2D36125821E5B5CB00660F72 /* StatView.swift */,
+			);
+			path = views;
+			sourceTree = "<group>";
+		};
+		2DD2F35A21E5BC790038799D /* nibs */ = {
+			isa = PBXGroup;
+			children = (
+				2D36125021E5B40400660F72 /* StatView.xib */,
+			);
+			path = nibs;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
